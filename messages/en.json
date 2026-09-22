@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "title": "QA/QC Contractor | Inspection & MDR Documentation for Offshore & Industrial Projects",
+    "description": "Specialist QA/QC contractor for XXL Monopiles, Pressure Vessels, and Offshore Wind. Digital-first welding inspection and audit-ready MDR management."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "howWeWork": "How We Work",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "PIPELINE QUALITY",
+    "titleLine1": "Audit-Ready",
+    "titleLine2": "Fabrication.",
+    "titleLine3": "Delivered Right. First Time.",
+    "title": "Audit-Ready Fabrication. Delivered Right. First Time.",
+    "subtitle": "We help engineering teams deliver on-site QA/QC and compliant documentation for XXL Monopiles, Pressure Vessels, and Industrial Piping—aligned with ISO, DNV, and PED requirements.",
+    "imageAlt": "Heavy steel fabrication and welding inspection",
+    "availability": "Available for short-term and long-term projects across Europe.",
+    "cta1": "Book a Documentation Audit",
+    "cta2": "View Services",
+    "trustBadge": "Specialist QA/QC contractor for offshore and industrial projects"
+  },
+  "documentationReviewModal": {
+    "title": "Request Technical Review",
+    "description": "Upload your ITP, RFI, or Welding Logs. Our team will perform a detailed gap analysis and provide a professional feedback report.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@company.com",
+      "phone": "Phone (Optional)",
+      "phonePlaceholder": "+49 123 456 7890",
+      "message": "Additional Information (Optional)",
+      "messagePlaceholder": "Tell us about your documentation review needs...",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "privacyNote": "Privacy Note: Your documents are transmitted via an encrypted SSL connection. Your data is used solely for service delivery and is deleted upon project completion in compliance with GDPR. Server location: Frankfurt, Germany."
+    },
+    "footer": {
+      "connectWith": "Or connect with us:"
+    }
+  },
+  "intro": {
+    "headline": "Pipeline projects fail or succeed on documentation quality.",
+    "paragraph1": "We help EPCs, operators and engineering teams by delivering structured, compliant and audit-ready QA/QC documentation, without the need for permanent site presence.",
+    "paragraph2": "We operate as a remote QA/QC documentation partner, supporting projects across Europe.",
+    "paragraph3": "This allows our clients to reduce on-site workload, avoid documentation backlogs and stay audit-ready throughout the project lifecycle.",
+    "whatSetsUsApart": "What sets us apart:",
+    "point1": "real project experience in large industrial environments",
+    "point2": "strong understanding of European standards and EPC workflows",
+    "point3": "remote-first execution with clear accountability",
+    "point4": "focus on documentation that actually works on real projects",
+    "tagline": "We don't sell theory. We deliver usable documentation.",
+    "description": "Pipeline Quality is a specialized QA/QC documentation and project quality support service for industrial pipeline and process projects."
+  },
+  "experience": {
+    "title": "Professional Background & Experience",
+    "description": "Over 15 years of experience in pipeline projects, QA/QC documentation, and inspection support across international standards and compliance frameworks.",
+    "imageAlt": "Pipeline QA/QC expert reviewing technical documents",
+    "paragraph1": "Our experience is based on hands-on involvement in large-scale European industrial projects, supporting QA/QC documentation, welding documentation, and final handover processes.",
+    "paragraph2": "Project environments include chemical, energy, and pipeline-related installations with complex documentation and compliance requirements.",
+    "paragraph3": "Experience gained through professional involvement in large-scale industrial projects, including projects associated with companies such as:",
+    "companies": "BASF, Bayernoil, Chemiepark Marl, INEOS, Yamal LNG plant, Gazprom and Rosneft."
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "description": "Specialist QA/QC contractor services for XXL Monopiles, Pressure Vessels, and Industrial Piping. We deliver on-site field inspection, welding supervision, and remote Manufacturing Data Report (MDR) management—aligned with ISO, DNV, and PED standards.",
+    "scopeTitle": "Audit-Ready Fabrication Support",
+    "paragraph1": "",
+    "paragraph2": "",
+    "keyAreasTitle": "What We Offer",
+    "serviceAreas": [
+      "Field Inspection & NDT Management",
+      "Remote MDR Management & Documentation Audit",
+      "Welding Supervision & Traceability",
+      "Coating & Paint Inspection",
+      "Client Escalation & Audit Support"
+    ],
+    "sections": {
+      "fieldInspection": {
+        "title": "Field Inspection & Coordination",
+        "description": "On-site NDT management, welding supervision, and coating inspections. We ensure the steel meets the standard before it leaves the yard—reducing NCRs, delays, and client escalations.\nExperience across offshore wind fabrication yards, heavy industry, and complex welding environments.",
+        "imageAlt": "Field Inspection - NDT Close-up",
+        "items": [
+          "On-site NDT management and welding supervision",
+          "Coating inspections and paint thickness verification",
+          "Steel quality verification before yard departure",
+          "NCR reduction and client escalation prevention",
+          "Experience across offshore wind and heavy industry"
+        ]
+      },
+      "remoteMDR": {
+        "title": "Remote MDR Management",
+        "description": "We handle the \"Paperwork War.\" Automated compilation of Manufacturing Data Reports (MDR) that are structured, traceable, and audit-ready at any time.",
+        "imageAlt": "Digital MDR - Weld Tracking",
+        "items": [
+          "Automated MDR compilation and structuring",
+          "Material traceability and weld log verification",
+          "Real-time tracking of inspection and test records",
+          "Audit-ready documentation at any time",
+          "AI-assisted consistency checks and gap identification"
+        ]
+      },
+      "docControl": {
+        "title": "Documentation Review & Control",
+        "description": "Expert QA/QC review of fabrication documentation and drawings.",
+        "imageAlt": "Engineer reviewing technical documentation",
+        "items": [
+          "Review of isometric drawings and technical documentation",
+          "P&ID and fabrication drawing verification",
+          "Document control, revision tracking, and version management",
+          "Verification of document completeness against standards"
+        ]
+      },
+      "welding": {
+        "title": "Welding & Fabrication Documentation",
+        "items": [
+          "Review of welding documentation (WPS, PQR, WPQ)",
+          "Welding maps and weld traceability matrices",
+          "Material traceability documentation (heat numbers, traceability records)",
+          "Verification of welder qualifications and approvals"
+        ]
+      },
+      "quality": {
+        "title": "QA / QC Services",
+        "description": "On-site pipeline inspections, quality control tools, and compliance verification.",
+        "imageAlt": "Field engineer performing pipeline inspection with PPE",
+        "items": [
+          "Inspection & Test Plan (ITP) preparation, review, and verification",
+          "Review of inspection reports and quality records",
+          "RFIs documentation support and follow-up",
+          "NCR documentation support and corrective action tracking"
+        ]
+      },
+      "vendor": {
+        "title": "Vendor & Manufacturer Documentation",
+        "items": [
+          "Manufacturer and vendor documentation follow-up",
+          "Review of data books and supplier documentation",
+          "Coordination of missing or incomplete documentation",
+          "Interface support between vendors, contractors, and clients"
+        ]
+      },
+      "completion": {
+        "title": "Mechanical Completion & Handover",
+        "items": [
+          "Mechanical Completion documentation support",
+          "As-built documentation review and compilation",
+          "MDR / DDP (Manufacturing Data Record / Document Data Package) compilation",
+          "Final handover dossiers preparation and verification"
+        ]
+      },
+      "audit": {
+        "title": "Audit & Client Support",
+        "items": [
+          "Pre-audit documentation checks and readiness reviews",
+          "Client and third-party audit documentation support",
+          "Alignment of documentation with contractual and standard requirements"
+        ]
+      },
+      "remote": {
+        "title": "Remote QA/QC Support",
+        "items": [
+          "Remote quality documentation support for ongoing projects",
+          "Flexible support tailored to project phases and workloads",
+          "Efficient collaboration with site teams and project management"
+        ]
+      }
+    }
+  },
+  "smartQAQC": {
+    "label": "POWERED BY AI",
+    "title": "Smart QA/QC: Powered by Pipeline Quality AI",
+    "description": "Manual logs are the graveyard of project margins. In partnership with BW Digit, we develop custom tools to automate MDR generation, cross-check material traceability, and flag inconsistencies before audits, ensuring full traceability across MTRs, weld logs and NDT reports.",
+    "features": [
+      "Real-time Weld Tracking",
+      "Automated MDR Compilation",
+      "AI-Assisted Documentation Audit"
+    ]
+  },
+  "standards": {
+    "label": "STANDARDS & COMPLIANCE",
+    "title": "Working in accordance with recognized international standards.",
+    "description": "Our QA/QC documentation support aligns with internationally recognized standards and project-specific requirements, ensuring compliance, traceability and audit readiness.",
+    "items": {
+      "iso9001": {
+        "title": "ISO 9001",
+        "description": "Quality Management Systems"
+      },
+      "iso45001": {
+        "title": "ISO 45001",
+        "description": "Occupational Health & Safety"
+      },
+      "enDin": {
+        "title": "EN / DIN Standards",
+        "description": "Compliance with European industrial norms"
+      },
+      "en10204": {
+        "title": "EN 10204",
+        "description": "Metallic Products Inspection"
+      },
+      "welding": {
+        "title": "Welding Standards",
+        "description": "ISO 15614 / ISO 9606"
+      },
+      "asme": {
+        "title": "ASME Section IX",
+        "description": "Welding & Brazing Qualifications"
+      },
+      "compliance": {
+        "title": "Compliance",
+        "description": "Regulatory Adherence"
+      }
+    },
+    "footer": "European Regulatory Standards Compliant",
+    "frameworkTitle": "Standards & Normative Framework",
+    "frameworkDescription": "Our QA/QC documentation support is aligned with commonly applied international standards, including but not limited to:",
+    "standardsList": [
+      "ISO 9001 – Quality Management Systems",
+      "ISO 45001 – Occupational Health & Safety",
+      "ISO 12944 – C5/CX Corrosion Protection",
+      "ISO 9712 – Non-Destructive Testing (NDT)",
+      "EN 10204 – Metallic product inspection documents",
+      "ISO 15614 / ISO 9606 – Welding procedure and welder qualification",
+      "DNV-ST-0126 – Offshore Wind Structures",
+      "PED 2014/68/EU – Pressure Equipment Directive",
+      "FROSIO/NACE Level 3 – Coating Inspector Certification",
+      "ASME Section IX (project-dependent)",
+      "EN and DIN standards applicable to industrial fabrication and installation"
+    ],
+    "auditNote": "Documentation is prepared with audit readiness in mind, supporting internal and external audits.",
+    "qualifications": "Relevant auditor qualifications and technical certifications are available upon request.",
+    "scopeNote": "Standards are applied strictly within the scope defined by the client and project documentation."
+  },
+  "industries": {
+    "label": "INDUSTRIES",
+    "title": "Industries & Standards We Work With",
+    "description": "Oil & Gas, Pipeline Construction, EPC Contractors, QA/QC & Inspection Support",
+    "standardsAlt": "ISO, ASME, API, EN standards for pipeline QA/QC",
+    "list": [
+      "Oil & Gas (onshore and related facilities)",
+      "Pipeline and transmission projects",
+      "Chemical and petrochemical plants",
+      "Energy and power generation",
+      "EPC and engineering projects",
+      "Industrial construction and installation",
+      "Maintenance, shutdowns and revamp projects"
+    ],
+    "experienceNote": "Our experience includes large-scale industrial projects executed under strict quality and safety requirements across Europe and worldwide."
+  },
+  "workProcess": {
+    "label": "HOW WE WORK",
+    "title": "Structured. Transparent. Reliable.",
+    "steps": [
+      "Initial consultation & scope definition",
+      "Document review based on client specs & standards",
+      "Clear feedback, tracking lists & action points",
+      "Ongoing remote support & coordination",
+      "Final documentation ready for audit & handover"
+    ],
+    "tagline": "Clear ownership, clear deadlines, clear documentation."
+  },
+  "why": {
+    "label": "WHY PIPELINE QUALITY",
+    "title": "Why Pipeline Quality",
+    "points": [
+      "Real project experience – not theoretical consulting",
+      "Strong understanding of EPC & operator requirements",
+      "Focus on documentation quality, traceability & compliance",
+      "Flexible remote support model",
+      "Clear communication in English & German"
+    ],
+    "reasons": [
+      {
+        "title": "Real Project Experience",
+        "description": "Hands-on experience gained within large-scale European industrial projects, not theoretical consulting."
+      },
+      {
+        "title": "Strong EPC Understanding",
+        "description": "Deep understanding of EPC workflows, documentation requirements and project pressures."
+      },
+      {
+        "title": "Remote-First Flexibility",
+        "description": "Flexible remote support models aligned with project phases, workload and timelines."
+      },
+      {
+        "title": "Documentation That Works",
+        "description": "Practical, usable documentation designed for real project execution and audits."
+      },
+      {
+        "title": "European Standards Focus",
+        "description": "Strong alignment with European regulations, EN/DIN standards and client-specific requirements."
+      },
+      {
+        "title": "Clear Communication",
+        "description": "Direct, structured communication in English and German, ensuring clarity and accountability."
+      }
+    ],
+    "builtOn": "Built on real project experience",
+    "companyInfo": "Pipeline Quality is operated by Backpack Wander GmbH, registered in Germany and based in Berlin. We collaborate with a network of experienced QA/QC professionals and scale our support according to project needs."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is remote QA/QC documentation support?",
+        "answer": "Remote QA/QC documentation support means managing, reviewing and preparing all quality-related project documentation without permanent site presence, ensuring compliance with project specifications and standards."
+      },
+      {
+        "question": "Do you work only remotely?",
+        "answer": "Our primary focus is remote documentation support. On-site support can be coordinated through our professional network if required."
+      },
+      {
+        "question": "Which standards do you work with?",
+        "answer": "We work according to ISO 9001, ISO 45001, project-specific EPC requirements, welding standards and client specifications."
+      },
+      {
+        "question": "Which industries do you support?",
+        "answer": "Pipeline construction, oil & gas, chemical and petrochemical plants, energy, utilities and industrial installations."
+      },
+      {
+        "question": "Can you support audits and client inspections?",
+        "answer": "Yes. Documentation is prepared with audit-readiness in mind and supports both internal and external audits."
+      },
+      {
+        "question": "Do you support EPC contractors and engineering companies?",
+        "answer": "Yes. We regularly support EPC contractors, engineering companies and operators with structured QA/QC documentation aligned with project and contractual requirements."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to streamline your project's quality documentation?",
+    "description": "Whether you need short-term QA/QC documentation support or long-term remote involvement, we are ready to support your project with structured and reliable solutions.",
+    "button1": "Request a Quote",
+    "button2": "Discuss Your Project",
+    "tagline": "Supporting European Industrial Excellence",
+    "altTitle": "Let's Talk About Your Project",
+    "responseNote": "We respond fast and work transparently"
+  },
+  "contact": {
+    "title": "Request QA/QC & Quality Support",
+    "subtitle": "Let's discuss your QA/QC documentation needs",
+    "description": "Please upload relevant project documentation or describe your QA/QC needs. Our team will respond within 48–72 hours.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@company.com",
+      "supportType": "Project Support Type",
+      "supportTypePlaceholder": "Select support type",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project requirements...",
+      "fileUpload": "File Upload (Optional)",
+      "fileUploadHint": "Attach specs, drawings, or lists (PDF, DWG, XLSX, max 10MB)",
+      "gdprConsent": "I agree to the processing of my personal data in accordance with the",
+      "privacyPolicy": "Privacy Policy",
+      "submit": "Request QA/QC support",
+      "submitting": "Sending...",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you for contacting us. We'll get back to you shortly.",
+      "errorTitle": "Error",
+      "errorMessage": "Something went wrong. Please try again or contact us via email.",
+      "required": "Required field",
+      "disclaimer": "We provide remote documentation, preparation and quality support. On-site services are available upon request via partners.",
+      "privacyNote": "Privacy Note: Your documents are transmitted via an encrypted SSL connection. Your data is used solely for service delivery and is deleted upon project completion in compliance with GDPR. Server location: Frankfurt, Germany."
+    },
+    "whatsapp": {
+      "text": "Prefer direct communication? Message us on WhatsApp.",
+      "button": "WhatsApp"
+    },
+    "supportTypes": [
+      "QA/QC Documentation Support",
+      "Quality Management System (ISO 9001) Support",
+      "HSE Documentation & ISO 45001 Preparation",
+      "Audit Preparation & Internal Audit Support",
+      "Quality Documentation for Projects & Tenders",
+      "Other / Not sure yet"
+    ]
+  },
+  "footer": {
+    "brand": "Pipeline Quality",
+    "description": "Specialist QA/QC contractor for XXL Monopiles, Pressure Vessels, and Industrial Piping. Digital-first welding inspection and audit-ready MDR management.",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "email": "Email: info@pipelinequality.com",
+    "location": "Based in Germany, Europe",
+    "linkedIn": "LinkedIn",
+    "companyInfo": "Company Information",
+    "companyDescription": "Pipeline Quality is a brand of Backpack Wander GmbH, a company registered in Germany, with headquarters in Berlin. Technical partner: BW Digit. We work with an international network of qualified professionals and scale our services according to project requirements.",
+    "tagline": "QA/QC Contractor Services",
+    "copyright": "© 2025 Backpack Wander GmbH. All rights reserved.",
+    "brandNote": "Pipeline Quality is a brand of Backpack Wander GmbH. Technical partner: BW Digit.",
+    "madeBy": "Made by BW Digit",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "imprint": "Impressum"
+  },
+  "whatsappFloat": {
+    "tooltip": "Message us on WhatsApp"
+  },
+  "meta": {
+    "title": "QA/QC Engineering & Documentation Services | PipelineQuality",
+    "description": "Remote QA/QC documentation review for Oil & Gas and Chemical industries. Expert analysis for ITP, RFI, and Welding Logs according to ISO and ASME standards."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Legal Notice",
+      "companyName": "Company Information",
+      "address": "Backpack Wander GmbH\nKolonnenstrasse 8\n10827 Berlin, Germany",
+      "managingDirectorLabel": "Managing Director",
+      "managingDirector": "Biljana Habel, M.Sc.",
+      "contactLabel": "Contact",
+      "contact": "info@pipelinequality.com",
+      "registerLabel": "Register Entry",
+      "register": "Registered in the Commercial Register (Handelsregister)\nRegistry Court: Amtsgericht Charlottenburg (Berlin)\nRegistration Number: HRB 282058 B",
+      "vatLabel": "VAT ID",
+      "vat": "DE451725510",
+      "brandNote": "Pipeline Quality is a registered brand of Backpack Wander GmbH.",
+      "sections": [
+        {
+          "title": "Company Information",
+          "content": "Backpack Wander GmbH\nKolonnenstrasse 8\n10827 Berlin, Germany"
+        },
+        {
+          "title": "Represented by",
+          "content": "Managing Director: Biljana Habel, M.Sc."
+        },
+        {
+          "title": "Contact",
+          "content": "Email: info@backpackwander.com / info@pipelinequality.com\nWebsite: https://www.pipelinequality.com"
+        },
+        {
+          "title": "Register Entry",
+          "content": "Registered in the Commercial Register (Handelsregister)\nRegistry Court: Amtsgericht Charlottenburg (Berlin)\nRegistration Number: HRB 282058 B"
+        },
+        {
+          "title": "VAT Identification Number",
+          "content": "VAT ID according to § 27 a of the German Value Added Tax Act:\nDE451725510"
+        },
+        {
+          "title": "Brand Disclaimer",
+          "content": "Pipeline Quality is a registered brand of Backpack Wander GmbH."
+        },
+        {
+          "title": "EU Dispute Resolution",
+          "content": "The European Commission provides a platform for online dispute resolution (ODR): https://europa.eu.\nWe are not obliged or willing to participate in dispute resolution proceedings before a consumer arbitration board."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "title": "1. General Information",
+          "content": "The protection of your personal data is a high priority for Backpack Wander GmbH.\nThis Privacy Policy explains how we process personal data within our online offer and for our brand Pipeline Quality."
+        },
+        {
+          "title": "2. Controller (Responsible Entity)",
+          "content": "The entity responsible for data processing is:\n\nBackpack Wander GmbH\nKolonnenstrasse 8, 10827 Berlin, Germany\nManaging Director: Biljana Habel, M.Sc.\n\nFor general & legal inquiries: info@backpackwander.com\nFor project & brand inquiries: info@pipelinequality.com"
+        },
+        {
+          "title": "3. Hosting and Content Delivery Networks (CDN)",
+          "content": "Our website is hosted by Vercel Inc. (650 California St, San Francisco, CA 94108, USA). Vercel collects server log files (including IP address, browser type, and timestamps) to ensure the technical security and stability of the site.\n\nLegal Basis: Art. 6(1)(f) GDPR (Legitimate interest).\nData Transfer: Vercel is certified under the EU-U.S. Data Privacy Framework, ensuring a level of data protection compliant with EU standards."
+        },
+        {
+          "title": "4. Data Collection & Processing",
+          "content": "Contact Forms & File Uploads: Data submitted via forms or file uploads is processed solely to handle your inquiry and manage project-related communication. (Art. 6(1)(b) GDPR).\n\nWhatsApp Communication: If you contact us via WhatsApp, we process your phone number and chat history exclusively for business purposes. Please note that WhatsApp's own privacy terms apply.\n\nGoogle Analytics: We use Google Analytics with IP Anonymization enabled. This requires your explicit consent via our cookie banner. (Art. 6(1)(a) GDPR)."
+        },
+        {
+          "title": "5. Your Rights (Data Subject Rights)",
+          "content": "You have the right to access (Art. 15), rectify (Art. 16), or erase (Art. 17) your data, as well as the right to restrict processing (Art. 18) and data portability (Art. 20).\nYou may withdraw your consent at any time.\nTo exercise these rights, please contact us at info@pipelinequality.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "General Terms and Conditions",
+      "sections": [
+        {
+          "title": "1. Scope of Application",
+          "content": "These General Terms and Conditions apply to all services, offers, and contracts provided by Backpack Wander GmbH (hereinafter \"the Provider\") specifically under the brand \"Pipeline Quality\"."
+        },
+        {
+          "title": "2. Services",
+          "content": "The Provider offers specialized technical and engineering services, including:\n- Technical consultancy and engineering support.\n- QA/QC documentation and inspection services.\n- Project-related remote and on-site support.\n- Provision of technical digital products and online offerings."
+        },
+        {
+          "title": "3. Contractual Partner",
+          "content": "The sole contractual partner is\nBackpack Wander GmbH, Kolonnenstrasse 8, 10827 Berlin, Managing Director: Biljana Habel, M.Sc."
+        },
+        {
+          "title": "4. Liability",
+          "content": "- The Provider is liable for intent and gross negligence.\n- For slight negligence, the Provider is only liable in the event of a breach of an essential contractual obligation (cardinal obligation). In such cases, liability is limited to the typical, foreseeable damage.\n- Liability for injury to life, body or health remains unaffected.\n- The Provider provides services based on the current state of technology."
+        },
+        {
+          "title": "5. Digital Products",
+          "content": "For the purchase of digital products or technical templates, the right of withdrawal expires once the performance of the contract has begun with the consumer's prior express consent."
+        },
+        {
+          "title": "6. Final Provisions",
+          "content": "- The laws of the Federal Republic of Germany apply.\n- Place of jurisdiction is Berlin, Germany."
+        }
+      ]
+    }
+  }
+}
