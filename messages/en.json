@@ -32,6 +32,24 @@
       "Production Support",
       "Documentation",
       "Project Quality"
+    ],
+    "pillars": [
+      {
+        "title": "Experienced Professionals",
+        "text": "Access skilled QA/QC experts with proven industry experience and practical project knowledge."
+      },
+      {
+        "title": "Project-Based Support",
+        "text": "Flexible quality resources for specific project phases, production ramp-ups, and inspection campaigns."
+      },
+      {
+        "title": "Quality & Compliance",
+        "text": "Support for quality standards, inspection requirements, documentation, and client specifications."
+      },
+      {
+        "title": "Coordinated Quality Teams",
+        "text": "Individual specialists or dedicated quality teams working alongside your existing workforce."
+      }
     ]
   },
   "documentationReviewModal": {
@@ -58,6 +76,8 @@
   },
   "intro": {
     "headline": "Quality Capacity When Your Project Needs It.",
+    "headlineLine1": "Quality Capacity When",
+    "headlineLine2": "Your Project Needs It",
     "paragraph1": "Projects do not always need another permanent position. Sometimes they need experienced QA/QC capacity for a defined project phase, production ramp-up, inspection campaign, documentation backlog or client requirement.",
     "paragraph2": "Pipeline Quality provides qualified professionals and project-based support according to the actual scope. We can support individual requirements as well as coordinated project quality teams.",
     "paragraph3": "",
@@ -89,6 +109,8 @@
     "scopeText": "Coordination with clients and third-party inspection bodies, inspection tracking, production meetings, progress reporting, End-of-Manufacturing Data Record (MDR) compilation, NCR follow-up and repair-rate\u00a0reporting.",
     "trackTitle": "Project Track Record",
     "trackText": "Contributed to international offshore wind projects including East Anglia, Baltic, Orange Wind, DolWin, BorWin and IJmuiden Ver Gamma.",
+    "summary1": "Recent project experience includes offshore wind foundation manufacturing in the Netherlands.",
+    "summary2": "Our expertise is built on the professional project experience of our founder and our network of qualified specialists.",
     "offshoreTitle": "Offshore Wind",
     "offshoreText": "Foundation manufacturing, monopiles, transition pieces, welding, NDT, dimensional control, client inspection, production support and quality documentation.",
     "industrialTitle": "Industrial & Pipeline",
@@ -101,6 +123,9 @@
     "paragraph1": "",
     "paragraph2": "",
     "keyAreasTitle": "What We Offer",
+    "designTitle": "Engineering Solutions for",
+    "designTitleAccent": "Safer, Stronger Tomorrow",
+    "designLead": "From inspection to installation, our expert engineering services ensure quality, compliance, and long-term reliability across every project.",
     "serviceAreas": [
       "QA/QC Engineering",
       "Inspection & Production Support",
@@ -771,6 +796,7 @@
     "label": "From Field to Handover",
     "title": "From Field Data to Final Handover",
     "description": "A clean engineering flow connecting production activity with final project quality documentation for Pipeline Quality and BW Digit.",
+    "lead": "End-to-end quality control, full traceability and complete project documentation from on-site inspection to final handover.",
     "stages": [
       {
         "id": "01",

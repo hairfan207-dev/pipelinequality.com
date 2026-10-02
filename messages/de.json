@@ -32,6 +32,24 @@
       "Fertigungsbegleitung",
       "Dokumentation",
       "Projektqualität"
+    ],
+    "pillars": [
+      {
+        "title": "Erfahrene Fachkräfte",
+        "text": "Zugang zu erfahrenen QA/QC-Spezialisten mit nachgewiesener Branchenpraxis und konkretem Projektwissen."
+      },
+      {
+        "title": "Projektbezogene Unterstützung",
+        "text": "Flexible Qualitätsressourcen für einzelne Projektphasen, Produktionshochläufe und Inspektionskampagnen."
+      },
+      {
+        "title": "Qualität & Konformität",
+        "text": "Unterstützung bei Qualitätsnormen, Inspektionsanforderungen, Dokumentation und Kundenspezifikationen."
+      },
+      {
+        "title": "Koordinierte Qualitätsteams",
+        "text": "Einzelne Spezialisten oder eingespielte Qualitätsteams, die mit Ihrem bestehenden Team zusammenarbeiten."
+      }
     ]
   },
   "documentationReviewModal": {
@@ -58,6 +76,8 @@
   },
   "intro": {
     "headline": "Erfahrenes QA/QC-Personal, wenn Ihr Projekt es braucht.",
+    "headlineLine1": "Erfahrenes QA/QC-Personal,",
+    "headlineLine2": "wenn Ihr Projekt es braucht",
     "paragraph1": "Projekte brauchen nicht immer eine weitere Festanstellung. Manchmal brauchen sie erfahrene QA/QC-Fachkräfte für eine klar definierte Projektphase, einen Produktionshochlauf, eine Inspektionskampagne, einen Dokumentationsrückstand oder eine Kundenanforderung.",
     "paragraph2": "Pipeline Quality stellt qualifizierte Fachkräfte und projektbezogene Unterstützung entsprechend dem tatsächlichen Leistungsumfang bereit — vom einzelnen Spezialisten bis zum koordinierten Qualitätsteam.",
     "paragraph3": "",
@@ -89,6 +109,8 @@
     "scopeText": "Koordination mit Kunden und unabhängigen Prüfstellen, Inspektionsnachverfolgung, Produktionsbesprechungen, Fortschrittsberichte, Zusammenstellung der End-of-Manufacturing Data Records (MDR), NCR-Nachverfolgung und Berichte zur\u00a0Reparaturrate.",
     "trackTitle": "Projektreferenzen",
     "trackText": "Mitwirkung an internationalen Offshore-Wind-Projekten, darunter East Anglia, Baltic, Orange Wind, DolWin, BorWin und IJmuiden Ver Gamma.",
+    "summary1": "Aktuelle Projekterfahrung umfasst die Fertigung von Offshore-Wind-Fundamenten in den Niederlanden.",
+    "summary2": "Unsere Kompetenz beruht auf der Projekterfahrung der Gründerin und unseres Netzwerks qualifizierter Spezialisten.",
     "offshoreTitle": "Offshore-Wind",
     "offshoreText": "Fundamentsfertigung, Monopiles, Transition Pieces, Schweißen, NDT/ZfP, Maßkontrolle, Kundeninspektion, Fertigungsbegleitung und Qualitätsdokumentation.",
     "industrialTitle": "Industrie & Pipeline",
@@ -101,6 +123,9 @@
     "paragraph1": "",
     "paragraph2": "",
     "keyAreasTitle": "Was wir anbieten",
+    "designTitle": "Engineering-Lösungen für",
+    "designTitleAccent": "eine sicherere, stärkere Zukunft",
+    "designLead": "Von der Inspektion bis zur Montage sichern unsere Engineering-Leistungen Qualität, Konformität und langfristige Zuverlässigkeit in jedem Projekt.",
     "serviceAreas": [
       "QA/QC Engineering",
       "Inspektion & Fertigungsbegleitung",
@@ -771,6 +796,7 @@
     "label": "Vom Feld zur Übergabe",
     "title": "Von Felddaten zur finalen Übergabe",
     "description": "Ein klarer Engineering-Ablauf, der Fertigungsaktivitäten mit der finalen Projektqualitätsdokumentation für Pipeline Quality und BW Digit verbindet.",
+    "lead": "Durchgängige Qualitätskontrolle, volle Rückverfolgbarkeit und vollständige Projektdokumentation — von der Inspektion vor Ort bis zur finalen Übergabe.",
     "stages": [
       {
         "id": "01",

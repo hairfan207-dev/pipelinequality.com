@@ -9,12 +9,10 @@ export function ContactSection() {
   return (
     <section className='border-t border-navy/15 bg-white' id='contact'>
       <div className='pq-shell pq-section'>
-        <div className='max-w-3xl lg:max-w-5xl'>
-          <p className='pq-index'>{t('label')}</p>
-          <h2 className='mt-3 text-navy'>{t('title')}</h2>
-          <p className='mt-4 pq-subtitle text-navy/70'>{t('description')}</p>
-          <p className='mt-5 hidden text-[13px] text-navy/70 lg:block'>
-            {t('subtitle')}
+        <div className='mx-auto max-w-3xl text-center lg:max-w-4xl'>
+          <h2 className='text-navy'>{t('title')}</h2>
+          <p className='mt-4 text-[0.98rem] leading-relaxed text-navy/70'>
+            {t('description')}
           </p>
         </div>
 

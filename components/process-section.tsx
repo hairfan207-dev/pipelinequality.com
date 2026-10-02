@@ -1,7 +1,6 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
-import { SectionLabel } from '@/components/section-label';
+import { useTranslations } from 'next-intl';
 
 type Step = {
   id: string;
@@ -9,37 +8,38 @@ type Step = {
   text: string;
 };
 
+const images = [
+  '/client/team-network.jpg?v=1',
+  '/client/service-project.jpg?v=7',
+  '/client/service-docs.jpg?v=5',
+  '/client/service-engineering.jpg?v=9',
+  '/client/industry-offshore.jpg?v=3',
+];
+
 export function ProcessSection() {
   const t = useTranslations('workProcess');
-  const locale = useLocale();
   const steps = t.raw('steps') as Step[];
 
   return (
-    <section id='how-we-work' className='border-t border-navy/15 bg-white'>
-      <div className='pq-shell pq-section'>
-        <SectionLabel>{t('label')}</SectionLabel>
-        <h2 className='max-w-3xl text-navy lg:max-w-5xl'>{t('title')}</h2>
-        <div className='mt-6 grid gap-6 border-t border-navy/15 pt-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-5'>
+    <section id='how-we-work' className='bg-white'>
+      <div className='pq-shell py-16 text-center lg:py-20'>
+        <p className='pq-index'>{t('label')}</p>
+        <h2 className='mt-3 text-navy'>{t('title')}</h2>
+        <div className='mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5'>
           {steps.map((step, index) => (
-            <div key={step.id} className='min-w-0'>
-              <div className='flex items-baseline gap-2'>
-                <h3 className='min-w-0 text-navy'>{step.title}</h3>
-                {index < steps.length - 1 && (
-                  <span
-                    className='hidden shrink-0 text-sm leading-none text-navy/30 xl:inline'
-                    aria-hidden
-                  >
-                    →
-                  </span>
-                )}
+            <article key={step.id} className='text-center'>
+              <div className='relative overflow-hidden rounded-2xl'>
+                <img
+                  src={images[index]}
+                  alt={step.title}
+                  className='h-52 w-full object-cover'
+                />
+                <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy to-transparent px-2 py-3 pt-12'>
+                  <p className='text-[15px] font-semibold text-white'>{step.title}</p>
+                </div>
               </div>
-              <p
-                lang={locale}
-                className='mt-2 break-words hyphens-auto pq-subtitle text-navy/70'
-              >
-                {step.text}
-              </p>
-            </div>
+              <p className='mt-3 text-[13px] leading-relaxed text-navy/70'>{step.text}</p>
+            </article>
           ))}
         </div>
       </div>

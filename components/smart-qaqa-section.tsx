@@ -4,43 +4,34 @@ import { useTranslations } from 'next-intl';
 
 export function SmartQAQCSection() {
   const t = useTranslations('smartQAQC');
+  const partners = useTranslations('partners');
 
   return (
-    <section id='bw-digit' className='border-t border-navy/15 bg-white'>
-      <div className='pq-shell pq-section grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12'>
-        <div className='min-w-0 self-center lg:max-w-none'>
-          <p className='pq-index'>{t('label')}</p>
-          <h2 className='mt-3 text-navy'>{t('title')}</h2>
-          <p className='mt-4 pq-subtitle text-navy/70'>{t('description')}</p>
-          <div className='mt-6'>
-            <a
-              href='https://www.bwdigit.com'
-              target='_blank'
-              rel='noreferrer'
-              className='pq-btn !gap-2 !px-3.5 !py-2.5 text-[10px] tracking-[0.12em] lg:!gap-[0.85rem] lg:!px-[1.35rem] lg:!py-4 lg:text-[11px] lg:tracking-[0.14em]'
-            >
-              {t('cta')}
-            </a>
-          </div>
+    <section id='bw-digit' className='border-y-2 border-accent bg-white'>
+      <div className='pq-shell grid gap-8 py-14 lg:grid-cols-2 lg:items-center lg:py-16'>
+        <div>
+          <h2 className='text-navy'>{t('title')}</h2>
+          <a
+            href='#contact'
+            className='pq-btn mt-6 inline-flex !px-5 !py-3 text-[11px] tracking-[0.12em]'
+          >
+            {partners('cta')}
+          </a>
+          <img
+            src='/client/bw-field.jpg?v=2'
+            alt={t('fieldAlt')}
+            className='mt-6 h-56 w-full rounded-2xl object-cover'
+          />
         </div>
-
-        <div className='flex min-w-0 w-full items-center justify-center self-center lg:justify-end'>
-          <div className='pq-service-visual pq-service-visual--landscape w-full max-w-[22rem] sm:max-w-[24rem] md:max-w-[26rem] lg:max-w-[28rem] xl:max-w-[30rem]'>
-            <div className='pq-service-visual__glow' aria-hidden />
-            <div className='pq-service-visual__back' aria-hidden />
-            <div className='pq-service-visual__frame'>
-              <div className='pq-service-visual__media'>
-                <img
-                  src='/client/bw-digit.jpg?v=3'
-                  alt={t('docsAlt')}
-                  width={1536}
-                  height={1024}
-                  className='pq-service-visual__img is-static is-active is-bw-digit'
-                />
-                <div className='pq-service-visual__veil' aria-hidden />
-              </div>
-            </div>
-          </div>
+        <div>
+          <img
+            src='/client/bw-digital.jpg?v=2'
+            alt={t('docsAlt')}
+            className='h-72 w-full rounded-2xl object-cover lg:h-80'
+          />
+          <p className='mt-5 text-[0.98rem] leading-relaxed text-navy/75'>
+            {t('description')}
+          </p>
         </div>
       </div>
     </section>

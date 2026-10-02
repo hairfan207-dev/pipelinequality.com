@@ -2,38 +2,32 @@
 
 import { useTranslations } from 'next-intl';
 
-const bodyText =
-  'text-[1.0625rem] leading-[1.7] font-normal text-navy/70 lg:text-[1.125rem]';
-
 export function ExperienceSection() {
   const t = useTranslations('experience');
 
   return (
     <section id='experience' className='bg-white text-navy'>
-      <div className='pq-shell pq-section'>
-        <div className='max-w-3xl lg:max-w-5xl'>
-          <p className='pq-index'>{t('label')}</p>
-          <h2 className='mt-3 text-navy'>{t('title')}</h2>
-          <p className={`mt-4 ${bodyText}`}>{t('intro')}</p>
-
-          <div className='mt-8 space-y-7 border-t border-navy/15 pt-7'>
-            <div>
-              <p className='pq-index'>{t('referenceLabel')}</p>
-              <h3 className='mt-2 font-sans text-[1.05rem] font-semibold tracking-[-0.02em] text-navy'>
-                {t('referenceTitle')}
-              </h3>
-              <p className={`mt-2 ${bodyText}`}>{t('referenceText')}</p>
+      <div className='pq-shell pb-8'>
+        <div className='rounded-[2rem] bg-[#f4f7fb] px-6 py-10 lg:px-10 lg:py-12'>
+          <div className='grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start'>
+            <h2 className='text-navy'>{t('title')}</h2>
+            <div className='space-y-4 text-[0.98rem] leading-relaxed text-navy/75'>
+              <p className='pq-index'>{t('label')}</p>
+              <p>{t('summary1')}</p>
+              <p>{t('summary2')}</p>
             </div>
-
-            <div>
-              <p className='pq-index'>{t('scopeTitle')}</p>
-              <p className={`mt-2 ${bodyText}`}>{t('scopeText')}</p>
-            </div>
-
-            <div>
-              <p className='pq-index'>{t('trackTitle')}</p>
-              <p className={`mt-2 ${bodyText}`}>{t('trackText')}</p>
-            </div>
+          </div>
+          <div className='mt-8 grid gap-4 md:grid-cols-2'>
+            <img
+              src='/client/hero-monopile.jpg?v=4'
+              alt={t('imageAlt')}
+              className='h-64 w-full rounded-2xl object-cover lg:h-80'
+            />
+            <img
+              src='/client/industry-offshore.jpg?v=3'
+              alt={t('offshoreTitle')}
+              className='h-64 w-full rounded-2xl object-cover lg:h-80'
+            />
           </div>
         </div>
       </div>

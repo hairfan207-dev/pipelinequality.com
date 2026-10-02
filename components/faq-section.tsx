@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { ChevronDown } from 'lucide-react';
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -9,56 +10,28 @@ export function FAQSection() {
   const items = t.raw('items') as Array<{ question: string; answer: string }>;
 
   return (
-    <section className='relative overflow-hidden border-t border-navy/15 bg-white text-navy'>
-      <div className='pq-shell pq-section relative'>
-        <div className='max-w-xl lg:max-w-3xl'>
-          <p className='pq-index'>FAQ</p>
-          <h2 className='mt-2 text-navy'>{t('title')}</h2>
-        </div>
-
-        <div className='mt-6 border-t border-navy/15 lg:mt-8'>
+    <section className='bg-white text-navy'>
+      <div className='pq-shell py-8 text-center lg:py-12'>
+        <h2 className='text-navy'>{t('title')}</h2>
+        <div className='mx-auto mt-8 max-w-3xl rounded-3xl bg-[#f4f7fb] px-4 py-2 text-left sm:px-8'>
           {items.map((faq, index) => {
             const open = openIndex === index;
             return (
-              <div
-                key={faq.question}
-                className='border-b border-navy/15 transition-colors duration-400'
-              >
+              <div key={faq.question} className='border-b border-navy/10 last:border-b-0'>
                 <button
                   type='button'
                   onClick={() => setOpenIndex(open ? null : index)}
-                  className='grid w-full grid-cols-[1fr_auto] items-start gap-3 py-3.5 text-left sm:gap-5 lg:py-3.5'
+                  className='flex w-full items-center justify-between gap-4 py-4 text-left'
                   aria-expanded={open}
                 >
-                  <span
-                    className={`text-[0.9rem] leading-snug font-semibold tracking-[-0.015em] transition-colors duration-300 lg:text-[0.95rem] ${
-                      open ? 'text-navy' : 'text-navy/70'
-                    }`}
-                  >
-                    {faq.question}
-                  </span>
-                  <span
-                    className='relative mt-1.5 h-3.5 w-3.5 shrink-0'
-                    aria-hidden
-                  >
-                    <span className='absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-accent' />
-                    <span
-                      className={`absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-accent transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                        open ? 'scale-y-0' : 'scale-y-100'
-                      }`}
-                    />
-                  </span>
+                  <span className='text-[0.98rem] font-medium text-navy'>{faq.question}</span>
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 text-navy/50 transition ${open ? 'rotate-180' : ''}`}
+                  />
                 </button>
-                <div
-                  className='grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]'
-                  style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
-                >
-                  <div className='overflow-hidden'>
-                    <p className='max-w-3xl pr-8 pb-3.5 text-[13px] leading-relaxed text-navy/70 lg:max-w-5xl lg:pb-3'>
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
+                {open && (
+                  <p className='pb-4 text-[0.95rem] leading-relaxed text-navy/70'>{faq.answer}</p>
+                )}
               </div>
             );
           })}

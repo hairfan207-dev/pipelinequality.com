@@ -77,7 +77,7 @@ export function Navigation() {
 
   const links = [
     { href: '#services', label: t('services') },
-    { href: '#process', label: t('process') },
+    { href: '#how-we-work', label: t('process') },
     { href: '#industries', label: t('industries') },
     { href: '#experience', label: t('experience') },
     { href: '#contact', label: t('contact') },

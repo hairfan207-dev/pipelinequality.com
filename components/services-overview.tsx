@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { ChevronDown, ClipboardCheck, FileText, Search, Users } from 'lucide-react';
 
 type ServiceBlock = {
   title: string;
@@ -9,171 +10,88 @@ type ServiceBlock = {
 };
 
 const serviceImages = [
-  { src: '/client/service-engineering.jpg?v=9' },
-  { src: '/client/service-welding.jpg?v=6' },
-  { src: '/client/service-docs-yard.jpg?v=7' },
-  {
-    src: '/client/service-project.jpg?v=7',
-    mobileSrc: '/client/service-project-mobile.jpg?v=1',
-  },
+  '/client/service-engineering.jpg?v=9',
+  '/client/service-welding.jpg?v=6',
+  '/client/service-docs-yard.jpg?v=7',
+  '/client/service-project.jpg?v=7',
 ];
+
+const icons = [ClipboardCheck, FileText, Search, Users];
+const displayOrder = [0, 2, 1, 3];
 
 export function ServicesOverview() {
   const t = useTranslations('services');
   const blocks = t.raw('blocks') as ServiceBlock[];
   const [active, setActive] = useState(0);
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
   const current = blocks[active];
 
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id='services'
-      ref={sectionRef}
-      className='relative overflow-hidden bg-white text-navy'
-    >
-      <div
-        className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent'
-        aria-hidden
-      />
+    <section id='services' className='bg-white text-navy'>
+      <div className='pq-shell pb-16 lg:pb-20'>
+        <div className='grid items-start gap-8 lg:grid-cols-2 lg:gap-12'>
+          <div>
+            <p className='pq-index'>{t('keyAreasTitle')}</p>
+            <h2 className='mt-3 max-w-xl text-navy'>
+              {t('designTitle')}{' '}
+              <span className='text-accent'>{t('designTitleAccent')}</span>
+            </h2>
+            <p className='mt-4 max-w-xl text-[0.98rem] leading-relaxed text-navy/70'>
+              {t('designLead')}
+            </p>
 
-      <div className='pq-shell pq-section'>
-        <p
-          className={`pq-index transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-          }`}
-        >
-          {t('keyAreasTitle')}
-        </p>
-        <h2 className='sr-only'>{t('title')}</h2>
-        <div
-          className={`mt-6 grid items-start gap-8 lg:mt-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}
-        >
-          {/* Left: interactive service list */}
-          <div className='min-w-0'>
-            <div className='space-y-0 border-t border-navy/10'>
-              {blocks.map((service, index) => {
+            <div className='mt-8 overflow-hidden rounded-2xl border border-navy/10 bg-[#f4f7fb]'>
+              {displayOrder.map((index) => {
+                const service = blocks[index];
                 const isActive = active === index;
+                const Icon = icons[displayOrder.indexOf(index)] ?? ClipboardCheck;
                 return (
-                  <button
-                    key={service.title}
-                    type='button'
-                    onClick={() => setActive(index)}
-                    onMouseEnter={() => setActive(index)}
-                    className={`group relative block w-full border-b border-navy/10 py-5 text-left transition-colors duration-500 ${
-                      isActive ? 'bg-navy/[0.02]' : 'hover:bg-navy/[0.015]'
-                    }`}
-                  >
-                    <span
-                      className={`absolute top-0 bottom-0 left-0 w-[2px] origin-top bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                        isActive ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-50'
-                      }`}
-                      aria-hidden
-                    />
-
-                    <div className='flex items-baseline gap-4 pl-4 sm:gap-5 sm:pl-5'>
-                      <span
-                        className={`font-sans text-[11px] font-semibold tracking-[0.18em] transition-colors duration-400 ${
-                          isActive ? 'text-accent' : 'text-navy/35'
-                        }`}
-                      >
-                        {String(index + 1).padStart(2, '0')}
+                  <div key={service.title} className='border-b border-navy/10 last:border-b-0'>
+                    <button
+                      type='button'
+                      onClick={() => setActive(index)}
+                      className='flex w-full items-center gap-4 px-4 py-4 text-left'
+                      aria-expanded={isActive}
+                    >
+                      <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-navy text-white'>
+                        <Icon className='h-5 w-5' strokeWidth={1.6} />
                       </span>
-                      <span
-                        className={`block text-[1.05rem] leading-snug font-semibold tracking-[-0.02em] transition-colors duration-400 ${
-                          isActive ? 'text-navy' : 'text-navy/55 group-hover:text-navy/80'
-                        }`}
-                      >
+                      <span className='flex-1 text-[1.05rem] font-semibold text-navy'>
                         {service.title}
                       </span>
-                    </div>
-
-                    <div
-                      className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                        isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                      }`}
-                    >
-                      <div className='overflow-hidden'>
-                        <ul className='mt-3 space-y-1.5 pl-4 sm:pl-[3.25rem]'>
-                          {service.items.map((item, itemIndex) => (
-                            <li
-                              key={item}
-                              className={`pq-subtitle text-navy/70 before:mr-2 before:text-accent before:content-["▸"] transition-all duration-500 ${
-                                isActive
-                                  ? 'translate-x-0 opacity-100'
-                                  : 'translate-x-2 opacity-0'
-                              }`}
-                              style={{
-                                transitionDelay: isActive ? `${80 + itemIndex * 35}ms` : '0ms',
-                              }}
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </button>
+                      <ChevronDown
+                        className={`h-4 w-4 text-navy/50 transition ${isActive ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {isActive && (
+                      <ul className='grid gap-x-6 gap-y-2 px-5 pb-5 sm:grid-cols-2 sm:px-16'>
+                        {service.items.map((item) => (
+                          <li
+                            key={item}
+                            className='text-[13px] leading-snug text-navy/75 before:mr-2 before:text-accent before:content-["▸"]'
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 );
               })}
             </div>
           </div>
 
-          {/* Right: editorial image stage */}
-          <div className='relative mx-auto w-full max-w-[18.5rem] sm:max-w-[22rem] md:max-w-[26rem] lg:mx-0 lg:ml-auto lg:max-w-[28rem] xl:max-w-[30rem] lg:sticky lg:top-28'>
-            <div className='pq-service-visual'>
-              <div className='pq-service-visual__glow' aria-hidden />
-              <div className='pq-service-visual__back' aria-hidden />
-
-              <div className='pq-service-visual__frame'>
-                <div className='pq-service-visual__media'>
-                  {serviceImages.map((image, index) => (
-                    <picture key={image.src}>
-                      {image.mobileSrc ? (
-                        <source
-                          media='(min-width: 1024px)'
-                          srcSet={image.src}
-                        />
-                      ) : null}
-                      <img
-                        src={image.mobileSrc ?? image.src}
-                        alt={blocks[index]?.title ?? ''}
-                        className={`pq-service-visual__img${
-                          active === index ? ' is-active' : ''
-                        }`}
-                      />
-                    </picture>
-                  ))}
-                  <div className='pq-service-visual__veil' aria-hidden />
-                  <div className='pq-service-visual__mark' aria-hidden>
-                    <span />
-                    <span />
-                  </div>
-                </div>
-
-                <div className='pq-service-visual__caption'>
-                  <p key={current?.title} className='pq-service-visual__title pq-fade-up'>
-                    {current?.title}
-                  </p>
-                </div>
+          <div className='relative overflow-hidden rounded-3xl bg-navy'>
+            <img
+              src={serviceImages[active]}
+              alt={current?.title ?? ''}
+              className='h-[420px] w-full object-cover lg:h-[560px]'
+            />
+            <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy via-navy/80 to-transparent p-5 pt-16'>
+              <div className='flex items-center gap-3 text-white'>
+                <span className='flex h-10 w-10 items-center justify-center rounded-lg bg-white text-navy'>
+                  <ClipboardCheck className='h-5 w-5' />
+                </span>
+                <p className='text-[1.05rem] font-semibold'>{current?.title}</p>
               </div>
             </div>
           </div>
