@@ -10,37 +10,43 @@ export function HeroSection() {
   const pillars = t.raw('pillars') as Array<{ title: string; text: string }>;
 
   return (
-    <section id='home' className='bg-white text-navy'>
-      <div className='relative min-h-[88svh] overflow-hidden bg-[#071c33] text-white lg:min-h-[760px]'>
-        <img
-          src='/client/hero-monopile.jpg?v=4'
-          alt={t('imageAlt')}
-          className='absolute inset-0 h-full w-full object-cover object-[72%_center]'
-        />
-        <div
-          className='absolute inset-0 bg-[linear-gradient(90deg,#012A60_0%,#012A60_42%,rgba(1,42,96,0.78)_54%,rgba(1,42,96,0.28)_70%,rgba(1,42,96,0.08)_100%)]'
-          aria-hidden
-        />
-        <div className='relative flex min-h-[88svh] items-center pt-28 pb-16 lg:min-h-[760px] lg:pt-32'>
-          <div className='pq-shell w-full'>
-            <div className='max-w-[40rem]'>
-              <h1 className='m-0 font-sans text-[clamp(2.6rem,5vw,4.4rem)] leading-[1.02] font-semibold tracking-[-0.03em] text-white'>
+    <section id='home' className='bg-white'>
+      <div className='bg-[#012A60] text-white'>
+        <div className='relative lg:min-h-[720px]'>
+          <div className='relative h-[240px] sm:h-[320px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[48%]'>
+            <img
+              src='/client/hero-platform.jpg'
+              alt={t('imageAlt')}
+              className='h-full w-full object-cover object-[70%_40%]'
+            />
+            <div
+              className='pointer-events-none absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#012A60] to-transparent lg:block'
+              aria-hidden
+            />
+          </div>
+
+          <div className='pq-shell relative flex items-center pt-28 pb-14 lg:min-h-[720px] lg:pt-24 lg:pb-16'>
+            <div className='max-w-[34rem] lg:max-w-[46%]'>
+              <h1 className='m-0 font-sans text-[clamp(2.75rem,4.8vw,4.5rem)] leading-[0.98] font-semibold tracking-[-0.035em] text-white'>
                 {t('brand')}
               </h1>
-              <p className='mt-3 font-sans text-[clamp(1.7rem,3vw,2.7rem)] leading-tight font-semibold tracking-[-0.03em] text-white'>
-                {t('titleLine2').replace(/\.$/, '')}
+              <p className='mt-1 font-sans text-[clamp(1.9rem,3.2vw,3rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-white'>
+                {t('heroLine2')}
               </p>
               <div className='mt-6 space-y-1 text-[1.05rem] leading-snug font-medium text-white lg:text-[1.15rem]'>
                 <p>{t('subtitle')}</p>
                 <p>{t('subtitleLine2')}</p>
               </div>
               <div className='mt-8 flex flex-wrap gap-3'>
-                <a href='#contact' className='pq-btn !px-5 !py-3 text-[11px] tracking-[0.12em]'>
+                <a
+                  href='#contact'
+                  className='inline-flex items-center bg-[#FB7200] px-5 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition hover:bg-[#e56800]'
+                >
                   {t('cta1')}
                 </a>
                 <a
                   href='#network'
-                  className='inline-flex items-center border border-white/80 px-5 py-3 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition hover:bg-white hover:text-navy'
+                  className='inline-flex items-center border border-white/75 px-5 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition hover:bg-white hover:text-[#012A60]'
                 >
                   {t('cta2')}
                 </a>
@@ -48,19 +54,17 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className='bg-navy text-white'>
-        <div className='pq-shell grid gap-8 py-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:py-10'>
+        <div className='pq-shell grid sm:grid-cols-2 lg:grid-cols-4'>
           {pillars.map((pillar, index) => {
             const Icon = pillarIcons[index] ?? HardHat;
             return (
               <div
                 key={pillar.title}
-                className='px-2 text-center lg:px-6 lg:border-r lg:border-accent/80 last:lg:border-r-0'
+                className='px-4 py-8 text-center lg:border-r lg:border-[#FB7200] lg:px-6 lg:py-9 last:lg:border-r-0'
               >
-                <Icon className='mx-auto h-8 w-8 text-white' strokeWidth={1.5} />
-                <p className='mt-4 font-sans text-[12px] font-semibold tracking-[0.14em] uppercase'>
+                <Icon className='mx-auto h-8 w-8' strokeWidth={1.4} />
+                <p className='mx-auto mt-4 max-w-[11rem] font-sans text-[12px] leading-snug font-semibold tracking-[0.16em] uppercase'>
                   {pillar.title}
                 </p>
               </div>
@@ -68,12 +72,15 @@ export function HeroSection() {
           })}
         </div>
       </div>
+
       <div className='border-b border-navy/10 bg-[#f7f8fa]'>
-        <div className='pq-shell grid gap-6 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:py-7'>
-          {pillars.map((pillar) => (
+        <div className='pq-shell grid sm:grid-cols-2 lg:grid-cols-4'>
+          {pillars.map((pillar, index) => (
             <p
-              key={pillar.title}
-              className='px-3 text-center text-[13px] leading-relaxed text-navy/70 lg:px-6'
+              key={pillar.text}
+              className={`px-4 py-5 text-center text-[13px] leading-relaxed text-navy/65 lg:border-r lg:border-navy/10 lg:px-6 lg:py-6 ${
+                index === pillars.length - 1 ? 'lg:border-r-0' : ''
+              }`}
             >
               {pillar.text}
             </p>
