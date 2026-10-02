@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
@@ -222,7 +222,7 @@ export function DesignHome() {
           <p className='lead centered'>{tField('lead')}</p>
           <div className='process-cards'>
             {stages.map((stage, index) => (
-              <div key={stage.id} style={{ display: 'contents' }}>
+              <Fragment key={stage.id}>
                 <article className='process-card'>
                   <div className='pic'>
                     <img src={processPhotos[index]} alt={stage.title} />
@@ -237,7 +237,7 @@ export function DesignHome() {
                   </div>
                 </article>
                 {index < stages.length - 1 ? <div className='connector'>➜</div> : null}
-              </div>
+              </Fragment>
             ))}
           </div>
         </div>

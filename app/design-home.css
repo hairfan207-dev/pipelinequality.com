@@ -22,3 +22,54 @@
 .pq-design .nav-links.is-open{display:flex;flex-direction:column;position:absolute;top:90px;right:7vw;background:#08316b;padding:18px 22px;gap:16px;z-index:5}
 .pq-design .lang-btn{border:0;background:transparent;color:#fb7301;font:700 11px Montserrat;letter-spacing:.14em;cursor:pointer}
 @media(max-width:1100px){.pq-design .menu-btn{display:inline-flex}}
+
+/* Lock the supplied design scale over the site's global type rules */
+.pq-design h1,
+.pq-design h2,
+.pq-design h3,
+.pq-design p { text-wrap: wrap !important; letter-spacing: normal; }
+.pq-design .nav-links,
+.pq-design .btn,
+.pq-design .promise-grid h3,
+.pq-design .footer-links { text-transform: uppercase; }
+.pq-design .hero-bg { left: auto !important; right: 0 !important; width: 64% !important; max-width: none !important; object-position: 12% center !important; }
+.pq-design .hero-overlay { background: linear-gradient(90deg, #082d66 0%, #082d66 38%, rgba(8,45,102,.88) 50%, rgba(8,45,102,.35) 64%, rgba(8,45,102,0) 78%) !important; }
+.pq-design .hero-copy h1 { font-size: 74px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 18px !important; }
+.pq-design .hero-copy h2 { font-size: 52px !important; line-height: 1.1 !important; font-weight: 400 !important; color: #fff !important; margin: 0 0 26px !important; }
+.pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
+.pq-design .section h2,
+.pq-design .industries-head h2 { font-size: 48px !important; line-height: 1.18 !important; font-weight: 600 !important; margin: 0 0 22px !important; }
+.pq-design .services-grid h2,
+.pq-design .network-copy h2,
+.pq-design .process h2,
+.pq-design .digital h2 { font-size: 54px !important; }
+.pq-design .experience-heading h2 { font-size: 78px !important; line-height: 1.12 !important; }
+.pq-design .why h2 { font-size: 80px !important; line-height: 1.1 !important; margin: 0 !important; }
+.pq-design .competence-card h2 { font-size: 52px !important; line-height: 1.2 !important; color: #fff !important; }
+.pq-design .promise-grid h3 { font-size: 16px !important; font-weight: 500 !important; margin: 10px 0 45px !important; color: #fff !important; line-height: 1.25 !important; }
+.pq-design .promise-grid p { color: #2a416b !important; font-size: 12px !important; line-height: 1.35 !important; }
+.pq-design .acc-item button { font: 500 22px Montserrat, sans-serif !important; }
+.pq-design .wf-img span { top: auto !important; bottom: 0 !important; }
+.pq-design .contact form { width: min(900px, 92%); margin: 48px auto 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 42px; text-align: left; }
+.pq-design .contact form > * { margin-top: 0 !important; }
+.pq-design .contact form > :nth-child(n+5) { grid-column: 1 / -1; }
+.pq-design .contact input:not([type='checkbox']),
+.pq-design .contact textarea,
+.pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
+.pq-design .contact button[type='submit'] { width: 100%; border-radius: 0 !important; clip-path: none !important; background: #fb7301 !important; }
+@media (max-width: 1100px) {
+  .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
+  .pq-design .hero-copy h1 { font-size: 58px !important; }
+  .pq-design .hero-copy h2 { font-size: 40px !important; }
+  .pq-design .promise-grid p { color: #fff !important; }
+  .pq-design .experience-heading h2 { font-size: 58px !important; }
+  .pq-design .contact form { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .pq-design .hero-copy h1 { font-size: 43px !important; }
+  .pq-design .hero-copy h2 { font-size: 31px !important; }
+  .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
+  .pq-design .services-grid h2, .pq-design .network-copy h2, .pq-design .digital h2 { font-size: 38px !important; }
+  .pq-design .why h2 { font-size: 56px !important; }
+  .pq-design .experience-heading h2 { font-size: 50px !important; }
+}
