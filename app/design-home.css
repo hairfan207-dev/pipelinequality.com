@@ -93,8 +93,9 @@
 .pq-design .contact textarea,
 .pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
 .pq-design .contact button[type='submit'] { width: 100%; border-radius: 0 !important; clip-path: none !important; background: #fb7301 !important; }
-.pq-design .intro { padding-top: 88px !important; background: #fff; }
-.pq-design .intro-bg { display: none !important; }
+.pq-design .intro { height: 545px; padding: 72px 0 28px !important; display: flex; flex-direction: column; background: #fff; overflow: hidden; }
+.pq-design .intro-bg { display: block !important; opacity: 1 !important; background: linear-gradient(rgba(255,255,255,.86), rgba(255,255,255,.86)), url('/design/page001_img025.png') center 42% / cover no-repeat; }
+.pq-design .intro:after { margin: auto auto 0; width: min(1280px, 72vw); }
 .pq-design .intro .eyebrow { display: none !important; }
 .pq-design .intro h2 { font-size: 56px !important; font-weight: 700 !important; line-height: 1.15 !important; color: #102A5F !important; margin: 0 0 28px !important; }
 .pq-design .intro h2 span { color: #FB7200 !important; display: inline-block; margin-top: 6px; }
@@ -123,6 +124,7 @@
   .pq-design .contact form { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
+  .pq-design .intro { height: auto !important; padding: 56px 0 40px !important; }
   .pq-design .hero-copy h1 { font-size: 43px !important; }
   .pq-design .hero-copy h2 { font-size: 31px !important; }
   .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
