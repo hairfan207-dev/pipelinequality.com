@@ -42,6 +42,7 @@
 .pq-design .promise-strip { background: linear-gradient(#102A5F 0 214px, #fff 214px) !important; min-height: 316px; }
 .pq-design .promise-grid article { display: flex; flex-direction: column; min-height: 316px; padding: 36px 28px 0 !important; }
 .pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 84px !important; width: 0; height: 98px !important; border-right: 1px solid #FB7200 !important; background: none !important; }
+.pq-design .promise-grid article:not(:last-child):before { content: ""; position: absolute; right: 0; display: block; top: 222px; width: 0; height: 41px; border-right: 1px solid #102A5F; }
 .pq-design .round-icon { display: grid; place-items: center; color: #fff; }
 .pq-design .round-icon svg { width: 36px; height: 36px; }
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
@@ -74,6 +75,7 @@
   .pq-design .promise-strip { background: #102A5F !important; min-height: 0; }
   .pq-design .promise-grid article { min-height: 0; }
   .pq-design .promise-grid p { color: #fff !important; min-height: 0; }
+  .pq-design .promise-grid article:not(:last-child):before { display: none; }
   .pq-design .experience-heading h2 { font-size: 58px !important; }
   .pq-design .contact form { grid-template-columns: 1fr; }
 }
