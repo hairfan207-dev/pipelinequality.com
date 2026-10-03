@@ -38,7 +38,7 @@
 .pq-design .nav .brand { width: 194.44px; height: 56px; margin-top: 32px; gap: 14px; flex: none; }
 .pq-design .nav .brand-logo { height: 56px; width: auto; }
 .pq-design .nav .brand-copy { white-space: nowrap; }
-.pq-design .nav-links { margin-top: 30px; }
+.pq-design .nav-links { position: absolute; top: 40px; left: 526px; width: 1124.56px; min-width: 727.56px; height: 40px; margin-top: 0; padding-left: 455.33px; box-sizing: border-box; align-items: center; justify-content: flex-end; }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
 .pq-design .hero-overlay { background: none !important; }
 .pq-design .hero-copy h1 { font-size: 72px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 16px !important; }
@@ -118,7 +118,7 @@
   .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; align-items: center; }
   .pq-design .nav .brand { width: auto; height: auto; margin-top: 0; }
   .pq-design .nav .brand-logo { height: 44px; }
-  .pq-design .nav-links { margin-top: 0; }
+  .pq-design .nav-links { position: static; left: auto; width: auto; min-width: 0; height: auto; padding-left: 0; margin-top: 0; justify-content: flex-start; }
   .pq-design .hero { height: 760px !important; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
