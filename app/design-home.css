@@ -36,7 +36,7 @@
 .pq-design .nav.shell { width: 100%; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
 .pq-design .hero-overlay { background: none !important; }
-.pq-design .hero-copy h1 { font-size: 74px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 18px !important; }
+.pq-design .hero-copy h1 { font-size: 72px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 16px !important; }
 .pq-design .hero-copy h2 { font-size: 48px !important; line-height: 1.15 !important; font-weight: 500 !important; color: #fff !important; margin: 0 0 26px !important; }
 .pq-design .btn { border-radius: 4px; }
 .pq-design .btn-navy { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.7); }
@@ -55,16 +55,17 @@
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
 .pq-design .section h2,
 .pq-design .industries-head h2 { font-size: 48px !important; line-height: 1.18 !important; font-weight: 600 !important; margin: 0 0 22px !important; }
-.pq-design .services-grid h2,
-.pq-design .network-copy h2,
+.pq-design .services-grid h2 { font-size: 72px !important; font-weight: 700 !important; line-height: 1.08 !important; }
+.pq-design .network-copy h2 { font-size: 42px !important; font-weight: 700 !important; line-height: 1.2 !important; }
 .pq-design .process h2,
-.pq-design .digital h2 { font-size: 54px !important; }
+.pq-design .digital h2 { font-size: 42px !important; font-weight: 700 !important; line-height: 1.2 !important; }
+.pq-design .lead { font-size: 16px !important; line-height: 1.5 !important; }
 .pq-design .experience-heading h2 { font-size: 78px !important; line-height: 1.12 !important; }
 .pq-design .why h2 { font-size: 80px !important; line-height: 1.1 !important; margin: 0 !important; }
 .pq-design .competence-card h2 { font-size: 52px !important; line-height: 1.2 !important; color: #fff !important; }
 .pq-design .promise-grid h3 { font-size: 16px !important; font-weight: 500 !important; margin: 8px 0 12px !important; color: #fff !important; line-height: 1.25 !important; }
 .pq-design .promise-grid p { margin-top: auto; min-height: 102px; padding-top: 14px; color: #2a416b !important; font-size: 12px !important; line-height: 1.35 !important; }
-.pq-design .acc-item button { font: 500 22px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
+.pq-design .acc-item button { font: 600 20px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
 .pq-design .acc-chevron { display: inline-block; transition: transform 180ms ease; }
 .pq-design .acc-item.open .acc-chevron { transform: rotate(90deg); }
