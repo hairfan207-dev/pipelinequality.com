@@ -45,7 +45,13 @@
 .pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 84px !important; width: 0; height: 98px !important; border-right: 1px solid #FB7200 !important; background: none !important; }
 .pq-design .promise-grid article:not(:last-child):before { content: ""; position: absolute; right: 0; display: block; top: 222px; width: 0; height: 41px; border-right: 1px solid #102A5F; }
 .pq-design .round-icon { display: grid; place-items: center; width: 53px; height: 60px; margin: 0 auto; color: #fff; }
-.pq-design .round-icon svg { width: 53px; height: 60px; }
+.pq-design .round-icon img { width: 53px; height: 60px; object-fit: contain; }
+.pq-design .acc-icon { background: transparent !important; padding: 0; }
+.pq-design .acc-icon img { width: 48px; height: 48px; object-fit: contain; }
+.pq-design .process-strip { display: block; width: calc(100% - 16px); height: auto; margin: 14px auto 0; }
+.pq-design .connector { width: auto; height: auto; background: none; border-radius: 0; }
+.pq-design .connector img { width: 86px; height: auto; }
+.pq-design .standard-grid article > div img { width: 64px; height: 64px; object-fit: contain; }
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
 .pq-design .section h2,
 .pq-design .industries-head h2 { font-size: 48px !important; line-height: 1.18 !important; font-weight: 600 !important; margin: 0 0 22px !important; }

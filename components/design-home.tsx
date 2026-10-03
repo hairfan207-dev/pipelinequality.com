@@ -14,7 +14,7 @@ type Faq = { question: string; answer: string };
 
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
-  '/design/page001_img006.png',
+  '/design/figma/photo-offshore.png',
   '/client/industry-pipeline.jpg',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
@@ -25,28 +25,54 @@ const industryPhotos = [
 ];
 const serviceOrder = [0, 2, 1, 3];
 const processPhotos = [
-  '/design/page001_img019.png',
-  '/design/page001_img020.png',
-  '/design/page001_img021.png',
+  '/design/figma/photo-welding.png',
+  '/design/figma/photo-clipboard.png',
+  '/design/figma/photo-team.png',
 ];
 const networkPhotos = [
-  { src: '/design/page001_img022.png', role: 7 },
-  { src: '/design/page001_img024.png', role: 9 },
-  { src: '/design/page001_img003.png', role: 8 },
-  { src: '/design/page001_img023.png', role: 5 },
+  { src: '/design/figma/photo-team.png', role: 7 },
+  { src: '/design/figma/photo-review.png', role: 9 },
+  { src: '/design/figma/photo-engineers.png', role: 8 },
+  { src: '/design/figma/photo-helmet.png', role: 5 },
 ];
 const pillarIcons = [
-  <svg key='person' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.6'><circle cx='12' cy='8' r='3.2'/><path d='M5 19.5c1.2-3 3.6-4.5 7-4.5s5.8 1.5 7 4.5'/></svg>,
-  <svg key='target' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.6'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='4'/><circle cx='12' cy='12' r='1' fill='currentColor'/></svg>,
-  <svg key='shield' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.6'><path d='M12 3.5 19 6.2v5.4c0 4.2-2.8 7.2-7 8.9-4.2-1.7-7-4.7-7-8.9V6.2L12 3.5z'/></svg>,
-  <svg key='team' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.6'><circle cx='8' cy='9' r='2.4'/><circle cx='16' cy='9' r='2.4'/><path d='M3.8 18.5c.8-2.4 2.6-3.6 4.2-3.6s3.4 1.2 4.2 3.6M12 18.5c.8-2.4 2.6-3.6 4.2-3.6s3.4 1.2 4.2 3.6'/></svg>,
+  '/design/figma/icon-experienced.png',
+  '/design/figma/icon-project.png',
+  '/design/figma/icon-quality.png',
+  '/design/figma/icon-coordinated.png',
+];
+const serviceIcons = [
+  '/design/figma/svc-qaqc.png',
+  '/design/figma/svc-inspect.png',
+  '/design/figma/svc-docs.png',
+  '/design/figma/svc-project.png',
+];
+const servicePhotos = [
+  '/design/figma/photo-qaqc.png',
+  '/design/figma/photo-welding.png',
+  '/design/figma/photo-engineers.png',
+  '/design/figma/photo-team.png',
+];
+const processStrips = [
+  '/design/figma/strip-field.png',
+  '/design/figma/strip-quality.png',
+  '/design/figma/strip-project.png',
+];
+const standardIcons = [
+  '/design/figma/std-hardhat.png',
+  '/design/figma/std-search-orange.png',
+  '/design/figma/std-mask.png',
+  '/design/figma/std-wind.png',
+  '/design/figma/std-gauge.png',
+  '/design/figma/std-drop.png',
+  '/design/figma/std-page.png',
 ];
 const workflowPhotos = [
-  '/design/page001_img010.png',
-  '/design/page001_img009.png',
-  '/design/page001_img014.png',
-  '/design/page001_img024.png',
-  '/design/page001_img011.png',
+  '/design/figma/photo-drawing.png',
+  '/design/figma/photo-clipboard.png',
+  '/design/figma/photo-engineers.png',
+  '/design/figma/photo-review.png',
+  '/design/figma/photo-qaqc.png',
 ];
 
 export function DesignHome() {
@@ -98,7 +124,7 @@ export function DesignHome() {
   return (
     <div className='pq-design'>
       <header className='hero' id='top'>
-        <img className='hero-bg' src='/design/page001_img002.png' alt={tHero('imageAlt')} />
+        <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
         <nav className='nav shell'>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
@@ -151,7 +177,7 @@ export function DesignHome() {
         <div className='shell promise-grid'>
           {pillars.map((pillar, index) => (
             <article key={pillar.title}>
-              <div className='round-icon' aria-hidden='true'>{pillarIcons[index]}</div>
+              <div className='round-icon' aria-hidden='true'><img src={pillarIcons[index]} alt='' /></div>
               <h3>{pillar.title}</h3>
               <p>{pillar.text}</p>
             </article>
@@ -190,7 +216,7 @@ export function DesignHome() {
                 return (
                   <div key={block.title} className={`acc-item${open ? ' open' : ''}`}>
                     <button type='button' onClick={() => setServiceOpen(open ? -1 : index)}>
-                      <span className='acc-icon'>●</span>
+                      <span className='acc-icon'><img src={serviceIcons[index]} alt='' /></span>
                       {block.title} <b>{open ? '⌄' : '›'}</b>
                     </button>
                     <div className='acc-panel'>
@@ -211,7 +237,7 @@ export function DesignHome() {
             </div>
           </div>
           <div className='feature-image'>
-            <img src='/design/page001_img018.png' alt={blocks[serviceOpen]?.title ?? ''} />
+            <img src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
             <div className='image-caption'>
               <span>●</span> {blocks[Math.max(serviceOpen, 0)]?.title}
             </div>
@@ -234,15 +260,9 @@ export function DesignHome() {
                     <img src={processPhotos[index]} alt={stage.title} />
                     <strong>{stage.title}</strong>
                   </div>
-                  <div className='mini-icons'>
-                    {stage.items.map((item) => (
-                      <span key={item}>
-                        ●<small>{item}</small>
-                      </span>
-                    ))}
-                  </div>
+                  <img className='process-strip' src={processStrips[index]} alt='' />
                 </article>
-                {index < stages.length - 1 ? <div className='connector'>➜</div> : null}
+                {index < stages.length - 1 ? <div className='connector'><img src='/design/figma/connector.png' alt='' /></div> : null}
               </Fragment>
             ))}
           </div>
@@ -283,7 +303,7 @@ export function DesignHome() {
       </section>
 
       <section className='competence'>
-        <img src='/design/page001_img004.png' className='competence-bg' alt='' />
+        <img src='/design/figma/photo-yard.png' className='competence-bg' alt='' />
         <div className='competence-shade' />
         <div className='shell competence-inner'>
           <div className='competence-card'>
@@ -344,8 +364,8 @@ export function DesignHome() {
             <p>{tExp('summary1')}</p>
             <p>{tExp('summary2')}</p>
           </div>
-          <img className='exp-a' src='/design/page001_img008.png' alt={tExp('imageAlt')} />
-          <img className='exp-b' src='/design/page001_img007.png' alt={tExp('offshoreTitle')} />
+          <img className='exp-a' src='/design/figma/photo-monopiles.png' alt={tExp('imageAlt')} />
+          <img className='exp-b' src='/design/figma/photo-offshore.png' alt={tExp('offshoreTitle')} />
         </div>
       </section>
 
@@ -354,9 +374,9 @@ export function DesignHome() {
           <p className='eyebrow'>{tServices('keyAreasTitle')}</p>
           <h2>{tStd('title')}</h2>
           <div className='standard-grid'>
-            {groups.map((group) => (
+            {groups.map((group, index) => (
               <article key={group.title}>
-                <div>●</div>
+                <div><img src={standardIcons[index]} alt='' /></div>
                 <h3>{group.title}</h3>
                 <p>
                   {group.items.map((item) => (
@@ -395,10 +415,10 @@ export function DesignHome() {
           <div>
             <h2>{tSmart('title')}</h2>
             <a className='btn btn-orange' href='#contact'>{tPartners('cta')}</a>
-            <img src='/design/page001_img016.png' alt={tSmart('fieldAlt')} />
+            <img src='/design/figma/photo-review.png' alt={tSmart('fieldAlt')} />
           </div>
           <div>
-            <img src='/design/page001_img017.png' alt={tSmart('docsAlt')} />
+            <img src='/design/figma/photo-drawing.png' alt={tSmart('docsAlt')} />
             <p>{tSmart('description')}</p>
           </div>
         </div>
