@@ -73,6 +73,14 @@
 .pq-design .contact textarea,
 .pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
 .pq-design .contact button[type='submit'] { width: 100%; border-radius: 0 !important; clip-path: none !important; background: #fb7301 !important; }
+.pq-design .network-copy h2 span { color: #FB7200 !important; }
+.pq-design .network-images figcaption { top: 14px; bottom: auto; background: none; display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
+.pq-design .network-images figcaption img { width: 42px; height: 42px; object-fit: contain; flex: none; }
+.pq-design .network-list { margin-top: 28px; background: transparent; border-radius: 0; padding: 0; }
+.pq-design .network-list h3 { color: #FB7200 !important; font-size: 28px !important; font-weight: 700 !important; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 18px !important; }
+.pq-design .network-list li { display: flex; align-items: center; gap: 14px; padding: 8px 0 !important; font-size: 16px !important; color: #102A5F; }
+.pq-design .network-list li:before { content: none !important; }
+.pq-design .network-list li img { width: 48px; height: 48px; object-fit: contain; flex: none; }
 @media (max-width: 1100px) {
   .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; }
   .pq-design .hero { height: 760px !important; }

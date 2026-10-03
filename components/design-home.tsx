@@ -35,6 +35,24 @@ const networkPhotos = [
   { src: '/design/figma/photo-engineers.png', role: 8 },
   { src: '/design/figma/photo-weld-close.png', role: 5 },
 ];
+const roleIcons = [
+  '/design/figma/role-person.png',
+  '/design/figma/role-checklist.png',
+  '/design/figma/role-nodes.png',
+  '/design/figma/role-group.png',
+  '/design/figma/role-gear.png',
+  '/design/figma/role-doc.png',
+  '/design/figma/role-pulse.png',
+  '/design/figma/role-search.png',
+  '/design/figma/role-ruler.png',
+  '/design/figma/role-doc.png',
+  '/design/figma/role-headset.png',
+  '/design/figma/role-badge.png',
+];
+const networkColumns = [
+  [0, 1, 4, 5, 3, 2],
+  [6, 7, 8, 9, 10, 11],
+];
 const pillarIcons = [
   '/design/figma/icon-experienced.png',
   '/design/figma/icon-project.png',
@@ -275,27 +293,35 @@ export function DesignHome() {
             {networkPhotos.map((photo) => (
               <figure key={photo.src}>
                 <img src={photo.src} alt={roles[photo.role]} />
-                <figcaption>{roles[photo.role]}</figcaption>
+                <figcaption>
+                  <img src={roleIcons[photo.role]} alt='' />
+                  {roles[photo.role]}
+                </figcaption>
               </figure>
             ))}
           </div>
           <div className='network-copy'>
             <p className='eyebrow left'>{tServices('keyAreasTitle')}</p>
-            <h2>{tTeam('title')}</h2>
+            <h2>
+              {tTeam('titleBefore')}
+              <br />
+              {tTeam('titleAfter')}
+              <span>{tTeam('titleAccent')}</span>
+            </h2>
             <p className='lead'>{tTeam('paragraph1')}</p>
             <div className='network-list'>
               <h3>{tTeam('networkLabel')}</h3>
               <div className='cols'>
-                <ul>
-                  {roles.slice(0, Math.ceil(roles.length / 2)).map((role) => (
-                    <li key={role}>{role}</li>
-                  ))}
-                </ul>
-                <ul>
-                  {roles.slice(Math.ceil(roles.length / 2)).map((role) => (
-                    <li key={role}>{role}</li>
-                  ))}
-                </ul>
+                {networkColumns.map((column) => (
+                  <ul key={column.join('-')}>
+                    {column.map((index) => (
+                      <li key={roles[index]}>
+                        <img src={roleIcons[index]} alt='' />
+                        {roles[index]}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
               </div>
             </div>
           </div>
