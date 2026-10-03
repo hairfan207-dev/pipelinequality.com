@@ -14,13 +14,13 @@ type Faq = { question: string; answer: string };
 
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
-  '/design/figma/photo-offshore.png',
-  '/client/industry-pipeline.jpg',
+  '/design/figma/photo-climber.png',
+  '/design/figma/photo-pipes.jpg',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
-  '/client/industry-energy.jpg',
+  '/design/figma/photo-sunset.png',
   '/client/industry-epc.jpg',
-  '/client/industry-construction.jpg',
+  '/design/figma/photo-helmet.png',
   '/client/industry-maintenance.jpg',
 ];
 const serviceOrder = [0, 2, 1, 3];
@@ -33,7 +33,7 @@ const networkPhotos = [
   { src: '/design/figma/photo-team.png', role: 7 },
   { src: '/design/figma/photo-review.png', role: 9 },
   { src: '/design/figma/photo-engineers.png', role: 8 },
-  { src: '/design/figma/photo-helmet.png', role: 5 },
+  { src: '/design/figma/photo-weld-close.png', role: 5 },
 ];
 const pillarIcons = [
   '/design/figma/icon-experienced.png',
@@ -124,7 +124,7 @@ export function DesignHome() {
   return (
     <div className='pq-design'>
       <header className='hero' id='top'>
-        <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
+        <img className='hero-bg' src='/design/figma/hero.jpg' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
         <nav className='nav shell'>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
@@ -418,7 +418,7 @@ export function DesignHome() {
             <img src='/design/figma/photo-review.png' alt={tSmart('fieldAlt')} />
           </div>
           <div>
-            <img src='/design/figma/photo-drawing.png' alt={tSmart('docsAlt')} />
+            <img src='/design/figma/photo-tablet.png' alt={tSmart('docsAlt')} />
             <p>{tSmart('description')}</p>
           </div>
         </div>
