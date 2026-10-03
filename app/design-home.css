@@ -38,11 +38,11 @@
 .pq-design .hero-copy h1 { font-size: 74px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 18px !important; }
 .pq-design .hero-copy h2 { font-size: 48px !important; line-height: 1.15 !important; font-weight: 500 !important; color: #fff !important; margin: 0 0 26px !important; }
 .pq-design .btn { border-radius: 4px; }
-.pq-design .btn-navy { background: #0c3168; color: #fff; border: 0; }
+.pq-design .btn-navy { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.7); }
 .pq-design .promise-strip { background: linear-gradient(#102A5F 0 214px, #fff 214px) !important; min-height: 316px; }
 .pq-design .promise-strip .shell { width: min(1920px, 100%); }
 .pq-design .promise-grid article { display: flex; flex-direction: column; min-height: 316px; padding: 36px 28px 0 !important; }
-.pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 48px !important; height: 120px !important; border-right: 1px solid rgba(255,255,255,.45) !important; }
+.pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 84px !important; width: 1px; height: 178px !important; border-right: 0 !important; background: linear-gradient(rgba(255,255,255,.7) 130px, rgba(16,42,95,.2) 130px) !important; }
 .pq-design .round-icon { display: grid; place-items: center; color: #fff; }
 .pq-design .round-icon svg { width: 36px; height: 36px; }
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
