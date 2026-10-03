@@ -34,7 +34,7 @@
 .pq-design .promise-grid h3,
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; }
-.pq-design .nav.shell { width: 100%; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; align-items: flex-start; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
+.pq-design .nav.shell { position: relative; left: -56px; width: 2035px; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; box-sizing: border-box; align-items: flex-start; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
 .pq-design .nav .brand { width: 194.44px; height: 56px; margin-top: 32px; gap: 14px; flex: none; }
 .pq-design .nav .brand-logo { height: 56px; width: auto; }
 .pq-design .nav .brand-copy { white-space: nowrap; }
@@ -115,7 +115,7 @@
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 48px; height: 48px; object-fit: contain; flex: none; }
 @media (max-width: 1100px) {
-  .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; align-items: center; }
+  .pq-design .nav.shell { left: 0; width: 100%; height: 80px !important; padding-left: 24px; padding-right: 24px; align-items: center; }
   .pq-design .nav .brand { width: auto; height: auto; margin-top: 0; }
   .pq-design .nav .brand-logo { height: 44px; }
   .pq-design .nav-links { position: static; left: auto; width: auto; min-width: 0; height: auto; padding-left: 0; margin-top: 0; justify-content: flex-start; }
