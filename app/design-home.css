@@ -39,10 +39,10 @@
 .pq-design .hero-copy h2 { font-size: 48px !important; line-height: 1.15 !important; font-weight: 500 !important; color: #fff !important; margin: 0 0 26px !important; }
 .pq-design .btn { border-radius: 4px; }
 .pq-design .btn-navy { background: #0c3168; color: #fff; border: 0; }
-.pq-design .promise-strip { background: #102A5F !important; min-height: 214px; }
+.pq-design .promise-strip { background: linear-gradient(#102A5F 0 214px, #fff 214px) !important; min-height: 316px; }
 .pq-design .promise-strip .shell { width: min(1920px, 100%); }
-.pq-design .promise-grid article { padding: 28px 32px 20px !important; }
-.pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 36px !important; height: 140px !important; border-right: 1px solid rgba(255,255,255,.45) !important; }
+.pq-design .promise-grid article { display: flex; flex-direction: column; min-height: 316px; padding: 36px 28px 0 !important; }
+.pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 48px !important; height: 120px !important; border-right: 1px solid rgba(255,255,255,.45) !important; }
 .pq-design .round-icon { display: grid; place-items: center; color: #fff; }
 .pq-design .round-icon svg { width: 36px; height: 36px; }
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
@@ -56,7 +56,7 @@
 .pq-design .why h2 { font-size: 80px !important; line-height: 1.1 !important; margin: 0 !important; }
 .pq-design .competence-card h2 { font-size: 52px !important; line-height: 1.2 !important; color: #fff !important; }
 .pq-design .promise-grid h3 { font-size: 16px !important; font-weight: 500 !important; margin: 8px 0 12px !important; color: #fff !important; line-height: 1.25 !important; }
-.pq-design .promise-grid p { color: rgba(255,255,255,.88) !important; font-size: 12px !important; line-height: 1.35 !important; }
+.pq-design .promise-grid p { margin-top: auto; min-height: 102px; padding-top: 14px; color: #2a416b !important; font-size: 12px !important; line-height: 1.35 !important; }
 .pq-design .acc-item button { font: 500 22px Montserrat, sans-serif !important; }
 .pq-design .wf-img span { top: auto !important; bottom: 0 !important; }
 .pq-design .contact form { width: min(900px, 92%); margin: 48px auto 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 42px; text-align: left; }
@@ -72,7 +72,9 @@
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
   .pq-design .hero-copy h1 { font-size: 58px !important; }
   .pq-design .hero-copy h2 { font-size: 40px !important; }
-  .pq-design .promise-grid p { color: #fff !important; }
+  .pq-design .promise-strip { background: #102A5F !important; min-height: 0; }
+  .pq-design .promise-grid article { min-height: 0; }
+  .pq-design .promise-grid p { color: #fff !important; min-height: 0; }
   .pq-design .experience-heading h2 { font-size: 58px !important; }
   .pq-design .contact form { grid-template-columns: 1fr; }
 }
