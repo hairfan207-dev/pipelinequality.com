@@ -368,6 +368,9 @@ export function DesignHome() {
                 key={sectors[index].title}
                 type='button'
                 className={industry === index ? 'active' : ''}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === 'mouse') setIndustry(index);
+                }}
                 onClick={() => setIndustry(index)}
               >
                 {sectors[index].title} <span>›</span>
@@ -376,10 +379,10 @@ export function DesignHome() {
           </div>
           <div className='industry-card'>
             <div className='industry-photo'>
-              <img src={industryPhotos[industry]} alt={activeIndustry.title} />
-              <strong>{activeIndustry.title}</strong>
+              <img key={industry} src={industryPhotos[industry]} alt={activeIndustry.title} />
+              <strong key={`label-${industry}`}>{activeIndustry.title}</strong>
             </div>
-            <div className='industry-copy'>
+            <div className='industry-copy' key={`copy-${industry}`}>
               <h3>{activeIndustry.title}</h3>
               <p>
                 {activeIndustry.items.map((item) => (
