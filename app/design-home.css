@@ -33,6 +33,7 @@
 .pq-design .promise-grid h3,
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; }
+.pq-design .nav.shell { width: 100%; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
 .pq-design .hero-bg { left: auto !important; right: 0 !important; width: 50% !important; max-width: none !important; object-position: left center !important; }
 .pq-design .hero-overlay { background: none !important; }
 .pq-design .hero-copy h1 { font-size: 74px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 18px !important; }
@@ -67,6 +68,7 @@
 .pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
 .pq-design .contact button[type='submit'] { width: 100%; border-radius: 0 !important; clip-path: none !important; background: #fb7301 !important; }
 @media (max-width: 1100px) {
+  .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; }
   .pq-design .hero { height: 760px !important; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
