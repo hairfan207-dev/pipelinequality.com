@@ -61,7 +61,7 @@
 .pq-design .section h2,
 .pq-design .industries-head h2 { font-size: clamp(36px, 3.125vw, 60px) !important; line-height: 1.15 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
 .pq-design .services { background: #F4F8FC !important; padding-top: 80px !important; padding-bottom: 80px !important; }
-.pq-design .services-grid h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.12 !important; }
+.pq-design .services-grid h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.22 !important; letter-spacing: -0.01em; }
 .pq-design .network-copy h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
 .pq-design .process h2,
 .pq-design .digital h2,
