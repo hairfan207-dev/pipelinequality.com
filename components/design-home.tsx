@@ -142,7 +142,7 @@ export function DesignHome() {
   return (
     <div className='pq-design'>
       <header className='hero' id='top'>
-        <img className='hero-bg' src='/design/figma/hero.jpg' alt={tHero('imageAlt')} />
+        <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
         <nav className='nav shell'>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
