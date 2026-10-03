@@ -232,22 +232,36 @@ export function DesignHome() {
                 const block = blocks[index];
                 const open = serviceOpen === index;
                 return (
-                  <div key={block.title} className={`acc-item${open ? ' open' : ''}`}>
-                    <button type='button' onClick={() => setServiceOpen(open ? -1 : index)}>
+                  <div
+                    key={block.title}
+                    className={`acc-item${open ? ' open' : ''}`}
+                    onPointerEnter={(event) => {
+                      if (event.pointerType === 'mouse') setServiceOpen(index);
+                    }}
+                  >
+                    <button
+                      type='button'
+                      onClick={() => {
+                        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+                        setServiceOpen(open ? -1 : index);
+                      }}
+                    >
                       <span className='acc-icon'><img src={serviceIcons[index]} alt='' /></span>
-                      {block.title} <b>{open ? '⌄' : '›'}</b>
+                      {block.title} <b className='acc-chevron' aria-hidden='true'>›</b>
                     </button>
                     <div className='acc-panel'>
-                      <ul>
-                        {block.items.slice(0, Math.ceil(block.items.length / 2)).map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                      <ul>
-                        {block.items.slice(Math.ceil(block.items.length / 2)).map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+                      <div className='acc-panel-inner'>
+                        <ul>
+                          {block.items.slice(0, Math.ceil(block.items.length / 2)).map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                        <ul>
+                          {block.items.slice(Math.ceil(block.items.length / 2)).map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 );
@@ -255,8 +269,8 @@ export function DesignHome() {
             </div>
           </div>
           <div className='feature-image'>
-            <img src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
-            <div className='image-caption'>
+            <img key={serviceOpen} src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
+            <div className='image-caption' key={`cap-${serviceOpen}`}>
               <span>●</span> {blocks[Math.max(serviceOpen, 0)]?.title}
             </div>
           </div>

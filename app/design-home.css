@@ -64,7 +64,20 @@
 .pq-design .competence-card h2 { font-size: 52px !important; line-height: 1.2 !important; color: #fff !important; }
 .pq-design .promise-grid h3 { font-size: 16px !important; font-weight: 500 !important; margin: 8px 0 12px !important; color: #fff !important; line-height: 1.25 !important; }
 .pq-design .promise-grid p { margin-top: auto; min-height: 102px; padding-top: 14px; color: #2a416b !important; font-size: 12px !important; line-height: 1.35 !important; }
-.pq-design .acc-item button { font: 500 22px Montserrat, sans-serif !important; }
+.pq-design .acc-item button { font: 500 22px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
+.pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
+.pq-design .acc-chevron { display: inline-block; transition: transform 180ms ease; }
+.pq-design .acc-item.open .acc-chevron { transform: rotate(90deg); }
+.pq-design .service-accordion .acc-panel { display: grid !important; grid-template-rows: 0fr; opacity: 0; padding: 0 34px 0 105px !important; background: #f0f4f8; transition: grid-template-rows 220ms ease, opacity 160ms ease, padding 220ms ease; }
+.pq-design .service-accordion .acc-item.open .acc-panel { grid-template-rows: 1fr; opacity: 1; padding: 15px 34px 28px 105px !important; }
+.pq-design .acc-panel-inner { overflow: hidden; min-height: 0; display: flex; gap: 70px; }
+.pq-design .acc-panel-inner ul { flex: 1; }
+.pq-design .feature-image img { animation: pq-soft-fade 220ms ease; }
+.pq-design .feature-image .image-caption { animation: pq-soft-fade 220ms ease; }
+@keyframes pq-soft-fade { from { opacity: .45; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .pq-design .acc-panel, .pq-design .acc-chevron, .pq-design .feature-image img, .pq-design .feature-image .image-caption { transition: none !important; animation: none !important; }
+}
 .pq-design .wf-img span { top: auto !important; bottom: 0 !important; }
 .pq-design .contact form { width: min(900px, 92%); margin: 48px auto 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 42px; text-align: left; }
 .pq-design .contact form > * { margin-top: 0 !important; }
@@ -107,6 +120,9 @@
   .pq-design .hero-copy h2 { font-size: 31px !important; }
   .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
   .pq-design .services-grid h2, .pq-design .network-copy h2, .pq-design .digital h2 { font-size: 38px !important; }
+  .pq-design .service-accordion .acc-panel { padding-left: 16px !important; padding-right: 16px !important; }
+  .pq-design .service-accordion .acc-item.open .acc-panel { padding: 12px 16px 20px !important; }
+  .pq-design .acc-panel-inner { flex-direction: column; gap: 0; }
   .pq-design .why h2 { font-size: 56px !important; }
   .pq-design .experience-heading h2 { font-size: 50px !important; }
 }
