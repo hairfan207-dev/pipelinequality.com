@@ -34,7 +34,11 @@
 .pq-design .promise-grid h3,
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; }
-.pq-design .nav.shell { width: 100%; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
+.pq-design .nav.shell { width: 100%; max-width: none; height: 99px !important; padding-left: 192px; padding-right: 192px; align-items: flex-start; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
+.pq-design .nav .brand { width: 194.44px; height: 56px; margin-top: 32px; gap: 14px; flex: none; }
+.pq-design .nav .brand-logo { height: 56px; width: auto; }
+.pq-design .nav .brand-copy { white-space: nowrap; }
+.pq-design .nav-links { margin-top: 30px; }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
 .pq-design .hero-overlay { background: none !important; }
 .pq-design .hero-copy h1 { font-size: 72px !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 16px !important; }
@@ -111,7 +115,10 @@
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 48px; height: 48px; object-fit: contain; flex: none; }
 @media (max-width: 1100px) {
-  .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; }
+  .pq-design .nav.shell { height: 80px !important; padding-left: 24px; padding-right: 24px; align-items: center; }
+  .pq-design .nav .brand { width: auto; height: auto; margin-top: 0; }
+  .pq-design .nav .brand-logo { height: 44px; }
+  .pq-design .nav-links { margin-top: 0; }
   .pq-design .hero { height: 760px !important; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
