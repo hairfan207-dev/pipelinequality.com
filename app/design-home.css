@@ -55,6 +55,7 @@
 .pq-design .hero-line { font-size: 20px !important; line-height: 1.55 !important; font-weight: 600 !important; }
 .pq-design .section h2,
 .pq-design .industries-head h2 { font-size: 48px !important; line-height: 1.18 !important; font-weight: 600 !important; margin: 0 0 22px !important; }
+.pq-design .services { background: #F4F8FC !important; padding-top: 80px !important; padding-bottom: 80px !important; }
 .pq-design .services-grid h2 { font-size: 72px !important; font-weight: 700 !important; line-height: 1.08 !important; }
 .pq-design .network-copy h2 { font-size: 42px !important; font-weight: 700 !important; line-height: 1.2 !important; }
 .pq-design .process h2,
@@ -69,7 +70,7 @@
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
 .pq-design .acc-chevron { display: inline-block; transition: transform 180ms ease; }
 .pq-design .acc-item.open .acc-chevron { transform: rotate(90deg); }
-.pq-design .service-accordion .acc-panel { display: grid !important; grid-template-rows: 0fr; opacity: 0; padding: 0 34px 0 105px !important; background: #f0f4f8; transition: grid-template-rows 220ms ease, opacity 160ms ease, padding 220ms ease; }
+.pq-design .service-accordion .acc-panel { display: grid !important; grid-template-rows: 0fr; opacity: 0; padding: 0 34px 0 105px !important; background: #fff; border-radius: 8px; transition: grid-template-rows 220ms ease, opacity 160ms ease, padding 220ms ease; }
 .pq-design .service-accordion .acc-item.open .acc-panel { grid-template-rows: 1fr; opacity: 1; padding: 15px 34px 28px 105px !important; }
 .pq-design .acc-panel-inner { overflow: hidden; min-height: 0; display: flex; gap: 70px; }
 .pq-design .acc-panel-inner ul { flex: 1; }
