@@ -74,7 +74,8 @@
 .pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
 .pq-design .contact button[type='submit'] { width: 100%; border-radius: 0 !important; clip-path: none !important; background: #fb7301 !important; }
 .pq-design .network-copy h2 span { color: #FB7200 !important; }
-.pq-design .network-images figcaption { top: 14px; bottom: auto; background: none; display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
+.pq-design .network-images figure:before { content: ""; position: absolute; z-index: 1; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, rgba(6,24,64,.72), rgba(6,24,64,0)); pointer-events: none; }
+.pq-design .network-images figcaption { z-index: 2; top: 14px; bottom: auto; background: none; display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
 .pq-design .network-images figcaption img { width: 42px; height: 42px; object-fit: contain; flex: none; }
 .pq-design .network-list { margin-top: 28px; background: transparent; border-radius: 0; padding: 0; }
 .pq-design .network-list h3 { color: #FB7200 !important; font-size: 28px !important; font-weight: 700 !important; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 18px !important; }
