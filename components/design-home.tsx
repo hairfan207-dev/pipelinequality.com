@@ -98,7 +98,7 @@ export function DesignHome() {
   return (
     <div className='pq-design'>
       <header className='hero' id='top'>
-        <img className='hero-bg' src='/client/hero-platform.jpg' alt={tHero('imageAlt')} />
+        <img className='hero-bg' src='/design/page001_img002.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
         <nav className='nav shell'>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
@@ -124,11 +124,7 @@ export function DesignHome() {
         </nav>
         <div className='hero-copy shell'>
           <h1>{tHero('brand')}</h1>
-          <h2>
-            {tHero('heroLine2').split(' ').map((word, index) =>
-              index === 0 ? <span key={word}>{word}</span> : ` ${word}`,
-            )}
-          </h2>
+          <h2>{tHero('heroLine2')}</h2>
           <p className='hero-line'>
             {tHero('subtitle').split('|').map((part, i, arr) => (
               <span key={part}>
