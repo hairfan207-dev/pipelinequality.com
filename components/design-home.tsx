@@ -281,7 +281,9 @@ export function DesignHome() {
         <div className='shell center'>
           <p className='eyebrow'>{tField('label')}</p>
           <h2>
-            {tField('title')}
+            From Field Data to
+            <br />
+            <span>Final Handover</span>
           </h2>
           <p className='lead centered'>{tField('lead')}</p>
           <div className='process-cards'>
@@ -347,19 +349,34 @@ export function DesignHome() {
         <div className='competence-shade' />
         <div className='shell competence-inner'>
           <div className='competence-card'>
-            <h2>{tPhil('title')}</h2>
+            <h2>
+              We Choose
+              <br />
+              <span>Competence</span>
+              <br />
+              Over Headcount
+            </h2>
             <p>{tPhil('paragraph1')}</p>
             <p>{tPhil('paragraph2')}</p>
             <p>{tPhil('paragraph3')}</p>
           </div>
-          <div className='quality-badge'>{tPhil('principle')}</div>
+          <div className='quality-badge'>
+            QUALITY
+            <br />
+            BEFORE
+            <br />
+            QUANTITY
+          </div>
         </div>
       </section>
 
       <section className='industries' id='industries'>
         <div className='industries-head'>
-          <p className='eyebrow'>{tInd('label')}</p>
-          <h2>{tInd('title')}</h2>
+          <h2>
+            Industries
+            <br />
+            <span>We Support</span>
+          </h2>
         </div>
         <div className='shell industries-panel'>
           <div className='industry-tabs'>
