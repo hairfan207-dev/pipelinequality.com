@@ -678,7 +678,7 @@ export function DesignHome() {
           <button type='button' className={locale === 'en' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('en')}>EN</button>
           <button type='button' className={locale === 'de' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('de')}>DE</button>
         </div>
-        <p className='footer-note'><span>Pipeline Quality</span> a brand of Backpack Wander GmbH</p>
+        <p className='footer-note'><span>Pipeline Quality</span> a brand of Backpack Wander GmbH Berlin, Germany</p>
         <div className='footer-legal'>
           <a href='/privacy'>{tFooter('privacyPolicy')}</a>
           <a href={locale === 'de' ? '/agb' : '/terms'}>{tFooter('terms')}</a>
