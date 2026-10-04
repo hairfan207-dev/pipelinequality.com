@@ -108,7 +108,6 @@
 .pq-design .digital h2,
 .pq-design .faq h2,
 .pq-design .contact h2,
-.pq-design .standards h2,
 .pq-design .workflow h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
 .pq-design .lead { font-size: 20px !important; line-height: 1.45 !important; color: #102A5F !important; }
 .pq-design .services-grid .lead { font-size: 18px !important; font-weight: 500 !important; }
@@ -260,12 +259,27 @@
 .pq-design .network-list li { display: flex; align-items: center; gap: 20px; min-height: 59.91px; margin: 0 0 16.8px; padding: 0 !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.219; letter-spacing: 0.2px; color: #102A5F; }
 .pq-design .network-list li.wrap { align-items: flex-start; }
 .pq-design .network-list li.wrap span { max-width: 230px; line-height: 20.4px; }
-.pq-design .standard-grid h3 { font-size: 25px !important; font-weight: 700 !important; }
+.pq-design .standards.section { position: relative; background: #fff; padding: 0 0 80px; }
+.pq-design .standards.section::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 570px; background: #FAFBFC; opacity: 0.8; pointer-events: none; }
+.pq-design .standards.section h2 { position: relative; z-index: 1; width: min(779px, calc(100% - 48px)); margin: 0 auto 141px !important; text-align: center; color: #102A5F !important; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: -0.04px; }
+.pq-design .standards.section h2 .line { display: block; color: #102A5F !important; }
+.pq-design .standards.section h2 .line + .line { margin-top: 7px; letter-spacing: -0.005px; }
+.pq-design .standard-grid { position: relative; z-index: 1; width: min(1650px, calc(100% - 270px)); margin: 0 auto; display: grid; grid-template-columns: repeat(7, 219.4px); justify-content: space-between; gap: 0; }
+.pq-design .standard-grid article { background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.pq-design .standard-grid article img { width: 219.4px; height: 194px; max-width: none; border-radius: 0; }
+.pq-design .standard-grid .std-card { margin-top: 19px; width: 219.4px; height: 194px; background: #F4F7F9; border-radius: 20px; padding: 80px 6px 12px; text-align: center; }
+.pq-design .standard-grid article:nth-child(even) { border: 0; }
+.pq-design .standard-grid article:nth-child(even) .std-card { background: transparent; border: 1px solid #FB7200; }
+.pq-design .standard-grid h3 { margin: 0; font-size: 25px !important; font-weight: 600 !important; line-height: 30px !important; letter-spacing: -0.05px; color: #102A5F; }
+.pq-design .standard-grid h3 span { display: block; }
+.pq-design .standard-grid p { margin: 10px 0 0; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 0.75px; color: #102A5F; }
+.pq-design .standard-grid p span { display: block; }
 .pq-design .why-box h3 { font-size: 30px !important; font-weight: 700 !important; }
 .pq-design .workflow-grid h3, .pq-design .wf-img span { font-size: 30px !important; font-weight: 500 !important; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1700px) {
+  .pq-design .standard-grid { grid-template-columns: repeat(4, 219.4px); justify-content: center; column-gap: 19px; row-gap: 28px; }
   .pq-design .experience-box { padding: 48px 40px 40px; }
   .pq-design .experience-intro { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr); column-gap: 32px; }
   .pq-design .experience-heading p,
@@ -316,6 +330,7 @@
   .pq-design .promise-grid p { color: #fff !important; min-height: 0; margin-top: 12px !important; }
   .pq-design .promise-grid article:not(:last-child):before,
   .pq-design .promise-grid article:not(:last-child):after { display: none !important; }
+  .pq-design .standard-grid { width: min(92vw, 1000px); grid-template-columns: repeat(2, 219.4px); }
   .pq-design .experience-box { width: min(92vw, 1000px); padding: 40px 28px 36px; border-radius: 32px; }
   .pq-design .experience-intro { grid-template-columns: 1fr; row-gap: 28px; }
   .pq-design .experience-heading p,

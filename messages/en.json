@@ -363,10 +363,10 @@
         ]
       },
       {
-        "title": "Inspection & NDT",
+        "title": "Inspection & Ndt",
         "items": [
           "ISO 9712",
-          "VT / NDT capabilities"
+          "VT / NDT"
         ]
       },
       {
@@ -374,7 +374,7 @@
         "items": [
           "ISO 15614",
           "ISO 9606",
-          "ASME Section IX where applicable"
+          "ASME"
         ]
       },
       {
@@ -386,18 +386,20 @@
       {
         "title": "Pressure Equipment",
         "items": [
-          "PED 2014/68/EU"
+          "PED",
+          "2014/68/EU"
         ]
       },
       {
-        "title": "Corrosion / Coating",
+        "title": "Corrosion Coating",
         "items": [
           "ISO 12944",
-          "FROSIO / NACE where qualified specialists are assigned"
+          "FROSIO",
+          "NACE"
         ]
       },
       {
-        "title": "Materials / Documentation",
+        "title": "Materials Documentation",
         "items": [
           "EN 10204"
         ]

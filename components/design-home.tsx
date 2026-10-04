@@ -83,14 +83,15 @@ const processStrips = [
   '/design/figma/handover-icons-project.svg',
 ];
 const standardIcons = [
-  '/design/figma/std-hardhat.png',
-  '/design/figma/std-search-orange.png',
-  '/design/figma/std-mask.png',
-  '/design/figma/std-wind.png',
-  '/design/figma/std-gauge.png',
-  '/design/figma/std-drop.png',
-  '/design/figma/std-page.png',
+  '/design/figma/std-qm.svg',
+  '/design/figma/std-coat.svg',
+  '/design/figma/std-press.svg',
+  '/design/figma/std-wind-icon.svg',
+  '/design/figma/std-weld-icon.svg',
+  '/design/figma/std-ndt.svg',
+  '/design/figma/std-docs.svg',
 ];
+const standardOrder = [0, 5, 4, 3, 2, 1, 6];
 const workflowPhotos = [
   '/design/figma/photo-drawing.png',
   '/design/figma/photo-clipboard.png',
@@ -483,25 +484,35 @@ export function DesignHome() {
       </section>
 
       <section className='standards section'>
-        <div className='shell center'>
-          <p className='eyebrow'>{tServices('keyAreasTitle')}</p>
-          <h2>{tStd('title')}</h2>
-          <div className='standard-grid'>
-            {groups.map((group, index) => (
+        <h2>
+          <span className='line'>Qualifications, Standards</span>
+          <span className='line'>& Technical Competence</span>
+        </h2>
+        <div className='standard-grid'>
+          {standardOrder.map((groupIndex, iconIndex) => {
+            const group = groups[groupIndex];
+            const [first, ...rest] = group.title.split(' ');
+            const titleLines = group.title.includes(' & ')
+              ? group.title.split(' & ').map((part, line) => (line === 0 ? part : `& ${part}`))
+              : rest.length ? [first, rest.join(' ')] : [group.title];
+            return (
               <article key={group.title}>
-                <div><img src={standardIcons[index]} alt='' /></div>
-                <h3>{group.title}</h3>
-                <p>
-                  {group.items.map((item) => (
-                    <span key={item}>
-                      {item}
-                      <br />
-                    </span>
-                  ))}
-                </p>
+                <img src={standardIcons[iconIndex]} alt='' />
+                <div className='std-card'>
+                  <h3>
+                    {titleLines.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </h3>
+                  <p>
+                    {group.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </p>
+                </div>
               </article>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
