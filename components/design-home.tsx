@@ -84,6 +84,13 @@ const fieldIcons = [
   '/design/figma/handover-field-dimensional.png',
   '/design/figma/handover-field-mtr.png',
 ];
+const workPhotos = [
+  '/design/figma/work-understand.webp',
+  '/design/figma/work-match.webp',
+  '/design/figma/work-execute.webp',
+  '/design/figma/work-control.webp',
+  '/design/figma/work-handover.webp',
+];
 const qualityIcons = [
   '/design/figma/handover-qc-inspection.png',
   '/design/figma/handover-qc-ncr.png',
@@ -563,6 +570,7 @@ export function DesignHome() {
           {steps.map((step, index) => (
             <article key={step.id} className={index % 2 ? 'up' : 'down'}>
               <div className='wf-card'>
+                <img src={workPhotos[index]} alt='' />
                 <strong>{step.title}</strong>
               </div>
               <p>{step.text}</p>
