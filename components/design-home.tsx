@@ -271,7 +271,8 @@ export function DesignHome() {
           <div className='feature-image'>
             <img key={serviceOpen} src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
             <div className='image-caption' key={`cap-${serviceOpen}`}>
-              <span>●</span> {blocks[Math.max(serviceOpen, 0)]?.title}
+              <span><img src={serviceIcons[Math.max(serviceOpen, 0)]} alt='' /></span>
+              {blocks[Math.max(serviceOpen, 0)]?.title}
             </div>
           </div>
         </div>
