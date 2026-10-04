@@ -606,9 +606,7 @@ export function DesignHome() {
           {digitalBlocks.map((block, index) => (
             <div key={block.title} className={index === 0 ? 'support-row active' : 'support-row'}>
               <h3>{block.title}</h3>
-              {index === 0 ? (
-                <p>{`${block.items.slice(0, -1).join(' ')}, ${block.items[block.items.length - 1]}`}</p>
-              ) : null}
+              <p>{`${block.items.slice(0, -1).join(' ')}, ${block.items[block.items.length - 1]}`}</p>
             </div>
           ))}
         </div>
