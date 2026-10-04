@@ -54,10 +54,10 @@ const networkColumns = [
   [6, 7, 8, 9, 10, 11],
 ];
 const pillarIcons = [
-  '/design/figma/icon-experienced.png',
-  '/design/figma/icon-project.png',
-  '/design/figma/icon-quality.png',
-  '/design/figma/icon-coordinated.png',
+  '/design/figma/icon-experienced.svg',
+  '/design/figma/icon-project.svg',
+  '/design/figma/icon-quality.svg',
+  '/design/figma/icon-coordinated.svg',
 ];
 const serviceIcons = [
   '/design/figma/svc-qaqc.png',
@@ -196,7 +196,14 @@ export function DesignHome() {
           {pillars.map((pillar, index) => (
             <article key={pillar.title}>
               <div className='round-icon' aria-hidden='true'><img src={pillarIcons[index]} alt='' /></div>
-              <h3>{pillar.title}</h3>
+              <h3>
+                {pillar.title.split(/(?= & )/).map((line, index) => (
+                  <span key={line}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </span>
+                ))}
+              </h3>
               <p>{pillar.text}</p>
             </article>
           ))}
