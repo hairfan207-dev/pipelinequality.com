@@ -381,27 +381,22 @@ export function DesignHome() {
       </section>
 
       <section className='competence'>
-        <img src='/design/figma/photo-yard.png' className='competence-bg' alt='' />
-        <div className='competence-shade' />
+        <img src='/design/figma/competence-bg.png' className='competence-bg' alt='' />
         <div className='shell competence-inner'>
           <div className='competence-card'>
             <h2>
-              We Choose
-              <br />
-              <span>Competence</span>
-              <br />
-              Over Headcount
+              <span className='line'>We Choose</span>
+              <span className='line'>Competence</span>
+              <span className='line'>Over Headcount</span>
             </h2>
             <p>{tPhil('paragraph1')}</p>
             <p>{tPhil('paragraph2')}</p>
-            <p>{tPhil('paragraph3')}</p>
+            <p className='note'>{tPhil('paragraph3')}</p>
           </div>
           <div className='quality-badge'>
-            QUALITY
-            <br />
-            BEFORE
-            <br />
-            QUANTITY
+            <span>QUALITY</span>
+            <span>BEFORE</span>
+            <span>QUANTITY</span>
           </div>
         </div>
       </section>
