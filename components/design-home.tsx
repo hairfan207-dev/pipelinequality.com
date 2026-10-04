@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
@@ -128,16 +128,28 @@ export function DesignHome() {
   const faqs = tFaq.raw('items') as Faq[];
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langMenuRef = useRef<HTMLDivElement>(null);
   const [serviceOpen, setServiceOpen] = useState(0);
   const [industry, setIndustry] = useState(0);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
+    setLangOpen(false);
     if (nextLocale === locale) return;
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=lax`;
     router.replace(pathname || '/', { locale: nextLocale });
     router.refresh();
   };
+
+  useEffect(() => {
+    if (!langOpen) return;
+    const close = (event: MouseEvent) => {
+      if (!langMenuRef.current?.contains(event.target as Node)) setLangOpen(false);
+    };
+    document.addEventListener('mousedown', close);
+    return () => document.removeEventListener('mousedown', close);
+  }, [langOpen]);
 
   const activeIndustry = sectors[industry];
 
@@ -163,9 +175,23 @@ export function DesignHome() {
             <a href='#industries' onClick={() => setMenuOpen(false)}>{tNav('industries')}</a>
             <a href='#experience' onClick={() => setMenuOpen(false)}>{tNav('experience')}</a>
             <a href='#contact' onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
-            <button type='button' className='lang-btn' onClick={() => switchLocale(locale === 'en' ? 'de' : 'en')}>
-              {locale === 'en' ? 'ENGLISH +' : 'DEUTSCH +'}
-            </button>
+            <div className='lang-menu' ref={langMenuRef}>
+              <button
+                type='button'
+                className='lang-btn'
+                aria-expanded={langOpen}
+                aria-haspopup='menu'
+                onClick={() => setLangOpen((open) => !open)}
+              >
+                {locale === 'en' ? 'ENGLISH +' : 'DEUTSCH +'}
+              </button>
+              {langOpen ? (
+                <div className='lang-drop' role='menu'>
+                  <button type='button' role='menuitem' className={locale === 'en' ? 'on' : ''} onClick={() => switchLocale('en')}>English</button>
+                  <button type='button' role='menuitem' className={locale === 'de' ? 'on' : ''} onClick={() => switchLocale('de')}>Deutsch</button>
+                </div>
+              ) : null}
+            </div>
           </div>
         </nav>
         <div className='hero-copy shell'>

@@ -21,7 +21,11 @@
 .pq-design .menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;padding:8px 12px;font:700 11px Montserrat;letter-spacing:.12em}
 .pq-design .nav-links.is-open{display:flex;flex-direction:column;position:absolute;top:90px;right:7vw;left:auto;margin-left:0;background:#08316b;padding:18px 22px;gap:16px;z-index:5;width:max-content;height:auto}
 .pq-design .lang-btn{border:0;background:transparent;color:#FB7200;font:700 11px Montserrat;letter-spacing:.14em;cursor:pointer}
-.pq-design .nav-links .lang-btn{box-sizing:border-box;width:126.5px;height:38px;margin-left:4px;padding:0;border:1px solid #FB7200;background:#fff;color:#FB7200;border-radius:0;display:inline-flex;align-items:center;justify-content:center;line-height:19.5px;font-size:13px;font-weight:600;letter-spacing:1.82px}
+.pq-design .lang-menu{position:relative;margin-left:4px}
+.pq-design .nav-links .lang-btn{box-sizing:border-box;width:126.5px;height:38px;margin-left:0;padding:0;border:1px solid #FB7200;background:#fff;color:#FB7200;border-radius:0;display:inline-flex;align-items:center;justify-content:center;line-height:19.5px;font-size:13px;font-weight:600;letter-spacing:1.82px}
+.pq-design .lang-drop{position:absolute;top:38px;right:0;z-index:6;width:126.5px;background:#fff;border:1px solid #FB7200;border-top:0}
+.pq-design .lang-drop button{display:block;width:100%;padding:8px 6px;border:0;background:#fff;color:#102A5F;font:600 13px/19.5px Montserrat,Arial,sans-serif;letter-spacing:1.2px;text-align:center;text-transform:uppercase;cursor:pointer}
+.pq-design .lang-drop button.on,.pq-design .lang-drop button:hover{color:#FB7200}
 @media(max-width:1100px){.pq-design .menu-btn{display:inline-flex}}
 
 /* Lock the supplied design scale over the site's global type rules */
@@ -35,12 +39,12 @@
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .shell { width: min(1648px, calc(100% - 272px)); }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; }
-.pq-design .nav.shell { position: relative; left: 0; width: min(1650.56px, calc(100% - 272px)); max-width: none; height: 56px !important; margin-top: 32px; padding: 0; box-sizing: border-box; align-items: center; background: none; }
+.pq-design .nav.shell { position: relative; z-index: 3; left: 0; width: min(1650.56px, calc(100% - 272px)); max-width: none; height: 56px !important; margin-top: 32px; padding: 0; box-sizing: border-box; align-items: center; background: none; }
 .pq-design .nav .brand { width: auto; height: 56px; margin-top: 0; gap: 14px; flex: none; }
 .pq-design .nav .brand-logo { height: 56px; width: 70.44px; object-fit: contain; }
 .pq-design .nav .brand-copy { white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 3.24px; line-height: 18.9px; text-transform: uppercase; }
 .pq-design .nav .brand-copy b { font-weight: 600; }
-.pq-design .nav-links { position: static; top: auto; right: auto; left: auto; width: max-content; max-width: none; min-width: 0; height: 40px; margin-top: 0; margin-left: auto; padding-left: 0; box-sizing: border-box; align-items: center; justify-content: flex-end; flex-wrap: nowrap; gap: 4px; font-size: 13px; font-weight: 600; letter-spacing: 1.82px; text-transform: uppercase; }
+.pq-design .nav-links { position: static; top: auto; right: auto; left: auto; width: max-content; max-width: none; min-width: 0; height: 40px; margin-top: 0; margin-left: auto; padding-left: 0; box-sizing: border-box; align-items: center; justify-content: flex-end; flex-wrap: nowrap; gap: 4px; overflow: visible; font-size: 13px; font-weight: 600; letter-spacing: 1.82px; text-transform: uppercase; }
 .pq-design .nav-links a { padding: 10px 14px; line-height: 19.5px; }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
 .pq-design .hero-overlay { inset: auto; top: 0; left: 0; width: 100%; height: 121px; background: linear-gradient(to bottom, #0F295F 0%, rgba(15, 41, 95, 0.94) 18%, rgba(15, 41, 95, 0.77) 40%, rgba(15, 41, 94, 0.48) 66%, rgba(15, 41, 94, 0.09) 94%, rgba(15, 41, 94, 0) 100%) !important; pointer-events: none; }
