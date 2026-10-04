@@ -116,8 +116,26 @@
 .pq-design .process .lead { font-size: 22px !important; font-weight: 400 !important; }
 .pq-design .experience-heading h2 { font-size: clamp(36px, 3.125vw, 60px) !important; line-height: 1.15 !important; font-weight: 700 !important; }
 .pq-design .experience-box { background: #F4F7F9 !important; }
-.pq-design .why h2,
-.pq-design .industries-head h2 { font-size: clamp(40px, 5.065vw, 97.25px) !important; line-height: 1.05 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
+.pq-design .why h2 { font-size: clamp(40px, 5.065vw, 97.25px) !important; line-height: 1.05 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
+.pq-design .industries { background: #fff !important; padding: 0 0 48px !important; }
+.pq-design .industries-head { background: #102A5F; height: 354px; padding: 60px 0 0; color: #fff; }
+.pq-design .industries .industries-head h2 { width: min(640px, 100%); margin: 0 auto !important; font-size: clamp(48px, 5.065vw, 97.25px) !important; font-weight: 700 !important; line-height: 1.2 !important; letter-spacing: -0.07px; color: #fff !important; }
+.pq-design .industries-head h2 span { color: #FB7200 !important; letter-spacing: -0.09px; }
+.pq-design .industries .industries-panel { width: min(1651px, calc(100% - 270px)); margin: 0 auto; background: #fff; border: 2px solid #102A5F; border-top: 0; border-radius: 0 0 35px 35px; padding: 102px 0 36px; display: grid; grid-template-columns: 705px minmax(0, 1fr); column-gap: 120px; align-items: start; }
+.pq-design .industry-tabs button { display: flex; justify-content: space-between; align-items: center; width: 100%; height: 65px; padding: 0 6px 0 57px; border: 0; border-bottom: 1px solid rgba(16, 42, 95, 0.2); background: transparent; font: 500 30px/1.219 Montserrat, Arial, sans-serif; color: #102A5F; letter-spacing: -0.03px; text-align: left; }
+.pq-design .industry-tabs button.active { font-weight: 700 !important; }
+.pq-design .industry-tabs button:last-child { border-bottom: 0; }
+.pq-design .industry-tabs button img { width: 8.35px; height: 13.67px; flex: none; }
+.pq-design .industry-card { position: relative; display: grid; grid-template-columns: 372px minmax(0, 1fr); column-gap: 42px; align-items: start; min-height: 429px; background: transparent; border-radius: 0; overflow: visible; }
+.pq-design .industry-card::before { content: ""; position: absolute; z-index: 0; top: 0; right: 0; left: 61px; height: 429px; background: #FAFBFC; border-radius: 54px; }
+.pq-design .industry-photo, .pq-design .industry-copy { position: relative; z-index: 1; }
+.pq-design .industry-photo { height: 429px; border-radius: 20px; overflow: hidden; }
+.pq-design .industry-photo img { width: 100%; height: 352px; min-height: 0; object-fit: cover; object-position: center bottom; border-radius: 20px 20px 0 0; }
+.pq-design .industry-photo strong { left: 0; right: 0; bottom: 0; height: 113px; display: flex; align-items: center; justify-content: center; padding: 0; background: #102A5F; border-radius: 20px; color: #fff; font-size: 30px; font-weight: 500; letter-spacing: -0.07px; text-transform: uppercase; }
+.pq-design .industry-copy { padding: 29px 0 0; }
+.pq-design .industry-copy h3 { margin: 0; font-size: 30px; font-weight: 500; line-height: 1.219; color: #102A5F; }
+.pq-design .industry-copy p { width: min(315px, 100%); margin: 23px 0 0; font-size: 17px; font-weight: 400; line-height: 1.219; color: #102A5F; }
+.pq-design .industry-copy p span { display: block; margin: 0 0 9px; }
 .pq-design .competence { height: 778px; }
 .pq-design .competence-bg { left: 50%; top: 0; width: 1934px; height: 778px; max-width: none; transform: translateX(-50%); object-fit: cover; object-position: center; }
 .pq-design .competence-inner { align-items: flex-end; padding-bottom: 112px; }
@@ -241,6 +259,10 @@
   .pq-design .network-images { grid-template-columns: 1fr 1fr; }
   .pq-design .network-list { margin-left: 0; }
   .pq-design .process-cards { grid-template-columns: 1fr; }
+  .pq-design .industries .industries-panel { width: min(92vw, 1000px); grid-template-columns: 1fr; row-gap: 32px; padding: 48px 24px 36px; }
+  .pq-design .industry-tabs button { height: auto; min-height: 52px; padding-left: 8px; font-size: 22px; }
+  .pq-design .industry-card { grid-template-columns: 1fr; }
+  .pq-design .industry-card::before { left: 0; height: auto; bottom: 0; }
   .pq-design .competence { height: auto; min-height: 640px; }
   .pq-design .competence-bg { left: 0; width: 100%; height: 100%; transform: none; }
   .pq-design .competence-inner { align-items: center; padding: 64px 0; }

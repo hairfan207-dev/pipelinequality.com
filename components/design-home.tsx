@@ -14,7 +14,7 @@ type Faq = { question: string; answer: string };
 
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
-  '/design/figma/photo-climber.png',
+  '/design/figma/industry-wind.png',
   '/design/figma/photo-pipes.jpg',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
@@ -421,7 +421,8 @@ export function DesignHome() {
                 }}
                 onClick={() => setIndustry(index)}
               >
-                {sectors[index].title} <span>›</span>
+                {sectors[index].title}
+                <img src='/design/figma/industry-mark.svg' alt='' />
               </button>
             ))}
           </div>
