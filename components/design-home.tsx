@@ -626,11 +626,8 @@ export function DesignHome() {
       </section>
 
       <section className='contact section' id='contact'>
-        <div className='shell center contact-shell'>
-          <h2>{tContact('title')}</h2>
-          <p>{tContact('description')}</p>
-          <ContactForm />
-        </div>
+        <h2>Discuss <span>Yor</span> Project</h2>
+        <ContactForm />
       </section>
 
       <footer className='footer'>
