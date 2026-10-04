@@ -30,24 +30,24 @@ const processPhotos = [
   '/design/figma/handover-project.png',
 ];
 const networkPhotos = [
-  { src: '/design/figma/photo-team.png', role: 7 },
-  { src: '/design/figma/photo-review.png', role: 9 },
-  { src: '/design/figma/photo-engineers.png', role: 8 },
-  { src: '/design/figma/photo-weld-close.png', role: 5 },
+  { src: '/design/figma/team-inspectors.png', role: 7, variant: 'bottom-fade', icon: '/design/figma/team-icon-inspectors.svg', shade: '/design/figma/team-caption-bottom.svg' },
+  { src: '/design/figma/team-docs.png', role: 9, variant: 'top-solid', icon: '/design/figma/team-icon-docs.svg', shade: '/design/figma/team-caption-top.svg' },
+  { src: '/design/figma/team-dimensional.png', role: 8, variant: 'bottom-solid', icon: '/design/figma/team-icon-dimensional.svg', shade: '/design/figma/team-caption-top.svg' },
+  { src: '/design/figma/team-welding.png', role: 5, variant: 'top-fade', icon: '/design/figma/team-icon-weld.svg', shade: '/design/figma/team-caption-weld.svg' },
 ];
 const roleIcons = [
-  '/design/figma/role-person.png',
-  '/design/figma/role-checklist.png',
-  '/design/figma/role-nodes.png',
-  '/design/figma/role-group.png',
-  '/design/figma/role-gear.png',
-  '/design/figma/role-doc.png',
-  '/design/figma/role-pulse.png',
-  '/design/figma/role-search.png',
-  '/design/figma/role-ruler.png',
-  '/design/figma/role-doc.png',
-  '/design/figma/role-headset.png',
-  '/design/figma/role-badge.png',
+  '/design/figma/net-qm.svg',
+  '/design/figma/net-auditors.svg',
+  '/design/figma/net-third.svg',
+  '/design/figma/net-leaders.svg',
+  '/design/figma/net-qaqc.svg',
+  '/design/figma/net-weld.svg',
+  '/design/figma/net-ndt.svg',
+  '/design/figma/net-inspectors.svg',
+  '/design/figma/net-dimensional.svg',
+  '/design/figma/net-docs.svg',
+  '/design/figma/net-support.svg',
+  '/design/figma/net-hse.svg',
 ];
 const networkColumns = [
   [0, 1, 4, 5, 3, 2],
@@ -325,23 +325,40 @@ export function DesignHome() {
       <section className='network section' id='network'>
         <div className='shell network-grid'>
           <div className='network-images'>
-            {networkPhotos.map((photo) => (
-              <figure key={photo.src}>
-                <img src={photo.src} alt={roles[photo.role]} />
-                <figcaption>
-                  <img src={roleIcons[photo.role]} alt='' />
-                  {roles[photo.role]}
-                </figcaption>
-              </figure>
-            ))}
+            {networkPhotos.map((photo) => {
+              const label = roles[photo.role] ?? '';
+              const lines = label.startsWith('Quality ')
+                ? ['Quality', label.slice('Quality '.length)]
+                : label.startsWith('Dimensional / ')
+                  ? ['Dimensional', label.slice('Dimensional / '.length)]
+                  : [label];
+              return (
+                <figure key={photo.src} className={photo.variant}>
+                  <img className='shot' src={photo.src} alt={label} />
+                  <img className='shade' src={photo.shade} alt='' />
+                  <figcaption>
+                    <img src={photo.icon} alt='' />
+                    <span>
+                      {lines.map((line, index) => (
+                        <span key={line}>
+                          {index > 0 ? <br /> : null}
+                          {line}
+                        </span>
+                      ))}
+                    </span>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
           <div className='network-copy'>
             <p className='eyebrow left'>{tServices('keyAreasTitle')}</p>
             <h2>
-              {tTeam('titleBefore')}
-              <br />
-              {tTeam('titleAfter')}
-              <span>{tTeam('titleAccent')}</span>
+              <span className='net-line'>{tTeam('titleBefore')}</span>
+              <span className='net-line'>
+                <span className='complete'>{tTeam('titleAfter')}</span>
+                <span>{tTeam('titleAccent')}</span>
+              </span>
             </h2>
             <p className='lead'>{tTeam('paragraph1')}</p>
             <div className='network-list'>
@@ -350,9 +367,9 @@ export function DesignHome() {
                 {networkColumns.map((column) => (
                   <ul key={column.join('-')}>
                     {column.map((index) => (
-                      <li key={roles[index]}>
+                      <li key={roles[index]} className={index === 11 ? 'wrap' : undefined}>
                         <img src={roleIcons[index]} alt='' />
-                        {roles[index]}
+                        <span>{roles[index]}</span>
                       </li>
                     ))}
                   </ul>

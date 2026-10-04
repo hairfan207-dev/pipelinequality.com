@@ -104,7 +104,7 @@
 .pq-design .services-grid h2 .svc-line { white-space: nowrap; display: block; }
 .pq-design .services-grid h2 .svc-line + .svc-line { margin-top: 7px; }
 .pq-design .services-grid h2 .svc-line span { color: #FB7200 !important; letter-spacing: 0.97px; }
-.pq-design .network-copy h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
+.pq-design .network.section .network-copy h2 { width: min(742px, 100%); font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.783px; color: #102A5F !important; margin: 0 !important; }
 .pq-design .digital h2,
 .pq-design .faq h2,
 .pq-design .contact h2,
@@ -130,7 +130,10 @@
 .pq-design .promise-grid article:nth-child(2) p { width: 248px; }
 .pq-design .promise-grid article:nth-child(3) p { width: 260px; }
 .pq-design .promise-grid article:nth-child(4) p { width: 220px; }
-.pq-design .network { background: #F0F2F5 !important; }
+.pq-design .network.section { background: #F0F2F5 !important; padding-top: 85px !important; padding-bottom: 114px !important; }
+.pq-design .network-grid { grid-template-columns: 785px minmax(0, 1fr); gap: 36px; align-items: start; }
+.pq-design .network-images { margin-top: 23px; grid-template-columns: 372px 372px; gap: 43px 41px; }
+.pq-design .network-images figure { height: 429px; border-radius: 20px; margin: 0; }
 .pq-design .footer { background: #032855 !important; }
 .pq-design .acc-item button { font: 500 30px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
@@ -171,18 +174,41 @@
 .pq-design .intro p:not(.eyebrow) { font-size: 20px !important; font-weight: 400 !important; line-height: 24px !important; letter-spacing: 0.94px; color: #102A5F !important; margin: 0 auto !important; }
 .pq-design .intro p.intro-copy { width: min(1318px, 100%); }
 .pq-design .intro p.intro-copy-b { width: min(1256px, 100%); margin-top: 24px !important; }
-.pq-design .network-copy h2 span { color: #FB7200 !important; }
-.pq-design .network-images figure:before { content: ""; position: absolute; z-index: 1; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, rgba(6,24,64,.72), rgba(6,24,64,0)); pointer-events: none; }
-.pq-design .network-images figcaption { z-index: 2; top: 14px; bottom: auto; background: none; display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-.pq-design .network-images figcaption img { width: 42px; height: 42px; object-fit: contain; flex: none; }
-.pq-design .network-list { margin-top: 28px; background: transparent; border-radius: 0; padding: 0; }
-.pq-design .network-list h3 { color: #FB7200 !important; font-size: 40px !important; font-weight: 700 !important; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 18px !important; }
-.pq-design .network-list li { display: flex; align-items: center; gap: 14px; padding: 8px 0 !important; font-size: 20px !important; font-weight: 500 !important; color: #102A5F; }
+.pq-design .network-copy .eyebrow { margin: 0 0 16px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.03px; text-transform: uppercase; color: #FB7200; }
+.pq-design .network-copy h2 .net-line { display: block; color: #102A5F !important; }
+.pq-design .network-copy h2 .net-line + .net-line { margin-top: 7px; }
+.pq-design .network-copy h2 .complete { letter-spacing: 1.82px; color: #102A5F !important; }
+.pq-design .network-copy h2 .net-line span:last-child { color: #FB7200 !important; letter-spacing: -0.075px; }
+.pq-design .network-copy .lead { width: min(788px, 100%); max-width: 788px; margin: 15px 0 0 !important; font-size: 22px !important; font-weight: 400 !important; line-height: 26px !important; letter-spacing: 0.95px; color: #102A5F !important; }
+.pq-design .network-images .shot { position: absolute; max-width: none; }
+.pq-design .network-images .bottom-fade .shot { width: 120.19%; height: 225.22%; left: -20.19%; top: -71.75%; }
+.pq-design .network-images .top-solid .shot { top: 79px; left: -25.91%; width: 141.11%; height: 350px; }
+.pq-design .network-images .bottom-solid .shot { top: 0; left: 0; width: 100%; height: 350px; object-fit: cover; object-position: center bottom; }
+.pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+.pq-design .network-images .shade { position: absolute; z-index: 1; left: 0; pointer-events: none; }
+.pq-design .network-images .bottom-fade .shade { bottom: 0; width: 371.56px; height: 81.16px; transform: rotate(180deg); }
+.pq-design .network-images .top-fade .shade { top: 0; width: 371.56px; height: 81.16px; }
+.pq-design .network-images .top-solid .shade { top: 0; width: 371.58px; height: 112.89px; }
+.pq-design .network-images .bottom-solid .shade { bottom: 0; width: 371.58px; height: 112.89px; transform: rotate(180deg); }
+.pq-design .network-images figcaption { z-index: 2; left: 0; right: 0; bottom: auto; background: none; display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 28px; color: #fff; font-size: 17px; font-weight: 400; line-height: 20.4px; letter-spacing: 0.3px; text-shadow: none; text-align: left; }
+.pq-design .network-images .bottom-fade figcaption,
+.pq-design .network-images .bottom-solid figcaption { top: auto; bottom: 18px; }
+.pq-design .network-images .top-fade figcaption,
+.pq-design .network-images .top-solid figcaption { top: 24px; }
+.pq-design .network-images figcaption img { width: 30px; height: 30px; object-fit: contain; flex: none; }
+.pq-design .network-images .top-solid figcaption img { width: 22.72px; height: 30px; }
+.pq-design .network-images .top-fade figcaption img { width: 28.65px; height: 30px; }
+.pq-design .network-list { margin-top: 43px; margin-left: 44px; background: transparent; border-radius: 0; padding: 0; }
+.pq-design .network-list h3 { color: #FB7200 !important; font-size: 40px !important; font-weight: 600 !important; letter-spacing: 0; text-transform: uppercase; margin: 0 0 46px !important; }
+.pq-design .network-list .cols { grid-template-columns: 328px minmax(0, 1fr); gap: 0; }
+.pq-design .network-list li { display: flex; align-items: center; gap: 20px; min-height: 59.91px; margin: 0 0 16.8px; padding: 0 !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.219; letter-spacing: 0.2px; color: #102A5F; }
+.pq-design .network-list li.wrap { align-items: flex-start; }
+.pq-design .network-list li.wrap span { max-width: 230px; line-height: 20.4px; }
 .pq-design .standard-grid h3 { font-size: 25px !important; font-weight: 700 !important; }
 .pq-design .why-box h3 { font-size: 30px !important; font-weight: 700 !important; }
 .pq-design .workflow-grid h3, .pq-design .wf-img span { font-size: 30px !important; font-weight: 500 !important; }
 .pq-design .network-list li:before { content: none !important; }
-.pq-design .network-list li img { width: 48px; height: 48px; object-fit: contain; flex: none; }
+.pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1100px) {
   .pq-design .shell { width: min(92vw, 1000px); }
   .pq-design .nav.shell { left: 0; width: 100%; height: 80px !important; margin-top: 0; padding-left: 24px; padding-right: 24px; align-items: center; }
@@ -197,6 +223,9 @@
   .pq-design .hero { height: 760px !important; }
   .pq-design .services-grid { grid-template-columns: 1fr; gap: 32px; }
   .pq-design .feature-image > img { height: 420px; }
+  .pq-design .network-grid { grid-template-columns: 1fr; }
+  .pq-design .network-images { grid-template-columns: 1fr 1fr; }
+  .pq-design .network-list { margin-left: 0; }
   .pq-design .process-cards { grid-template-columns: 1fr; }
   .pq-design .process .connector { margin-top: 0; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
@@ -220,6 +249,8 @@
   .pq-design .hero-copy h2 { font-size: 31px !important; }
   .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
   .pq-design .services-grid h2, .pq-design .network-copy h2, .pq-design .digital h2 { font-size: 38px !important; }
+  .pq-design .network-images { grid-template-columns: 1fr; }
+  .pq-design .network-list .cols { grid-template-columns: 1fr; }
   .pq-design .services-grid h2 .svc-line { white-space: normal; }
   .pq-design .service-accordion .acc-panel { padding-left: 16px !important; padding-right: 16px !important; }
   .pq-design .service-accordion .acc-item.open .acc-panel { padding: 12px 16px 20px !important; }

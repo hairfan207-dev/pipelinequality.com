@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="371.56" height="81.16" viewBox="0 0 371.56 81.16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Graphic / Team Card Caption 04" clip-path="url(#clip0_0_55)">
+<path id="Vector" d="M14.44 81.16L357.12 81.16C365.095 81.16 371.56 74.695 371.56 66.72V14.44C371.56 6.46501 365.095 0 357.12 0L14.44 0C6.465 0 0 6.46501 0 14.44V66.72C0 74.695 6.465 81.16 14.44 81.16Z" fill="url(#paint0_linear_0_55)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_55" x1="185.78" y1="0" x2="185.78" y2="81.16" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0F295F"/>
+<stop offset="0.3" stop-color="#0F295E" stop-opacity="0.97"/>
+<stop offset="0.49" stop-color="#0F295E" stop-opacity="0.88"/>
+<stop offset="0.65" stop-color="#0F295E" stop-opacity="0.73"/>
+<stop offset="0.79" stop-color="#0F295E" stop-opacity="0.52"/>
+<stop offset="0.91" stop-color="#0F295E" stop-opacity="0.24"/>
+<stop offset="1" stop-color="#0F295E" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_0_55">
+<rect width="371.56" height="81.16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
