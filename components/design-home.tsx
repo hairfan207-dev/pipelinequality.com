@@ -77,8 +77,14 @@ const servicePhotos = [
   '/design/figma/photo-engineers.png',
   '/design/figma/photo-team.png',
 ];
+const fieldIcons = [
+  '/design/figma/handover-field-inspection.png',
+  '/design/figma/handover-field-welding.png',
+  '/design/figma/handover-field-ndt.png',
+  '/design/figma/handover-field-dimensional.png',
+  '/design/figma/handover-field-mtr.png',
+];
 const processStrips = [
-  '/design/figma/handover-icons-field.png',
   '/design/figma/handover-icons-quality.svg',
   '/design/figma/handover-icons-project.svg',
 ];
@@ -329,7 +335,9 @@ export function DesignHome() {
                     <strong>{stage.title}</strong>
                   </div>
                   <div className='process-panel'>
-                    <img className={`process-strip${index === 0 ? ' is-icons' : ''}`} src={processStrips[index]} alt='' />
+                    {index === 0
+                      ? fieldIcons.map((src) => <img key={src} className='process-icon' src={src} alt='' />)
+                      : <img className='process-strip' src={processStrips[index - 1]} alt='' />}
                     <div className='process-labels'>
                       {stage.items.map((item) => (
                         <span key={item}>{item}</span>

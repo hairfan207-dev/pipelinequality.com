@@ -77,9 +77,28 @@
 .pq-design .process-card:nth-child(3) .pic img { object-position: center 18%; }
 .pq-design .process-panel { position: relative; z-index: 0; height: 189px; margin-top: -52px; background: #FAFBFC; border-radius: 29px; }
 .pq-design .process-panel .process-strip { position: absolute; inset: 0; display: block; width: 100%; height: 100%; margin: 0; object-fit: fill; }
-.pq-design .process-panel .process-strip.is-icons { inset: auto; top: 75px; left: 29px; width: calc(100% - 58px); height: 60px; object-fit: contain; }
-.pq-design .process-labels { position: absolute; left: 10px; right: 10px; top: 142px; display: flex; justify-content: space-between; gap: 4px; }
-.pq-design .process-labels span { flex: 1; font-size: 12px; line-height: 15px; font-weight: 400; color: #000; text-align: center; white-space: nowrap; }
+.pq-design .process-icon { position: absolute; top: 75px; width: 59px; height: 59px; margin-left: -29.5px; object-fit: contain; }
+.pq-design .process-card:nth-child(1) .process-icon:nth-child(1) { left: 11.75%; }
+.pq-design .process-card:nth-child(1) .process-icon:nth-child(2) { left: 30.22%; }
+.pq-design .process-card:nth-child(1) .process-icon:nth-child(3) { left: 48.34%; }
+.pq-design .process-card:nth-child(1) .process-icon:nth-child(4) { left: 68.15%; }
+.pq-design .process-card:nth-child(1) .process-icon:nth-child(5) { left: 87.93%; }
+.pq-design .process-labels { position: absolute; inset: 142px 0 auto; height: 15px; }
+.pq-design .process-labels span { position: absolute; top: 0; transform: translateX(-50%); font-size: 12px; line-height: 15px; font-weight: 400; color: #000; text-align: center; white-space: nowrap; }
+.pq-design .process-card:nth-child(1) .process-labels span:nth-child(1) { left: 11.75%; }
+.pq-design .process-card:nth-child(1) .process-labels span:nth-child(2) { left: 30.22%; }
+.pq-design .process-card:nth-child(1) .process-labels span:nth-child(3) { left: 48.34%; }
+.pq-design .process-card:nth-child(1) .process-labels span:nth-child(4) { left: 68.15%; }
+.pq-design .process-card:nth-child(1) .process-labels span:nth-child(5) { left: 87.93%; }
+.pq-design .process-card:nth-child(3) .process-labels span:nth-child(1) { left: 14.49%; }
+.pq-design .process-card:nth-child(3) .process-labels span:nth-child(2) { left: 34.31%; }
+.pq-design .process-card:nth-child(3) .process-labels span:nth-child(3) { left: 52.8%; }
+.pq-design .process-card:nth-child(3) .process-labels span:nth-child(4) { left: 70.89%; }
+.pq-design .process-card:nth-child(3) .process-labels span:nth-child(5) { left: 90.71%; }
+.pq-design .process-card:nth-child(5) .process-labels span:nth-child(1) { left: 21.16%; }
+.pq-design .process-card:nth-child(5) .process-labels span:nth-child(2) { left: 39.65%; }
+.pq-design .process-card:nth-child(5) .process-labels span:nth-child(3) { left: 57.74%; }
+.pq-design .process-card:nth-child(5) .process-labels span:nth-child(4) { left: 77.56%; }
 .pq-design .process .connector { width: 77px; height: 34px; margin-top: 145px; background: none; border-radius: 0; overflow: visible; }
 .pq-design .process .connector img { width: 112px; height: 34px; max-width: none; margin-left: -17px; }
 .pq-design .connector { width: auto; height: auto; background: none; border-radius: 0; }
