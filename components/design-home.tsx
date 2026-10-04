@@ -149,6 +149,7 @@ export function DesignHome() {
   const [serviceOpen, setServiceOpen] = useState(0);
   const [industry, setIndustry] = useState(0);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
     setLangOpen(false);
@@ -604,7 +605,11 @@ export function DesignHome() {
         <div className='support-list'>
           <p className='eyebrow'>{tDigital('label')}</p>
           {digitalBlocks.map((block, index) => (
-            <div key={block.title} className={index === 0 ? 'support-row active' : 'support-row'}>
+            <div
+              key={block.title}
+              className={supportOpen === index ? 'support-row active' : 'support-row'}
+              onMouseEnter={() => setSupportOpen(index)}
+            >
               <h3>{block.title}</h3>
               <p>{`${block.items.slice(0, -1).join(' ')}, ${block.items[block.items.length - 1]}`}</p>
             </div>

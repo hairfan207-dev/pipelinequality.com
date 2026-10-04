@@ -382,17 +382,11 @@
 .pq-design .support-list { padding-top: 8px; }
 .pq-design .support-list .eyebrow { margin: 0 0 22px 51px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.04px; text-transform: uppercase; color: #FB7200; }
 .pq-design .support-row { display: grid; grid-template-columns: 456px minmax(0, 304px); justify-content: start; align-items: center; gap: 0; min-height: 38px; margin: 0 0 40px; padding-left: 51px; border-radius: 12px 0 0 12px; background: transparent; cursor: pointer; transition: background-color 0.28s ease, min-height 0.28s ease, margin-bottom 0.28s ease; }
-.pq-design .support-row.active,
-.pq-design .support-row:hover { min-height: 83px; margin-bottom: 27px; background: #F4F7F9; }
-.pq-design .support-list:has(.support-row:hover) .support-row.active:not(:hover) { min-height: 38px; margin-bottom: 40px; background: transparent; }
+.pq-design .support-row.active { min-height: 83px; margin-bottom: 27px; background: #F4F7F9; }
 .pq-design .support-row h3 { margin: 0; font-size: 30px; font-weight: 700; line-height: 1.219; color: #102A5F; transition: color 0.28s ease, font-size 0.28s ease; }
-.pq-design .support-row.active h3,
-.pq-design .support-row:hover h3 { font-size: 40px; color: #FB7200; }
-.pq-design .support-list:has(.support-row:hover) .support-row.active:not(:hover) h3 { font-size: 30px; color: #102A5F; }
+.pq-design .support-row.active h3 { font-size: 40px; color: #FB7200; }
 .pq-design .support-row p { width: 304px; max-height: 0; margin: 0; overflow: hidden; opacity: 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.14px; color: #102A5F; transition: opacity 0.28s ease, max-height 0.28s ease; }
-.pq-design .support-row.active p,
-.pq-design .support-row:hover p { max-height: 72px; opacity: 1; }
-.pq-design .support-list:has(.support-row:hover) .support-row.active:not(:hover) p { max-height: 0; opacity: 0; }
+.pq-design .support-row.active p { max-height: 72px; opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .pq-design .support-row,
   .pq-design .support-row h3,
