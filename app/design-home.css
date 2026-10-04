@@ -59,8 +59,10 @@
 .pq-design .promise-strip { position: relative; background: linear-gradient(#102A5F 0 214px, #F0F2F5 214px) !important; height: 315px; min-height: 315px; }
 .pq-design .promise-grid { height: 315px; align-items: start; }
 .pq-design .promise-grid article { display: flex; flex-direction: column; align-items: center; height: 315px; min-height: 315px; padding: 58px 0 0 !important; }
-.pq-design .promise-grid article:not(:last-child):before { display: none !important; }
-.pq-design .promise-grid article:not(:last-child):after { content: ""; display: block !important; position: absolute; top: 84px; right: 0; z-index: 1; width: 1px; height: 178.4px; border: 0; background: #FB7200; transform: translateX(0.5px); pointer-events: none; }
+.pq-design .promise-grid article:not(:last-child):before,
+.pq-design .promise-grid article:not(:last-child):after { content: ""; display: block !important; position: absolute; right: 0; z-index: 1; width: 1px; border: 0; transform: translateX(0.5px); pointer-events: none; }
+.pq-design .promise-grid article:not(:last-child):after { top: 84px; height: 130px; background: #FB7200; }
+.pq-design .promise-grid article:not(:last-child):before { top: 214px; height: 48.4px; background: #102A5F; }
 .pq-design .round-icon { display: grid; place-items: center; width: 60px; height: 60px; margin: 0; color: #fff; }
 .pq-design .round-icon img { width: auto; height: 60px; max-width: none; object-fit: contain; }
 .pq-design .acc-icon { background: transparent !important; padding: 0; }
