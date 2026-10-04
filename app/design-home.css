@@ -570,3 +570,125 @@
   .pq-design .why.section h2 { font-size: 48px !important; }
   .pq-design .experience-heading h2 { font-size: 50px !important; }
 }
+
+/* Tablet and mobile. Rules above this line stay locked at desktop widths. */
+@media (max-width: 1100px) {
+  .pq-design .nav-links.is-open { right: 16px; left: 16px; width: auto; max-width: none; }
+  .pq-design .services-grid h2 .svc-line { white-space: normal; }
+  .pq-design .services-grid > div:first-child { min-height: 0; }
+  .pq-design .acc-item button { font-size: 22px !important; column-gap: 16px; }
+  .pq-design .feature-image .image-caption { font-size: 22px !important; gap: 16px; padding: 48px 24px 28px; }
+  .pq-design .process-panel { height: auto; min-height: 200px; padding-bottom: 16px; }
+  .pq-design .process-labels { height: auto; }
+  .pq-design .process-labels span { white-space: normal; max-width: 22%; font-size: 11px; line-height: 13px; }
+  .pq-design .process .connector { margin: 12px auto; }
+  .pq-design .network-images { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+  .pq-design .network-images figure { width: 100%; height: auto; aspect-ratio: 372 / 429; }
+  .pq-design .network-images .top-solid .shot,
+  .pq-design .network-images .bottom-solid .shot { left: 0; width: 100%; }
+  .pq-design .network-images .top-solid .shot { top: 18%; height: 82%; }
+  .pq-design .network-images .bottom-solid .shot { top: 0; height: 82%; }
+  .pq-design .network-images .shade { width: 100%; }
+  .pq-design .network-images .top-solid figcaption img { left: 8%; top: 6%; }
+  .pq-design .network-images .bottom-solid figcaption img { left: 12%; top: auto; bottom: 8%; }
+  .pq-design .network-images .top-solid figcaption > span,
+  .pq-design .network-images .bottom-solid figcaption > span { width: auto; height: auto; white-space: normal; }
+  .pq-design .network-images .top-solid figcaption > span { left: 24%; top: 5%; right: 8px; }
+  .pq-design .network-images .bottom-solid figcaption > span { left: 28%; top: auto; bottom: 7%; right: 8px; }
+  .pq-design .network-list { margin-left: 0; }
+  .pq-design .network-list h3 { font-size: 28px !important; margin-bottom: 24px !important; }
+  .pq-design .network-list .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 20px; }
+  .pq-design .network-list li { font-size: 16px !important; }
+  .pq-design .industries-head { height: auto; padding: 48px 20px 72px; }
+  .pq-design .industries .industries-head h2 { font-size: clamp(40px, 7vw, 72px) !important; }
+  .pq-design .industry-tabs button { height: auto; min-height: 48px; padding: 12px 8px; font-size: 18px !important; line-height: 1.25; white-space: normal; }
+  .pq-design .industry-card { height: auto; min-height: 0; }
+  .pq-design .industry-card::before { display: none; }
+  .pq-design .industry-photo { height: auto; padding-bottom: 105px; }
+  .pq-design .industry-photo img { height: auto; aspect-ratio: 413 / 300; }
+  .pq-design .industry-copy { padding: 28px 8px 0; }
+  .pq-design .industry-copy p { width: auto; }
+  .pq-design .standards.section h2 { margin-bottom: 36px !important; }
+  .pq-design .standard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; gap: 28px 16px; }
+  .pq-design .standard-grid article img,
+  .pq-design .standard-grid .std-card { width: 100%; max-width: 100%; }
+  .pq-design .standard-grid article img { height: auto; aspect-ratio: 219.4 / 194; object-fit: cover; }
+  .pq-design .standard-grid .std-card { height: auto; min-height: 150px; }
+  .pq-design .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; column-gap: 20px; row-gap: 32px; }
+  .pq-design .wf-card { width: 100%; max-width: none; height: auto; aspect-ratio: 302.1 / 349.13; }
+  .pq-design .wf-card img { height: 78%; }
+  .pq-design .wf-card strong { height: 27%; font-size: clamp(20px, 2.5vw, 28px); }
+  .pq-design .workflow-grid p { letter-spacing: 0; }
+  .pq-design .workflow-grid article:nth-child(4) p { width: auto; margin-left: 0; }
+  .pq-design .digital.section,
+  .pq-design .experience.section { overflow-x: clip; }
+  .pq-design .dig-engineer,
+  .pq-design .dig-quality { width: 100%; }
+  .pq-design .support-panel { padding: 40px 24px; }
+  .pq-design .support-panel p { margin-left: 0; }
+  .pq-design .support-list .eyebrow { margin-left: 16px; }
+  .pq-design .support-row { grid-template-columns: minmax(0, 1fr); width: auto; max-width: 100%; padding: 8px 16px; margin-bottom: 16px; }
+  .pq-design .support-row h3 { font-size: 22px; }
+  .pq-design .support-row.active { min-height: 0; padding-top: 12px; padding-bottom: 12px; }
+  .pq-design .support-row.active h3 { font-size: 26px; }
+  .pq-design .support-row p,
+  .pq-design .support-row.active p { width: auto; max-width: 100%; }
+  .pq-design .why-layout { width: min(92vw, 1000px); max-width: 100%; }
+  .pq-design .why.section h2 { position: static; left: auto; width: 100%; max-width: 100%; letter-spacing: 0 !important; line-height: 1.05 !important; }
+  .pq-design .why-col { width: auto; max-width: 100%; }
+  .pq-design .faq.section .faq-item button { height: auto; white-space: normal; }
+  .pq-design .faq.section .faq-item p { width: auto; }
+  .pq-design .contact.section h2,
+  .pq-design .faq.section h2 { width: auto; max-width: calc(100% - 32px); font-size: clamp(32px, 6vw, 48px) !important; white-space: normal; }
+  .pq-design .partners.section h2,
+  .pq-design .partners-lead,
+  .pq-design .partners-note { width: min(100% - 32px, 100%); max-width: calc(100% - 32px); }
+}
+
+@media (max-width: 700px) {
+  .pq-design .nav .brand-logo { width: auto; height: 40px; }
+  .pq-design .nav .brand-copy { font-size: 13px; letter-spacing: 1.2px; }
+  .pq-design .hero { height: auto !important; min-height: 620px; padding-bottom: 36px; }
+  .pq-design .hero-line { margin-bottom: 28px; letter-spacing: 0.4px; }
+  .pq-design .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .pq-design .hero-actions .btn-orange,
+  .pq-design .hero-actions .btn-navy { width: 100%; min-width: 0; }
+  .pq-design .promise-grid h3,
+  .pq-design .promise-grid article:nth-child(3) h3,
+  .pq-design .promise-grid article:nth-child(4) h3,
+  .pq-design .promise-grid p,
+  .pq-design .promise-grid article:nth-child(2) p,
+  .pq-design .promise-grid article:nth-child(3) p,
+  .pq-design .promise-grid article:nth-child(4) p { width: auto; max-width: 280px; }
+  .pq-design .acc-item button { font-size: 18px !important; grid-template-columns: 48px minmax(0, 1fr) auto; }
+  .pq-design .service-accordion .acc-icon,
+  .pq-design .service-accordion .acc-icon img { width: 48px; height: 48px; }
+  .pq-design .feature-image > img { height: 320px; }
+  .pq-design .process-icon { width: 44px; height: 44px; margin-left: -22px; top: 64px; }
+  .pq-design .process-card .pic { height: 240px; }
+  .pq-design .process-card .pic strong { left: 20px; font-size: 22px; }
+  .pq-design .network-images { grid-template-columns: 1fr; }
+  .pq-design .network-list .cols { grid-template-columns: 1fr; }
+  .pq-design .network-list li.wrap span { max-width: none; }
+  .pq-design .competence .competence-card h2 { font-size: 36px !important; }
+  .pq-design .competence-card { padding: 32px 24px; }
+  .pq-design .industry-photo { padding-bottom: 78px; }
+  .pq-design .industry-photo strong { height: auto; min-height: 88px; padding: 26px 14px 12px; font-size: 16px; }
+  .pq-design .industry-copy h3 { font-size: 24px; }
+  .pq-design .standard-grid h3 { font-size: 18px !important; line-height: 22px !important; }
+  .pq-design .standard-grid p { font-size: 14px; line-height: 18px; letter-spacing: 0; }
+  .pq-design .standard-grid .std-card { min-height: 0; padding: 16px 10px 16px; }
+  .pq-design .workflow-grid { grid-template-columns: 1fr; }
+  .pq-design .wf-card strong { font-size: 22px; }
+  .pq-design .support-row h3 { font-size: 20px; }
+  .pq-design .support-row.active h3 { font-size: 24px; }
+  .pq-design .support-row p { font-size: 16px; }
+  .pq-design .why.section h2 { font-size: clamp(36px, 11vw, 48px) !important; }
+  .pq-design .why-col { padding: 24px 20px; }
+  .pq-design .why-col h3 { font-size: 22px; }
+  .pq-design .faq.section h2,
+  .pq-design .contact.section h2 { font-size: clamp(30px, 9vw, 40px) !important; }
+  .pq-design .faq-lead { width: auto; max-width: calc(100% - 32px); letter-spacing: 0; }
+  .pq-design .partners .btn-orange,
+  .pq-design .digital .btn-orange { width: calc(100% - 32px); }
+}
