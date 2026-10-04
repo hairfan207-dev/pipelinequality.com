@@ -875,7 +875,7 @@
   "digitalQuality": {
     "label": "Digital Quality",
     "title": "Practical Digital Quality Support",
-    "description": "In partnership with BW Digit and technology partners, Pipeline Quality can support digital workflows for:",
+    "description": "In partnership with BW Digit and technology partners, Pipeline Quality can support digital workflows",
     "blocks": [
       {
         "title": "Weld Traceability",

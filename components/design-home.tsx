@@ -105,6 +105,7 @@ export function DesignHome() {
   const tStd = useTranslations('standards');
   const tWork = useTranslations('workProcess');
   const tSmart = useTranslations('smartQAQC');
+  const tDigital = useTranslations('digitalQuality');
   const tWhy = useTranslations('why');
   const tFaq = useTranslations('faq');
   const tContact = useTranslations('contact');
@@ -121,6 +122,7 @@ export function DesignHome() {
   const sectors = tInd.raw('sectors') as Industry[];
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
+  const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[] }>;
   const reasons = tWhy.raw('reasons') as Reason[];
   const faqs = tFaq.raw('items') as Faq[];
 
@@ -543,6 +545,27 @@ export function DesignHome() {
               <p key={part}>{part.trim()}</p>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className='digital-support section'>
+        <div className='support-panel'>
+          <h2>
+            <span className='line'>Practical Digital</span>
+            <span className='line'>Quality Support</span>
+          </h2>
+          <p>{tDigital('description')}</p>
+        </div>
+        <div className='support-list'>
+          <p className='eyebrow'>{tDigital('label')}</p>
+          {digitalBlocks.map((block, index) => (
+            <div key={block.title} className={index === 0 ? 'support-row active' : 'support-row'}>
+              <h3>{block.title}</h3>
+              {index === 0 ? (
+                <p>{`${block.items.slice(0, -1).join(' ')}, ${block.items[block.items.length - 1]}`}</p>
+              ) : null}
+            </div>
+          ))}
         </div>
       </section>
 
