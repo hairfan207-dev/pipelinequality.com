@@ -114,8 +114,32 @@
 .pq-design .services-grid .lead { font-size: 18px !important; font-weight: 500 !important; }
 .pq-design .network-copy .lead,
 .pq-design .process .lead { font-size: 22px !important; font-weight: 400 !important; }
-.pq-design .experience-heading h2 { font-size: clamp(36px, 3.125vw, 60px) !important; line-height: 1.15 !important; font-weight: 700 !important; }
-.pq-design .experience-box { background: #F4F7F9 !important; }
+.pq-design .experience.section { background: #fff; padding: 56px 0 72px; }
+.pq-design .experience-box { width: min(1649px, calc(100% - 270px)); margin: 0 auto; display: block; background: #FAFBFC !important; border-radius: 60px; padding: 64px 105px 54px 107px; }
+.pq-design .experience-intro { display: grid; grid-template-columns: 670px minmax(0, 1fr); column-gap: 48px; align-items: start; }
+.pq-design .experience.section h2 { width: auto; margin: 8px 0 0 !important; color: #102A5F !important; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.219 !important; letter-spacing: 0; }
+.pq-design .experience.section h2 .line { display: block; color: #102A5F !important; white-space: nowrap; letter-spacing: 2.662px; }
+.pq-design .experience.section h2 .line + .line { margin-top: 7px; letter-spacing: 1.87px; }
+.pq-design .experience.section h2 .accent { color: #FB7200 !important; letter-spacing: -0.14px; }
+.pq-design .experience.section h2 .line + .line .accent { letter-spacing: -0.06px; }
+.pq-design .experience.section h2 .amp { color: #102A5F !important; letter-spacing: 5.55px; }
+.pq-design .experience-heading p { width: min(670px, 100%); margin: 8px 0 0; font-size: 22px; font-weight: 400; line-height: 26px; color: #102A5F; }
+.pq-design .experience-copy { padding-top: 0; font-size: 22px; line-height: 31px; }
+.pq-design .experience-copy .eyebrow { margin: 0 0 40px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.07px; text-transform: uppercase; color: #FB7200; }
+.pq-design .experience-copy p { width: 791px; max-width: none; margin: 0; font-size: 22px; font-weight: 400; line-height: 31px; letter-spacing: -0.22px; color: #102A5F; }
+.pq-design .experience-photos { display: grid; grid-template-columns: 790px 563px; justify-content: space-between; margin-top: 28px; }
+.pq-design .experience-photos .exp-wind { width: 790px; height: 436px; max-width: none; object-fit: cover; border-radius: 20px; }
+.pq-design .exp-pipes { position: relative; width: 563px; height: 437px; border-radius: 20px; overflow: hidden; }
+.pq-design .exp-pipes img { position: absolute; width: 120.13%; height: 103.19%; max-width: none; left: -14.88%; top: -1.6%; object-fit: fill; border-radius: 0; }
+.pq-design .experience-ref { margin-top: 21px; }
+.pq-design .experience-ref .eyebrow { margin: 0 0 21px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.04px; text-transform: uppercase; color: #FB7200; }
+.pq-design .experience-ref h3 { margin: 0 0 18px; font-size: 30px; font-weight: 500; line-height: 1.219; letter-spacing: -0.01px; color: #102A5F; }
+.pq-design .experience-ref .ref-body { width: 1504px; max-width: none; margin: 0; font-size: 22px; font-weight: 400; line-height: 26px; letter-spacing: 0.93px; color: #102A5F; }
+.pq-design .experience-ref .ref-body + .ref-body { margin-top: 26px; }
+.pq-design .experience-ref h4 { margin: 21px 0 14px; font-size: 25px; font-weight: 600; line-height: 1.219; letter-spacing: -0.03px; color: #FB7200; }
+.pq-design .experience-ref h4.track { margin-top: 21px; }
+.pq-design .experience-ref .ref-detail { width: 1518px; max-width: none; margin: 0; font-size: 20px; font-weight: 400; line-height: 26px; letter-spacing: 0.93px; color: #102A5F; }
+.pq-design .experience-ref .ref-detail.track { letter-spacing: 0.89px; }
 .pq-design .why h2 { font-size: clamp(40px, 5.065vw, 97.25px) !important; line-height: 1.05 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
 .pq-design .industries { background: #fff !important; padding: 0 0 48px !important; }
 .pq-design .industries-head { background: #102A5F; height: 354px; padding: 60px 0 0; color: #fff; }
@@ -241,6 +265,18 @@
 .pq-design .workflow-grid h3, .pq-design .wf-img span { font-size: 30px !important; font-weight: 500 !important; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
+@media (max-width: 1700px) {
+  .pq-design .experience-box { padding: 48px 40px 40px; }
+  .pq-design .experience-intro { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr); column-gap: 32px; }
+  .pq-design .experience-heading p,
+  .pq-design .experience-copy p,
+  .pq-design .experience-ref .ref-body,
+  .pq-design .experience-ref .ref-detail { width: auto; }
+  .pq-design .experience.section h2 .line { white-space: normal; }
+  .pq-design .experience-photos { grid-template-columns: minmax(0, 790fr) minmax(0, 563fr); column-gap: 28px; justify-content: stretch; }
+  .pq-design .experience-photos .exp-wind { width: 100%; height: auto; aspect-ratio: 790 / 436; }
+  .pq-design .exp-pipes { width: 100%; height: auto; aspect-ratio: 563 / 437; }
+}
 @media (max-width: 1100px) {
   .pq-design .shell { width: min(92vw, 1000px); }
   .pq-design .nav.shell { left: 0; width: 100%; height: 80px !important; margin-top: 0; padding-left: 24px; padding-right: 24px; align-items: center; }
@@ -280,6 +316,18 @@
   .pq-design .promise-grid p { color: #fff !important; min-height: 0; margin-top: 12px !important; }
   .pq-design .promise-grid article:not(:last-child):before,
   .pq-design .promise-grid article:not(:last-child):after { display: none !important; }
+  .pq-design .experience-box { width: min(92vw, 1000px); padding: 40px 28px 36px; border-radius: 32px; }
+  .pq-design .experience-intro { grid-template-columns: 1fr; row-gap: 28px; }
+  .pq-design .experience-heading p,
+  .pq-design .experience-copy p,
+  .pq-design .experience-ref .ref-body,
+  .pq-design .experience-ref .ref-detail { width: auto; }
+  .pq-design .experience.section h2 .line { white-space: normal; }
+  .pq-design .experience-photos { grid-template-columns: 1fr; row-gap: 16px; }
+  .pq-design .experience-photos .exp-wind,
+  .pq-design .exp-pipes { width: 100%; height: auto; }
+  .pq-design .experience-photos .exp-wind { aspect-ratio: 790 / 436; }
+  .pq-design .exp-pipes { aspect-ratio: 563 / 437; }
   .pq-design .experience-heading h2 { font-size: 58px !important; }
   .pq-design .contact form { grid-template-columns: 1fr; }
 }

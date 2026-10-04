@@ -447,17 +447,38 @@ export function DesignHome() {
       </section>
 
       <section className='experience section' id='experience'>
-        <div className='shell experience-box'>
-          <div className='experience-heading'>
-            <h2>{tExp('title')}</h2>
+        <div className='experience-box'>
+          <div className='experience-intro'>
+            <div className='experience-heading'>
+              <h2>
+                <span className='line'>Track <span className='accent'>Record</span><span className='amp'> &</span></span>
+                <span className='line'>Industry <span className='accent'>Expertise</span></span>
+              </h2>
+              <p>{tExp('intro')}</p>
+            </div>
+            <div className='experience-copy'>
+              <p className='eyebrow'>{tExp('label')}</p>
+              <p>{tExp('paragraph1')}</p>
+              {tExp('paragraph2') ? <p>{tExp('paragraph2')}</p> : null}
+            </div>
           </div>
-          <div className='experience-copy'>
-            <p className='eyebrow left'>{tExp('label')}</p>
-            <p>{tExp('summary1')}</p>
-            <p>{tExp('summary2')}</p>
+          <div className='experience-photos'>
+            <img className='exp-wind' src='/design/figma/exp-wind.png' alt={tExp('imageAlt')} />
+            <div className='exp-pipes'>
+              <img src='/design/figma/exp-pipes.jpg' alt={tExp('industrialTitle')} />
+            </div>
           </div>
-          <img className='exp-a' src='/design/figma/photo-monopiles.png' alt={tExp('imageAlt')} />
-          <img className='exp-b' src='/design/figma/photo-offshore.png' alt={tExp('offshoreTitle')} />
+          <div className='experience-ref'>
+            <p className='eyebrow'>{tExp('referenceLabel')}</p>
+            <h3>{tExp('referenceTitle')}</h3>
+            {tExp('referenceText').split('\n\n').map((part) => (
+              <p className='ref-body' key={part}>{part}</p>
+            ))}
+            <h4>{tExp('scopeTitle')}</h4>
+            <p className='ref-detail'>{tExp('scopeText')}</p>
+            <h4 className='track'>{tExp('trackTitle')}</h4>
+            <p className='ref-detail track'>{tExp('trackText')}</p>
+          </div>
         </div>
       </section>
 
