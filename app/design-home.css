@@ -126,12 +126,12 @@
 .pq-design .industry-tabs button.active { font-weight: 700 !important; }
 .pq-design .industry-tabs button:last-child { border-bottom: 0; }
 .pq-design .industry-tabs button img { width: 8.35px; height: 13.67px; flex: none; }
-.pq-design .industry-card { position: relative; display: grid; grid-template-columns: 372px minmax(0, 1fr); column-gap: 42px; align-items: start; min-height: 429px; background: transparent; border-radius: 0; overflow: visible; }
-.pq-design .industry-card::before { content: ""; position: absolute; z-index: 0; top: 0; right: 0; left: 61px; height: 429px; background: #FAFBFC; border-radius: 54px; }
+.pq-design .industry-card { position: relative; display: grid; grid-template-columns: 413px minmax(0, 1fr); column-gap: 31px; align-items: start; min-height: 477px; background: transparent; border-radius: 0; overflow: visible; }
+.pq-design .industry-card::before { content: ""; position: absolute; z-index: 0; top: 0; right: 0; left: 61px; height: 477px; background: #FAFBFC; border-radius: 54px; }
 .pq-design .industry-photo, .pq-design .industry-copy { position: relative; z-index: 1; }
-.pq-design .industry-photo { height: 429px; border-radius: 20px; overflow: hidden; }
-.pq-design .industry-photo img { width: 100%; height: 352px; min-height: 0; object-fit: cover; object-position: center bottom; border-radius: 20px 20px 0 0; }
-.pq-design .industry-photo strong { left: 0; right: 0; bottom: 0; height: 113px; display: flex; align-items: center; justify-content: center; padding: 0; background: #102A5F; border-radius: 20px; color: #fff; font-size: 30px; font-weight: 500; letter-spacing: -0.07px; text-transform: uppercase; }
+.pq-design .industry-photo { height: 477px; border-radius: 20px; overflow: hidden; }
+.pq-design .industry-photo img { width: 100%; height: 391px; min-height: 0; object-fit: cover; object-position: center bottom; border-radius: 20px 20px 0 0; }
+.pq-design .industry-photo strong { left: 0; right: 0; bottom: 0; height: 125px; display: flex; align-items: center; justify-content: center; padding: 0; background: #102A5F; border-radius: 0 0 20px 20px; color: #fff; font-size: 30px; font-weight: 500; letter-spacing: -0.07px; text-transform: uppercase; }
 .pq-design .industry-copy { padding: 29px 0 0; }
 .pq-design .industry-copy h3 { margin: 0; font-size: 30px; font-weight: 500; line-height: 1.219; color: #102A5F; }
 .pq-design .industry-copy p { width: min(315px, 100%); margin: 23px 0 0; font-size: 17px; font-weight: 400; line-height: 1.219; color: #102A5F; }
