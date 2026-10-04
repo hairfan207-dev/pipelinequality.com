@@ -130,6 +130,7 @@ export function DesignHome() {
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
   const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[] }>;
+  const digitalCopy = tSmart('description').split(/(?=Together,|Gemeinsam )/).filter(Boolean).map((part) => part.trim());
   const reasons = tWhy.raw('reasons') as Reason[];
   const faqs = tFaq.raw('items') as Faq[];
 
@@ -563,10 +564,8 @@ export function DesignHome() {
       <section className='digital section' id='bw-digit'>
         <div className='digital-grid'>
           <div>
-            <h2>
-              <span className='line'>Quality Execution Meets</span>
-              <span className='line'><span>Digital</span> Intelligence</span>
-            </h2>
+            <h2><span>Digital</span> Quality</h2>
+            <p className='dig-lead'>{digitalCopy[0]}</p>
             <a className='btn btn-orange' href='#contact'>{tSmart('cta')}</a>
             <div className='dig-photo dig-engineer'>
               <img src='/design/figma/dig-engineer.jpg' alt={tSmart('docsAlt')} />
@@ -576,8 +575,8 @@ export function DesignHome() {
             <div className='dig-photo dig-quality'>
               <img src='/design/figma/dig-quality.png' alt={tSmart('fieldAlt')} />
             </div>
-            {tSmart('description').split(/(?=Together,|Gemeinsam )/).filter(Boolean).map((part) => (
-              <p key={part}>{part.trim()}</p>
+            {digitalCopy.map((part) => (
+              <p key={part}>{part}</p>
             ))}
           </div>
         </div>
