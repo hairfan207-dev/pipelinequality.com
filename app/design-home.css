@@ -294,8 +294,8 @@
 .pq-design .network-copy .lead { width: min(788px, 100%); max-width: 788px; margin: 15px 0 0 !important; font-size: 22px !important; font-weight: 400 !important; line-height: 26px !important; letter-spacing: 0.95px; color: #102A5F !important; }
 .pq-design .network-images .shot { position: absolute; max-width: none; }
 .pq-design .network-images .bottom-fade .shot { width: 120.19%; height: 225.22%; left: -20.19%; top: -71.75%; }
-.pq-design .network-images .top-solid .shot { top: 79px; left: -25.91%; width: 141.11%; height: 350px; }
-.pq-design .network-images .bottom-solid .shot { top: 0; left: 0; width: 100%; height: 350px; object-fit: cover; object-position: center bottom; }
+.pq-design .network-images .top-solid .shot { top: 79.43px; left: -25.91%; width: 141.11%; height: 349.57px; }
+.pq-design .network-images .bottom-solid .shot { top: 0; left: 0; width: 372px; height: 350px; object-fit: cover; object-position: center bottom; border-radius: 20px; }
 .pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .pq-design .network-images .shade { position: absolute; z-index: 1; left: 0; pointer-events: none; }
 .pq-design .network-images .bottom-fade .shade { bottom: 0; width: 371.56px; height: 81.16px; transform: rotate(180deg); }
@@ -303,13 +303,16 @@
 .pq-design .network-images .top-solid .shade { top: 0; width: 371.58px; height: 112.89px; }
 .pq-design .network-images .bottom-solid .shade { bottom: 0; width: 371.58px; height: 112.89px; transform: rotate(180deg); }
 .pq-design .network-images figcaption { z-index: 2; left: 0; right: 0; bottom: auto; background: none; display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 28px; color: #fff; font-size: 17px; font-weight: 400; line-height: 20.4px; letter-spacing: 0.3px; text-shadow: none; text-align: left; }
-.pq-design .network-images .bottom-fade figcaption,
-.pq-design .network-images .bottom-solid figcaption { top: auto; bottom: 18px; }
-.pq-design .network-images .top-fade figcaption,
-.pq-design .network-images .top-solid figcaption { top: 24px; }
+.pq-design .network-images .bottom-fade figcaption { top: auto; bottom: 18px; }
+.pq-design .network-images .top-fade figcaption { top: 24px; }
 .pq-design .network-images figcaption img { width: 30px; height: 30px; object-fit: contain; flex: none; }
-.pq-design .network-images .top-solid figcaption img { width: 22.72px; height: 30px; }
 .pq-design .network-images .top-fade figcaption img { width: 28.65px; height: 30px; }
+.pq-design .network-images .top-solid figcaption,
+.pq-design .network-images .bottom-solid figcaption { inset: 0; display: block; padding: 0; }
+.pq-design .network-images .top-solid figcaption img { position: absolute; left: 49.27px; top: 27.05px; width: 22.72px; height: 30px; }
+.pq-design .network-images .top-solid figcaption > span { position: absolute; left: 88.78px; top: 21.55px; width: 235px; height: 41px; }
+.pq-design .network-images .bottom-solid figcaption img { position: absolute; left: 72px; top: 376px; width: 30px; height: 30px; }
+.pq-design .network-images .bottom-solid figcaption > span { position: absolute; left: 120.41px; top: 368.13px; width: 179px; height: 41px; }
 .pq-design .network-list { margin-top: 43px; margin-left: 44px; background: transparent; border-radius: 0; padding: 0; }
 .pq-design .network-list h3 { color: #FB7200 !important; font-size: 40px !important; font-weight: 600 !important; letter-spacing: 0; text-transform: uppercase; margin: 0 0 46px !important; }
 .pq-design .network-list .cols { grid-template-columns: 328px minmax(0, 1fr); gap: 0; }
