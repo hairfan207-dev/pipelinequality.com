@@ -61,7 +61,24 @@
 .pq-design .round-icon img { width: auto; height: 60px; max-width: none; object-fit: contain; }
 .pq-design .acc-icon { background: transparent !important; padding: 0; }
 .pq-design .acc-icon img { width: 48px; height: 48px; object-fit: contain; }
-.pq-design .process-strip { display: block; width: calc(100% - 16px); height: auto; margin: 14px auto 0; }
+.pq-design .process { background: #fff !important; padding-top: 59px !important; padding-bottom: 36px !important; }
+.pq-design .process h2 { width: min(640px, 100%); font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; margin: 0 auto 22px !important; }
+.pq-design .process h2 span { display: block; margin-top: 7px; }
+.pq-design .process .lead { max-width: 958px; font-size: 22px !important; font-weight: 400 !important; line-height: 24px !important; letter-spacing: 0.94px; }
+.pq-design .process-cards { margin-top: 72px; grid-template-columns: minmax(0, 1fr) 77px minmax(0, 1fr) 77px minmax(0, 1fr); justify-content: center; align-items: start; }
+.pq-design .process-card { background: transparent; padding: 0; border-radius: 0; }
+.pq-design .process-card .pic { height: 324px; border-radius: 20px; }
+.pq-design .process-card .pic strong { left: 38px; bottom: 22px; font-size: 30px; font-weight: 500; letter-spacing: 0; text-transform: uppercase; }
+.pq-design .process-card:nth-child(1) .pic img { object-position: 28% center; }
+.pq-design .process-card:nth-child(3) .pic img { object-position: center 18%; }
+.pq-design .strip-clip { margin-top: 18px; }
+.pq-design .process-strip { display: block; width: 100%; height: 60px; margin: 0 auto 8px; object-fit: contain; object-position: center top; }
+.pq-design .strip-clip.tall { height: 64px; overflow: hidden; }
+.pq-design .strip-clip.tall .process-strip { height: 189px; margin: -72px 0 0; object-fit: fill; }
+.pq-design .process-labels { display: flex; justify-content: space-between; gap: 6px; }
+.pq-design .process-labels span { flex: 1; font-size: 12px; line-height: 1.219; font-weight: 400; color: #000; text-align: center; }
+.pq-design .process .connector { width: 77px; height: 34px; margin-top: 145px; background: none; border-radius: 0; overflow: visible; }
+.pq-design .process .connector img { width: 112px; height: 34px; max-width: none; margin-left: -17px; }
 .pq-design .connector { width: auto; height: auto; background: none; border-radius: 0; }
 .pq-design .connector img { width: 86px; height: auto; }
 .pq-design .standard-grid article > div img { width: 64px; height: 64px; object-fit: contain; }
@@ -88,7 +105,6 @@
 .pq-design .services-grid h2 .svc-line + .svc-line { margin-top: 7px; }
 .pq-design .services-grid h2 .svc-line span { color: #FB7200 !important; letter-spacing: 0.97px; }
 .pq-design .network-copy h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
-.pq-design .process h2,
 .pq-design .digital h2,
 .pq-design .faq h2,
 .pq-design .contact h2,
@@ -181,6 +197,8 @@
   .pq-design .hero { height: 760px !important; }
   .pq-design .services-grid { grid-template-columns: 1fr; gap: 32px; }
   .pq-design .feature-image > img { height: 420px; }
+  .pq-design .process-cards { grid-template-columns: 1fr; }
+  .pq-design .process .connector { margin-top: 0; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
   .pq-design .hero-copy h1 { font-size: 58px !important; }

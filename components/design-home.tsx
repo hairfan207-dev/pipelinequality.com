@@ -25,9 +25,9 @@ const industryPhotos = [
 ];
 const serviceOrder = [0, 2, 1, 3];
 const processPhotos = [
-  '/design/figma/photo-welding.png',
-  '/design/figma/photo-clipboard.png',
-  '/design/figma/photo-team.png',
+  '/design/figma/handover-field.png',
+  '/design/figma/handover-quality.png',
+  '/design/figma/handover-project.png',
 ];
 const networkPhotos = [
   { src: '/design/figma/photo-team.png', role: 7 },
@@ -78,9 +78,9 @@ const servicePhotos = [
   '/design/figma/photo-team.png',
 ];
 const processStrips = [
-  '/design/figma/strip-field.png',
-  '/design/figma/strip-quality.png',
-  '/design/figma/strip-project.png',
+  '/design/figma/handover-icons-field.png',
+  '/design/figma/handover-icons-quality.svg',
+  '/design/figma/handover-icons-project.svg',
 ];
 const standardIcons = [
   '/design/figma/std-hardhat.png',
@@ -293,10 +293,8 @@ export function DesignHome() {
 
       <section className='process section' id='process'>
         <div className='shell center'>
-          <p className='eyebrow'>{tField('label')}</p>
           <h2>
             From Field Data to
-            <br />
             <span>Final Handover</span>
           </h2>
           <p className='lead centered'>{tField('lead')}</p>
@@ -308,9 +306,16 @@ export function DesignHome() {
                     <img src={processPhotos[index]} alt={stage.title} />
                     <strong>{stage.title}</strong>
                   </div>
-                  <img className='process-strip' src={processStrips[index]} alt='' />
+                  <div className={`strip-clip${index === 0 ? '' : ' tall'}`}>
+                    <img className='process-strip' src={processStrips[index]} alt='' />
+                  </div>
+                  <div className='process-labels'>
+                    {stage.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
                 </article>
-                {index < stages.length - 1 ? <div className='connector'><img src='/design/figma/connector.png' alt='' /></div> : null}
+                {index < stages.length - 1 ? <div className='connector'><img src='/design/figma/handover-connector.svg' alt='' /></div> : null}
               </Fragment>
             ))}
           </div>
