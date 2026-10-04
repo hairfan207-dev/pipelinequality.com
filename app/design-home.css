@@ -342,7 +342,8 @@
 .pq-design .faq.section { margin-top: 41px; padding: 0; }
 .pq-design .faq.section h2 { width: min(892px, calc(100% - 48px)); margin: 0 auto !important; text-align: center; color: #102A5F !important; font-size: 60px !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.97px; }
 .pq-design .faq.section h2 span { color: #FB7200 !important; letter-spacing: 0; }
-.pq-design .faq.section .faq-box { width: 826px; height: 372px; margin: 85px 0 0 calc(50% - 421.72px); background: #F4F7F9; border-radius: 20px; padding: 46px 0 0 62px; }
+.pq-design .faq-lead { width: min(1180px, calc(100% - 80px)); margin: 2px auto 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.89px; text-align: center; color: #102A5F; }
+.pq-design .faq.section .faq-box { width: 826px; height: 372px; margin: 34px 0 0 calc(50% - 421.72px); background: #F4F7F9; border-radius: 20px; padding: 46px 0 0 62px; }
 .pq-design .faq.section .faq-item { position: relative; height: 49px; border: 0; }
 .pq-design .faq.section .faq-item:last-child { height: auto; }
 .pq-design .faq.section .faq-item button { width: 100%; height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; }

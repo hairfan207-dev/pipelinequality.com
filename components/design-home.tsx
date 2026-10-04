@@ -611,6 +611,7 @@ export function DesignHome() {
 
       <section className='faq section'>
         <h2>Frequently Asked <span>Questions</span></h2>
+        <p className='faq-lead'>{tContact('description')}</p>
         <div className='faq-box'>
           {faqs.map((faq, index) => (
             <div key={faq.question} className={`faq-item${faqOpen === index ? ' open' : ''}`}>
