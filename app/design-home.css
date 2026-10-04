@@ -130,9 +130,9 @@
 .pq-design .competence-card p { width: min(633px, 100%); margin: 39px 0 0 !important; font-size: 22px !important; font-weight: 400 !important; line-height: 26px !important; letter-spacing: 0.95px; color: #fff; }
 .pq-design .competence-card p + p { width: min(589px, 100%); margin-top: 20px !important; }
 .pq-design .competence-card p.note { width: auto; margin-top: 23px !important; font-size: 18px !important; line-height: 1.219 !important; }
-.pq-design .competence .quality-badge { width: 251px; height: 186px; margin: 0; align-self: flex-end; background: rgba(255,255,255,.95); border: 0; border-radius: 20px; padding: 29px 0 0 43px; color: #102A5F; font-size: 30px; font-weight: 700; line-height: 1.219 !important; letter-spacing: -0.02px; text-align: left; }
+.pq-design .competence .quality-badge { width: 251px; height: 186px; margin: 0; align-self: flex-end; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,.95); border: 0; border-radius: 20px; padding: 0; color: #102A5F; font-size: 30px; font-weight: 700; line-height: 1.219 !important; letter-spacing: -0.02px; text-align: center; }
 .pq-design .competence .quality-badge span { display: block; }
-.pq-design .competence .quality-badge span + span { margin-top: 8px; }
+.pq-design .competence .quality-badge span + span { margin-top: 0; }
 .pq-design .process h2 span,
 .pq-design .competence-card h2 span,
 .pq-design .industries-head h2 span { color: #FB7200 !important; }
