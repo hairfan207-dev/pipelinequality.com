@@ -15,12 +15,12 @@ type Faq = { question: string; answer: string };
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
   '/design/figma/industry-wind.png',
-  '/design/figma/photo-pipes.jpg',
+  '/design/figma/industry-pipeline.webp',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
-  '/design/figma/photo-sunset.png',
+  '/design/figma/industry-energy.webp',
   '/client/industry-epc.jpg',
-  '/design/figma/photo-helmet.png',
+  '/design/figma/industry-construction.webp',
   '/client/industry-maintenance.jpg',
 ];
 const serviceOrder = [0, 2, 1, 3];
