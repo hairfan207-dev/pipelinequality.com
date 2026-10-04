@@ -106,6 +106,7 @@ export function DesignHome() {
   const tWork = useTranslations('workProcess');
   const tSmart = useTranslations('smartQAQC');
   const tDigital = useTranslations('digitalQuality');
+  const tPartners = useTranslations('partners');
   const tWhy = useTranslations('why');
   const tFaq = useTranslations('faq');
   const tContact = useTranslations('contact');
@@ -567,6 +568,17 @@ export function DesignHome() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className='partners section' id='partners'>
+        <p className='eyebrow'>{tPartners('label')}</p>
+        <h2>
+          <span className='line'>We Do Not Reinvent Good Technology</span>
+          <span className='line'>We Connect It</span>
+        </h2>
+        <p className='partners-lead'>{tPartners('paragraph1')}</p>
+        <p className='partners-note'>{tPartners('paragraph2')}</p>
+        <a className='btn btn-orange' href='#contact'>{tPartners('cta')}</a>
       </section>
 
       <section className='why section'>

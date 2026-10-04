@@ -312,6 +312,14 @@
 .pq-design .support-row h3 { margin: 0; font-size: 30px; font-weight: 700; line-height: 1.219; color: #102A5F; }
 .pq-design .support-row.active h3 { font-size: 40px; color: #FB7200; }
 .pq-design .support-row p { width: 304px; margin: 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.14px; color: #102A5F; }
+.pq-design .partners.section { background: #F4F7F9; margin-top: 71px; padding: 45px 0 43px; text-align: center; }
+.pq-design .partners.section .eyebrow { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.02px; text-transform: uppercase; color: #FB7200; }
+.pq-design .partners.section h2 { width: min(1187px, calc(100% - 80px)); margin: 23px auto 0 !important; color: #102A5F !important; font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: -0.02px; text-align: center; }
+.pq-design .partners.section h2 .line { display: block; color: #102A5F !important; }
+.pq-design .partners.section h2 .line + .line { margin-top: 7px; color: #FB7200 !important; letter-spacing: 0; }
+.pq-design .partners-lead { width: min(1248px, calc(100% - 80px)); margin: 23px auto 0; font-size: 22px; font-weight: 400; line-height: 26px; color: #102A5F; }
+.pq-design .partners-note { width: min(1032px, calc(100% - 80px)); margin: 23px auto 0; font-size: 22px; font-weight: 400; line-height: 30px; color: #102A5F; }
+.pq-design .partners .btn-orange { width: 388px; max-width: calc(100% - 48px); height: 56px; min-width: 0; min-height: 0; margin-top: 23px; border: 1px solid #FB7200; border-radius: 8px; background: #FB7200; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.2; letter-spacing: 0; text-transform: uppercase; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1700px) {
@@ -399,7 +407,8 @@
   .pq-design .hero-copy h2 { font-size: 31px !important; }
   .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
   .pq-design .digital.section h2 { font-size: 38px !important; }
-  .pq-design .digital .btn-orange { width: 100%; }
+  .pq-design .digital .btn-orange,
+  .pq-design .partners .btn-orange { width: 100%; }
   .pq-design .services-grid h2, .pq-design .network-copy h2, .pq-design .digital h2 { font-size: 38px !important; }
   .pq-design .network-images { grid-template-columns: 1fr; }
   .pq-design .network-list .cols { grid-template-columns: 1fr; }
