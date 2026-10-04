@@ -132,7 +132,7 @@
 .pq-design .service-accordion .acc-panel li { font-size: 16px !important; line-height: 1.14 !important; padding: 0 0 10px !important; color: #000 !important; }
 .pq-design .feature-image { border-radius: 20px !important; margin-top: 18px; }
 .pq-design .feature-image > img { height: 761px; border-radius: 20px; object-fit: cover; }
-.pq-design .services-grid > div:first-child { container-type: inline-size; }
+.pq-design .services-grid > div:first-child { container-type: inline-size; min-height: 761px; }
 .pq-design .services-grid h2,
 .pq-design .services-grid h2 .svc-line { color: #102A5F !important; }
 .pq-design .services-grid h2 { display: flex; flex-direction: column; align-items: flex-start; gap: 0; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0; margin: 0 !important; }
@@ -183,7 +183,7 @@
 .pq-design .industry-tabs button.active { font-weight: 700 !important; }
 .pq-design .industry-tabs button:last-child { border-bottom: 0; }
 .pq-design .industry-tabs button img { width: 8.35px; height: 13.67px; flex: none; }
-.pq-design .industry-card { position: relative; display: grid; grid-template-columns: 413px minmax(0, 1fr); column-gap: 31px; align-items: start; min-height: 477px; background: transparent; border-radius: 0; overflow: visible; }
+.pq-design .industry-card { position: relative; display: grid; grid-template-columns: 413px minmax(0, 1fr); column-gap: 31px; align-items: start; height: 477px; min-height: 477px; background: transparent; border-radius: 0; overflow: hidden; }
 .pq-design .industry-card::before { content: ""; position: absolute; z-index: 0; top: 0; right: 0; left: 61px; height: 477px; background: #FAFBFC; border-radius: 54px; }
 .pq-design .industry-photo, .pq-design .industry-copy { position: relative; z-index: 1; }
 .pq-design .industry-photo { height: 477px; border-radius: 20px; overflow: hidden; }
@@ -382,7 +382,7 @@
 .pq-design .support-list { padding-top: 8px; }
 .pq-design .support-list .eyebrow { margin: 0 0 22px 51px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.04px; text-transform: uppercase; color: #FB7200; }
 .pq-design .support-row { display: grid; grid-template-columns: 456px minmax(0, 304px); justify-content: start; align-items: center; gap: 0; min-height: 38px; margin: 0 0 40px; padding-left: 51px; border-radius: 12px 0 0 12px; background: transparent; cursor: pointer; transition: background-color 0.28s ease, min-height 0.28s ease, margin-bottom 0.28s ease; }
-.pq-design .support-row.active { min-height: 83px; margin-bottom: 27px; background: #F4F7F9; }
+.pq-design .support-row.active { min-height: 78px; margin-bottom: 0; background: #F4F7F9; }
 .pq-design .support-row h3 { margin: 0; font-size: 30px; font-weight: 700; line-height: 1.219; color: #102A5F; transition: color 0.28s ease, font-size 0.28s ease; }
 .pq-design .support-row.active h3 { font-size: 40px; color: #FB7200; }
 .pq-design .support-row p { width: 304px; max-height: 0; margin: 0; overflow: hidden; opacity: 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.14px; color: #102A5F; transition: opacity 0.28s ease, max-height 0.28s ease; }
@@ -423,21 +423,15 @@
 .pq-design .faq.section h2 { width: min(892px, calc(100% - 48px)); margin: 0 auto !important; text-align: center; color: #102A5F !important; font-size: 60px !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.97px; }
 .pq-design .faq.section h2 span { color: #FB7200 !important; letter-spacing: 0; }
 .pq-design .faq-lead { width: min(1180px, calc(100% - 80px)); margin: 2px auto 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.89px; text-align: center; color: #102A5F; }
-.pq-design .faq.section .faq-box { width: 826px; height: 372px; margin: 34px 0 0 calc(50% - 421.72px); background: #F4F7F9; border-radius: 20px; padding: 46px 0 0 62px; }
-.pq-design .faq.section .faq-box:has(.faq-item.open),
-.pq-design .faq.section .faq-box:has(.faq-item:hover) { height: auto; padding-bottom: 24px; }
+.pq-design .faq.section .faq-box { width: 826px; height: 460px; margin: 34px 0 0 calc(50% - 421.72px); background: #F4F7F9; border-radius: 20px; padding: 46px 0 0 62px; overflow: hidden; }
 .pq-design .faq.section .faq-item { position: relative; height: auto; min-height: 49px; border: 0; }
 .pq-design .faq.section .faq-item:last-child { min-height: 0; }
 .pq-design .faq.section .faq-item button { width: calc(100% - 48px); height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; transition: color 0.28s ease; }
-.pq-design .faq.section .faq-item:hover button,
 .pq-design .faq.section .faq-item.open button { color: #FB7200; }
-.pq-design .faq.section .faq-box:has(.faq-item:hover) .faq-item.open:not(:hover) button { color: #102A5F; }
 .pq-design .faq.section .faq-divider { position: absolute; left: -14px; top: 11px; width: 705.08px; height: 14px; max-width: none; object-fit: none; object-position: left top; pointer-events: none; }
 .pq-design .faq.section .faq-item:not(:last-child)::after { content: ""; position: absolute; left: -14px; bottom: 11px; width: 705.08px; height: 1px; background: rgba(16, 42, 95, 0.2); pointer-events: none; }
 .pq-design .faq.section .faq-item p { display: block; width: 640px; max-width: calc(100% - 48px); max-height: 0; margin: 0; padding: 0; overflow: hidden; opacity: 0; text-align: left; font-size: 16px; line-height: 1.45; color: #102A5F; transition: max-height 0.28s ease, opacity 0.28s ease, padding 0.28s ease; }
-.pq-design .faq.section .faq-item.open p,
-.pq-design .faq.section .faq-item:hover p { max-height: 160px; opacity: 1; padding: 14px 0 28px; }
-.pq-design .faq.section .faq-box:has(.faq-item:hover) .faq-item.open:not(:hover) p { max-height: 0; opacity: 0; padding: 0; }
+.pq-design .faq.section .faq-item.open p { max-height: 160px; opacity: 1; padding: 14px 0 28px; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1700px) {

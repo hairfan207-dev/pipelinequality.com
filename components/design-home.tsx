@@ -661,7 +661,11 @@ export function DesignHome() {
         <p className='faq-lead'>{tContact('description')}</p>
         <div className='faq-box'>
           {faqs.map((faq, index) => (
-            <div key={faq.question} className={`faq-item${faqOpen === index ? ' open' : ''}`}>
+            <div
+              key={faq.question}
+              className={`faq-item${faqOpen === index ? ' open' : ''}`}
+              onMouseEnter={() => setFaqOpen(index)}
+            >
               <button type='button' onClick={() => setFaqOpen(faqOpen === index ? null : index)}>
                 {faq.question}
               </button>
