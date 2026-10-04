@@ -188,7 +188,20 @@
 .pq-design .network-grid { grid-template-columns: 785px minmax(0, 1fr); gap: 36px; align-items: start; }
 .pq-design .network-images { margin-top: 23px; grid-template-columns: 372px 372px; gap: 43px 41px; }
 .pq-design .network-images figure { height: 429px; border-radius: 20px; margin: 0; }
-.pq-design .footer { background: #032855 !important; }
+.pq-design .footer { position: relative; height: 259px; margin: 0; padding: 0; background: #032855 !important; border-top: 0; color: #A6BDCF; }
+.pq-design .footer-brand { position: absolute; left: 135px; top: 44px; margin: 0; font: 600 15px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 5.31px; text-transform: uppercase; color: #fff; }
+.pq-design .footer-desc { position: absolute; left: 135px; top: 87px; width: 528px; margin: 0; font: 400 16px/23px Montserrat, Arial, sans-serif; letter-spacing: -0.54px; color: #A6BDCF; }
+.pq-design .footer-links { position: absolute; left: 135px; top: 179px; display: flex; gap: 37px; margin: 0; font: 700 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 1.12px; text-transform: uppercase; color: #A6BDCF; }
+.pq-design .footer-links a { color: #A6BDCF; }
+.pq-design .footer-copy { position: absolute; left: 134px; top: 219px; margin: 0; font: 400 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.11px; color: #FF7700; }
+.pq-design .footer-locale { position: absolute; right: 134px; top: 152px; display: flex; align-items: center; gap: 27px; margin: 0; }
+.pq-design .footer-locale span { font: 400 14px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.57px; color: #A6BDCF; }
+.pq-design .footer-lang { border: 0; background: transparent; padding: 0; font: 700 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.5px; color: #A6BDCF; cursor: pointer; }
+.pq-design .footer-lang.on { color: #FF7700; letter-spacing: 0; }
+.pq-design .footer-note { position: absolute; right: 134px; top: 176px; margin: 0; font: 400 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.65px; color: #799AAF; }
+.pq-design .footer-note span { margin-right: 16px; font-weight: 500; letter-spacing: -0.69px; color: #A6BDCF; }
+.pq-design .footer-legal { position: absolute; right: 134px; top: 230px; display: flex; gap: 35px; font: 700 11px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.7px; text-transform: uppercase; }
+.pq-design .footer-legal a { color: #A6BDCF; }
 .pq-design .acc-item button { font: 500 30px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
 .pq-design .acc-chevron { display: inline-block; transition: transform 180ms ease; }
@@ -210,7 +223,7 @@
   .pq-design .acc-panel, .pq-design .acc-chevron, .pq-design .feature-image img, .pq-design .feature-image .image-caption, .pq-design .industry-photo img, .pq-design .industry-photo strong, .pq-design .industry-copy { transition: none !important; animation: none !important; }
 }
 .pq-design .wf-img span { top: auto !important; bottom: 0 !important; }
-.pq-design .contact.section { margin-top: 34px; padding: 0 0 48px; text-align: center; }
+.pq-design .contact.section { margin-top: 34px; padding: 0 0 44px; text-align: center; }
 .pq-design .contact.section h2 { width: max-content; max-width: calc(100% - 48px); margin: 0 auto !important; color: #102A5F !important; font-size: 60px !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.2px; white-space: nowrap; }
 .pq-design .contact.section h2 span { color: #FB7200 !important; letter-spacing: -0.01px; }
 .pq-design .contact form { width: min(826px, calc(100% - 48px)); margin: 25px auto 0 !important; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 34px; text-align: left; }
@@ -391,6 +404,22 @@
   .pq-design .exp-pipes { width: 100%; height: auto; aspect-ratio: 563 / 437; }
 }
 @media (max-width: 1100px) {
+  .pq-design .footer { height: auto; padding: 40px 24px 32px; }
+  .pq-design .footer-brand,
+  .pq-design .footer-desc,
+  .pq-design .footer-links,
+  .pq-design .footer-copy,
+  .pq-design .footer-locale,
+  .pq-design .footer-note,
+  .pq-design .footer-legal { position: static; left: auto; right: auto; top: auto; width: auto; max-width: 100%; }
+  .pq-design .footer-desc,
+  .pq-design .footer-links,
+  .pq-design .footer-copy,
+  .pq-design .footer-locale,
+  .pq-design .footer-note,
+  .pq-design .footer-legal { margin-top: 16px; }
+  .pq-design .footer-links,
+  .pq-design .footer-legal { flex-wrap: wrap; }
   .pq-design .faq.section .faq-box { width: min(826px, calc(100% - 48px)); height: auto; margin: 48px auto 0; padding: 28px 24px 20px; }
   .pq-design .faq.section .faq-divider { display: none; }
   .pq-design .faq.section .faq-item { height: auto; padding: 12px 0; border-bottom: 1px solid rgba(16, 42, 95, 0.2); }

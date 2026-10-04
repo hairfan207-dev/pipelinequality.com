@@ -631,42 +631,25 @@ export function DesignHome() {
       </section>
 
       <footer className='footer'>
-        <div className='shell footer-grid'>
-          <div>
-            <a className='brand footer-brand' href='#top'>
-              <img className='brand-logo' src='/logo-mark-white.png' alt='' />
-              <span className='brand-copy'>
-                <b>PIPELINE</b>
-                <em>QUALITY</em>
-              </span>
-            </a>
-            <p>{tFooter('description')}</p>
-            <div className='footer-links'>
-              <a href='#services'>{tNav('services')}</a> <i>·</i>{' '}
-              <a href='#industries'>{tNav('industries')}</a> <i>·</i>{' '}
-              <a href='#experience'>{tNav('experience')}</a> <i>·</i>{' '}
-              <a href='#contact'>{tNav('contact')}</a>
-            </div>
-          </div>
-          <div className='footer-right'>
-            <p>
-              {tFooter('location')} &nbsp; | &nbsp;
-              <button type='button' className='lang-btn' onClick={() => switchLocale('en')}>EN</button>
-              {' / '}
-              <button type='button' className='lang-btn' onClick={() => switchLocale('de')}>DE</button>
-            </p>
-            <p>{tFooter('brandNote')}</p>
-          </div>
+        <p className='footer-brand'>Pipeline Quality</p>
+        <p className='footer-desc'>{tFooter('description')}</p>
+        <nav className='footer-links'>
+          <a href='#services'>{tNav('services')}</a>
+          <a href='#industries'>{tNav('industries')}</a>
+          <a href='#experience'>{tNav('experience')}</a>
+          <a href='#contact'>{tNav('contact')}</a>
+        </nav>
+        <p className='footer-copy'>{tFooter('copyright')}</p>
+        <div className='footer-locale'>
+          <span>{tFooter('location')}</span>
+          <button type='button' className={locale === 'en' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('en')}>EN</button>
+          <button type='button' className={locale === 'de' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('de')}>DE</button>
         </div>
-        <div className='shell footer-bottom'>
-          <span>{tFooter('copyright')}</span>
-          <div>
-            <a href='/privacy'>{tFooter('privacyPolicy')}</a>
-            {' · '}
-            <a href={locale === 'de' ? '/agb' : '/terms'}>{tFooter('terms')}</a>
-            {' · '}
-            <a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a>
-          </div>
+        <p className='footer-note'><span>Pipeline Quality</span> a brand of Backpack Wander GmbH</p>
+        <div className='footer-legal'>
+          <a href='/privacy'>{tFooter('privacyPolicy')}</a>
+          <a href={locale === 'de' ? '/agb' : '/terms'}>{tFooter('terms')}</a>
+          <a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a>
         </div>
       </footer>
     </div>
