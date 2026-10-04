@@ -310,9 +310,9 @@
 .pq-design .network-images .top-solid figcaption,
 .pq-design .network-images .bottom-solid figcaption { inset: 0; display: block; padding: 0; }
 .pq-design .network-images .top-solid figcaption img { position: absolute; left: 49.27px; top: 27.05px; width: 22.72px; height: 30px; }
-.pq-design .network-images .top-solid figcaption > span { position: absolute; left: 88.78px; top: 21.55px; width: 235px; height: 41px; }
+.pq-design .network-images .top-solid figcaption > span { position: absolute; left: 88.78px; top: 21.55px; width: 235px; height: 41px; white-space: nowrap; }
 .pq-design .network-images .bottom-solid figcaption img { position: absolute; left: 72px; top: 376px; width: 30px; height: 30px; }
-.pq-design .network-images .bottom-solid figcaption > span { position: absolute; left: 120.41px; top: 368.13px; width: 179px; height: 41px; }
+.pq-design .network-images .bottom-solid figcaption > span { position: absolute; left: 120.41px; top: 368.13px; width: 179px; height: 41px; white-space: nowrap; }
 .pq-design .network-list { margin-top: 43px; margin-left: 44px; background: transparent; border-radius: 0; padding: 0; }
 .pq-design .network-list h3 { color: #FB7200 !important; font-size: 40px !important; font-weight: 600 !important; letter-spacing: 0; text-transform: uppercase; margin: 0 0 46px !important; }
 .pq-design .network-list .cols { grid-template-columns: 328px minmax(0, 1fr); gap: 0; }
