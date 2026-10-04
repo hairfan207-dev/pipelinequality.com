@@ -60,13 +60,19 @@ const pillarIcons = [
   '/design/figma/icon-coordinated.svg',
 ];
 const serviceIcons = [
-  '/design/figma/svc-qaqc.png',
-  '/design/figma/svc-inspect.png',
-  '/design/figma/svc-docs.png',
-  '/design/figma/svc-project.png',
+  '/design/figma/svc-qaqc.svg',
+  '/design/figma/svc-inspect.svg',
+  '/design/figma/svc-docs.svg',
+  '/design/figma/svc-project.svg',
+];
+const serviceCaptionIcons = [
+  '/design/figma/svc-qaqc-on.svg',
+  '/design/figma/svc-inspect.svg',
+  '/design/figma/svc-docs.svg',
+  '/design/figma/svc-project.svg',
 ];
 const servicePhotos = [
-  '/design/figma/photo-qaqc.png',
+  '/design/figma/photo-measure.png',
   '/design/figma/photo-welding.png',
   '/design/figma/photo-engineers.png',
   '/design/figma/photo-team.png',
@@ -259,12 +265,12 @@ export function DesignHome() {
                     <div className='acc-panel'>
                       <div className='acc-panel-inner'>
                         <ul>
-                          {block.items.slice(0, Math.ceil(block.items.length / 2)).map((item) => (
+                          {block.items.slice(Math.ceil(block.items.length / 2)).map((item) => (
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
                         <ul>
-                          {block.items.slice(Math.ceil(block.items.length / 2)).map((item) => (
+                          {block.items.slice(0, Math.ceil(block.items.length / 2)).map((item) => (
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
@@ -278,7 +284,8 @@ export function DesignHome() {
           <div className='feature-image'>
             <img key={serviceOpen} src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
             <div className='image-caption' key={`cap-${serviceOpen}`}>
-              <span>●</span> {blocks[Math.max(serviceOpen, 0)]?.title}
+              <img src={serviceCaptionIcons[Math.max(serviceOpen, 0)]} alt='' />
+              {blocks[Math.max(serviceOpen, 0)]?.title}
             </div>
           </div>
         </div>
