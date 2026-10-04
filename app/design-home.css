@@ -349,7 +349,7 @@
 .pq-design .standard-grid p span { display: block; }
 .pq-design .standard-grid article:nth-child(5) p { margin-top: 15px; }
 .pq-design .why-box h3 { font-size: 30px !important; font-weight: 700 !important; }
-.pq-design .workflow.section { background: #fff; border-top: 0; padding: 50px 0 0; }
+.pq-design .workflow.section { background: #fff; border-top: 0; padding: 50px 0 72px; }
 .pq-design .workflow .eyebrow { margin: 0 0 16px; text-align: center; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.01px; text-transform: uppercase; color: #FB7200; }
 .pq-design .workflow.section h2 { width: min(1032px, calc(100% - 48px)); margin: 0 auto 60px !important; text-align: center; color: #102A5F !important; font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: -0.006px; }
 .pq-design .workflow-grid { width: min(1650px, calc(100% - 270px)); margin: 0 auto; display: grid; grid-template-columns: repeat(5, 302.1px); justify-content: space-between; gap: 0; }
@@ -360,6 +360,7 @@
 .pq-design .workflow article.down .wf-card strong { bottom: 0; }
 .pq-design .workflow article.up .wf-card strong { top: 0; }
 .pq-design .workflow-grid p { margin: 28px 0 0; text-align: center; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 1.02px; color: #102A5F; }
+.pq-design .workflow-grid article:nth-child(4) p { width: 312px; margin-left: -5px; }
 .pq-design .digital.section { background: #fff; border-top: 4px solid #FB7200; border-bottom: 4px solid #FB7200; padding: 80px 0 86px; }
 .pq-design .digital-grid { width: min(1649px, calc(100% - 270px)); margin: 0 auto; display: grid; grid-template-columns: 784px 784px; justify-content: space-between; align-items: start; gap: 0; }
 .pq-design .digital.section h2 { width: min(753px, 100%); margin: 0 !important; color: #102A5F !important; font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: -0.003px; }
