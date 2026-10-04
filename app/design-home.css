@@ -19,9 +19,9 @@
 
 .pq-design .brand-logo{height:54px;width:auto}
 .pq-design .menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;padding:8px 12px;font:700 11px Montserrat;letter-spacing:.12em}
-.pq-design .nav-links.is-open{display:flex;flex-direction:column;position:absolute;top:90px;right:7vw;background:#08316b;padding:18px 22px;gap:16px;z-index:5}
+.pq-design .nav-links.is-open{display:flex;flex-direction:column;position:absolute;top:90px;right:7vw;left:auto;margin-left:0;background:#08316b;padding:18px 22px;gap:16px;z-index:5;width:max-content;height:auto}
 .pq-design .lang-btn{border:0;background:transparent;color:#FB7200;font:700 11px Montserrat;letter-spacing:.14em;cursor:pointer}
-.pq-design .nav-links .lang-btn{box-sizing:border-box;height:38px;padding:0 12px;border:1px solid #FB7200;background:rgba(255,255,255,.6);color:#FB7200;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:13px;letter-spacing:1.82px}
+.pq-design .nav-links .lang-btn{box-sizing:border-box;width:126.5px;height:38px;margin-left:4px;padding:0;border:1px solid #FB7200;background:rgba(255,255,255,.5);color:#FB7200;border-radius:0;display:inline-flex;align-items:center;justify-content:center;line-height:19.5px;font-size:13px;font-weight:600;letter-spacing:1.82px}
 @media(max-width:1100px){.pq-design .menu-btn{display:inline-flex}}
 
 /* Lock the supplied design scale over the site's global type rules */
@@ -35,17 +35,23 @@
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .shell { width: min(1648px, calc(100% - 272px)); }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; }
-.pq-design .nav.shell { position: relative; left: -2.916667vw; width: 105.989583vw; max-width: none; height: 99px !important; padding-left: 10vw; padding-right: 10vw; box-sizing: border-box; align-items: flex-start; background: linear-gradient(90deg, rgba(1,42,96,.55) 0%, rgba(1,42,96,.25) 55%, rgba(1,42,96,0) 100%); }
-.pq-design .nav .brand { width: 194.44px; height: 56px; margin-top: 32px; gap: 14px; flex: none; }
-.pq-design .nav .brand-logo { height: 56px; width: auto; }
-.pq-design .nav .brand-copy { white-space: nowrap; }
-.pq-design .nav-links { position: absolute; top: 40px; right: 18.8914%; left: auto; width: max-content; max-width: calc(100% - 10vw - 220px); min-width: 0; height: 40px; margin-top: 0; padding-left: 0; box-sizing: border-box; align-items: center; justify-content: flex-end; flex-wrap: nowrap; gap: clamp(10px, 2.395833vw, 46px); font-size: 13px; letter-spacing: 1.82px; }
+.pq-design .nav.shell { position: relative; left: 0; width: min(1650.56px, calc(100% - 272px)); max-width: none; height: 56px !important; margin-top: 32px; padding: 0; box-sizing: border-box; align-items: center; background: none; }
+.pq-design .nav .brand { width: auto; height: 56px; margin-top: 0; gap: 14px; flex: none; }
+.pq-design .nav .brand-logo { height: 56px; width: 70.44px; object-fit: contain; }
+.pq-design .nav .brand-copy { white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 3.24px; line-height: 18.9px; text-transform: uppercase; }
+.pq-design .nav .brand-copy b { font-weight: 600; }
+.pq-design .nav-links { position: static; top: auto; right: auto; left: auto; width: max-content; max-width: none; min-width: 0; height: 40px; margin-top: 0; margin-left: auto; padding-left: 0; box-sizing: border-box; align-items: center; justify-content: flex-end; flex-wrap: nowrap; gap: 4px; font-size: 13px; font-weight: 600; letter-spacing: 1.82px; text-transform: uppercase; }
+.pq-design .nav-links a { padding: 10px 14px; line-height: 19.5px; }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
 .pq-design .hero-overlay { background: none !important; }
-.pq-design .hero-copy h1 { font-size: clamp(48px, 5.065vw, 97.25px) !important; line-height: 1 !important; font-weight: 700 !important; margin: 0 0 16px !important; }
-.pq-design .hero-copy h2 { font-size: clamp(32px, 3.449vw, 66.23px) !important; line-height: 1.15 !important; font-weight: 400 !important; color: #fff !important; margin: 0 0 26px !important; }
+.pq-design .hero-copy { padding-top: 146px; }
+.pq-design .hero-copy h1 { font-size: clamp(48px, 5.065vw, 97.25px) !important; line-height: 1.219 !important; font-weight: 700 !important; margin: 0 !important; }
+.pq-design .hero-copy h2 { font-size: clamp(32px, 3.449vw, 66.23px) !important; line-height: 1.219 !important; font-weight: 400 !important; color: #fff !important; margin: 0 0 25px !important; }
 .pq-design .btn { border-radius: 8px; font-size: 16px !important; font-weight: 700 !important; padding: 0 24px; gap: 8px; }
-.pq-design .btn-navy { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.7); }
+.pq-design .hero-actions { gap: 32px; margin-top: 0; }
+.pq-design .hero-actions .btn { height: 64px; min-height: 64px; text-transform: uppercase; }
+.pq-design .hero-actions .btn-orange { width: 325px; min-width: 325px; }
+.pq-design .hero-actions .btn-navy { width: 272px; min-width: 272px; background: transparent; color: #fff; border: 1px solid #FB7200; }
 .pq-design .promise-strip { background: linear-gradient(#102A5F 0 214px, #fff 214px) !important; min-height: 316px; }
 .pq-design .promise-grid article { display: flex; flex-direction: column; min-height: 316px; padding: 58px 28px 0 !important; }
 .pq-design .promise-grid article:not(:last-child):after { display: block !important; top: 84px !important; width: 0; height: 98px !important; border-right: 1px solid #FB7200 !important; background: none !important; }
@@ -58,7 +64,8 @@
 .pq-design .connector { width: auto; height: auto; background: none; border-radius: 0; }
 .pq-design .connector img { width: 86px; height: auto; }
 .pq-design .standard-grid article > div img { width: 64px; height: 64px; object-fit: contain; }
-.pq-design .hero-line { font-size: clamp(16px, 1.4vw, 26.88px) !important; line-height: 1.4 !important; font-weight: 700 !important; }
+.pq-design .hero-line { font-size: clamp(16px, 1.4vw, 26.88px) !important; line-height: 1.219 !important; font-weight: 600 !important; letter-spacing: 1.18px; margin: 0 0 81px; }
+.pq-design .hero-line br { display: block; margin-bottom: 8px; content: ""; }
 .pq-design .section h2,
 .pq-design .industries-head h2 { font-size: clamp(36px, 3.125vw, 60px) !important; line-height: 1.15 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
 .pq-design .services { background: #F0F2F5 !important; padding-top: 80px !important; padding-bottom: 80px !important; }
@@ -141,10 +148,15 @@
 .pq-design .network-list li img { width: 48px; height: 48px; object-fit: contain; flex: none; }
 @media (max-width: 1100px) {
   .pq-design .shell { width: min(92vw, 1000px); }
-  .pq-design .nav.shell { left: 0; width: 100%; height: 80px !important; padding-left: 24px; padding-right: 24px; align-items: center; }
+  .pq-design .nav.shell { left: 0; width: 100%; height: 80px !important; margin-top: 0; padding-left: 24px; padding-right: 24px; align-items: center; }
+  .pq-design .hero-copy { padding-top: 48px; }
+  .pq-design .hero-actions .btn-orange,
+  .pq-design .hero-actions .btn-navy { width: auto; min-width: 220px; }
+  .pq-design .nav .brand-logo { width: auto; height: 44px; }
   .pq-design .nav .brand { width: auto; height: auto; margin-top: 0; }
   .pq-design .nav .brand-logo { height: 44px; }
-  .pq-design .nav-links { position: static; left: auto; right: auto; width: auto; max-width: none; min-width: 0; height: auto; padding-left: 0; margin-top: 0; justify-content: flex-start; gap: 16px; }
+  .pq-design .nav-links { position: static; left: auto; right: auto; width: auto; max-width: none; min-width: 0; height: auto; padding-left: 0; margin-top: 0; margin-left: 0; justify-content: flex-start; gap: 16px; }
+  .pq-design .nav-links .lang-btn { width: auto; padding: 0 12px; }
   .pq-design .hero { height: 760px !important; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
   .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
