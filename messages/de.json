@@ -587,8 +587,8 @@
     "title": "Häufig gestellte Fragen",
     "items": [
       {
-        "question": "Bieten Sie nur Remote-Dokumentationssupport?",
-        "answer": "Nein. Pipeline Quality unterstützt sowohl die Ausführung vor Ort als auch die Dokumentation. Je nach Projekt kann das Inspektion, Fertigungsbegleitung, QA/QC Engineering und Übergabedokumentation umfassen — vor Ort, remote oder kombiniert."
+        "question": "Unterstützen Sie Audits und Kundeninspektionen?",
+        "answer": "Ja. Die Dokumentation wird mit Blick auf Auditfähigkeit erstellt und unterstützt interne sowie externe Audits — einschließlich Schnittstellen zu Kunden- und Drittinspektionen."
       },
       {
         "question": "Können Sie einen Spezialisten oder ein komplettes Team stellen?",
@@ -603,8 +603,8 @@
         "answer": "Offshore-Wind, Pipeline und Transmission, Öl & Gas, Chemie und Petrochemie, Energie, EPC, Industrieanlagenbau sowie Wartungs-, Stillstands- und Revamp-Projekte."
       },
       {
-        "question": "Unterstützen Sie Audits und Kundeninspektionen?",
-        "answer": "Ja. Die Dokumentation wird mit Blick auf Auditfähigkeit erstellt und unterstützt interne sowie externe Audits — einschließlich Schnittstellen zu Kunden- und Drittinspektionen."
+        "question": "Bieten Sie nur Remote-Dokumentationssupport?",
+        "answer": "Nein. Pipeline Quality unterstützt sowohl die Ausführung vor Ort als auch die Dokumentation. Je nach Projekt kann das Inspektion, Fertigungsbegleitung, QA/QC Engineering und Übergabedokumentation umfassen — vor Ort, remote oder kombiniert."
       },
       {
         "question": "Wie ist BW Digit angebunden?",

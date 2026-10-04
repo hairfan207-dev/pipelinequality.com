@@ -610,19 +610,17 @@ export function DesignHome() {
       </section>
 
       <section className='faq section'>
-        <div className='shell center'>
-          <h2>{tFaq('title')}</h2>
-          <div className='faq-box'>
-            {faqs.map((faq, index) => (
-              <div key={faq.question} className={`faq-item${faqOpen === index ? ' open' : ''}`}>
-                <button type='button' onClick={() => setFaqOpen(faqOpen === index ? null : index)}>
-                  {faq.question}
-                  <b>⌄</b>
-                </button>
-                <p>{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+        <h2>Frequently Asked <span>Questions</span></h2>
+        <div className='faq-box'>
+          {faqs.map((faq, index) => (
+            <div key={faq.question} className={`faq-item${faqOpen === index ? ' open' : ''}`}>
+              <button type='button' onClick={() => setFaqOpen(faqOpen === index ? null : index)}>
+                {faq.question}
+              </button>
+              {index < faqs.length - 1 ? <img className='faq-divider' src='/design/figma/faq-divider.svg' alt='' /> : null}
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </div>
       </section>
 
