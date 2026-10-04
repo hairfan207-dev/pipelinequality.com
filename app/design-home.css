@@ -21,7 +21,7 @@
 .pq-design .menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;padding:8px 12px;font:700 11px Montserrat;letter-spacing:.12em}
 .pq-design .nav-links.is-open{display:flex;flex-direction:column;position:absolute;top:90px;right:7vw;left:auto;margin-left:0;background:#08316b;padding:18px 22px;gap:16px;z-index:5;width:max-content;height:auto}
 .pq-design .lang-btn{border:0;background:transparent;color:#FB7200;font:700 11px Montserrat;letter-spacing:.14em;cursor:pointer}
-.pq-design .nav-links .lang-btn{box-sizing:border-box;width:126.5px;height:38px;margin-left:4px;padding:0;border:1px solid #FB7200;background:rgba(255,255,255,.5);color:#FB7200;border-radius:0;display:inline-flex;align-items:center;justify-content:center;line-height:19.5px;font-size:13px;font-weight:600;letter-spacing:1.82px}
+.pq-design .nav-links .lang-btn{box-sizing:border-box;width:126.5px;height:38px;margin-left:4px;padding:0;border:1px solid #FB7200;background:#fff;color:#FB7200;border-radius:0;display:inline-flex;align-items:center;justify-content:center;line-height:19.5px;font-size:13px;font-weight:600;letter-spacing:1.82px}
 @media(max-width:1100px){.pq-design .menu-btn{display:inline-flex}}
 
 /* Lock the supplied design scale over the site's global type rules */
