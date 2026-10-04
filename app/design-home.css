@@ -295,7 +295,7 @@
 .pq-design .network-images .shot { position: absolute; max-width: none; }
 .pq-design .network-images .bottom-fade .shot { width: 120.19%; height: 225.22%; left: -20.19%; top: -71.75%; }
 .pq-design .network-images .top-solid .shot { top: 79.43px; left: -25.91%; width: 141.11%; height: 349.57px; }
-.pq-design .network-images .bottom-solid .shot { top: 0; left: 0; width: 372px; height: 350px; object-fit: cover; object-position: center bottom; border-radius: 20px; }
+.pq-design .network-images .bottom-solid .shot { top: 0; left: 0; width: 372px; height: 350px; object-fit: fill; border-radius: 20px; }
 .pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .pq-design .network-images .shade { position: absolute; z-index: 1; left: 0; pointer-events: none; }
 .pq-design .network-images .bottom-fade .shade { bottom: 0; width: 371.56px; height: 81.16px; transform: rotate(180deg); }
