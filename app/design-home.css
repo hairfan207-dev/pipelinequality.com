@@ -43,7 +43,7 @@
 .pq-design .nav-links { position: static; top: auto; right: auto; left: auto; width: max-content; max-width: none; min-width: 0; height: 40px; margin-top: 0; margin-left: auto; padding-left: 0; box-sizing: border-box; align-items: center; justify-content: flex-end; flex-wrap: nowrap; gap: 4px; font-size: 13px; font-weight: 600; letter-spacing: 1.82px; text-transform: uppercase; }
 .pq-design .nav-links a { padding: 10px 14px; line-height: 19.5px; }
 .pq-design .hero-bg { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; object-position: center center !important; }
-.pq-design .hero-overlay { background: none !important; }
+.pq-design .hero-overlay { inset: auto; top: 0; left: 0; width: 100%; height: 121px; background: linear-gradient(to bottom, #0F295F 0%, rgba(15, 41, 95, 0.94) 18%, rgba(15, 41, 95, 0.77) 40%, rgba(15, 41, 94, 0.48) 66%, rgba(15, 41, 94, 0.09) 94%, rgba(15, 41, 94, 0) 100%) !important; pointer-events: none; }
 .pq-design .hero-copy { padding-top: 146px; }
 .pq-design .hero-copy h1 { font-size: clamp(48px, 5.065vw, 97.25px) !important; line-height: 1.219 !important; font-weight: 700 !important; margin: 0 !important; }
 .pq-design .hero-copy h2 { font-size: clamp(32px, 3.449vw, 66.23px) !important; line-height: 1.219 !important; font-weight: 400 !important; color: #fff !important; margin: 0 0 25px !important; }
@@ -472,7 +472,7 @@
   .pq-design .competence-card { width: min(784px, 100%); height: auto; }
   .pq-design .process .connector { margin-top: 0; }
   .pq-design .hero-bg { width: 100% !important; left: 0 !important; object-position: 70% center !important; }
-  .pq-design .hero-overlay { background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
+  .pq-design .hero-overlay { inset: 0; height: 100%; background: linear-gradient(90deg, rgba(11,45,99,.82), rgba(11,45,99,.2)) !important; }
   .pq-design .hero-copy h1 { font-size: 58px !important; }
   .pq-design .hero-copy h2 { font-size: 40px !important; }
   .pq-design .promise-strip { height: auto; background: #102A5F !important; min-height: 0; }
