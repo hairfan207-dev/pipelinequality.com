@@ -85,6 +85,15 @@
 .pq-design .process-card:nth-child(1) .process-icon:nth-child(3) { left: 48.34%; }
 .pq-design .process-card:nth-child(1) .process-icon:nth-child(4) { left: 68.15%; }
 .pq-design .process-card:nth-child(1) .process-icon:nth-child(5) { left: 87.93%; }
+.pq-design .process-card:nth-child(3) .process-icon:nth-child(1) { left: 14.49%; }
+.pq-design .process-card:nth-child(3) .process-icon:nth-child(2) { left: 34.31%; }
+.pq-design .process-card:nth-child(3) .process-icon:nth-child(3) { left: 52.8%; }
+.pq-design .process-card:nth-child(3) .process-icon:nth-child(4) { left: 70.89%; }
+.pq-design .process-card:nth-child(3) .process-icon:nth-child(5) { left: 90.71%; }
+.pq-design .process-card:nth-child(5) .process-icon:nth-child(1) { left: 21.16%; }
+.pq-design .process-card:nth-child(5) .process-icon:nth-child(2) { left: 39.65%; }
+.pq-design .process-card:nth-child(5) .process-icon:nth-child(3) { left: 57.74%; }
+.pq-design .process-card:nth-child(5) .process-icon:nth-child(4) { left: 77.56%; }
 .pq-design .process-labels { position: absolute; inset: 142px 0 auto; height: 15px; }
 .pq-design .process-labels span { position: absolute; top: 0; transform: translateX(-50%); font-size: 12px; line-height: 15px; font-weight: 400; color: #000; text-align: center; white-space: nowrap; }
 .pq-design .process-card:nth-child(1) .process-labels span:nth-child(1) { left: 11.75%; }

@@ -84,9 +84,18 @@ const fieldIcons = [
   '/design/figma/handover-field-dimensional.png',
   '/design/figma/handover-field-mtr.png',
 ];
-const processStrips = [
-  '/design/figma/handover-icons-quality.svg',
-  '/design/figma/handover-icons-project.svg',
+const qualityIcons = [
+  '/design/figma/handover-qc-inspection.png',
+  '/design/figma/handover-qc-ncr.png',
+  '/design/figma/handover-qc-traceability.png',
+  '/design/figma/handover-qc-status.png',
+  '/design/figma/handover-qc-approvals.png',
+];
+const projectIcons = [
+  '/design/figma/handover-project-reports.png',
+  '/design/figma/handover-project-mdr.png',
+  '/design/figma/handover-project-handover.png',
+  '/design/figma/handover-project-compliance.png',
 ];
 const standardIcons = [
   '/design/figma/std-qm.svg',
@@ -336,9 +345,9 @@ export function DesignHome() {
                     <strong>{stage.title}</strong>
                   </div>
                   <div className='process-panel'>
-                    {index === 0
-                      ? fieldIcons.map((src) => <img key={src} className='process-icon' src={src} alt='' />)
-                      : <img className='process-strip' src={processStrips[index - 1]} alt='' />}
+                    {(index === 0 ? fieldIcons : index === 1 ? qualityIcons : projectIcons).map((src) => (
+                      <img key={src} className='process-icon' src={src} alt='' />
+                    ))}
                     <div className='process-labels'>
                       {stage.items.map((item) => (
                         <span key={item}>{item}</span>
