@@ -430,13 +430,20 @@
 .pq-design .faq.section h2 span { color: #FB7200 !important; letter-spacing: 0; }
 .pq-design .faq-lead { width: min(1180px, calc(100% - 80px)); margin: 2px auto 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.89px; text-align: center; color: #102A5F; }
 .pq-design .faq.section .faq-box { width: 826px; height: 372px; margin: 34px 0 0 calc(50% - 421.72px); background: #F4F7F9; border-radius: 20px; padding: 46px 0 0 62px; }
-.pq-design .faq.section .faq-item { position: relative; height: 49px; border: 0; }
-.pq-design .faq.section .faq-item:last-child { height: auto; }
-.pq-design .faq.section .faq-item button { width: 100%; height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; }
-.pq-design .faq.section .faq-divider { position: absolute; left: -14px; top: 11px; width: 705.08px; height: 26.65px; max-width: none; }
-.pq-design .faq.section .faq-item p { display: none; margin: 8px 48px 12px 0; text-align: left; font-size: 16px; line-height: 1.45; color: #102A5F; }
-.pq-design .faq.section .faq-item.open { height: auto; }
-.pq-design .faq.section .faq-item.open p { display: block; }
+.pq-design .faq.section .faq-box:has(.faq-item.open),
+.pq-design .faq.section .faq-box:has(.faq-item:hover) { height: auto; padding-bottom: 24px; }
+.pq-design .faq.section .faq-item { position: relative; height: auto; min-height: 49px; border: 0; }
+.pq-design .faq.section .faq-item:last-child { min-height: 0; }
+.pq-design .faq.section .faq-item button { width: calc(100% - 48px); height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; transition: color 0.28s ease; }
+.pq-design .faq.section .faq-item:hover button,
+.pq-design .faq.section .faq-item.open button { color: #FB7200; }
+.pq-design .faq.section .faq-box:has(.faq-item:hover) .faq-item.open:not(:hover) button { color: #102A5F; }
+.pq-design .faq.section .faq-divider { position: absolute; left: -14px; top: 11px; width: 705.08px; height: 14px; max-width: none; object-fit: none; object-position: left top; pointer-events: none; }
+.pq-design .faq.section .faq-item:not(:last-child)::after { content: ""; position: absolute; left: -14px; bottom: 11px; width: 705.08px; height: 1px; background: rgba(16, 42, 95, 0.2); pointer-events: none; }
+.pq-design .faq.section .faq-item p { display: block; width: 640px; max-width: calc(100% - 48px); max-height: 0; margin: 0; padding: 0; overflow: hidden; opacity: 0; text-align: left; font-size: 16px; line-height: 1.45; color: #102A5F; transition: max-height 0.28s ease, opacity 0.28s ease, padding 0.28s ease; }
+.pq-design .faq.section .faq-item.open p,
+.pq-design .faq.section .faq-item:hover p { max-height: 160px; opacity: 1; padding: 14px 0 28px; }
+.pq-design .faq.section .faq-box:has(.faq-item:hover) .faq-item.open:not(:hover) p { max-height: 0; opacity: 0; padding: 0; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1700px) {
@@ -472,6 +479,7 @@
   .pq-design .footer-legal { flex-wrap: wrap; }
   .pq-design .faq.section .faq-box { width: min(826px, calc(100% - 48px)); height: auto; margin: 48px auto 0; padding: 28px 24px 20px; }
   .pq-design .faq.section .faq-divider { display: none; }
+  .pq-design .faq.section .faq-item:not(:last-child)::after { display: none; }
   .pq-design .faq.section .faq-item { height: auto; padding: 12px 0; border-bottom: 1px solid rgba(16, 42, 95, 0.2); }
   .pq-design .faq.section .faq-item:last-child { border-bottom: 0; }
   .pq-design .why-layout { height: auto; display: grid; row-gap: 24px; }
