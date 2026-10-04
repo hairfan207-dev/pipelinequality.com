@@ -587,8 +587,8 @@ export function DesignHome() {
       <section className='digital-support section'>
         <div className='support-panel'>
           <h2>
-            <span className='line'>Practical Digital</span>
-            <span className='line'>Quality Support</span>
+            <span className='line'>Digital</span>
+            <span className='line'>Quality</span>
           </h2>
           <p>{tDigital('description')}</p>
         </div>

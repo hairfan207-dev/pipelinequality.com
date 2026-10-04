@@ -363,11 +363,11 @@
 .pq-design .digital-grid > div:last-child p { width: min(776px, 100%); margin: 39px 0 0; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 0.9px; color: #102A5F; }
 .pq-design .digital-grid > div:last-child p + p { margin-top: 21px; }
 .pq-design .digital-support.section { width: min(1650px, calc(100% - 270px)); margin: 129px auto 0; padding: 0; display: grid; grid-template-columns: 693px minmax(0, 1fr); column-gap: 84px; align-items: start; }
-.pq-design .support-panel { height: 552px; background: #102A5F; border-radius: 20px; padding: 166px 40px 0 96px; color: #fff; }
-.pq-design .digital-support.section h2 { width: min(522px, 100%); margin: 0 !important; color: #fff !important; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0; }
-.pq-design .digital-support.section h2 .line { display: block; color: #fff !important; letter-spacing: 0.89px; }
-.pq-design .digital-support.section h2 .line + .line { margin-top: 7px; letter-spacing: -0.02px; }
-.pq-design .support-panel p { width: min(547px, 100%); margin: 23px 0 0 -12px; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 0.96px; color: #fff; }
+.pq-design .support-panel { height: 552px; background: #102A5F; border-radius: 20px; padding: 148px 0 0; color: #fff; }
+.pq-design .digital-support.section h2 { width: 100%; margin: 0 !important; color: #fff !important; font-size: 92px !important; font-weight: 600 !important; line-height: 1.05 !important; letter-spacing: 0; text-align: center; }
+.pq-design .digital-support.section h2 .line { display: block; color: #fff !important; letter-spacing: 0; }
+.pq-design .digital-support.section h2 .line + .line { margin-top: 6px; letter-spacing: 0; }
+.pq-design .support-panel p { width: 547px; margin: 36px 0 0 84px; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 0.96px; color: #fff; }
 .pq-design .support-list { padding-top: 8px; }
 .pq-design .support-list .eyebrow { margin: 0 0 22px 51px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.04px; text-transform: uppercase; color: #FB7200; }
 .pq-design .support-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 38px; margin: 0 0 40px; padding-left: 51px; }
@@ -465,6 +465,8 @@
   .pq-design .why-col-left article:nth-child(2) p { width: auto; }
   .pq-design .digital-support.section { width: min(92vw, 1000px); grid-template-columns: 1fr; row-gap: 36px; margin-top: 64px; }
   .pq-design .support-panel { height: auto; padding: 48px 32px; }
+  .pq-design .digital-support.section h2 { font-size: 56px !important; }
+  .pq-design .support-panel p { width: auto; margin: 20px 0 0; }
   .pq-design .support-row p { width: auto; }
   .pq-design .digital-grid { width: min(92vw, 1000px); grid-template-columns: 1fr; row-gap: 32px; }
   .pq-design .dig-engineer,
