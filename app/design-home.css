@@ -63,9 +63,8 @@
 .pq-design .industries-head h2 { font-size: clamp(36px, 3.125vw, 60px) !important; line-height: 1.15 !important; font-weight: 700 !important; margin: 0 0 22px !important; }
 .pq-design .services { background: #F4F8FC !important; padding-top: 80px !important; padding-bottom: 80px !important; }
 .pq-design .services-grid > div:first-child { container-type: inline-size; }
-.pq-design .services-grid .eyebrow { display: none !important; }
-.pq-design .services-grid h2 { font-size: clamp(26px, 7.2cqi, 56px) !important; font-weight: 700 !important; line-height: 1.12 !important; letter-spacing: -0.02em; white-space: nowrap; }
-.pq-design .services-grid h2 span { display: block; white-space: nowrap; }
+.pq-design .services-grid h2 { display: flex; flex-direction: column; align-items: flex-start; gap: 0; font-size: min(60px, 7.6cqi) !important; font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -0.01em; }
+.pq-design .services-grid h2 .svc-line { white-space: nowrap; }
 .pq-design .network-copy h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
 .pq-design .process h2,
 .pq-design .digital h2,
@@ -87,21 +86,15 @@
 .pq-design .quality-badge { text-align: center; line-height: 1.15 !important; letter-spacing: .04em; }
 .pq-design .promise-grid h3 { font-size: 17px !important; font-weight: 500 !important; margin: 8px 0 12px !important; color: #fff !important; line-height: 1.25 !important; }
 .pq-design .promise-grid p { margin-top: auto; min-height: 102px; padding-top: 14px; color: #2a416b !important; font-size: 12px !important; line-height: 1.35 !important; }
-.pq-design .acc-item button { font: 500 clamp(18px, 1.25vw, 24px) Montserrat, sans-serif !important; transition: background-color 160ms ease; }
-.pq-design .service-accordion .acc-item.open { background: #f3f6fa; border-radius: 16px; border-bottom-color: transparent; }
-.pq-design .service-accordion .acc-item.open button { background: transparent !important; }
+.pq-design .acc-item button { font: 500 30px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
 .pq-design .acc-chevron { display: inline-block; transition: transform 180ms ease; }
 .pq-design .acc-item.open .acc-chevron { transform: rotate(90deg); }
-.pq-design .service-accordion .acc-panel { display: grid !important; grid-template-rows: 0fr; opacity: 0; padding: 0 24px 0 72px !important; background: transparent; border-radius: 0; transition: grid-template-rows 220ms ease, opacity 160ms ease, padding 220ms ease; }
-.pq-design .service-accordion .acc-item.open .acc-panel { grid-template-rows: 1fr; opacity: 1; padding: 0 24px 22px 72px !important; }
+.pq-design .service-accordion .acc-panel { display: grid !important; grid-template-rows: 0fr; opacity: 0; padding: 0 34px 0 105px !important; background: #fff; border-radius: 8px; transition: grid-template-rows 220ms ease, opacity 160ms ease, padding 220ms ease; }
+.pq-design .service-accordion .acc-item.open .acc-panel { grid-template-rows: 1fr; opacity: 1; padding: 15px 34px 28px 105px !important; }
 .pq-design .acc-panel-inner { overflow: hidden; min-height: 0; display: flex; gap: 70px; }
 .pq-design .acc-panel-inner ul { flex: 1; }
-.pq-design .feature-image { border-radius: 22px; }
-.pq-design .feature-image img { height: auto; aspect-ratio: 1.05; object-fit: cover; animation: pq-soft-fade 220ms ease; }
-.pq-design .feature-image .image-caption { font-size: 22px !important; padding: 48px 28px 22px !important; gap: 14px !important; }
-.pq-design .feature-image .image-caption span { width: 42px; height: 42px; border-radius: 10px; overflow: hidden; }
-.pq-design .feature-image .image-caption span img { width: 42px; height: 42px; aspect-ratio: auto; object-fit: contain; animation: none; }
+.pq-design .feature-image img { animation: pq-soft-fade 220ms ease; }
 .pq-design .feature-image .image-caption { animation: pq-soft-fade 220ms ease; }
 .pq-design .industry-tabs button { font-size: 30px !important; font-weight: 500 !important; transition: background-color 160ms ease; }
 .pq-design .industry-tabs button:hover { background: rgba(16,42,95,.04); }
@@ -162,8 +155,8 @@
   .pq-design .hero-copy h1 { font-size: 43px !important; }
   .pq-design .hero-copy h2 { font-size: 31px !important; }
   .pq-design .section h2, .pq-design .industries-head h2 { font-size: 36px !important; }
-  .pq-design .services-grid h2, .pq-design .services-grid h2 span { white-space: normal; }
   .pq-design .services-grid h2, .pq-design .network-copy h2, .pq-design .digital h2 { font-size: 38px !important; }
+  .pq-design .services-grid h2 .svc-line { white-space: normal; }
   .pq-design .service-accordion .acc-panel { padding-left: 16px !important; padding-right: 16px !important; }
   .pq-design .service-accordion .acc-item.open .acc-panel { padding: 12px 16px 20px !important; }
   .pq-design .acc-panel-inner { flex-direction: column; gap: 0; }

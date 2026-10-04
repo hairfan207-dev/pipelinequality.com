@@ -220,11 +220,9 @@ export function DesignHome() {
       <section className='services section' id='services'>
         <div className='shell two-col services-grid'>
           <div>
-            <p className='eyebrow left'>{tServices('keyAreasTitle')}</p>
             <h2>
-              {tServices('designTitle')}
-              <br />
-              <span>{tServices('designTitleAccent')}</span>
+              <span className='svc-line'>{tServices('designTitle')}</span>
+              <span className='svc-line'><span>Safer, Stronger</span> Tomorrow</span>
             </h2>
             <p className='lead'>{tServices('designLead')}</p>
             <div className='accordion service-accordion'>
@@ -271,8 +269,7 @@ export function DesignHome() {
           <div className='feature-image'>
             <img key={serviceOpen} src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
             <div className='image-caption' key={`cap-${serviceOpen}`}>
-              <span><img src={serviceIcons[Math.max(serviceOpen, 0)]} alt='' /></span>
-              {blocks[Math.max(serviceOpen, 0)]?.title}
+              <span>●</span> {blocks[Math.max(serviceOpen, 0)]?.title}
             </div>
           </div>
         </div>
