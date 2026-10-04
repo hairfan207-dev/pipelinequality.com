@@ -62,7 +62,7 @@
 .pq-design .acc-icon { background: transparent !important; padding: 0; }
 .pq-design .acc-icon img { width: 48px; height: 48px; object-fit: contain; }
 .pq-design .process { background: #fff !important; padding-top: 59px !important; padding-bottom: 36px !important; }
-.pq-design .process h2 { width: min(640px, 100%); font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; margin: 0 auto 22px !important; }
+.pq-design .process.section h2 { width: min(577px, 100%); text-align: center; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; margin: 0 auto 22px !important; }
 .pq-design .process h2 span { display: block; margin-top: 7px; }
 .pq-design .process .lead { max-width: 958px; font-size: 22px !important; font-weight: 400 !important; line-height: 24px !important; letter-spacing: 0.94px; }
 .pq-design .process-cards { margin-top: 72px; grid-template-columns: minmax(0, 1fr) 77px minmax(0, 1fr) 77px minmax(0, 1fr); justify-content: center; align-items: start; }
