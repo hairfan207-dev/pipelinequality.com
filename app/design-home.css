@@ -320,6 +320,25 @@
 .pq-design .partners-lead { width: min(1248px, calc(100% - 80px)); margin: 23px auto 0; font-size: 22px; font-weight: 400; line-height: 26px; color: #102A5F; }
 .pq-design .partners-note { width: min(1032px, calc(100% - 80px)); margin: 23px auto 0; font-size: 22px; font-weight: 400; line-height: 30px; color: #102A5F; }
 .pq-design .partners .btn-orange { width: 388px; max-width: calc(100% - 48px); height: 56px; min-width: 0; min-height: 0; margin-top: 23px; border: 1px solid #FB7200; border-radius: 8px; background: #FB7200; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.2; letter-spacing: 0; text-transform: uppercase; }
+.pq-design .why.section { margin-top: 95px; padding: 0; }
+.pq-design .why-layout { position: relative; width: min(1650px, calc(100% - 270px)); height: 650px; margin: 0 auto; }
+.pq-design .why-shape { position: absolute; left: 0; top: 25px; width: 100%; height: 625px; display: block; }
+.pq-design .why.section h2 { position: absolute; left: 0; top: 0; width: 735px; margin: 0 !important; color: #102A5F !important; font-size: 97.248px !important; font-weight: 700 !important; line-height: 116.7px !important; letter-spacing: 2.09px; }
+.pq-design .why.section h2 .line { display: block; color: #102A5F !important; }
+.pq-design .why.section h2 .line + .line { letter-spacing: 3.43px; }
+.pq-design .why.section h2 .line span { color: #FB7200 !important; letter-spacing: 2.09px; }
+.pq-design .why-col { position: absolute; }
+.pq-design .why-col article { height: 142.66px; }
+.pq-design .why-col h3 { margin: 0; font-size: 30px; font-weight: 700; line-height: 1.219; color: #102A5F; }
+.pq-design .why-col p { margin: 12px 0 0; font-size: 18px; font-weight: 400; line-height: 21.6px; letter-spacing: 0.96px; color: #102A5F; }
+.pq-design .why-col-right { left: 870px; top: 65px; width: 520px; }
+.pq-design .why-col-right p { width: 494px; }
+.pq-design .why-col-right article:nth-child(2) p { width: 490px; }
+.pq-design .why-col-right article:nth-child(3) p { width: auto; }
+.pq-design .why-col-right article:nth-child(4) p { width: 501px; }
+.pq-design .why-col-left { left: 85px; top: 350px; width: 720px; }
+.pq-design .why-col-left p { width: 694px; }
+.pq-design .why-col-left article:nth-child(2) p { width: 696px; }
 .pq-design .network-list li:before { content: none !important; }
 .pq-design .network-list li img { width: 59.91px; height: 59.91px; object-fit: contain; flex: none; }
 @media (max-width: 1700px) {
@@ -337,6 +356,18 @@
   .pq-design .exp-pipes { width: 100%; height: auto; aspect-ratio: 563 / 437; }
 }
 @media (max-width: 1100px) {
+  .pq-design .why-layout { height: auto; display: grid; row-gap: 24px; }
+  .pq-design .why-shape { display: none; }
+  .pq-design .why.section h2 { position: static; width: auto; font-size: 64px !important; line-height: 1.1 !important; letter-spacing: 0; }
+  .pq-design .why-col { position: static; width: auto; background: #F4F7F9; border-radius: 20px; padding: 32px; }
+  .pq-design .why-col article { height: auto; margin-bottom: 28px; }
+  .pq-design .why-col article:last-child { margin-bottom: 0; }
+  .pq-design .why-col p,
+  .pq-design .why-col-right p,
+  .pq-design .why-col-right article:nth-child(2) p,
+  .pq-design .why-col-right article:nth-child(4) p,
+  .pq-design .why-col-left p,
+  .pq-design .why-col-left article:nth-child(2) p { width: auto; }
   .pq-design .digital-support.section { width: min(92vw, 1000px); grid-template-columns: 1fr; row-gap: 36px; margin-top: 64px; }
   .pq-design .support-panel { height: auto; padding: 48px 32px; }
   .pq-design .support-row p { width: auto; }
@@ -417,6 +448,6 @@
   .pq-design .service-accordion .acc-panel { padding-left: 16px !important; padding-right: 16px !important; }
   .pq-design .service-accordion .acc-item.open .acc-panel { padding: 12px 16px 20px !important; }
   .pq-design .acc-panel-inner { flex-direction: column; gap: 0; }
-  .pq-design .why h2 { font-size: 56px !important; }
+  .pq-design .why.section h2 { font-size: 48px !important; }
   .pq-design .experience-heading h2 { font-size: 50px !important; }
 }

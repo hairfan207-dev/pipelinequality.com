@@ -582,21 +582,28 @@ export function DesignHome() {
       </section>
 
       <section className='why section'>
-        <div className='shell why-grid'>
+        <div className='why-layout'>
+          <svg className='why-shape' viewBox='0 0 1650.1 625.42' preserveAspectRatio='none' aria-hidden='true'>
+            <path fill='#F4F7F9' d='M824.85 20V252.14C824.85 257.444 822.743 262.531 818.992 266.281C815.241 270.032 810.154 272.14 804.85 272.14H20C14.6957 272.14 9.60859 274.246 5.85786 277.997C2.10714 281.748 0 286.835 0 292.14V605.42C0 610.724 2.10714 615.811 5.85786 619.562C9.60859 623.312 14.6957 625.42 20 625.42H1630.1C1635.4 625.42 1640.49 623.312 1644.24 619.562C1647.99 615.811 1650.1 610.724 1650.1 605.42V20C1650.1 14.6957 1647.99 9.60815 1644.24 5.85742C1640.49 2.10669 1635.4 0 1630.1 0H844.85C839.546 0 834.459 2.10669 830.708 5.85742C826.957 9.60815 824.85 14.6957 824.85 20Z' />
+          </svg>
           <h2>
-            {tWhy('title').replace('?', '')}
-            <span>?</span>
+            <span className='line'>Why Pipeline</span>
+            <span className='line'>Quality <span>?</span></span>
           </h2>
-          <div className='why-box'>
-            {[[0, 1], [4, 5], [2, 3]].map((group) => (
-              <div key={group.join('-')}>
-                {group.map((index) => (
-                  <div key={reasons[index].title}>
-                    <h3>{reasons[index].title}</h3>
-                    <p>{reasons[index].description}</p>
-                  </div>
-                ))}
-              </div>
+          <div className='why-col why-col-right'>
+            {reasons.slice(0, 4).map((reason) => (
+              <article key={reason.title}>
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className='why-col why-col-left'>
+            {reasons.slice(4).map((reason) => (
+              <article key={reason.title}>
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
             ))}
           </div>
         </div>
