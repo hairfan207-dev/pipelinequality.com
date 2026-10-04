@@ -92,13 +92,6 @@ const standardIcons = [
   '/design/figma/std-docs.svg',
 ];
 const standardOrder = [0, 5, 4, 3, 2, 1, 6];
-const workflowPhotos = [
-  '/design/figma/photo-drawing.png',
-  '/design/figma/photo-clipboard.png',
-  '/design/figma/photo-engineers.png',
-  '/design/figma/photo-review.png',
-  '/design/figma/photo-qaqc.png',
-];
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
@@ -517,20 +510,17 @@ export function DesignHome() {
       </section>
 
       <section className='workflow section' id='how-we-work'>
-        <div className='shell center'>
-          <p className='eyebrow'>{tWork('label')}</p>
-          <h2>{tWork('title')}</h2>
-          <div className='workflow-grid'>
-            {steps.map((step, index) => (
-              <article key={step.id}>
-                <div className='wf-img'>
-                  <img src={workflowPhotos[index]} alt={step.title} />
-                  <span>{step.title}</span>
-                </div>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
+        <p className='eyebrow'>{tWork('label')}</p>
+        <h2>{tWork('title')}</h2>
+        <div className='workflow-grid'>
+          {steps.map((step, index) => (
+            <article key={step.id} className={index % 2 ? 'up' : 'down'}>
+              <div className='wf-card'>
+                <strong>{step.title}</strong>
+              </div>
+              <p>{step.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
