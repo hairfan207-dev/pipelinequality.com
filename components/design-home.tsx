@@ -105,7 +105,6 @@ export function DesignHome() {
   const tStd = useTranslations('standards');
   const tWork = useTranslations('workProcess');
   const tSmart = useTranslations('smartQAQC');
-  const tPartners = useTranslations('partners');
   const tWhy = useTranslations('why');
   const tFaq = useTranslations('faq');
   const tContact = useTranslations('contact');
@@ -525,15 +524,24 @@ export function DesignHome() {
       </section>
 
       <section className='digital section' id='bw-digit'>
-        <div className='shell digital-grid'>
+        <div className='digital-grid'>
           <div>
-            <h2>{tSmart('title')}</h2>
-            <a className='btn btn-orange' href='#contact'>{tPartners('cta')}</a>
-            <img src='/design/figma/photo-review.png' alt={tSmart('fieldAlt')} />
+            <h2>
+              <span className='line'>Quality Execution Meets</span>
+              <span className='line'><span>Digital</span> Intelligence</span>
+            </h2>
+            <a className='btn btn-orange' href='#contact'>{tSmart('cta')}</a>
+            <div className='dig-photo dig-engineer'>
+              <img src='/design/figma/dig-engineer.jpg' alt={tSmart('docsAlt')} />
+            </div>
           </div>
           <div>
-            <img src='/design/figma/photo-tablet.png' alt={tSmart('docsAlt')} />
-            <p>{tSmart('description')}</p>
+            <div className='dig-photo dig-quality'>
+              <img src='/design/figma/dig-quality.png' alt={tSmart('fieldAlt')} />
+            </div>
+            {tSmart('description').split(/(?=Together,|Gemeinsam )/).filter(Boolean).map((part) => (
+              <p key={part}>{part.trim()}</p>
+            ))}
           </div>
         </div>
       </section>
