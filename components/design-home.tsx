@@ -67,9 +67,9 @@ const serviceIcons = [
 ];
 const serviceCaptionIcons = [
   '/design/figma/svc-qaqc-on.svg',
-  '/design/figma/svc-inspect.svg',
-  '/design/figma/svc-docs.svg',
-  '/design/figma/svc-project.svg',
+  '/design/figma/svc-inspect-on.png',
+  '/design/figma/svc-docs-on.png',
+  '/design/figma/svc-project-on.png',
 ];
 const servicePhotos = [
   '/design/figma/photo-measure.png',
