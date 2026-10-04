@@ -564,8 +564,10 @@ export function DesignHome() {
       <section className='digital section' id='bw-digit'>
         <div className='digital-grid'>
           <div>
-            <h2><span>Digital</span> Quality</h2>
-            <p className='dig-lead'>{digitalCopy[0]}</p>
+            <h2>
+              <span className='line'>Quality Execution Meets</span>
+              <span className='line'>Digital Intelligence</span>
+            </h2>
             <a className='btn btn-orange' href='#contact'>{tSmart('cta')}</a>
             <div className='dig-photo dig-engineer'>
               <img src='/design/figma/dig-engineer.jpg' alt={tSmart('docsAlt')} />
