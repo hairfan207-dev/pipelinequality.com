@@ -211,16 +211,18 @@ export function DesignHome() {
       </section>
 
       <section className='intro section'>
-        <div className='intro-bg' />
-        <div className='shell narrow center'>
+        <div className='intro-bg' aria-hidden='true'>
+          <img src='/design/figma/qc-bg.png' alt='' />
+        </div>
+        <div className='shell center'>
           <p className='eyebrow'>{tIntro('label')}</p>
           <h2>
             {tIntro('headlineLine1')}
             <br />
             <span>{tIntro('headlineLine2')}</span>
           </h2>
-          <p>{tIntro('paragraph1')}</p>
-          <p>{tIntro('paragraph2')}</p>
+          <p className='intro-copy'>{tIntro('paragraph1')}</p>
+          <p className='intro-copy intro-copy-b'>{tIntro('paragraph2')}</p>
         </div>
       </section>
 

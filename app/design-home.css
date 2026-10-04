@@ -133,13 +133,17 @@
 .pq-design .contact textarea,
 .pq-design .contact select { border-radius: 0 !important; border: 1px solid #bac5d2 !important; width: 100%; }
 .pq-design .contact button[type='submit'] { width: 100%; border-radius: 8px !important; clip-path: none !important; background: #FB7200 !important; font-size: 16px !important; font-weight: 700 !important; }
-.pq-design .intro { height: 545px; padding: 72px 0 28px !important; display: flex; flex-direction: column; background: #fff; overflow: hidden; }
-.pq-design .intro-bg { display: block !important; opacity: 1 !important; background: linear-gradient(rgba(255,255,255,.86), rgba(255,255,255,.86)), url('/design/page001_img025.png') center 42% / cover no-repeat; }
-.pq-design .intro:after { margin: auto auto 0; width: min(1280px, 72vw); }
+.pq-design .intro { height: 545px; padding: 88px 0 0 !important; display: flex; flex-direction: column; background: #fff; overflow: hidden; }
+.pq-design .intro .shell { margin-top: 0; margin-bottom: 0; }
+.pq-design .intro-bg { display: block !important; opacity: 0.06 !important; background: none !important; overflow: hidden; }
+.pq-design .intro-bg img { position: absolute; left: 0; top: -74.98%; width: 100%; height: 202.94%; max-width: none; object-fit: fill; }
+.pq-design .intro:after { margin: auto auto 0; width: min(1350px, 86vw); height: 4px; }
 .pq-design .intro .eyebrow { display: none !important; }
-.pq-design .intro h2 { font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 700 !important; line-height: 1.15 !important; color: #102A5F !important; margin: 0 0 28px !important; }
-.pq-design .intro h2 span { color: #FB7200 !important; display: inline-block; margin-top: 6px; }
-.pq-design .intro p:not(.eyebrow) { font-size: 20px !important; line-height: 1.45 !important; color: #102A5F !important; max-width: 1100px; margin: 0 auto 12px !important; }
+.pq-design .intro h2 { width: min(741px, 100%); font-size: clamp(32px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.73px; color: #102A5F !important; margin: 0 auto 20px !important; }
+.pq-design .intro h2 span { color: #FB7200 !important; display: block; margin-top: 7px; letter-spacing: -0.04px; }
+.pq-design .intro p:not(.eyebrow) { font-size: 20px !important; font-weight: 400 !important; line-height: 24px !important; letter-spacing: 0.94px; color: #102A5F !important; margin: 0 auto !important; }
+.pq-design .intro p.intro-copy { width: min(1318px, 100%); }
+.pq-design .intro p.intro-copy-b { width: min(1256px, 100%); margin-top: 24px !important; }
 .pq-design .network-copy h2 span { color: #FB7200 !important; }
 .pq-design .network-images figure:before { content: ""; position: absolute; z-index: 1; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, rgba(6,24,64,.72), rgba(6,24,64,0)); pointer-events: none; }
 .pq-design .network-images figcaption { z-index: 2; top: 14px; bottom: auto; background: none; display: flex; align-items: flex-start; gap: 10px; padding: 8px 14px; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
