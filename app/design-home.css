@@ -306,10 +306,10 @@
 .pq-design .network-copy h2 .net-line span:last-child { color: #FB7200 !important; letter-spacing: -0.075px; }
 .pq-design .network-copy .lead { width: min(788px, 100%); max-width: 788px; margin: 15px 0 0 !important; font-size: 22px !important; font-weight: 400 !important; line-height: 26px !important; letter-spacing: 0.95px; color: #102A5F !important; }
 .pq-design .network-images .shot { position: absolute; max-width: none; }
-.pq-design .network-images .bottom-fade .shot { width: 120.19%; height: 225.22%; left: -20.19%; top: -71.75%; }
-.pq-design .network-images .top-solid .shot { z-index: 2; top: 79.43px; left: 0; width: 372px; height: 349.57px; object-fit: cover; object-position: 53.9% center; border-radius: 20px; }
-.pq-design .network-images .bottom-solid .shot { z-index: 2; top: 0; left: 0; width: 372px; height: 350px; object-fit: fill; border-radius: 20px; }
-.pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+.pq-design .network-images .bottom-fade .shot { top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.pq-design .network-images .top-solid .shot { z-index: 2; top: 79.43px; left: 0; width: 372px; height: 349.57px; object-fit: cover; object-position: center; border-radius: 20px; }
+.pq-design .network-images .bottom-solid .shot { z-index: 2; top: 0; left: 0; width: 372px; height: 350px; object-fit: cover; object-position: center; border-radius: 20px; }
+.pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .pq-design .network-images .shade { position: absolute; z-index: 1; left: 0; pointer-events: none; }
 .pq-design .network-images .bottom-fade .shade { bottom: 0; width: 371.56px; height: 81.16px; transform: rotate(180deg); }
 .pq-design .network-images .top-fade .shade { top: 0; width: 371.56px; height: 81.16px; }
