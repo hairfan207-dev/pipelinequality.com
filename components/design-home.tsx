@@ -328,13 +328,13 @@ export function DesignHome() {
                     <img src={processPhotos[index]} alt={stage.title} />
                     <strong>{stage.title}</strong>
                   </div>
-                  <div className={`strip-clip${index === 0 ? '' : ' tall'}`}>
-                    <img className='process-strip' src={processStrips[index]} alt='' />
-                  </div>
-                  <div className='process-labels'>
-                    {stage.items.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
+                  <div className='process-panel'>
+                    <img className={`process-strip${index === 0 ? ' is-icons' : ''}`} src={processStrips[index]} alt='' />
+                    <div className='process-labels'>
+                      {stage.items.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </div>
                   </div>
                 </article>
                 {index < stages.length - 1 ? <div className='connector'><img src='/design/figma/handover-connector.svg' alt='' /></div> : null}

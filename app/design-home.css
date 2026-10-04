@@ -71,16 +71,15 @@
 .pq-design .process .lead { max-width: 958px; font-size: 22px !important; font-weight: 400 !important; line-height: 24px !important; letter-spacing: 0.94px; }
 .pq-design .process-cards { margin-top: 72px; grid-template-columns: minmax(0, 1fr) 77px minmax(0, 1fr) 77px minmax(0, 1fr); justify-content: center; align-items: start; }
 .pq-design .process-card { background: transparent; padding: 0; border-radius: 0; }
-.pq-design .process-card .pic { height: 324px; border-radius: 20px; }
+.pq-design .process-card .pic { position: relative; z-index: 1; height: 324px; border-radius: 20px; }
 .pq-design .process-card .pic strong { left: 38px; bottom: 22px; font-size: 30px; font-weight: 500; letter-spacing: 0; text-transform: uppercase; }
 .pq-design .process-card:nth-child(1) .pic img { object-position: 28% center; }
 .pq-design .process-card:nth-child(3) .pic img { object-position: center 18%; }
-.pq-design .strip-clip { margin-top: 18px; }
-.pq-design .process-strip { display: block; width: 100%; height: 60px; margin: 0 auto 8px; object-fit: contain; object-position: center top; }
-.pq-design .strip-clip.tall { height: 64px; overflow: hidden; }
-.pq-design .strip-clip.tall .process-strip { height: 189px; margin: -72px 0 0; object-fit: fill; }
-.pq-design .process-labels { display: flex; justify-content: space-between; gap: 6px; }
-.pq-design .process-labels span { flex: 1; font-size: 12px; line-height: 1.219; font-weight: 400; color: #000; text-align: center; }
+.pq-design .process-panel { position: relative; z-index: 0; height: 189px; margin-top: -52px; background: #FAFBFC; border-radius: 29px; }
+.pq-design .process-panel .process-strip { position: absolute; inset: 0; display: block; width: 100%; height: 100%; margin: 0; object-fit: fill; }
+.pq-design .process-panel .process-strip.is-icons { inset: auto; top: 75px; left: 29px; width: calc(100% - 58px); height: 60px; object-fit: contain; }
+.pq-design .process-labels { position: absolute; left: 10px; right: 10px; top: 142px; display: flex; justify-content: space-between; gap: 4px; }
+.pq-design .process-labels span { flex: 1; font-size: 12px; line-height: 15px; font-weight: 400; color: #000; text-align: center; white-space: nowrap; }
 .pq-design .process .connector { width: 77px; height: 34px; margin-top: 145px; background: none; border-radius: 0; overflow: visible; }
 .pq-design .process .connector img { width: 112px; height: 34px; max-width: none; margin-left: -17px; }
 .pq-design .connector { width: auto; height: auto; background: none; border-radius: 0; }
