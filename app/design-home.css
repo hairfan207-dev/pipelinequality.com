@@ -1098,4 +1098,10 @@
     padding: 0 18px !important;
     font-size: 12px !important;
   }
+  .pq-design:lang(de) .footer-note {
+    font-size: 8px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    white-space: nowrap !important;
+  }
 }
