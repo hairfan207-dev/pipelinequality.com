@@ -178,7 +178,7 @@ export function DesignHome() {
   const activeIndustry = sectors[industry];
 
   return (
-    <div className='pq-design' lang={locale}>
+    <div className={`pq-design${menuOpen ? ' menu-open' : ''}`} lang={locale}>
       <header className='hero' id='top'>
         <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />

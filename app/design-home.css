@@ -962,3 +962,51 @@
   .pq-design:lang(de) .footer-links { gap: 8px; font-size: 11px; }
   .pq-design:lang(de) .footer-note { font-size: 9px; white-space: normal; }
 }
+
+@media (max-width: 700px) {
+  html:has(.pq-design.menu-open) { overflow: hidden; }
+  .pq-design.menu-open .hero { overflow: visible; }
+  .pq-design.menu-open .nav .brand,
+  .pq-design.menu-open .menu-btn { position: relative; z-index: 70; }
+  .pq-design .nav-links.is-open {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 88px 28px 32px;
+    box-sizing: border-box;
+    background: #062350;
+    gap: 0;
+    overflow: auto;
+  }
+  .pq-design .nav-links.is-open a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    text-align: center;
+  }
+  .pq-design .nav-links.is-open .lang-menu {
+    align-self: center;
+    width: min(220px, 100%);
+    margin: 32px auto 0;
+  }
+  .pq-design .nav-links.is-open .lang-btn { width: 100%; height: 48px; }
+  .pq-design .nav-links.is-open .lang-drop {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+}
