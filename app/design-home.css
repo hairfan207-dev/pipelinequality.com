@@ -848,4 +848,8 @@
   .pq-design .nav-links.is-open .lang-menu { align-self: center; width: max-content; margin: 0; }
   .pq-design .nav-links.is-open .lang-btn { width: auto; }
   .pq-design .nav-links.is-open .lang-drop { left: 0; right: auto; top: 100%; width: 100%; box-sizing: border-box; }
+  .pq-design .intro { padding-bottom: 32px !important; }
+  .pq-design .intro:after { display: none; }
+  .pq-design .services { padding-top: 0 !important; }
+  .pq-design .services::before { content: ""; display: block; width: min(1350px, 86vw); height: 4px; margin: 0 auto 28px; background: #FB7200; }
 }
