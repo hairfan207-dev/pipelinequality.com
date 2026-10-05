@@ -852,4 +852,21 @@
   .pq-design .intro:after { display: none; }
   .pq-design .services { padding-top: 0 !important; }
   .pq-design .services::before { content: ""; display: block; width: min(1350px, 86vw); height: 4px; margin: 0 auto 28px; background: #FB7200; }
+  .pq-design .footer { padding: 22px 16px 18px; }
+  .pq-design .footer-brand { font-size: 13px; letter-spacing: 2.2px; }
+  .pq-design .footer-desc { margin-top: 8px; font-size: 13px; line-height: 1.35; letter-spacing: 0; }
+  .pq-design .footer-links,
+  .pq-design .footer-copy,
+  .pq-design .footer-locale,
+  .pq-design .footer-note,
+  .pq-design .footer-legal { margin-top: 10px; }
+  .pq-design .footer-links,
+  .pq-design .footer-legal { flex-wrap: nowrap; justify-content: space-between; gap: 8px; }
+  .pq-design .footer-links { font-size: 11px; letter-spacing: 0.2px; }
+  .pq-design .footer-legal { font-size: 10px; letter-spacing: 0.15px; }
+  .pq-design .footer-links a,
+  .pq-design .footer-legal a { white-space: nowrap; }
+  .pq-design .footer-copy { font-size: 11px; }
+  .pq-design .footer-locale { gap: 12px; }
+  .pq-design .footer-note { font-size: 11px; line-height: 1.35; letter-spacing: 0; }
 }
