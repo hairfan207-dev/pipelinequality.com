@@ -790,7 +790,7 @@
     z-index: 4;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
     height: 52px;
     padding: 0 16px;
@@ -810,7 +810,7 @@
     height: auto;
     font-size: 14px;
     line-height: 1.15;
-    text-align: left;
+    text-align: center;
   }
   .pq-design .competence-card { padding: 28px 20px; }
   .pq-design .industries .industries-panel { padding: 20px 12px 16px; }
