@@ -39,8 +39,26 @@
 .pq-design .footer-links { text-transform: uppercase; }
 .pq-design .shell { width: min(1648px, calc(100% - 272px)); }
 .pq-design .hero { height: 867px !important; background: #0b2d63 !important; padding-top: 88px; box-sizing: border-box; }
-.pq-design .nav.shell { position: fixed; top: 0; left: 0; right: 0; z-index: 80; width: 100%; max-width: none; height: 88px !important; margin-top: 0; padding: 0 136px; box-sizing: border-box; align-items: center; background: #0b2d63; }
+.pq-design .nav.shell { position: fixed; top: 0; left: 0; right: 0; z-index: 80; width: 100%; max-width: none; height: 88px !important; margin-top: 0; padding: 0 136px; box-sizing: border-box; align-items: center; background-color: transparent; color: #fff; box-shadow: 0 1px 0 rgba(1, 42, 96, 0); backdrop-filter: blur(0); transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease; }
+.pq-design .nav.shell.is-scrolled { background-color: rgba(255, 255, 255, 0.95); color: #102A5F; box-shadow: 0 1px 0 rgba(1, 42, 96, 0.08); backdrop-filter: blur(12px); }
+.pq-design .nav.is-scrolled .brand,
+.pq-design .nav.is-scrolled .menu-btn { color: #102A5F; }
+.pq-design .nav .brand,
+.pq-design .menu-btn,
+.pq-design .nav .brand-logo { transition: color 0.5s ease, opacity 0.5s ease; }
 .pq-design .nav .brand { width: auto; height: 56px; margin-top: 0; gap: 14px; flex: none; }
+.pq-design .nav .brand-logo-stack { display: grid; flex: none; }
+.pq-design .nav .brand-logo-stack .brand-logo { grid-area: 1 / 1; }
+.pq-design .nav .brand-logo-dark { opacity: 0; }
+.pq-design .nav.is-scrolled .brand-logo-light { opacity: 0; }
+.pq-design .nav.is-scrolled .brand-logo-dark { opacity: 1; }
+.pq-design.menu-open .nav.shell { background-color: transparent; color: #fff; box-shadow: none; backdrop-filter: none; }
+.pq-design.menu-open .nav .brand,
+.pq-design.menu-open .menu-btn { color: #fff; }
+.pq-design.menu-open .nav .brand-logo-light { opacity: 1; }
+.pq-design.menu-open .nav .brand-logo-dark { opacity: 0; }
+.pq-design .nav-links.is-open,
+.pq-design .nav-links.is-open a { color: #fff; }
 .pq-design .nav .brand-logo { height: 56px; width: 70.44px; object-fit: contain; }
 .pq-design .nav .brand-copy { white-space: nowrap; font-size: 18px; font-weight: 600; letter-spacing: 3.24px; line-height: 18.9px; text-transform: uppercase; }
 .pq-design .nav .brand-copy b { font-weight: 600; }

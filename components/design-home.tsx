@@ -151,6 +151,7 @@ export function DesignHome() {
   const faqs = tFaq.raw('items') as Faq[];
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const [serviceOpen, setServiceOpen] = useState(0);
@@ -165,6 +166,13 @@ export function DesignHome() {
     router.replace(pathname || '/', { locale: nextLocale });
     router.refresh();
   };
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     if (!langOpen) return;
@@ -182,9 +190,12 @@ export function DesignHome() {
       <header className='hero' id='top'>
         <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
-        <nav className='nav shell'>
+        <nav className={`nav shell${scrolled && !menuOpen ? ' is-scrolled' : ''}`}>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
-            <img className='brand-logo' src='/logo-mark-white.png' alt='' />
+            <span className='brand-logo-stack'>
+              <img className='brand-logo brand-logo-light' src='/logo-mark-white.png' alt='' />
+              <img className='brand-logo brand-logo-dark' src='/logo-mark.png' alt='' />
+            </span>
             <span className='brand-copy'>
               <b>PIPELINE</b>
               <em>QUALITY</em>
