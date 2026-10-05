@@ -10,7 +10,8 @@
     "howWeWork": "How We Work",
     "experience": "Experience",
     "contact": "Contact",
-    "process": "Process"
+    "process": "Process",
+    "menu": "MENU"
   },
   "hero": {
     "brand": "Pipeline Quality",
@@ -95,6 +96,11 @@
   },
   "experience": {
     "title": "Track Record & Industry Expertise",
+    "designBefore1": "Track ",
+    "designAccent1": "Record",
+    "designAmp": " &",
+    "designBefore2": "Industry ",
+    "designAccent2": "Expertise",
     "description": "Practical experience from industrial, pipeline and offshore wind project environments.",
     "imageAlt": "Industrial project experience in fabrication and inspection",
     "intro": "Pipeline Quality is built on extensive hands-on experience in highly regulated industrial and energy environments.",
@@ -126,6 +132,8 @@
     "keyAreasTitle": "What We Offer",
     "designTitle": "Engineering Solutions for",
     "designTitleAccent": "Safer, Stronger Tomorrow",
+    "designAccentLead": "Safer, Stronger",
+    "designAccentTail": "Tomorrow",
     "designLead": "From inspection to installation, our expert engineering services ensure quality, compliance, and long-term reliability across every project.",
     "serviceAreas": [
       "QA/QC Engineering",
@@ -287,6 +295,8 @@
   "smartQAQC": {
     "label": "BW Digit Connection",
     "title": "Quality Execution Meets Digital Intelligence",
+    "designLine1": "Quality Execution Meets",
+    "designLine2": "Digital Intelligence",
     "description": "Pipeline Quality handles the quality execution side. BW Digit focuses on industrial data, documentation and digital compliance workflows. Together, they connect field activities with the information needed to control, document and complete the project.",
     "features": [
       "Weld traceability and inspection management",
@@ -304,6 +314,8 @@
   "standards": {
     "label": "Standards & Competence",
     "title": "Qualifications, Standards & Technical Competence",
+    "designLine1": "Qualifications, Standards",
+    "designLine2": "& Technical Competence",
     "description": "Standards we work in accordance with — separate from individual qualifications and certificates.",
     "items": {
       "iso9001": {
@@ -409,6 +421,8 @@
   "industries": {
     "label": "Industries",
     "title": "Industries We Support",
+    "designLine1": "Industries",
+    "designLine2": "We Support",
     "description": "Offshore Wind, Pipeline & Transmission, Oil & Gas, Chemical, Energy, EPC and industrial construction.",
     "standardsAlt": "ISO, ASME, API, EN standards for pipeline QA/QC",
     "list": [
@@ -548,6 +562,9 @@
   "why": {
     "label": "Why Pipeline Quality",
     "title": "Why Pipeline Quality?",
+    "designLine1": "Why Pipeline",
+    "designLine2": "Quality",
+    "designMark": "?",
     "points": [
       "Real project experience from industrial, pipeline and offshore wind environments",
       "Technical competence selected according to the actual project requirement",
@@ -587,6 +604,8 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
+    "designBefore": "Frequently Asked ",
+    "designAccent": "Questions",
     "items": [
       {
         "question": "Can you support audits and client inspections?",
@@ -628,6 +647,9 @@
   "contact": {
     "label": "Contact",
     "title": "Discuss Your Project",
+    "designBefore": "Discuss ",
+    "designAccent": "Yor",
+    "designAfter": " Project",
     "subtitle": "Tell us the scope, phase and quality requirement.",
     "description": "Whether you need one specialist, inspection capacity, documentation support or a coordinated quality team we will respond within 48–72 hours.",
     "connectDirectly": "Or connect with us directly:",
@@ -683,6 +705,7 @@
     "tagline": "Project Quality from Production to Handover",
     "copyright": "© 2026 Pipeline Quality. All rights reserved.",
     "brandNote": "Pipeline Quality — a brand of Backpack Wander GmbH",
+    "brandRest": "a brand of Backpack Wander GmbH Berlin, Germany",
     "madeBy": "Made by BW Digit",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms & Conditions",
@@ -798,6 +821,8 @@
   "fieldHandover": {
     "label": "From Field to Handover",
     "title": "From Field Data to Final Handover",
+    "designLine1": "From Field Data to",
+    "designLine2": "Final Handover",
     "description": "A clean engineering flow connecting production activity with final project quality documentation for Pipeline Quality and BW Digit.",
     "lead": "End-to-end quality control, full traceability and complete project documentation from on-site inspection to final handover.",
     "stages": [
@@ -866,6 +891,12 @@
   "philosophy": {
     "label": "Quality Philosophy",
     "title": "We Choose Competence Over Headcount.",
+    "designLine1": "We Choose",
+    "designLine2": "Competence",
+    "designLine3": "Over Headcount",
+    "badge1": "QUALITY",
+    "badge2": "BEFORE",
+    "badge3": "QUANTITY",
     "paragraph1": "We carefully build our professional network around experience, qualifications and project fit.",
     "paragraph2": "We would rather provide one strong specialist than several people who do not add value.",
     "paragraph3": "Every person joining a project represents our reputation.",
@@ -875,6 +906,8 @@
   "digitalQuality": {
     "label": "Digital Quality",
     "title": "Practical Digital Quality Support",
+    "designLine1": "Digital",
+    "designLine2": "Quality",
     "description": "In partnership with BW Digit and technology partners, Pipeline Quality can support digital workflows",
     "blocks": [
       {
@@ -937,6 +970,8 @@
   "partners": {
     "label": "Technology Partnerships",
     "title": "We Do Not Reinvent Good Technology. We Connect It.",
+    "designLine1": "We Do Not Reinvent Good Technology",
+    "designLine2": "We Connect It",
     "paragraph1": "We are open to working with established technology providers when their solution can deliver better results, faster implementation or stronger project value.",
     "paragraph2": "BW Digit can act as an implementation and integration layer between industrial teams, project requirements and existing digital solutions.",
     "cta": "Become a Technology Partner"

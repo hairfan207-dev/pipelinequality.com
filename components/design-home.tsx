@@ -178,7 +178,7 @@ export function DesignHome() {
   const activeIndustry = sectors[industry];
 
   return (
-    <div className='pq-design'>
+    <div className='pq-design' lang={locale}>
       <header className='hero' id='top'>
         <img className='hero-bg' src='/design/figma/hero.png' alt={tHero('imageAlt')} />
         <div className='hero-overlay' />
@@ -191,7 +191,7 @@ export function DesignHome() {
             </span>
           </a>
           <button type='button' className='menu-btn' onClick={() => setMenuOpen((v) => !v)}>
-            MENU
+            {tNav('menu')}
           </button>
           <div className={`nav-links${menuOpen ? ' is-open' : ''}`}>
             <a href='#services' onClick={() => setMenuOpen(false)}>{tNav('services')}</a>
@@ -283,7 +283,7 @@ export function DesignHome() {
           <div>
             <h2>
               <span className='svc-line'>{tServices('designTitle')}</span>
-              <span className='svc-line'><span>Safer, Stronger</span> Tomorrow</span>
+              <span className='svc-line'><span>{tServices('designAccentLead')}</span> {tServices('designAccentTail')}</span>
             </h2>
             <p className='lead'>{tServices('designLead')}</p>
             <div className='accordion service-accordion'>
@@ -340,8 +340,8 @@ export function DesignHome() {
       <section className='process section' id='process'>
         <div className='shell center'>
           <h2>
-            From Field Data to
-            <span>Final Handover</span>
+            {tField('designLine1')}
+            <span>{tField('designLine2')}</span>
           </h2>
           <p className='lead centered'>{tField('lead')}</p>
           <div className='process-cards'>
@@ -375,11 +375,13 @@ export function DesignHome() {
           <div className='network-images'>
             {networkPhotos.map((photo) => {
               const label = roles[photo.role] ?? '';
-              const lines = label.startsWith('Quality ')
-                ? ['Quality', label.slice('Quality '.length)]
-                : label.startsWith('Dimensional / ')
-                  ? ['Dimensional', label.slice('Dimensional / '.length)]
-                  : [label];
+                  const lines = locale === 'de'
+                    ? [label]
+                    : label.startsWith('Quality ')
+                      ? ['Quality', label.slice('Quality '.length)]
+                      : label.startsWith('Dimensional / ')
+                        ? ['Dimensional', label.slice('Dimensional / '.length)]
+                        : [label];
               return (
                 <figure key={photo.src} className={photo.variant}>
                   <img className='shot' src={photo.src} alt={label} />
@@ -433,18 +435,18 @@ export function DesignHome() {
         <div className='shell competence-inner'>
           <div className='competence-card'>
             <h2>
-              <span className='line'>We Choose</span>
-              <span className='line'>Competence</span>
-              <span className='line'>Over Headcount</span>
+              <span className='line'>{tPhil('designLine1')}</span>
+              <span className='line'>{tPhil('designLine2')}</span>
+              <span className='line'>{tPhil('designLine3')}</span>
             </h2>
             <p>{tPhil('paragraph1')}</p>
             <p>{tPhil('paragraph2')}</p>
             <p className='note'>{tPhil('paragraph3')}</p>
           </div>
           <div className='quality-badge'>
-            <span>QUALITY</span>
-            <span>BEFORE</span>
-            <span>QUANTITY</span>
+            <span>{tPhil('badge1')}</span>
+            <span>{tPhil('badge2')}</span>
+            <span>{tPhil('badge3')}</span>
           </div>
         </div>
       </section>
@@ -452,9 +454,9 @@ export function DesignHome() {
       <section className='industries' id='industries'>
         <div className='industries-head'>
           <h2>
-            Industries
+            {tInd('designLine1')}
             <br />
-            <span>We Support</span>
+            <span>{tInd('designLine2')}</span>
           </h2>
         </div>
         <div className='shell industries-panel'>
@@ -499,8 +501,8 @@ export function DesignHome() {
           <div className='experience-intro'>
             <div className='experience-heading'>
               <h2>
-                <span className='line'>Track <span className='accent'>Record</span><span className='amp'> &</span></span>
-                <span className='line'>Industry <span className='accent'>Expertise</span></span>
+            <span className='line'>{tExp('designBefore1')}<span className='accent'>{tExp('designAccent1')}</span><span className='amp'>{tExp('designAmp')}</span></span>
+            <span className='line'>{tExp('designBefore2')}<span className='accent'>{tExp('designAccent2')}</span></span>
               </h2>
               <p>{tExp('intro')}</p>
             </div>
@@ -532,8 +534,8 @@ export function DesignHome() {
 
       <section className='standards section'>
         <h2>
-          <span className='line'>Qualifications, Standards</span>
-          <span className='line'>& Technical Competence</span>
+            <span className='line'>{tStd('designLine1')}</span>
+            <span className='line'>{tStd('designLine2')}</span>
         </h2>
         <div className='standard-grid'>
           {standardOrder.map((groupIndex, iconIndex) => {
@@ -583,8 +585,8 @@ export function DesignHome() {
         <div className='digital-grid'>
           <div>
             <h2>
-              <span className='line'>Quality Execution Meets</span>
-              <span className='line'>Digital Intelligence</span>
+            <span className='line'>{tSmart('designLine1')}</span>
+            <span className='line'>{tSmart('designLine2')}</span>
             </h2>
             <a className='btn btn-orange' href='#contact'>{tSmart('cta')}</a>
             <div className='dig-photo dig-engineer'>
@@ -605,8 +607,8 @@ export function DesignHome() {
       <section className='digital-support section'>
         <div className='support-panel'>
           <h2>
-            <span className='line'>Digital</span>
-            <span className='line'>Quality</span>
+            <span className='line'>{tDigital('designLine1')}</span>
+            <span className='line'>{tDigital('designLine2')}</span>
           </h2>
           <p>{tDigital('description')}</p>
         </div>
@@ -628,8 +630,8 @@ export function DesignHome() {
       <section className='partners section' id='partners'>
         <p className='eyebrow'>{tPartners('label')}</p>
         <h2>
-          <span className='line'>We Do Not Reinvent Good Technology</span>
-          <span className='line'>We Connect It</span>
+            <span className='line'>{tPartners('designLine1')}</span>
+            <span className='line'>{tPartners('designLine2')}</span>
         </h2>
         <p className='partners-lead'>{tPartners('paragraph1')}</p>
         <p className='partners-note'>{tPartners('paragraph2')}</p>
@@ -642,8 +644,8 @@ export function DesignHome() {
             <path fill='#F4F7F9' d='M824.85 20V252.14C824.85 257.444 822.743 262.531 818.992 266.281C815.241 270.032 810.154 272.14 804.85 272.14H20C14.6957 272.14 9.60859 274.246 5.85786 277.997C2.10714 281.748 0 286.835 0 292.14V605.42C0 610.724 2.10714 615.811 5.85786 619.562C9.60859 623.312 14.6957 625.42 20 625.42H1630.1C1635.4 625.42 1640.49 623.312 1644.24 619.562C1647.99 615.811 1650.1 610.724 1650.1 605.42V20C1650.1 14.6957 1647.99 9.60815 1644.24 5.85742C1640.49 2.10669 1635.4 0 1630.1 0H844.85C839.546 0 834.459 2.10669 830.708 5.85742C826.957 9.60815 824.85 14.6957 824.85 20Z' />
           </svg>
           <h2>
-            <span className='line'>Why Pipeline</span>
-            <span className='line'>Quality <span>?</span></span>
+            <span className='line'>{tWhy('designLine1')}</span>
+            <span className='line'>{tWhy('designLine2')} <span>{tWhy('designMark')}</span></span>
           </h2>
           <div className='why-col why-col-right'>
             {reasons.slice(0, 4).map((reason) => (
@@ -665,7 +667,7 @@ export function DesignHome() {
       </section>
 
       <section className='faq section'>
-        <h2>Frequently Asked <span>Questions</span></h2>
+          <h2>{tFaq('designBefore')}<span>{tFaq('designAccent')}</span></h2>
         <p className='faq-lead'>{tContact('description')}</p>
         <div className='faq-box'>
           {faqs.map((faq, index) => (
@@ -685,7 +687,7 @@ export function DesignHome() {
       </section>
 
       <section className='contact section' id='contact'>
-        <h2>Discuss <span>Yor</span> Project</h2>
+          <h2>{tContact('designBefore')}<span>{tContact('designAccent')}</span>{tContact('designAfter')}</h2>
         <ContactForm />
       </section>
 
@@ -704,7 +706,7 @@ export function DesignHome() {
           <button type='button' className={locale === 'en' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('en')}>EN</button>
           <button type='button' className={locale === 'de' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('de')}>DE</button>
         </div>
-        <p className='footer-note'><span>Pipeline Quality</span> a brand of Backpack Wander GmbH Berlin, Germany</p>
+          <p className='footer-note'><span>Pipeline Quality</span> {tFooter('brandRest')}</p>
         <div className='footer-legal'>
           <a href='/privacy'>{tFooter('privacyPolicy')}</a>
           <a href={locale === 'de' ? '/agb' : '/terms'}>{tFooter('terms')}</a>

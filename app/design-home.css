@@ -871,3 +871,94 @@
   .pq-design .footer-note { font-size: 9px; line-height: 1.2; letter-spacing: 0; white-space: nowrap; }
   .pq-design .footer-note span { margin-right: 6px; letter-spacing: 0; }
 }
+
+/* German copy is longer than the locked English desktop. These rules apply only when the page language is de. */
+.pq-design:lang(de) .nav-links { letter-spacing: 0.4px; font-size: 12px; }
+.pq-design:lang(de) .hero-actions .btn { letter-spacing: 0; font-size: 12px; padding: 0 18px; }
+.pq-design:lang(de) .hero-actions .btn-orange,
+.pq-design:lang(de) .hero-actions .btn-navy { width: auto; min-width: 240px; }
+.pq-design:lang(de) .intro h2,
+.pq-design:lang(de) .services-grid h2,
+.pq-design:lang(de) .network.section .network-copy h2,
+.pq-design:lang(de) .experience.section h2,
+.pq-design:lang(de) .standards.section h2,
+.pq-design:lang(de) .partners.section h2,
+.pq-design:lang(de) .faq.section h2,
+.pq-design:lang(de) .contact.section h2 { letter-spacing: 0; }
+.pq-design:lang(de) .services-grid h2 { font-size: 48px !important; }
+.pq-design:lang(de) .services-grid h2 .svc-line { white-space: normal; }
+.pq-design:lang(de) .process-card .pic strong { font-size: 22px; }
+.pq-design:lang(de) .process-labels { height: auto; }
+.pq-design:lang(de) .process-labels span { width: auto; max-width: 100px; font-size: 11px; line-height: 13px; white-space: nowrap; }
+.pq-design:lang(de) .promise-grid h3 { width: auto; max-width: 220px; margin-left: auto; margin-right: auto; font-size: 14px !important; line-height: 1.25 !important; }
+.pq-design:lang(de) .workflow-grid p { letter-spacing: 0; }
+.pq-design:lang(de) .workflow-grid article:nth-child(4) p { width: auto; max-width: 100%; margin-left: 0; }
+.pq-design:lang(de) .network-images .top-solid figcaption > span,
+.pq-design:lang(de) .network-images .bottom-solid figcaption > span { width: 230px; height: auto; font-size: 15px; line-height: 18px; white-space: normal; }
+.pq-design:lang(de) .network-list li { align-items: flex-start; font-size: 16px !important; }
+.pq-design:lang(de) .network-list li span { min-width: 0; }
+.pq-design:lang(de) .network-list li.wrap span { max-width: none; }
+.pq-design:lang(de) .competence-card { height: auto; min-height: 552px; }
+.pq-design:lang(de) .quality-badge { width: 270px; font-size: 24px; }
+.pq-design:lang(de) .industries .industries-head h2 { font-size: 64px !important; }
+.pq-design:lang(de) .industry-tabs button { height: auto; min-height: 65px; padding-top: 10px; padding-bottom: 10px; font-size: 24px; line-height: 1.2; }
+.pq-design:lang(de) .industry-photo strong { font-size: 18px; line-height: 1.2; }
+.pq-design:lang(de) .experience.section h2 { font-size: 48px !important; }
+.pq-design:lang(de) .experience.section h2 .line,
+.pq-design:lang(de) .experience.section h2 .line + .line,
+.pq-design:lang(de) .experience.section h2 .accent,
+.pq-design:lang(de) .experience.section h2 .amp { letter-spacing: 0; white-space: normal; }
+.pq-design:lang(de) .experience-copy p,
+.pq-design:lang(de) .experience-ref .ref-body,
+.pq-design:lang(de) .experience-ref .ref-detail { width: auto; max-width: 100%; }
+.pq-design:lang(de) .standard-grid h3 { font-size: 15px !important; line-height: 20px !important; letter-spacing: 0; }
+.pq-design:lang(de) .standard-grid p { font-size: 15px; line-height: 18px; letter-spacing: 0; }
+.pq-design:lang(de) .standard-grid .std-card { height: auto; min-height: 194px; padding-bottom: 16px; }
+.pq-design:lang(de) .support-row h3 { font-size: 24px; }
+.pq-design:lang(de) .support-row.active h3 { font-size: 30px; }
+.pq-design:lang(de) .why.section h2 { font-size: 78px !important; letter-spacing: 0; }
+.pq-design:lang(de) .why.section h2 .line,
+.pq-design:lang(de) .why.section h2 .line + .line,
+.pq-design:lang(de) .why.section h2 .line span { letter-spacing: 0; }
+.pq-design:lang(de) .why-layout { height: auto; min-height: 720px; padding-bottom: 40px; }
+.pq-design:lang(de) .why-col article { height: auto; min-height: 120px; margin-bottom: 16px; }
+.pq-design:lang(de) .why-col p,
+.pq-design:lang(de) .why-col-right p,
+.pq-design:lang(de) .why-col-right article:nth-child(2) p,
+.pq-design:lang(de) .why-col-right article:nth-child(4) p,
+.pq-design:lang(de) .why-col-left p,
+.pq-design:lang(de) .why-col-left article:nth-child(2) p { width: auto; font-size: 16px; line-height: 1.35; letter-spacing: 0; }
+.pq-design:lang(de) .faq.section .faq-box { height: auto; min-height: 460px; overflow: visible; }
+.pq-design:lang(de) .faq.section .faq-item button { height: auto; line-height: 1.35; white-space: normal; }
+.pq-design:lang(de) .contact.section h2 { white-space: normal; }
+.pq-design:lang(de) .contact form > p { white-space: normal; }
+.pq-design:lang(de) .footer-links { letter-spacing: 0; gap: 22px; }
+.pq-design:lang(de) .footer-note { max-width: 460px; letter-spacing: 0; text-align: right; }
+@media (max-width: 1100px) {
+  .pq-design:lang(de) .industries .industries-head h2 { font-size: clamp(36px, 6vw, 56px) !important; }
+  .pq-design:lang(de) .industry-tabs button { font-size: 20px; }
+  .pq-design:lang(de) .why.section h2 { font-size: clamp(36px, 6vw, 64px) !important; }
+  .pq-design:lang(de) .why-layout { min-height: 0; }
+  .pq-design:lang(de) .services-grid h2,
+  .pq-design:lang(de) .experience.section h2 { font-size: clamp(32px, 5vw, 44px) !important; }
+  .pq-design:lang(de) .standard-grid .std-card { min-height: 0; }
+  .pq-design:lang(de) .quality-badge { width: auto; }
+  .pq-design:lang(de) .footer-note { position: static; max-width: none; text-align: left; }
+}
+@media (max-width: 700px) {
+  .pq-design:lang(de) .hero-actions .btn-orange,
+  .pq-design:lang(de) .hero-actions .btn-navy { width: 100%; min-width: 0; }
+  .pq-design:lang(de) .acc-item button { overflow-wrap: anywhere; }
+  .pq-design:lang(de) .process-labels span { width: auto; max-width: none; font-size: 8px; line-height: 10px; }
+  .pq-design:lang(de) .acc-item button { font-size: 15px !important; line-height: 1.25; white-space: normal; }
+  .pq-design:lang(de) .network-images .top-solid figcaption > span,
+  .pq-design:lang(de) .network-images .bottom-solid figcaption > span { width: auto; }
+  .pq-design:lang(de) .industry-tabs button { font-size: 16px; min-height: 48px; }
+  .pq-design:lang(de) .industry-photo strong { font-size: 14px; }
+  .pq-design:lang(de) .support-row h3 { font-size: 20px; }
+  .pq-design:lang(de) .support-row.active h3 { font-size: 24px; }
+  .pq-design:lang(de) .standard-grid h3 { font-size: 16px !important; }
+  .pq-design:lang(de) .standard-grid .std-card { min-height: 72px; }
+  .pq-design:lang(de) .footer-links { gap: 8px; font-size: 11px; }
+  .pq-design:lang(de) .footer-note { font-size: 9px; white-space: normal; }
+}

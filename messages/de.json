@@ -10,7 +10,8 @@
     "howWeWork": "Arbeitsweise",
     "experience": "Erfahrung",
     "contact": "Kontakt",
-    "process": "Prozess"
+    "process": "Prozess",
+    "menu": "MENÜ"
   },
   "hero": {
     "brand": "Pipeline Quality",
@@ -95,6 +96,11 @@
   },
   "experience": {
     "title": "Referenzen & Branchenkompetenz",
+    "designBefore1": "",
+    "designAccent1": "Referenzen",
+    "designAmp": " &",
+    "designBefore2": "",
+    "designAccent2": "Branchenkompetenz",
     "description": "Praktische Erfahrung aus Industrie-, Pipeline- und Offshore-Wind-Projekten.",
     "imageAlt": "Industrieprojekte in Fertigung und Inspektion",
     "intro": "Unsere Kernkompetenz basiert auf über 20 Jahren praktischer Projekterfahrung in streng regulierten Industrieumgebungen. Dazu zählen Qualitätsausführung und Einsätze vor Ort bei großen Projekten im Umfeld führender Branchennamen wie BASF, Bayernoil, Chemiepark Marl, JSC Yamal LNG, Technip, AO Messoyakhaneftegaz, Gazprom Neft und INEOS.",
@@ -126,6 +132,8 @@
     "keyAreasTitle": "Was wir anbieten",
     "designTitle": "Engineering-Lösungen für",
     "designTitleAccent": "eine sicherere, stärkere Zukunft",
+    "designAccentLead": "eine sicherere, stärkere",
+    "designAccentTail": "Zukunft",
     "designLead": "Von der Inspektion bis zur Montage sichern unsere Engineering-Leistungen Qualität, Konformität und langfristige Zuverlässigkeit in jedem Projekt.",
     "serviceAreas": [
       "QA/QC Engineering",
@@ -287,6 +295,8 @@
   "smartQAQC": {
     "label": "BW Digit Anbindung",
     "title": "Qualitätsarbeit trifft digitale Intelligenz",
+    "designLine1": "Qualitätsarbeit trifft",
+    "designLine2": "digitale Intelligenz",
     "description": "Pipeline Quality übernimmt die Qualitätsausführung. BW Digit fokussiert sich auf industrielle Daten, Dokumentation und digitale Compliance-Workflows. Gemeinsam verbinden sie Feldaktivitäten mit den Informationen, die nötig sind, um das Projekt zu steuern, zu dokumentieren und abzuschließen.",
     "features": [
       "Schweißrückverfolgbarkeit und Inspektionsmanagement",
@@ -304,6 +314,8 @@
   "standards": {
     "label": "Normen & Kompetenz",
     "title": "Qualifikationen, Normen & technische Kompetenz",
+    "designLine1": "Qualifikationen, Normen",
+    "designLine2": "& technische Kompetenz",
     "description": "Normen, nach denen wir arbeiten — getrennt von einzelnen Qualifikationen und Zertifikaten.",
     "items": {
       "iso9001": {
@@ -374,7 +386,7 @@
         "items": [
           "ISO 15614",
           "ISO 9606",
-          "ASME Section IX sofern zutreffend"
+          "ASME Section IX"
         ]
       },
       {
@@ -393,7 +405,7 @@
         "title": "Korrosion / Beschichtung",
         "items": [
           "ISO 12944",
-          "FROSIO / NACE, wenn qualifizierte Spezialisten eingesetzt werden"
+          "FROSIO / NACE"
         ]
       },
       {
@@ -407,6 +419,8 @@
   "industries": {
     "label": "Branchen",
     "title": "Branchen, die wir unterstützen",
+    "designLine1": "Branchen,",
+    "designLine2": "die wir unterstützen",
     "description": "Offshore-Wind, Pipeline & Transmission, Öl & Gas, Chemie, Energie, EPC und Industrieanlagenbau.",
     "standardsAlt": "ISO-, ASME-, API- und EN-Normen für Pipeline QA/QC",
     "list": [
@@ -546,6 +560,9 @@
   "why": {
     "label": "Warum Pipeline Quality",
     "title": "Warum Pipeline Quality?",
+    "designLine1": "Warum Pipeline",
+    "designLine2": "Quality",
+    "designMark": "?",
     "points": [
       "Echte Projekterfahrung aus Industrie-, Pipeline- und Offshore-Wind-Umfeldern",
       "Technische Kompetenz, ausgewählt nach dem tatsächlichen Projektbedarf",
@@ -585,6 +602,8 @@
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
+    "designBefore": "Häufig gestellte ",
+    "designAccent": "Fragen",
     "items": [
       {
         "question": "Unterstützen Sie Audits und Kundeninspektionen?",
@@ -626,6 +645,9 @@
   "contact": {
     "label": "Kontakt",
     "title": "Projekt besprechen",
+    "designBefore": "",
+    "designAccent": "Projekt",
+    "designAfter": " besprechen",
     "subtitle": "Nennen Sie uns Umfang, Phase und Qualitätsbedarf.",
     "description": "Ob ein Spezialist, Inspektionskapazität, Dokumentationsunterstützung oder ein koordiniertes Qualitätsteam — wir antworten innerhalb von 48–72 Stunden.",
     "connectDirectly": "Oder kontaktieren Sie uns direkt:",
@@ -681,6 +703,7 @@
     "tagline": "Projektqualität von der Fertigung bis zur Übergabe",
     "copyright": "© 2026 Pipeline Quality. Alle Rechte vorbehalten.",
     "brandNote": "Pipeline Quality — eine Marke der Backpack Wander GmbH",
+    "brandRest": "eine Marke der Backpack Wander GmbH Berlin, Deutschland",
     "madeBy": "Made by BW Digit",
     "privacyPolicy": "Datenschutz",
     "terms": "AGB",
@@ -796,6 +819,8 @@
   "fieldHandover": {
     "label": "Vom Feld zur Übergabe",
     "title": "Von Felddaten zur finalen Übergabe",
+    "designLine1": "Von Felddaten zur",
+    "designLine2": "finalen Übergabe",
     "description": "Ein klarer Engineering-Ablauf, der Fertigungsaktivitäten mit der finalen Projektqualitätsdokumentation für Pipeline Quality und BW Digit verbindet.",
     "lead": "Durchgängige Qualitätskontrolle, volle Rückverfolgbarkeit und vollständige Projektdokumentation — von der Inspektion vor Ort bis zur finalen Übergabe.",
     "stages": [
@@ -816,9 +841,9 @@
         "title": "Qualitätskontrolle",
         "text": "Aufzeichnungen, Maßnahmen und Freigaben unter Kontrolle.",
         "items": [
-          "Inspektionsaufzeichnungen",
+          "Aufzeichnungen",
           "NCR",
-          "Rückverfolgbarkeit",
+          "Rückverfolgung",
           "Status",
           "Freigaben"
         ]
@@ -864,6 +889,12 @@
   "philosophy": {
     "label": "Qualitätsphilosophie",
     "title": "Wir wählen Kompetenz vor Kopfzahl.",
+    "designLine1": "Wir wählen",
+    "designLine2": "Kompetenz",
+    "designLine3": "vor Kopfzahl",
+    "badge1": "QUALITÄT",
+    "badge2": "VOR",
+    "badge3": "QUANTITÄT",
     "paragraph1": "Wir bauen unser Fachnetzwerk bewusst nach Erfahrung, Qualifikation und Projektpassung auf.",
     "paragraph2": "Lieber ein starker Spezialist als mehrere Personen ohne Mehrwert.",
     "paragraph3": "Jede Person im Projekt steht für unseren Ruf.",
@@ -873,6 +904,8 @@
   "digitalQuality": {
     "label": "Digitale Qualität",
     "title": "Praktische digitale Qualitätsunterstützung",
+    "designLine1": "Digitale",
+    "designLine2": "Qualität",
     "description": "In Partnerschaft mit BW Digit und Technologiepartnern kann Pipeline Quality digitale Workflows unterstützen für:",
     "blocks": [
       {
@@ -935,6 +968,8 @@
   "partners": {
     "label": "Technologiepartnerschaften",
     "title": "Wir erfinden gute Technologie nicht neu. Wir verbinden sie.",
+    "designLine1": "Wir erfinden gute Technologie nicht neu.",
+    "designLine2": "Wir verbinden sie.",
     "paragraph1": "Wir sind offen für die Zusammenarbeit mit etablierten Technologieanbietern, wenn ihre Lösung bessere Ergebnisse, schnellere Umsetzung oder höheren Projektnutzen bringt.",
     "paragraph2": "BW Digit kann als Implementierungs- und Integrationsschicht zwischen Industrieteams, Projektanforderungen und bestehenden digitalen Lösungen wirken.",
     "cta": "Technologiepartner werden"
