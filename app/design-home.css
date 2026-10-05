@@ -1070,22 +1070,32 @@
     text-align: center;
     white-space: normal;
   }
-  .pq-design .hero-actions { align-items: center; gap: 10px; }
-  .pq-design .hero-actions .btn,
-  .pq-design:lang(de) .hero-actions .btn {
-    width: auto;
-    min-width: 0;
+  .pq-design .hero-actions {
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: center;
+    gap: 10px;
+    width: max-content;
     max-width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pq-design .hero-actions .btn,
+  .pq-design:lang(de) .hero-actions .btn,
+  .pq-design .hero-actions .btn-orange,
+  .pq-design .hero-actions .btn-navy,
+  .pq-design:lang(de) .hero-actions .btn-orange,
+  .pq-design:lang(de) .hero-actions .btn-navy {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
     height: 42px;
     min-height: 42px;
     padding: 0 16px;
     font-size: 12px !important;
     letter-spacing: 0.04em;
+    white-space: nowrap;
   }
-  .pq-design .hero-actions .btn-orange,
-  .pq-design .hero-actions .btn-navy,
-  .pq-design:lang(de) .hero-actions .btn-orange,
-  .pq-design:lang(de) .hero-actions .btn-navy { width: auto; min-width: 0; }
   .pq-design .digital .btn-orange,
   .pq-design .partners .btn-orange,
   .pq-design .contact button[type='submit'] {
