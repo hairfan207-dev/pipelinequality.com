@@ -252,7 +252,7 @@ export function DesignHome() {
                 {pillar.title.split(/(?= & )/).map((line, index) => (
                   <span key={line}>
                     {index > 0 ? <br /> : null}
-                    {line}
+                    {line.trim()}
                   </span>
                 ))}
               </h3>
@@ -543,7 +543,9 @@ export function DesignHome() {
             const [first, ...rest] = group.title.split(' ');
             const titleLines = group.title.includes(' & ')
               ? group.title.split(' & ').map((part, line) => (line === 0 ? part : `& ${part}`))
-              : rest.length ? [first, rest.join(' ')] : [group.title];
+              : group.title.includes(' / ')
+                ? group.title.split(' / ').map((part, line, parts) => (line < parts.length - 1 ? `${part} /` : part))
+                : rest.length ? [first, rest.join(' ')] : [group.title];
             return (
               <article key={group.title}>
                 <img src={standardIcons[iconIndex]} alt='' />

@@ -94,8 +94,8 @@ export function DocumentationReviewModal({ isOpen, onClose }: DocumentationRevie
         // Show success toast
         setToast({
           type: 'success',
-          message: 'Request Submitted Successfully!',
-          description: 'Thank you! We\'ll review your documentation request and get back to you shortly.'
+          message: t('form.successTitle'),
+          description: t('form.successMessage')
         })
         
         // Close modal after short delay
@@ -106,16 +106,16 @@ export function DocumentationReviewModal({ isOpen, onClose }: DocumentationRevie
         setIsSubmitting(false)
         setToast({
           type: 'error',
-          message: 'Submission Failed',
-          description: 'Something went wrong. Please try again or contact us directly.'
+          message: t('form.errorTitle'),
+          description: t('form.errorMessage')
         })
       }
     } catch (error) {
       setIsSubmitting(false)
       setToast({
         type: 'error',
-        message: 'Submission Failed',
-        description: 'Something went wrong. Please try again or contact us directly.'
+        message: t('form.errorTitle'),
+        description: t('form.errorMessage')
       })
     }
   }

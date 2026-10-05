@@ -70,6 +70,10 @@
       "messagePlaceholder": "Tell us about your documentation review needs...",
       "submit": "Submit Request",
       "submitting": "Submitting...",
+      "successTitle": "Request submitted",
+      "successMessage": "Thank you. We will review your documentation request and get back to you shortly.",
+      "errorTitle": "Submission failed",
+      "errorMessage": "Something went wrong. Please try again or contact us directly.",
       "privacyNote": "Privacy Note: Your documents are transmitted via an encrypted SSL connection. Your data is used solely for service delivery and is deleted upon project completion in compliance with GDPR. Server location: Frankfurt, Germany."
     },
     "footer": {
@@ -359,7 +363,7 @@
       "ISO 15614 / ISO 9606 – Welding procedure and welder qualification",
       "DNV-ST-0126 – Offshore Wind Structures",
       "PED 2014/68/EU – Pressure Equipment Directive",
-      "FROSIO/NACE Level 3 – Coating Inspector Certification",
+      "FROSIO / NACE Level 3 – Coating Inspector Certification",
       "ASME Section IX (project-dependent)",
       "EN and DIN standards applicable to industrial fabrication and installation"
     ],
@@ -375,7 +379,7 @@
         ]
       },
       {
-        "title": "Inspection & Ndt",
+        "title": "Inspection & NDT",
         "items": [
           "ISO 9712",
           "VT / NDT"
@@ -406,8 +410,7 @@
         "title": "Corrosion Coating",
         "items": [
           "ISO 12944",
-          "FROSIO",
-          "NACE"
+          "FROSIO / NACE"
         ]
       },
       {
@@ -624,7 +627,7 @@
         "answer": "Offshore wind, pipeline and transmission, oil & gas, chemical and petrochemical, energy, EPC, industrial construction, and maintenance / shutdown / revamp projects."
       },
       {
-        "question": "Do you provide remote documentation support?",
+        "question": "Do you only provide remote documentation support?",
         "answer": "No. Pipeline Quality supports both field execution and documentation. Depending on the project, this can include inspection, production support, QA/QC engineering and handover documentation — on site, remotely, or as a combined setup."
       },
       {
@@ -648,7 +651,7 @@
     "label": "Contact",
     "title": "Discuss Your Project",
     "designBefore": "Discuss ",
-    "designAccent": "Yor",
+    "designAccent": "Your",
     "designAfter": " Project",
     "subtitle": "Tell us the scope, phase and quality requirement.",
     "description": "Whether you need one specialist, inspection capacity, documentation support or a coordinated quality team we will respond within 48–72 hours.",
@@ -722,7 +725,7 @@
     "imprint": {
       "title": "Legal Notice",
       "companyName": "Company Information",
-      "address": "Backpack Wander GmbH\nKolonnenstrasse 8\n10827 Berlin, Germany",
+      "address": "Backpack Wander GmbH\nKolonnenstraße 8\n10827 Berlin, Germany",
       "managingDirectorLabel": "Managing Director",
       "managingDirector": "Biljana Habel, M.Sc.",
       "contactLabel": "Contact",
@@ -735,7 +738,7 @@
       "sections": [
         {
           "title": "Company Information",
-          "content": "Backpack Wander GmbH\nKolonnenstrasse 8\n10827 Berlin, Germany"
+          "content": "Backpack Wander GmbH\nKolonnenstraße 8\n10827 Berlin, Germany"
         },
         {
           "title": "Represented by",
@@ -751,7 +754,7 @@
         },
         {
           "title": "VAT Identification Number",
-          "content": "VAT ID according to § 27 a of the German Value Added Tax Act:\nDE451725510"
+          "content": "VAT ID according to § 27a of the German Value Added Tax Act:\nDE451725510"
         },
         {
           "title": "Brand Disclaimer",
@@ -759,7 +762,7 @@
         },
         {
           "title": "EU Dispute Resolution",
-          "content": "The European Commission provides a platform for online dispute resolution (ODR): https://europa.eu.\nWe are not obliged or willing to participate in dispute resolution proceedings before a consumer arbitration board."
+          "content": "The European online dispute resolution platform was discontinued on 20 July 2025, so a link to that platform is no longer required.\nWe are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board."
         }
       ]
     },
@@ -772,7 +775,7 @@
         },
         {
           "title": "2. Controller (Responsible Entity)",
-          "content": "The entity responsible for data processing is:\n\nBackpack Wander GmbH\nKolonnenstrasse 8, 10827 Berlin, Germany\nManaging Director: Biljana Habel, M.Sc.\n\nFor general & legal inquiries: info@backpackwander.com\nFor project & brand inquiries: info@pipelinequality.com"
+          "content": "The entity responsible for data processing is:\n\nBackpack Wander GmbH\nKolonnenstraße 8, 10827 Berlin, Germany\nManaging Director: Biljana Habel, M.Sc.\n\nFor general & legal inquiries: info@backpackwander.com\nFor project & brand inquiries: info@pipelinequality.com"
         },
         {
           "title": "3. Hosting and Content Delivery Networks (CDN)",
@@ -801,7 +804,7 @@
         },
         {
           "title": "3. Contractual Partner",
-          "content": "The sole contractual partner is\nBackpack Wander GmbH, Kolonnenstrasse 8, 10827 Berlin, Managing Director: Biljana Habel, M.Sc."
+          "content": "The sole contractual partner is\nBackpack Wander GmbH, Kolonnenstraße 8, 10827 Berlin, Managing Director: Biljana Habel, M.Sc."
         },
         {
           "title": "4. Liability",
