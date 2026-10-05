@@ -960,6 +960,7 @@
   .pq-design:lang(de) .standard-grid h3 { font-size: 16px !important; }
   .pq-design:lang(de) .standard-grid .std-card { min-height: 72px; }
   .pq-design:lang(de) .footer-links { gap: 8px; font-size: 11px; }
+  .pq-design:lang(de) .footer-legal { justify-content: flex-start; gap: 22px; letter-spacing: 0.4px; }
   .pq-design:lang(de) .footer-note { font-size: 9px; white-space: normal; }
 }
 
