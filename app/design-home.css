@@ -868,5 +868,6 @@
   .pq-design .footer-legal a { white-space: nowrap; }
   .pq-design .footer-copy { font-size: 11px; }
   .pq-design .footer-locale { gap: 12px; }
-  .pq-design .footer-note { font-size: 11px; line-height: 1.35; letter-spacing: 0; }
+  .pq-design .footer-note { font-size: 9px; line-height: 1.2; letter-spacing: 0; white-space: nowrap; }
+  .pq-design .footer-note span { margin-right: 6px; letter-spacing: 0; }
 }
