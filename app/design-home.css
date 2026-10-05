@@ -1114,14 +1114,4 @@
     letter-spacing: 0;
     white-space: nowrap !important;
   }
-  .pq-design .process-card:nth-child(1) .pic img,
-  .pq-design .process-card:nth-child(3) .pic img,
-  .pq-design .process-card:nth-child(5) .pic img {
-    object-position: center center;
-  }
-  .pq-design .process-card .pic strong {
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
 }
