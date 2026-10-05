@@ -1027,4 +1027,47 @@
     pointer-events: none;
   }
   .pq-design .competence-inner { position: relative; z-index: 1; }
+  .pq-design .network-images .top-solid figcaption,
+  .pq-design .network-images .bottom-solid figcaption,
+  .pq-design .network-images .top-fade figcaption,
+  .pq-design .network-images .bottom-fade figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .pq-design .network-images .top-solid figcaption img,
+  .pq-design .network-images .bottom-solid figcaption img,
+  .pq-design .network-images .top-fade figcaption img,
+  .pq-design .network-images .bottom-fade figcaption img {
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 16px;
+    height: 16px;
+    flex: none;
+  }
+  .pq-design .network-images .top-solid figcaption > span,
+  .pq-design .network-images .bottom-solid figcaption > span,
+  .pq-design .network-images .top-fade figcaption > span,
+  .pq-design .network-images .bottom-fade figcaption > span,
+  .pq-design:lang(de) .network-images .top-solid figcaption > span,
+  .pq-design:lang(de) .network-images .bottom-solid figcaption > span {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    max-width: calc(100% - 32px);
+    min-width: 0;
+    height: auto;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
 }
