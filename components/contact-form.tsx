@@ -214,7 +214,7 @@ export function ContactForm() {
             <a href='/privacy' target='_blank' rel='noopener noreferrer' className='text-muted-gold hover:underline'>
               {t('privacyPolicy')}
             </a>
-            . *
+            {t('gdprConsentEnd')} *
           </label>
         </div>
         <p className='text-[10px] md:text-xs text-charcoal/60 leading-relaxed italic'>

@@ -670,6 +670,7 @@
       "fileUpload": "File Upload (Optional)",
       "fileUploadHint": "Attach specs, drawings, or lists (PDF, DWG, XLSX, max 10MB)",
       "gdprConsent": "I agree to the processing of my personal data in accordance with the",
+      "gdprConsentEnd": ".",
       "privacyPolicy": "Privacy Policy",
       "submit": "Request QA/QC support",
       "submitting": "Sending...",

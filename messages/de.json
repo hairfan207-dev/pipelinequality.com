@@ -143,7 +143,7 @@
       "QA/QC Engineering",
       "Inspektion & Fertigungsbegleitung",
       "Dokumentation & Übergabe",
-      "Projektqualitätsunterstützung"
+      "Qualitätsbegleitung"
     ],
     "sections": {
       "fieldInspection": {
@@ -281,7 +281,7 @@
         ]
       },
       {
-        "title": "Projektqualitätsunterstützung",
+        "title": "Qualitätsbegleitung im Projekt",
         "summary": "",
         "items": [
           "Lieferanten- und Herstellerüberwachung",
@@ -379,10 +379,10 @@
         ]
       },
       {
-        "title": "Inspektion & NDT",
+        "title": "Prüfung & ZfP",
         "items": [
           "ISO 9712",
-          "VT / NDT-Kompetenzen"
+          "VT / ZfP-Kompetenzen"
         ]
       },
       {
@@ -406,7 +406,7 @@
         ]
       },
       {
-        "title": "Korrosion / Beschichtung",
+        "title": "Korrosionsschutz / Beschichtung",
         "items": [
           "ISO 12944",
           "FROSIO / NACE"
@@ -540,8 +540,8 @@
       },
       {
         "id": "02",
-        "title": "Besetzen",
-        "text": "Den richtigen Spezialisten oder das passende Projektteam entsprechend dem tatsächlichen Bedarf auswählen."
+        "title": "Auswählen",
+        "text": "Den richtigen Spezialisten oder das passende Projektteam bedarfsgerecht auswählen."
       },
       {
         "id": "03",
@@ -570,7 +570,7 @@
     "points": [
       "Echte Projekterfahrung aus Industrie-, Pipeline- und Offshore-Wind-Umfeldern",
       "Technische Kompetenz, ausgewählt nach dem tatsächlichen Projektbedarf",
-      "Flexible Besetzung — ein Spezialist oder ein koordiniertes Projektteam",
+      "Flexible Kapazitäten — ein Spezialist oder ein koordiniertes Projektteam",
       "Qualität vor Quantität",
       "Ausführung vor Ort, verbunden mit Dokumentation und Übergabe",
       "Digitale Anbindung über BW Digit"
@@ -585,7 +585,7 @@
         "description": "Qualifizierte Fachkräfte, ausgewählt nach dem tatsächlichen Projektbedarf."
       },
       {
-        "title": "Flexible Besetzung",
+        "title": "Flexible Kapazitäten",
         "description": "Einzelne Spezialisten oder koordinierte Projektteams."
       },
       {
@@ -669,6 +669,7 @@
       "fileUpload": "Datei-Upload (optional)",
       "fileUploadHint": "Spezifikationen, Zeichnungen oder Listen anhängen (PDF, DWG, XLSX, max. 10 MB)",
       "gdprConsent": "Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der",
+      "gdprConsentEnd": " zu.",
       "privacyPolicy": "Datenschutzerklärung",
       "submit": "QA/QC-Unterstützung anfragen",
       "submitting": "Wird gesendet …",
@@ -677,7 +678,7 @@
       "errorTitle": "Fehler",
       "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
       "required": "Pflichtfeld",
-      "disclaimer": "Pipeline Quality unterstützt die Arbeit vor Ort und die Dokumentation — vor Ort, aus der Ferne oder kombiniert, je nach Projekt.",
+      "disclaimer": "Pipeline Quality begleitet die Ausführung und die Dokumentation — vor Ort, aus der Ferne oder kombiniert, je nach Projekt.",
       "privacyNote": "Datenschutzhinweis: Die Übertragung Ihrer Dokumente erfolgt über eine verschlüsselte SSL-Verbindung. Ihre Daten werden ausschließlich zur Leistungserbringung verwendet und nach Projektabschluss DSGVO-konform gelöscht. Serverstandort: Frankfurt, Deutschland."
     },
     "whatsapp": {
@@ -822,11 +823,11 @@
   },
   "fieldHandover": {
     "label": "Von der Fertigung zur Übergabe",
-    "title": "Von der Fertigung zur finalen Übergabe",
-    "designLine1": "Von der Fertigung zur",
-    "designLine2": "finalen Übergabe",
-    "description": "Ein klarer Ablauf, der die Arbeit in der Fertigung mit der finalen Qualitätsdokumentation von Pipeline Quality und BW Digit verbindet.",
-    "lead": "Durchgängige Qualitätskontrolle, volle Rückverfolgbarkeit und vollständige Projektdokumentation — von der Inspektion vor Ort bis zur finalen Übergabe.",
+    "title": "Von der Fertigung bis zur Endabnahme",
+    "designLine1": "Von der Fertigung bis zur",
+    "designLine2": "Endabnahme",
+    "description": "Ein klarer Ablauf, der die Arbeit in der Fertigung mit der Qualitätsdokumentation zur Endabnahme von Pipeline Quality und BW Digit verbindet.",
+    "lead": "Durchgängige Qualitätskontrolle, lückenlose Rückverfolgbarkeit und vollständige Projektdokumentation — von der Inspektion vor Ort bis zur Endabnahme.",
     "stages": [
       {
         "id": "01",
@@ -878,7 +879,7 @@
     "roles": [
       "Qualitätsmanager",
       "Auditoren",
-      "Unabhängige Inspektoren",
+      "Drittprüfer",
       "Teamleiter",
       "QA/QC-Ingenieure",
       "Schweißfachkräfte",
@@ -901,7 +902,7 @@
     "badge3": "QUANTITÄT",
     "paragraph1": "Wir bauen unser Fachnetzwerk bewusst nach Erfahrung, Qualifikation und Projektpassung auf.",
     "paragraph2": "Lieber ein starker Spezialist als mehrere Personen ohne Mehrwert.",
-    "paragraph3": "Jede Person im Projekt steht für unseren Ruf.",
+    "paragraph3": "Jede Fachkraft im Projekt steht für unseren Ruf.",
     "principleLabel": "",
     "principle": "QUALITÄT VOR QUANTITÄT."
   },
@@ -910,7 +911,7 @@
     "title": "Praktische digitale Qualitätsunterstützung",
     "designLine1": "Digitale",
     "designLine2": "Qualität",
-    "description": "Gemeinsam mit BW Digit und Technologiepartnern unterstützt Pipeline Quality digitale Abläufe, unter anderem für:",
+    "description": "Gemeinsam mit BW Digit und Technologiepartnern unterstützt Pipeline Quality digitale Abläufe in diesen Bereichen:",
     "blocks": [
       {
         "title": "Schweißrückverfolgbarkeit",

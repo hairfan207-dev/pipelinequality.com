@@ -623,7 +623,7 @@ export function DesignHome() {
               onMouseEnter={() => setSupportOpen(index)}
             >
               <h3>{block.title}</h3>
-              <p>{`${block.items.slice(0, -1).join(' ')}, ${block.items[block.items.length - 1]}`}</p>
+              <p>{block.items.join(', ')}</p>
             </div>
           ))}
         </div>
@@ -647,7 +647,7 @@ export function DesignHome() {
           </svg>
           <h2>
             <span className='line'>{tWhy('designLine1')}</span>
-            <span className='line'>{tWhy('designLine2')} <span>{tWhy('designMark')}</span></span>
+            <span className='line'>{tWhy('designLine2')}<span>{tWhy('designMark')}</span></span>
           </h2>
           <div className='why-col why-col-right'>
             {reasons.slice(0, 4).map((reason) => (
