@@ -845,4 +845,7 @@
   .pq-design .why-col p { font-size: 15px; line-height: 1.4; letter-spacing: 0; }
   .pq-design .faq.section .faq-box { padding: 8px 16px 12px; }
   .pq-design .faq.section .faq-item button { font-size: 15px; line-height: 1.35; }
+  .pq-design .nav-links.is-open .lang-menu { align-self: center; width: max-content; margin: 0; }
+  .pq-design .nav-links.is-open .lang-btn { width: auto; }
+  .pq-design .nav-links.is-open .lang-drop { left: 0; right: auto; top: 100%; width: 100%; box-sizing: border-box; }
 }
