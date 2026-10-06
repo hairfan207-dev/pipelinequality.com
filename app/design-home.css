@@ -469,8 +469,8 @@
 .pq-design .network-images .top-solid figcaption > span { position: absolute; left: 88.78px; top: 21.55px; width: 235px; height: 41px; white-space: nowrap; }
 .pq-design .network-images .bottom-solid figcaption img { position: absolute; left: 72px; top: 376px; width: 30px; height: 30px; }
 .pq-design .network-images .bottom-solid figcaption > span { position: absolute; left: 120.41px; top: 368.13px; width: 179px; height: 41px; white-space: nowrap; }
-.pq-design .network-list { margin-top: 43px; margin-left: 44px; background: transparent; border-radius: 0; padding: 0; }
-.pq-design .network-list h3 { color: #FB7200 !important; font-size: 40px !important; font-weight: 600 !important; letter-spacing: 0; text-transform: uppercase; margin: 0 0 46px !important; }
+.pq-design .network-list { container-type: inline-size; margin-top: 43px; margin-left: 44px; background: transparent; border-radius: 0; padding: 0; }
+.pq-design .network-list h3 { color: #FB7200 !important; font-size: clamp(16px, 5.7cqi, 40px) !important; font-weight: 600 !important; letter-spacing: 0; text-transform: uppercase; white-space: nowrap; margin: 0 0 46px !important; }
 .pq-design .network-list .cols { grid-template-columns: 328px minmax(0, 1fr); gap: 0; }
 .pq-design .network-list li { display: flex; align-items: center; gap: 20px; min-height: 59.91px; margin: 0 0 16.8px; padding: 0 !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.219; letter-spacing: 0.2px; color: #102A5F; }
 .pq-design .network-list li.wrap { align-items: flex-start; }
@@ -939,7 +939,7 @@
   .pq-design .network-images .top-solid figcaption > span { left: 24%; top: 5%; right: 8px; }
   .pq-design .network-images .bottom-solid figcaption > span { left: 28%; top: auto; bottom: 7%; right: 8px; }
   .pq-design .network-list { margin-left: 0; }
-  .pq-design .network-list h3 { font-size: 28px !important; margin-bottom: 24px !important; }
+  .pq-design .network-list h3 { font-size: clamp(16px, 5.7cqi, 40px) !important; margin-bottom: 24px !important; white-space: nowrap; }
   .pq-design .network-list .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 20px; }
   .pq-design .network-list li { font-size: 16px !important; }
   .pq-design .industries-head { padding: 16px 20px; }
