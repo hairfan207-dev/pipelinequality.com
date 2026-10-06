@@ -593,14 +593,14 @@
 .pq-design .dq-row + .dq-row { border-top: 1px solid #E5E8EC; }
 .pq-design .dq-row.is-open,
 .pq-design .dq-row.is-open + .dq-row { border-top-color: transparent; }
-.pq-design .dq-row.is-open { margin: 6px 0; }
 .pq-design .dq-row button {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   width: 100%;
-  min-height: 0;
+  height: 88px;
+  min-height: 88px;
   margin: 0;
   padding: 12px 14px 12px 10px;
   border: 0;
@@ -611,6 +611,8 @@
   font: inherit;
   text-align: left;
   cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
   transition: background-color 0.28s ease, border-color 0.28s ease;
 }
 .pq-design .dq-row:not(.is-open) button:hover { background: rgba(16, 42, 95, 0.04); }
@@ -618,8 +620,9 @@
 .pq-design .dq-row:not(.is-open) button:hover .dq-num { background: var(--orange); color: #fff; }
 .pq-design .dq-row:not(.is-open) button:hover .dq-chevron { transform: translateX(4px) rotate(-45deg); }
 .pq-design .dq-row.is-open button {
-  min-height: 0;
-  padding: 14px 14px 14px 10px;
+  height: 88px;
+  min-height: 88px;
+  padding: 12px 14px 12px 10px;
   border-left-color: var(--orange);
   background: var(--soft);
 }
@@ -793,7 +796,8 @@
   .pq-design .dq-panel-copy { padding: 32px 28px 0; }
   .pq-design .digital-support.section h2 { font-size: clamp(40px, 4.8vw, 64px) !important; }
   .pq-design .dq-copy { font-size: 15px; }
-  .pq-design .dq-row button { min-height: 0; padding: 10px 12px; gap: 12px; }
+  .pq-design .dq-row button,
+  .pq-design .dq-row.is-open button { height: 80px; min-height: 80px; padding: 10px 12px; gap: 12px; }
   .pq-design .dq-num { width: 40px; height: 40px; font-size: 13px; }
   .pq-design .dq-title { font-size: clamp(17px, 1.8vw, 22px); }
   .pq-design .digital-grid { width: var(--pq-rail); grid-template-columns: 1fr; row-gap: 32px; }
@@ -1453,8 +1457,10 @@
     line-height: 1.55;
   }
   .pq-design .dq-blueprint { height: 28%; }
-  .pq-design .dq-row button {
-    min-height: 0;
+  .pq-design .dq-row button,
+  .pq-design .dq-row.is-open button {
+    height: 96px;
+    min-height: 96px;
     padding: 10px 8px;
     gap: 12px;
   }
