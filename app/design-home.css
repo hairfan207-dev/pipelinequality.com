@@ -527,7 +527,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   gap: clamp(32px, 3vw, 56px);
-  align-items: center;
+  align-items: stretch;
   box-sizing: border-box;
   background: #fff;
 }
@@ -593,7 +593,7 @@
   opacity: 1;
   pointer-events: none;
 }
-.pq-design .dq-workflows { min-width: 0; align-self: center; }
+.pq-design .dq-workflows { min-width: 0; align-self: stretch; }
 .pq-design .dq-list { margin: 0; padding: 0; list-style: none; }
 .pq-design .dq-row + .dq-row { border-top: 1px solid #E5E8EC; }
 .pq-design .dq-row.is-open,
