@@ -206,10 +206,16 @@ export function DesignHome() {
               <em>QUALITY</em>
             </span>
           </a>
-          <button type='button' className='menu-btn' onClick={() => setMenuOpen((v) => !v)}>
-            {tNav('menu')}
+          <button
+            type='button'
+            className='menu-btn'
+            aria-expanded={menuOpen}
+            aria-controls='pq-nav-menu'
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className='menu-label'>{tNav('menu')}</span>
           </button>
-          <div className={`nav-links${menuOpen ? ' is-open' : ''}`}>
+          <div id='pq-nav-menu' className={`nav-links${menuOpen ? ' is-open' : ''}`}>
             <a href='#services' onClick={() => setMenuOpen(false)}>{tNav('services')}</a>
             <a href='#process' onClick={() => setMenuOpen(false)}>{tNav('process')}</a>
             <a href='#industries' onClick={() => setMenuOpen(false)}>{tNav('industries')}</a>
