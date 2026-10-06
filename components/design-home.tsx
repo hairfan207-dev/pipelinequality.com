@@ -73,9 +73,9 @@ const serviceCaptionIcons = [
 ];
 const servicePhotos = [
   '/design/figma/photo-measure.png',
-  '/design/figma/photo-welding.png',
-  '/design/figma/photo-engineers.png',
-  '/design/figma/photo-team.png',
+  '/design/figma/photo-inspection.webp',
+  '/design/figma/photo-documentation.webp',
+  '/design/figma/photo-project-quality.webp',
 ];
 const fieldIcons = [
   '/design/figma/handover-field-inspection.png',
@@ -442,7 +442,7 @@ export function DesignHome() {
       </section>
 
       <section className='competence'>
-        <img src='/design/figma/competence-bg.png' className='competence-bg' alt='' />
+        <img src='/design/figma/competence-bg.webp' className='competence-bg' alt='' />
         <div className='shell competence-inner'>
           <div className='competence-card'>
             <h2>
@@ -525,9 +525,9 @@ export function DesignHome() {
             </div>
           </div>
           <div className='experience-photos'>
-            <img className='exp-wind' src='/design/figma/exp-wind.png' alt={tExp('imageAlt')} />
+            <img className='exp-wind' src='/design/figma/exp-wind.webp' alt={tExp('imageAlt')} />
             <div className='exp-pipes'>
-              <img src='/design/figma/exp-pipes.jpg' alt={tExp('industrialTitle')} />
+              <img src='/design/figma/exp-pipes.webp' alt={tExp('industrialTitle')} />
             </div>
           </div>
           <div className='experience-ref'>
