@@ -598,11 +598,11 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   width: 100%;
-  min-height: 104px;
+  min-height: 0;
   margin: 0;
-  padding: 18px 18px 18px 16px;
+  padding: 12px 14px 12px 10px;
   border: 0;
   border-left: 4px solid transparent;
   border-radius: 14px;
@@ -613,11 +613,18 @@
   cursor: pointer;
   transition: background-color 0.28s ease, border-color 0.28s ease;
 }
+.pq-design .dq-row:not(.is-open) button:hover { background: rgba(16, 42, 95, 0.04); }
+.pq-design .dq-row:not(.is-open) button:hover .dq-title { color: var(--orange); }
+.pq-design .dq-row:not(.is-open) button:hover .dq-num { background: var(--orange); color: #fff; }
+.pq-design .dq-row:not(.is-open) button:hover .dq-chevron { transform: translateX(4px) rotate(-45deg); }
 .pq-design .dq-row.is-open button {
-  min-height: 112px;
+  min-height: 0;
+  padding: 14px 14px 14px 10px;
   border-left-color: var(--orange);
   background: var(--soft);
 }
+.pq-design .dq-row.is-open button:hover { background: #EEF2F6; }
+.pq-design .dq-row.is-open button:hover .dq-chevron { transform: translateY(3px) rotate(45deg); }
 .pq-design .dq-row button:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 2px;
@@ -635,8 +642,9 @@
   line-height: 1;
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
-  transition: background-color 0.28s ease, color 0.28s ease;
+  transition: background-color 0.28s ease, color 0.28s ease, transform 0.28s ease;
 }
+.pq-design .dq-row button:hover .dq-num { transform: scale(1.06); }
 .pq-design .dq-row.is-open .dq-num { background: var(--orange); color: #fff; }
 .pq-design .dq-main { display: flex; flex-direction: column; min-width: 0; }
 .pq-design .dq-title {
@@ -785,7 +793,7 @@
   .pq-design .dq-panel-copy { padding: 32px 28px 0; }
   .pq-design .digital-support.section h2 { font-size: clamp(40px, 4.8vw, 64px) !important; }
   .pq-design .dq-copy { font-size: 15px; }
-  .pq-design .dq-row button { min-height: 88px; padding: 14px 12px; gap: 12px; }
+  .pq-design .dq-row button { min-height: 0; padding: 10px 12px; gap: 12px; }
   .pq-design .dq-num { width: 40px; height: 40px; font-size: 13px; }
   .pq-design .dq-title { font-size: clamp(17px, 1.8vw, 22px); }
   .pq-design .digital-grid { width: var(--pq-rail); grid-template-columns: 1fr; row-gap: 32px; }
@@ -1446,8 +1454,8 @@
   }
   .pq-design .dq-blueprint { height: 36%; }
   .pq-design .dq-row button {
-    min-height: 72px;
-    padding: 18px 14px;
+    min-height: 0;
+    padding: 10px 8px;
     gap: 12px;
   }
   .pq-design .dq-num { width: 40px; height: 40px; font-size: 13px; }
