@@ -306,6 +306,11 @@ export function DesignHome() {
               {serviceOrder.map((index) => {
                 const block = blocks[index];
                 const open = serviceOpen === index;
+                const splitAt = Math.ceil(block.items.length / 2);
+                const longerFirst = block.items.length % 2 === 1;
+                const columns = longerFirst
+                  ? [block.items.slice(0, splitAt), block.items.slice(splitAt)]
+                  : [block.items.slice(splitAt), block.items.slice(0, splitAt)];
                 return (
                   <div
                     key={block.title}
@@ -326,16 +331,13 @@ export function DesignHome() {
                     </button>
                     <div className='acc-panel'>
                       <div className='acc-panel-inner'>
-                        <ul>
-                          {block.items.slice(Math.ceil(block.items.length / 2)).map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                        <ul>
-                          {block.items.slice(0, Math.ceil(block.items.length / 2)).map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
+                        {columns.map((column, columnIndex) => (
+                          <ul key={columnIndex}>
+                            {column.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        ))}
                       </div>
                     </div>
                   </div>
