@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
@@ -162,8 +162,6 @@ export function DesignHome() {
   const [serviceOpen, setServiceOpen] = useState(0);
   const [industry, setIndustry] = useState(0);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
-  const faqItemRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const faqAnchorTop = useRef<number | null>(null);
   const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
@@ -189,16 +187,6 @@ export function DesignHome() {
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, [langOpen]);
-
-  useLayoutEffect(() => {
-    const anchor = faqAnchorTop.current;
-    if (anchor == null || faqOpen == null) return;
-    faqAnchorTop.current = null;
-    const item = faqItemRefs.current[faqOpen];
-    if (!item) return;
-    const delta = item.getBoundingClientRect().top - anchor;
-    if (Math.abs(delta) > 0.5) window.scrollBy({ top: delta, behavior: 'instant' });
-  }, [faqOpen]);
 
   const activeIndustry = sectors[industry];
 
@@ -734,19 +722,19 @@ export function DesignHome() {
           {faqs.map((faq, index) => (
             <div
               key={faq.question}
-              ref={(node) => {
-                faqItemRefs.current[index] = node;
-              }}
               className={`faq-item${faqOpen === index ? ' open' : ''}`}
-              onMouseEnter={(event) => {
-                if (faqOpen === index) return;
-                faqAnchorTop.current = event.currentTarget.getBoundingClientRect().top;
-                setFaqOpen(index);
-              }}
+              onMouseMove={() => setFaqOpen((current) => (current === index ? current : index))}
             >
-              <button type='button' onClick={() => setFaqOpen(faqOpen === index ? null : index)}>
+              <button
+                type='button'
+                aria-expanded={faqOpen === index}
+                onClick={() => setFaqOpen(faqOpen === index ? null : index)}
+                onFocus={() => setFaqOpen(index)}
+              >
                 <span>{faq.question}</span>
-                <span className='faq-chevron' aria-hidden='true' />
+                <svg className='faq-chevron' viewBox='0 0 12 20' width='8' height='14' aria-hidden='true' focusable='false'>
+                  <path d='M2.2 2.4 L9.4 10 L2.2 17.6' fill='none' stroke='#102A5F' strokeWidth='1.6' strokeLinecap='round' strokeLinejoin='round' />
+                </svg>
               </button>
               <p>{faq.answer}</p>
             </div>

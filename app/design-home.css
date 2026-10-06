@@ -725,18 +725,17 @@
 .pq-design .why-col-left { grid-column: 1; grid-row: 3 / 5; }
 .pq-design .why-col-left p,
 .pq-design .why-col-left article:nth-child(2) p { width: auto; max-width: 40ch; }
-.pq-design .faq.section { margin-top: 41px; padding: 0; }
+.pq-design .faq.section { margin-top: 41px; padding: 0; overflow-anchor: none; }
 .pq-design .faq.section h2 { width: min(892px, calc(100% - 48px)); margin: 0 auto !important; text-align: center; color: #102A5F !important; font-size: clamp(36px, 3.125vw, 60px) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: 0.97px; }
 .pq-design .faq.section h2 span { color: #FB7200 !important; letter-spacing: 0; }
 .pq-design .faq-lead { width: min(1180px, calc(100% - 80px)); margin: 2px auto 0; font-size: 20px; font-weight: 400; line-height: 1.219; letter-spacing: 0.89px; text-align: center; color: #102A5F; }
 .pq-design .faq.section .faq-box { width: min(826px, calc(100% - 48px)); height: auto; min-height: 0; margin: 34px auto 0; background: #F4F7F9; border-radius: 20px; padding: 46px clamp(24px, 4vw, 62px) 28px; overflow: visible; box-sizing: border-box; }
-.pq-design .faq.section .faq-item { position: relative; height: auto; min-height: 49px; border: 0; }
+.pq-design .faq.section .faq-item { position: relative; height: auto; min-height: 49px; border: 0; overflow-anchor: none; }
 .pq-design .faq.section .faq-item:last-child { min-height: 0; }
-.pq-design .faq.section .faq-item button { width: 100%; height: auto; min-height: 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 0; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; overflow: visible; transition: color 0.28s ease; }
+.pq-design .faq.section .faq-item button { width: 100%; height: auto; min-height: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 4px 2px; border: 0; background: transparent; color: #102A5F; font: 400 18px/1.35 Montserrat, Arial, sans-serif; letter-spacing: 0.86px; text-align: left; cursor: pointer; overflow: visible; transition: color 0.28s ease; }
 .pq-design .faq.section .faq-item button > span:first-child { min-width: 0; }
-.pq-design .faq.section .faq-chevron { width: 8px; height: 8px; flex: none; margin-right: 3px; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; transform: rotate(45deg); }
+.pq-design .faq-chevron { display: block; width: 8px; height: 14px; flex: none; overflow: visible; }
 .pq-design .faq.section .faq-item.open button { color: #FB7200; }
-.pq-design .faq.section .faq-divider { display: none; }
 .pq-design .faq.section .faq-item:not(:last-child)::after { content: ""; position: absolute; left: 0; bottom: 11px; width: 100%; height: 1px; background: rgba(16, 42, 95, 0.2); pointer-events: none; }
 .pq-design .faq.section .faq-item p { display: block; width: 640px; max-width: 100%; max-height: 0; margin: 0; padding: 0; overflow: hidden; opacity: 0; text-align: left; font-size: 16px; line-height: 1.45; color: #102A5F; transition: opacity 0.2s ease; }
 .pq-design .faq.section .faq-item.open p { max-height: none; opacity: 1; padding: 14px 0 28px; }
