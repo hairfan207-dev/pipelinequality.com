@@ -580,12 +580,14 @@
 }
 .pq-design .dq-blueprint {
   position: absolute;
-  bottom: 0;
+  bottom: 18px;
   left: 50%;
   width: auto;
-  height: 30%;
+  height: 28%;
+  max-width: 88%;
+  object-fit: contain;
   transform: translateX(-50%);
-  opacity: 0.55;
+  opacity: 1;
   pointer-events: none;
 }
 .pq-design .dq-workflows { min-width: 0; align-self: center; }
@@ -1458,7 +1460,7 @@
     font-size: 16px;
     line-height: 1.55;
   }
-  .pq-design .dq-blueprint { height: 28%; }
+  .pq-design .dq-blueprint { width: auto; height: 24%; max-width: 86%; }
   .pq-design .dq-row button,
   .pq-design .dq-row.is-open button {
     height: 96px;

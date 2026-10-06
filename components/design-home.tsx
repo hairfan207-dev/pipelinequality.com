@@ -651,34 +651,7 @@ export function DesignHome() {
             </h2>
             <p className='dq-copy'>{tDigital('description')}</p>
           </div>
-          <svg className='dq-blueprint' viewBox='0 0 800 320' preserveAspectRatio='xMidYMax meet' aria-hidden='true' focusable='false'>
-            <g fill='none' stroke='#D5E4F7' strokeWidth='1.35' strokeLinecap='round' strokeLinejoin='round'>
-              <path strokeDasharray='2 5' d='M24 188 H776' />
-              <path d='M0 156 H292' />
-              <path d='M0 220 H292' />
-              <path d='M468 156 H800' />
-              <path d='M468 220 H800' />
-              <circle cx='380' cy='188' r='108' />
-              <circle cx='380' cy='188' r='40' />
-              <circle cx='380' cy='96' r='7' />
-              <circle cx='380' cy='280' r='7' />
-              <circle cx='288' cy='188' r='7' />
-              <circle cx='472' cy='188' r='7' />
-              <circle cx='315' cy='123' r='7' />
-              <circle cx='445' cy='123' r='7' />
-              <circle cx='315' cy='253' r='7' />
-              <circle cx='445' cy='253' r='7' />
-              <circle cx='640' cy='188' r='62' />
-              <circle cx='640' cy='188' r='28' />
-              <path d='M48 78 H196' />
-              <path d='M48 70 V86' />
-              <path d='M196 70 V86' />
-              <path d='M700 96 V250' />
-              <path d='M692 96 H708' />
-              <path d='M692 250 H708' />
-              <path stroke='#F4F7FB' strokeWidth='1.6' d='M248 108 H272 M260 96 V120' />
-            </g>
-          </svg>
+          <img className='dq-blueprint' src='/design/figma/dq-blueprint.png' alt='' />
         </div>
         <div className='dq-workflows'>
           <p className='dq-kicker'>
