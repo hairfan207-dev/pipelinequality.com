@@ -30,9 +30,9 @@ const processPhotos = [
   '/design/figma/handover-project.png',
 ];
 const networkPhotos = [
-  { src: '/design/figma/team-inspectors.webp', role: 7, variant: 'bottom-fade', icon: '/design/figma/team-icon-inspectors.svg', shade: '/design/figma/team-caption-bottom.svg' },
-  { src: '/design/figma/team-docs.webp', role: 9, variant: 'top-solid', icon: '/design/figma/team-icon-docs.svg', shade: '/design/figma/team-caption-top.svg' },
-  { src: '/design/figma/team-dimensional.webp', role: 8, variant: 'bottom-solid', icon: '/design/figma/team-icon-dimensional.svg', shade: '/design/figma/team-caption-top.svg' },
+  { src: '/design/figma/team-inspectors.webp', role: 7, variant: 'top-fade', icon: '/design/figma/team-icon-inspectors.svg', shade: '/design/figma/team-caption-weld.svg' },
+  { src: '/design/figma/team-docs.webp', role: 9, variant: 'top-fade', icon: '/design/figma/team-icon-docs.svg', shade: '/design/figma/team-caption-weld.svg' },
+  { src: '/design/figma/team-dimensional.webp', role: 8, variant: 'top-fade', icon: '/design/figma/team-icon-dimensional.svg', shade: '/design/figma/team-caption-weld.svg' },
   { src: '/design/figma/team-welding.webp', role: 5, variant: 'top-fade', icon: '/design/figma/team-icon-weld.svg', shade: '/design/figma/team-caption-weld.svg' },
 ];
 const roleIcons = [

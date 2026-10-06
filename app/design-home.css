@@ -452,12 +452,13 @@
 .pq-design .network-images .top-fade .shot { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .pq-design .network-images .shade { position: absolute; z-index: 1; left: 0; pointer-events: none; }
 .pq-design .network-images .bottom-fade .shade { bottom: 0; width: 371.56px; height: 81.16px; transform: rotate(180deg); }
-.pq-design .network-images .top-fade .shade { top: 0; width: 371.56px; height: 81.16px; }
+.pq-design .network-images .top-fade .shade { top: 0; width: 100%; height: 108px; }
 .pq-design .network-images .top-solid .shade { top: 0; width: 371.58px; height: 112.89px; }
 .pq-design .network-images .bottom-solid .shade { bottom: 0; width: 371.58px; height: 112.89px; transform: rotate(180deg); }
 .pq-design .network-images figcaption { z-index: 2; left: 0; right: 0; bottom: auto; background: none; display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 28px; color: #fff; font-size: 17px; font-weight: 400; line-height: 20.4px; letter-spacing: 0.3px; text-shadow: none; text-align: left; }
 .pq-design .network-images .bottom-fade figcaption { top: auto; bottom: 18px; }
-.pq-design .network-images .top-fade figcaption { top: 24px; }
+.pq-design .network-images .top-fade figcaption { top: 18px; font-size: 16px; line-height: 1.25; letter-spacing: 0; }
+.pq-design .network-images .top-fade figcaption > span { min-width: 0; }
 .pq-design .network-images figcaption img { width: 30px; height: 30px; object-fit: contain; flex: none; }
 .pq-design .network-images .top-fade figcaption img { width: 28.65px; height: 30px; }
 .pq-design .network-images .top-solid figcaption,
@@ -1102,7 +1103,7 @@
   .pq-design .process-panel { min-height: 168px; }
   .pq-design .network-images { gap: 16px; }
   .pq-design .network-images figure { aspect-ratio: auto; height: 200px; }
-  .pq-design .network-images .shade { width: 100%; height: 58px; object-fit: fill; }
+  .pq-design .network-images .shade { width: 100%; height: 78px; object-fit: fill; }
   .pq-design .network-images .top-solid .shot { top: 46px; height: calc(100% - 34px); }
   .pq-design .network-images .bottom-solid .shot { top: 0; height: calc(100% - 46px); }
   .pq-design .network-images .top-fade figcaption { top: 12px; }
@@ -1461,6 +1462,7 @@
     line-height: 1.55;
   }
   .pq-design .dq-blueprint { width: auto; height: 24%; max-width: 86%; }
+  .pq-design .network-images .top-fade .shade { height: 72px; }
   .pq-design .dq-row button,
   .pq-design .dq-row.is-open button {
     height: 96px;
