@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
@@ -162,6 +162,8 @@ export function DesignHome() {
   const [serviceOpen, setServiceOpen] = useState(0);
   const [industry, setIndustry] = useState(0);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const faqItemRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const faqAnchorTop = useRef<number | null>(null);
   const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
@@ -187,6 +189,16 @@ export function DesignHome() {
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, [langOpen]);
+
+  useLayoutEffect(() => {
+    const anchor = faqAnchorTop.current;
+    if (anchor == null || faqOpen == null) return;
+    faqAnchorTop.current = null;
+    const item = faqItemRefs.current[faqOpen];
+    if (!item) return;
+    const delta = item.getBoundingClientRect().top - anchor;
+    if (Math.abs(delta) > 0.5) window.scrollBy({ top: delta, behavior: 'instant' });
+  }, [faqOpen]);
 
   const activeIndustry = sectors[industry];
 
@@ -749,13 +761,20 @@ export function DesignHome() {
           {faqs.map((faq, index) => (
             <div
               key={faq.question}
+              ref={(node) => {
+                faqItemRefs.current[index] = node;
+              }}
               className={`faq-item${faqOpen === index ? ' open' : ''}`}
-              onMouseEnter={() => setFaqOpen(index)}
+              onMouseEnter={(event) => {
+                if (faqOpen === index) return;
+                faqAnchorTop.current = event.currentTarget.getBoundingClientRect().top;
+                setFaqOpen(index);
+              }}
             >
               <button type='button' onClick={() => setFaqOpen(faqOpen === index ? null : index)}>
-                {faq.question}
+                <span>{faq.question}</span>
+                <span className='faq-chevron' aria-hidden='true' />
               </button>
-              {index < faqs.length - 1 ? <img className='faq-divider' src='/design/figma/faq-divider.svg' alt='' /> : null}
               <p>{faq.answer}</p>
             </div>
           ))}
