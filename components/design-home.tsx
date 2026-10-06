@@ -467,8 +467,7 @@ export function DesignHome() {
       <section className='industries' id='industries'>
         <div className='industries-head'>
           <h2>
-            {tInd('designLine1')}
-            <br />
+            {tInd('designLine1')}{' '}
             <span>{tInd('designLine2')}</span>
           </h2>
         </div>
