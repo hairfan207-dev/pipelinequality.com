@@ -573,14 +573,24 @@
 .pq-design .digital-support.section h2 .line { display: block; color: #fff !important; letter-spacing: -0.03em; }
 .pq-design .digital-support.section h2 .line + .line { margin-top: 0.02em; color: var(--orange) !important; }
 .pq-design .dq-copy {
+  position: relative;
+  z-index: 1;
   width: auto;
-  max-width: 28em;
+  max-width: 20em;
   margin: 22px 0 0;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.55;
   letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: #fff;
+}
+.pq-design .dq-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -12px -28px -14px -10px;
+  background: linear-gradient(90deg, #102A5F 0%, rgba(16, 42, 95, 0.96) 68%, rgba(16, 42, 95, 0) 100%);
+  pointer-events: none;
 }
 .pq-design .dq-blueprint {
   position: absolute;
