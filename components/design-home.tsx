@@ -683,6 +683,8 @@ export function DesignHome() {
                     type='button'
                     aria-expanded={open}
                     aria-controls={panelId}
+                    onMouseEnter={() => setSupportOpen(index)}
+                    onFocus={() => setSupportOpen(index)}
                     onClick={() => setSupportOpen(index)}
                   >
                     <span className='dq-num'>{item.number}</span>
