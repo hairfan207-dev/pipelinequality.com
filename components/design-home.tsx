@@ -145,7 +145,12 @@ export function DesignHome() {
   const sectors = tInd.raw('sectors') as Industry[];
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
-  const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[] }>;
+  const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[]; summary?: string }>;
+  const workflows = digitalBlocks.map((block, index) => ({
+    number: String(index + 1).padStart(2, '0'),
+    title: block.title,
+    description: block.summary ?? block.items.join(', '),
+  }));
   const digitalCopy = tSmart('description').split(/(?=Together,|Gemeinsam )/).filter(Boolean).map((part) => part.trim());
   const reasons = tWhy.raw('reasons') as Reason[];
   const faqs = tFaq.raw('items') as Faq[];
@@ -621,26 +626,78 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='digital-support section'>
-        <div className='support-panel'>
-          <h2>
-            <span className='line'>{tDigital('designLine1')}</span>{' '}
-            <span className='line'>{tDigital('designLine2')}</span>
-          </h2>
-          <p>{tDigital('description')}</p>
+      <section className='digital-support section' id='digital-quality'>
+        <div className='dq-panel'>
+          <div className='dq-panel-copy'>
+            <p className='dq-kicker'>
+              <span className='dq-dash' aria-hidden='true' />
+              {tDigital('label')}
+            </p>
+            <h2>
+              <span className='line'>{tDigital('designLine1')}</span>
+              <span className='line'>{tDigital('designLine2')}</span>
+            </h2>
+            <p className='dq-copy'>{tDigital('description')}</p>
+          </div>
+          <svg className='dq-blueprint' viewBox='0 0 800 320' preserveAspectRatio='xMidYMax meet' aria-hidden='true' focusable='false'>
+            <g fill='none' stroke='#D5E4F7' strokeWidth='1.35' strokeLinecap='round' strokeLinejoin='round'>
+              <path strokeDasharray='2 5' d='M24 188 H776' />
+              <path d='M0 156 H292' />
+              <path d='M0 220 H292' />
+              <path d='M468 156 H800' />
+              <path d='M468 220 H800' />
+              <circle cx='380' cy='188' r='108' />
+              <circle cx='380' cy='188' r='40' />
+              <circle cx='380' cy='96' r='7' />
+              <circle cx='380' cy='280' r='7' />
+              <circle cx='288' cy='188' r='7' />
+              <circle cx='472' cy='188' r='7' />
+              <circle cx='315' cy='123' r='7' />
+              <circle cx='445' cy='123' r='7' />
+              <circle cx='315' cy='253' r='7' />
+              <circle cx='445' cy='253' r='7' />
+              <circle cx='640' cy='188' r='62' />
+              <circle cx='640' cy='188' r='28' />
+              <path d='M48 78 H196' />
+              <path d='M48 70 V86' />
+              <path d='M196 70 V86' />
+              <path d='M700 96 V250' />
+              <path d='M692 96 H708' />
+              <path d='M692 250 H708' />
+              <path stroke='#F4F7FB' strokeWidth='1.6' d='M248 108 H272 M260 96 V120' />
+            </g>
+          </svg>
         </div>
-        <div className='support-list'>
-          <p className='eyebrow'>{tDigital('label')}</p>
-          {digitalBlocks.map((block, index) => (
-            <div
-              key={block.title}
-              className={supportOpen === index ? 'support-row active' : 'support-row'}
-              onMouseEnter={() => setSupportOpen(index)}
-            >
-              <h3>{block.title}</h3>
-              <p>{block.items.join(', ')}</p>
-            </div>
-          ))}
+        <div className='dq-workflows'>
+          <p className='dq-kicker'>
+            <span className='dq-dash' aria-hidden='true' />
+            {tDigital('workflowsLabel')}
+          </p>
+          <ul className='dq-list'>
+            {workflows.map((item, index) => {
+              const open = supportOpen === index;
+              const panelId = `digital-quality-${item.number}`;
+              return (
+                <li key={item.title} className={open ? 'dq-row is-open' : 'dq-row'}>
+                  <button
+                    type='button'
+                    aria-expanded={open}
+                    aria-controls={panelId}
+                    onClick={() => setSupportOpen(index)}
+                  >
+                    <span className='dq-num'>{item.number}</span>
+                    <span className='dq-main'>
+                      <span className='dq-title'>{item.title}</span>
+                      <span className='dq-desc' id={panelId} aria-hidden={!open}>
+                        <span>{item.description}</span>
+                      </span>
+                    </span>
+                    <span className='dq-chevron' aria-hidden='true' />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 

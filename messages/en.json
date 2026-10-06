@@ -913,9 +913,11 @@
     "designLine1": "Digital",
     "designLine2": "Quality",
     "description": "In partnership with BW Digit and technology partners, Pipeline Quality can support digital workflows in these areas.",
+    "workflowsLabel": "Digital Quality Workflows",
     "blocks": [
       {
         "title": "Weld Traceability",
+        "summary": "Weld maps, Weld logs, Welder data, NDT status",
         "items": [
           "Weld maps",
           "Weld logs",
@@ -925,6 +927,7 @@
       },
       {
         "title": "Inspection Management",
+        "summary": "Inspection requests, evidence, status and approvals",
         "items": [
           "Inspection requests",
           "Evidence",
@@ -934,6 +937,7 @@
       },
       {
         "title": "NCR Management",
+        "summary": "NCR creation, actions, responsibility and closure",
         "items": [
           "NCR creation",
           "Actions",
@@ -943,6 +947,7 @@
       },
       {
         "title": "Documentation",
+        "summary": "MTR, NDT, weld records, MDR and handover",
         "items": [
           "MTR",
           "NDT",
@@ -953,6 +958,7 @@
       },
       {
         "title": "Quality Analytics",
+        "summary": "Repair rates, trends, open items and project status",
         "items": [
           "Repair rate",
           "Trends",
@@ -962,6 +968,7 @@
       },
       {
         "title": "HSE Data",
+        "summary": "Reports, observations, actions and evidence",
         "items": [
           "Reports",
           "Observations",

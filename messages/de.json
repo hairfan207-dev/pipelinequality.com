@@ -912,9 +912,11 @@
     "designLine1": "Digitale",
     "designLine2": "Qualität",
     "description": "Gemeinsam mit BW Digit und Technologiepartnern unterstützt Pipeline Quality digitale Abläufe in diesen Bereichen:",
+    "workflowsLabel": "Digitale Qualitätsabläufe",
     "blocks": [
       {
         "title": "Schweißrückverfolgbarkeit",
+        "summary": "Schweißnahtpläne, Schweißprotokolle, Schweißerdaten, NDT/ZfP-Status",
         "items": [
           "Schweißnahtpläne",
           "Schweißprotokolle",
@@ -924,6 +926,7 @@
       },
       {
         "title": "Inspektionsmanagement",
+        "summary": "Inspektionsanfragen, Nachweise, Status und Freigaben",
         "items": [
           "Inspektionsanfragen",
           "Nachweise",
@@ -933,6 +936,7 @@
       },
       {
         "title": "NCR-Management",
+        "summary": "NCR-Erstellung, Maßnahmen, Verantwortung und Abschluss",
         "items": [
           "NCR-Erstellung",
           "Maßnahmen",
@@ -942,6 +946,7 @@
       },
       {
         "title": "Dokumentation",
+        "summary": "MTR, NDT/ZfP, Schweißaufzeichnungen, MDR und Übergabe",
         "items": [
           "MTR",
           "NDT/ZfP",
@@ -952,6 +957,7 @@
       },
       {
         "title": "Qualitätsauswertung",
+        "summary": "Reparaturraten, Trends, offene Punkte und Projektstatus",
         "items": [
           "Reparaturrate",
           "Trends",
@@ -961,6 +967,7 @@
       },
       {
         "title": "HSE-Daten",
+        "summary": "Berichte, Beobachtungen, Maßnahmen und Nachweise",
         "items": [
           "Berichte",
           "Beobachtungen",
