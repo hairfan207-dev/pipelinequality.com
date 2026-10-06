@@ -583,13 +583,13 @@
 }
 .pq-design .dq-blueprint {
   position: absolute;
-  bottom: 18px;
-  left: 50%;
-  width: auto;
-  height: 28%;
-  max-width: 88%;
-  object-fit: contain;
-  transform: translateX(-50%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: right bottom;
+  transform: none;
   opacity: 1;
   pointer-events: none;
 }
@@ -1463,7 +1463,7 @@
     font-size: 16px;
     line-height: 1.55;
   }
-  .pq-design .dq-blueprint { width: auto; height: 24%; max-width: 86%; }
+  .pq-design .dq-blueprint { inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: right bottom; }
   .pq-design .network-images .top-fade .shade { height: 52px; }
   .pq-design .dq-row button,
   .pq-design .dq-row.is-open button {
