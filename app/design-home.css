@@ -1476,3 +1476,15 @@
   .pq-design .dq-title { font-size: clamp(18px, 5.2vw, 22px); }
   .pq-design .dq-desc > span { font-size: 15px; line-height: 1.45; }
 }
+
+.pq-design .services-grid h2 {
+  font-size: clamp(16px, 7.1cqi, 60px) !important;
+}
+.pq-design:lang(de) .services-grid h2 {
+  font-size: clamp(16px, 6.4cqi, 60px) !important;
+}
+.pq-design .services-grid h2 .svc-line,
+.pq-design:lang(de) .services-grid h2 .svc-line {
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
