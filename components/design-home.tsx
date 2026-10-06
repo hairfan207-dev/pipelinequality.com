@@ -454,6 +454,8 @@ export function DesignHome() {
             <p>{tPhil('paragraph2')}</p>
             <p className='note'>{tPhil('paragraph3')}</p>
           </div>
+        </div>
+        <div className='competence-visual' aria-hidden='true'>
           <div className='quality-badge'>
             <span>{tPhil('badge1')}</span>
             <span>{tPhil('badge2')}</span>
@@ -546,7 +548,10 @@ export function DesignHome() {
       <section className='standards section'>
         <h2>
             <span className='line'>{tStd('designLine1')}</span>
-            <span className='line'>{tStd('designLine2')}</span>
+            <span className='line'>
+              <span className='amp'>&</span>{' '}
+              {tStd('designLine2').replace(/^&\s*/, '')}
+            </span>
         </h2>
         <div className='standard-grid'>
           {standardOrder.map((groupIndex, iconIndex) => {

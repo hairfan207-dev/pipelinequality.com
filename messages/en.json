@@ -379,7 +379,7 @@
         ]
       },
       {
-        "title": "Inspection & NDT",
+        "title": "Inspection & Ndt",
         "items": [
           "ISO 9712",
           "VT / NDT"
@@ -402,15 +402,15 @@
       {
         "title": "Pressure Equipment",
         "items": [
-          "PED",
-          "2014/68/EU"
+          "PED 2014/68/EU"
         ]
       },
       {
         "title": "Corrosion Coating",
         "items": [
           "ISO 12944",
-          "FROSIO / NACE"
+          "FROSIO",
+          "NACE"
         ]
       },
       {
