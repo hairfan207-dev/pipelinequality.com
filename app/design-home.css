@@ -2469,13 +2469,31 @@
     font-size: 15px !important;
     white-space: normal;
   }
+  .pq-design .promise-strip { padding: 16px 0 18px !important; }
+  .pq-design .promise-grid { grid-template-columns: 1fr 1fr; gap: 14px 10px !important; }
+  .pq-design .promise-grid .round-icon,
+  .pq-design .promise-grid .round-icon img {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+  }
   .pq-design .promise-grid h3,
   .pq-design .promise-grid article:nth-child(3) h3,
-  .pq-design .promise-grid article:nth-child(4) h3 { font-size: 15px !important; }
+  .pq-design .promise-grid article:nth-child(4) h3,
+  .pq-design:lang(de) .promise-grid h3 {
+    margin: 6px 0 0 !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
   .pq-design .promise-grid p,
   .pq-design .promise-grid article:nth-child(2) p,
   .pq-design .promise-grid article:nth-child(3) p,
-  .pq-design .promise-grid article:nth-child(4) p { font-size: 14px !important; }
+  .pq-design .promise-grid article:nth-child(4) p,
+  .pq-design:lang(de) .promise-grid p {
+    margin: 4px 0 0 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
   .pq-design .dig-engineer,
   .pq-design .dig-quality { position: relative; overflow: hidden; border-radius: 12px; }
   .pq-design .dig-engineer img,
