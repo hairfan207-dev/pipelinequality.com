@@ -512,7 +512,11 @@ export function DesignHome() {
                 {industry === index ? (
                   <div className='industry-mobile-panel'>
                     <div className='industry-photo'>
-                      <img src={industryPhotos[index]} alt={sectors[index].title} />
+                      <img
+                        className={index === 0 ? 'industry-wind-mobile' : undefined}
+                        src={index === 0 ? '/design/figma/industry-wind-mobile.jpg' : industryPhotos[index]}
+                        alt={sectors[index].title}
+                      />
                       <strong>{sectors[index].title}</strong>
                     </div>
                     <div className='industry-copy'>

@@ -2305,6 +2305,10 @@
     object-position: center;
     border-radius: 0;
   }
+  .pq-design .industry-mobile-panel .industry-photo img.industry-wind-mobile {
+    aspect-ratio: 478 / 1024;
+    object-position: center;
+  }
   .pq-design .industry-mobile-panel .industry-photo strong {
     position: relative;
     left: auto;
