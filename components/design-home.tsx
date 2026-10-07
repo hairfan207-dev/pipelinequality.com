@@ -14,7 +14,7 @@ type Faq = { question: string; answer: string };
 
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
-  '/design/figma/industry-wind.png',
+  '/design/figma/industry-wind.webp',
   '/design/figma/industry-pipeline.webp',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
