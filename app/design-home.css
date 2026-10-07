@@ -1937,6 +1937,8 @@
   .pq-design:lang(de) .process.section h2 {
     font-size: clamp(18px, calc(5.6vw - 2.016px), 30px) !important;
   }
+  .pq-design .process .connector { display: none; }
+  .pq-design .process-cards { gap: 16px; }
 
   .pq-design .service-accordion .acc-item {
     margin: 0;
