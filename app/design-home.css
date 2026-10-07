@@ -448,7 +448,7 @@
 .pq-design .network-copy .eyebrow { margin: 0 0 16px; font-size: 17px; font-weight: 500; line-height: 1.219; letter-spacing: -0.03px; text-transform: uppercase; color: #FB7200; }
 .pq-design .network-copy h2 .net-line { display: block; color: #102A5F !important; }
 .pq-design .network-copy h2 .net-line + .net-line { margin-top: 7px; }
-.pq-design .network-copy h2 .complete { letter-spacing: 1.82px; color: #102A5F !important; }
+.pq-design .network-copy h2 .complete { letter-spacing: 1.82px; color: #FB7200 !important; }
 .pq-design .network-copy h2 .net-line span:last-child { color: #FB7200 !important; letter-spacing: -0.075px; }
 .pq-design .network-copy .lead { width: min(788px, 100%); max-width: 788px; margin: 15px 0 0 !important; font-size: 22px !important; font-weight: 400 !important; line-height: 26px !important; letter-spacing: 0.95px; color: #102A5F !important; }
 .pq-design .network-images .shot { position: absolute; max-width: none; }

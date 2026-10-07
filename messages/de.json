@@ -868,10 +868,10 @@
   },
   "team": {
     "label": "Projektteam",
-    "title": "Ein Spezialist oder ein komplettes Projektteam",
+    "title": "Ein Spezialist oder ein komplettes Team",
     "titleBefore": "Ein Spezialist oder ein",
     "titleAfter": "komplettes ",
-    "titleAccent": "Projektteam",
+    "titleAccent": "Team",
     "paragraph1": "Je nach Projektanforderung kann Pipeline Quality einen einzelnen Spezialisten, mehrere ergänzende Fachkräfte oder ein koordiniertes Qualitätsteam bereitstellen.",
     "paragraph2": "",
     "networkLabel": "Unser Netzwerk",
