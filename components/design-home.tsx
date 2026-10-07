@@ -327,13 +327,15 @@ export function DesignHome() {
                   >
                     <button
                       type='button'
+                      aria-expanded={open}
                       onClick={() => {
                         if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
                         setServiceOpen(open ? -1 : index);
                       }}
                     >
                       <span className='acc-icon'><img src={serviceIcons[index]} alt='' /></span>
-                      {block.title} <b className='acc-chevron' aria-hidden='true'>›</b>
+                      <span className='acc-title'>{block.title}</span>
+                      <b className='acc-chevron' aria-hidden='true'>›</b>
                     </button>
                     <div className='acc-panel'>
                       <div className='acc-panel-inner'>
@@ -345,6 +347,13 @@ export function DesignHome() {
                           </ul>
                         ))}
                       </div>
+                      <figure className='acc-mobile-visual'>
+                        <img src={servicePhotos[index]} alt={block.title} />
+                        <figcaption className='image-caption'>
+                          <img src={serviceCaptionIcons[index]} alt='' />
+                          <span>{block.title}</span>
+                        </figcaption>
+                      </figure>
                     </div>
                   </div>
                 );
@@ -487,18 +496,35 @@ export function DesignHome() {
         <div className='shell industries-panel'>
           <div className='industry-tabs'>
             {industryOrder.map((index) => (
-              <button
-                key={sectors[index].title}
-                type='button'
-                className={industry === index ? 'active' : ''}
-                onPointerEnter={(event) => {
-                  if (event.pointerType === 'mouse') setIndustry(index);
-                }}
-                onClick={() => setIndustry(index)}
-              >
-                {sectors[index].title}
-                <img src='/design/figma/industry-mark.svg' alt='' />
-              </button>
+              <div key={sectors[index].title} className={`industry-row${industry === index ? ' active' : ''}`}>
+                <button
+                  type='button'
+                  className={industry === index ? 'active' : ''}
+                  aria-expanded={industry === index}
+                  onPointerEnter={(event) => {
+                    if (event.pointerType === 'mouse') setIndustry(index);
+                  }}
+                  onClick={() => setIndustry(index)}
+                >
+                  {sectors[index].title}
+                  <img src='/design/figma/industry-mark.svg' alt='' />
+                </button>
+                {industry === index ? (
+                  <div className='industry-mobile-panel'>
+                    <div className='industry-photo'>
+                      <img src={industryPhotos[index]} alt={sectors[index].title} />
+                      <strong>{sectors[index].title}</strong>
+                    </div>
+                    <div className='industry-copy'>
+                      <p>
+                        {sectors[index].items.map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
             ))}
           </div>
           <div className='industry-card'>
