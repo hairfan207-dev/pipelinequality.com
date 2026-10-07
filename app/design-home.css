@@ -1866,7 +1866,7 @@
   .pq-design .contact small,
   .pq-design .contact .direct { font-size: 14px; line-height: 1.5; }
 
-  .pq-design .footer { display: block; height: auto; padding: 36px 18px 28px; }
+  .pq-design .footer { display: block; height: auto; padding: 20px 18px 16px; }
   .pq-design .footer-brand,
   .pq-design .footer-desc,
   .pq-design .footer-links,
@@ -1874,13 +1874,31 @@
   .pq-design .footer-locale,
   .pq-design .footer-note,
   .pq-design .footer-legal { position: static; grid-column: auto; grid-row: auto; justify-self: auto; width: auto; max-width: none; text-align: left; }
-  .pq-design .footer-desc { font-size: 15px; line-height: 1.55; }
+  .pq-design .footer-brand { font-size: 13px; letter-spacing: 1.6px; }
+  .pq-design .footer-desc { margin-top: 8px; font-size: 13px; line-height: 1.4; }
   .pq-design .footer-links,
-  .pq-design .footer-legal { flex-direction: column; align-items: flex-start; gap: 12px; font-size: 14px; }
+  .pq-design .footer-copy,
+  .pq-design .footer-locale,
+  .pq-design .footer-note,
+  .pq-design .footer-legal { margin-top: 10px; }
+  .pq-design .footer-links,
+  .pq-design .footer-legal {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+  .pq-design .footer-links { font-size: 11px; letter-spacing: 0.15px; }
+  .pq-design .footer-legal { font-size: 9px; letter-spacing: 0.05px; }
   .pq-design .footer-links a,
-  .pq-design .footer-legal a { min-height: 44px; display: inline-flex; align-items: center; }
-  .pq-design:lang(de) .footer-links,
-  .pq-design:lang(de) .footer-note { font-size: 14px; gap: 12px; white-space: normal; }
+  .pq-design .footer-legal a { min-height: 0; display: inline-flex; align-items: center; white-space: nowrap; padding: 6px 0; }
+  .pq-design .footer-copy { font-size: 11px; }
+  .pq-design .footer-note { font-size: 11px; line-height: 1.35; white-space: normal; }
+  .pq-design:lang(de) .footer-links { font-size: 10px; gap: 6px; letter-spacing: 0; white-space: nowrap; }
+  .pq-design:lang(de) .footer-legal { font-size: 9px; gap: 6px; letter-spacing: 0; justify-content: space-between; white-space: nowrap; }
+  .pq-design:lang(de) .footer-note { font-size: 11px; gap: 6px; white-space: normal; }
 }
 
 @media (max-width: 359px) {
