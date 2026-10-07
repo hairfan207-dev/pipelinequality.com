@@ -502,12 +502,13 @@
 .pq-design .workflow.section h2 { width: min(53.75vw, 1032px, calc(100% - 2.5rem)); margin: 0 auto clamp(1.75rem, 3.125vw, 3.75rem) !important; text-align: center; color: #102A5F !important; font-size: clamp(1.5rem, 3.125vw, 3.75rem) !important; font-weight: 600 !important; line-height: 1.219 !important; letter-spacing: -0.006px; }
 .pq-design .workflow-grid { position: relative; container-type: inline-size; container-name: workflow; width: var(--pq-rail); margin: 0 auto; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-content: stretch; align-items: start; gap: clamp(0.5rem, 1.7cqi, 1.75rem); }
 .pq-design .workflow-grid article { min-width: 0; }
-.pq-design .wf-card { position: relative; width: 100%; height: auto; aspect-ratio: 302.1 / 349.13; }
-.pq-design .wf-card img { position: absolute; z-index: 2; left: 0; top: 0; width: 100%; height: 78.2%; max-width: none; object-fit: cover; border-radius: clamp(0.6rem, 2.1cqi, 1rem); }
-.pq-design .workflow article.up .wf-card img { top: auto; bottom: 0; }
-.pq-design .wf-card strong { position: absolute; z-index: 1; left: 0; right: 0; height: 26.3%; display: flex; align-items: center; justify-content: center; background: #102A5F; border-radius: clamp(0.6rem, 2.1cqi, 1rem); color: #fff; font-size: clamp(0.7rem, 3.95cqi, 1.875rem); font-weight: 500; line-height: 1.219; letter-spacing: -0.03px; text-align: center; padding: 0 0.35em; }
-.pq-design .workflow article.down .wf-card strong { bottom: 0; }
-.pq-design .workflow article.up .wf-card strong { top: 0; }
+.pq-design .wf-card { position: relative; display: flex; flex-direction: column; width: 100%; height: auto; aspect-ratio: 302.1 / 349.13; border-radius: 18px; overflow: hidden; background: #102A5F; box-shadow: 0 14px 32px rgba(16, 42, 95, 0.14); }
+.pq-design .wf-card img { position: relative; z-index: 0; flex: 1 1 auto; left: auto; top: auto; bottom: auto; width: 100%; height: auto; min-height: 0; max-width: none; object-fit: cover; border-radius: 0; }
+.pq-design .workflow article.up .wf-card { flex-direction: column-reverse; }
+.pq-design .workflow article.up .wf-card img { top: auto; bottom: auto; }
+.pq-design .wf-card strong { position: relative; z-index: 1; left: auto; right: auto; top: auto; bottom: auto; flex: none; height: auto; min-height: 22%; display: flex; align-items: center; justify-content: center; margin: 0; background: #102A5F; border-radius: 0; border-top: 3px solid #FB7200; color: #fff; font-size: clamp(0.75rem, 3.1cqi, 1.35rem); font-weight: 600; line-height: 1.15; letter-spacing: 0.01em; text-align: center; padding: 10px 8px; }
+.pq-design .workflow article.down .wf-card strong { bottom: auto; }
+.pq-design .workflow article.up .wf-card strong { top: auto; border-top: 0; border-bottom: 3px solid #FB7200; }
 .pq-design .workflow-grid p { width: 100%; margin: clamp(0.75rem, 3.7cqi, 1.75rem) 0 0; text-align: center; font-size: clamp(0.55rem, 2.35cqi, 1.125rem); font-weight: 400; line-height: 1.2; letter-spacing: 0.04em; color: #102A5F; }
 .pq-design .workflow-grid article:nth-child(4) p { width: 100%; margin-left: 0; }
 .pq-design .digital.section { background: #fff; border-top: 4px solid #FB7200; border-bottom: 4px solid #FB7200; padding: 80px 0 86px; }
@@ -1171,8 +1172,8 @@
   .pq-design .standard-grid p span + span::before { content: none; }
   .pq-design .workflow-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); width: var(--pq-rail); gap: clamp(0.25rem, 1.2cqi, 0.75rem); }
   .pq-design .wf-card { aspect-ratio: 302.1 / 349.13; }
-  .pq-design .wf-card img { height: 78.2%; }
-  .pq-design .wf-card strong { height: 26.3%; }
+  .pq-design .wf-card img { height: auto; }
+  .pq-design .wf-card strong { height: auto; }
   .pq-design .dig-engineer { aspect-ratio: 16 / 9; height: auto; max-height: 180px; }
   .pq-design .dig-quality { aspect-ratio: 16 / 9; height: auto; max-height: 200px; }
   .pq-design .why-col h3 { font-size: 20px; }
@@ -1780,12 +1781,13 @@
 
   .pq-design .workflow { border-top-width: 16px; }
   .pq-design .workflow-grid { grid-template-columns: 1fr; gap: 28px; width: var(--pq-rail); margin-top: 28px; }
-  .pq-design .wf-card { aspect-ratio: 16 / 11; }
+  .pq-design .wf-card,
+  .pq-design .workflow article.up .wf-card { aspect-ratio: 16 / 11; flex-direction: column; border-radius: 16px; }
   .pq-design .wf-card img,
-  .pq-design .workflow article.up .wf-card img { top: 0; bottom: auto; height: 72%; }
+  .pq-design .workflow article.up .wf-card img { top: auto; bottom: auto; height: auto; flex: 1 1 auto; }
   .pq-design .wf-card strong,
   .pq-design .workflow article.up .wf-card strong,
-  .pq-design .workflow article.down .wf-card strong { top: auto; bottom: 0; height: 32%; font-size: 20px; }
+  .pq-design .workflow article.down .wf-card strong { top: auto; bottom: auto; height: auto; min-height: 44px; font-size: 18px; border-top: 3px solid #FB7200; border-bottom: 0; }
   .pq-design .workflow-grid article p { font-size: 15px; line-height: 1.6; margin-top: 12px; }
 
   .pq-design .digital-grid { grid-template-columns: 1fr; row-gap: 28px; }
