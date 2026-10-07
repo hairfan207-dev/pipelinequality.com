@@ -2391,40 +2391,37 @@
     gap: 12px;
     width: var(--pq-rail);
   }
-  .pq-design .standard-grid article,
-  .pq-design .standard-grid article:nth-child(even) {
+  .pq-design .standard-grid article {
     min-width: 0;
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: transparent;
-    border-radius: 0;
-    overflow: visible;
-    box-shadow: none;
+    background: #F4F7F9;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pq-design .standard-grid article:nth-child(even) {
+    background: #fff;
+    box-shadow: inset 0 0 0 1px #FB7200;
   }
   .pq-design .standard-grid article img {
     width: 100%;
     height: auto;
     aspect-ratio: 219.4 / 194;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 0;
   }
   .pq-design .standard-grid .std-card {
     aspect-ratio: auto !important;
     height: auto !important;
     min-height: 0 !important;
-    margin-top: 8px !important;
+    margin-top: 0 !important;
     padding: 8px 4px 10px !important;
-    border-radius: 12px !important;
+    border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
     flex: 1;
   }
-  .pq-design .standard-grid article:nth-child(even) .std-card {
-    background: #fff !important;
-    box-shadow: inset 0 0 0 1px #FB7200 !important;
-  }
-  .pq-design .standard-grid article:last-child { grid-column: 2; }
   .pq-design .standard-grid h3,
   .pq-design:lang(de) .standard-grid h3 {
     font-size: 12px !important;
@@ -2638,9 +2635,4 @@
 @media (max-width: 359px) {
   .pq-design .standard-grid,
   .pq-design:lang(de) .standard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pq-design .standard-grid article:last-child {
-    grid-column: 1 / -1;
-    width: calc((100% - 12px) / 2);
-    justify-self: center;
-  }
 }
