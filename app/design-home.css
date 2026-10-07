@@ -167,8 +167,8 @@
 .pq-design .service-accordion .acc-panel li { display: flex; align-items: center; gap: 8px; min-width: 0; white-space: nowrap; font-size: clamp(11px, 5.2cqi, 16px) !important; line-height: 1.2 !important; padding: 0 0 10px !important; color: #000 !important; }
 .pq-design .service-accordion .acc-panel li::before { content: ""; flex: none; width: 0; height: 0; margin: 0; border-style: solid; border-width: 4px 0 4px 6px; border-color: transparent transparent transparent var(--orange); }
 .pq-design:lang(de) .service-accordion .acc-panel li { font-size: clamp(8px, 3.5cqi, 15px) !important; letter-spacing: -0.01em; }
-.pq-design .feature-image { border-radius: 16px !important; margin-top: 0; height: 100%; }
-.pq-design .feature-image > img { height: 100%; border-radius: 16px; object-fit: cover; }
+.pq-design .feature-image { align-self: start; border-radius: 16px !important; margin-top: 0; height: auto; }
+.pq-design .feature-image > img { width: 100%; height: auto; aspect-ratio: 16 / 10; max-height: 380px; border-radius: 16px; object-fit: cover; }
 .pq-design .services-grid > div:first-child { container-type: inline-size; min-height: 0; }
 .pq-design .services-grid h2,
 .pq-design .services-grid h2 .svc-line { color: #102A5F !important; }
