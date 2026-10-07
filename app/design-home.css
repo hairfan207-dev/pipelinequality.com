@@ -366,19 +366,19 @@
 .pq-design .network-grid { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(24px, 2vw, 36px); align-items: start; }
 .pq-design .network-images { margin-top: 23px; width: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 2.2vw, 43px) clamp(16px, 2vw, 41px); }
 .pq-design .network-images figure { width: 100%; height: auto; aspect-ratio: 372 / 429; border-radius: 20px; margin: 0; overflow: hidden; }
-.pq-design .footer { position: relative; height: 259px; margin: 0; padding: 0; background: #032855 !important; border-top: 0; color: #A6BDCF; overflow: hidden; }
-.pq-design .footer-brand { position: absolute; left: var(--pq-rail-pad); top: 44px; margin: 0; font: 600 15px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 5.31px; text-transform: uppercase; color: #fff; }
-.pq-design .footer-desc { position: absolute; left: var(--pq-rail-pad); top: 87px; width: min(528px, 42vw); margin: 0; font: 400 16px/23px Montserrat, Arial, sans-serif; letter-spacing: -0.54px; color: #A6BDCF; }
-.pq-design .footer-links { position: absolute; left: var(--pq-rail-pad); top: 179px; display: flex; gap: 37px; margin: 0; font: 700 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 1.12px; text-transform: uppercase; color: #A6BDCF; }
+.pq-design .footer { position: relative; height: auto; margin: 0; padding: 22px var(--pq-rail-pad) 18px; background: #032855 !important; border-top: 0; color: #A6BDCF; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); column-gap: 32px; row-gap: 8px; align-items: start; }
+.pq-design .footer-brand { position: static; grid-column: 1; grid-row: 1; margin: 0; font: 600 14px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 3.2px; text-transform: uppercase; color: #fff; }
+.pq-design .footer-desc { position: static; grid-column: 1; grid-row: 2; width: min(528px, 100%); margin: 0; font: 400 14px/1.45 Montserrat, Arial, sans-serif; letter-spacing: 0; color: #A6BDCF; }
+.pq-design .footer-links { position: static; grid-column: 1; grid-row: 3; display: flex; gap: 28px; margin: 0; font: 700 12px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 0.8px; text-transform: uppercase; color: #A6BDCF; }
 .pq-design .footer-links a { color: #A6BDCF; }
-.pq-design .footer-copy { position: absolute; left: var(--pq-rail-pad); top: 219px; margin: 0; font: 400 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.11px; color: #FF7700; }
-.pq-design .footer-locale { position: absolute; right: var(--pq-rail-pad); top: 152px; display: flex; align-items: center; gap: 27px; margin: 0; }
-.pq-design .footer-locale span { font: 400 14px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.57px; color: #A6BDCF; }
-.pq-design .footer-lang { border: 0; background: transparent; padding: 0; font: 700 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.5px; color: #A6BDCF; cursor: pointer; }
+.pq-design .footer-copy { position: static; grid-column: 1; grid-row: 4; margin: 0; font: 400 12px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 0; color: #FF7700; }
+.pq-design .footer-locale { position: static; grid-column: 2; grid-row: 1; justify-self: end; display: flex; align-items: center; gap: 16px; margin: 0; }
+.pq-design .footer-locale span { font: 400 14px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 0; color: #A6BDCF; }
+.pq-design .footer-lang { border: 0; background: transparent; padding: 0; font: 700 12px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 0.5px; color: #A6BDCF; cursor: pointer; }
 .pq-design .footer-lang.on { color: #FF7700; letter-spacing: 0; }
-.pq-design .footer-note { position: absolute; right: var(--pq-rail-pad); top: 176px; margin: 0; font: 400 12px/1.219 Montserrat, Arial, sans-serif; letter-spacing: -0.65px; color: #799AAF; }
-.pq-design .footer-note span { margin-right: 16px; font-weight: 500; letter-spacing: -0.69px; color: #A6BDCF; }
-.pq-design .footer-legal { position: absolute; right: var(--pq-rail-pad); top: 230px; display: flex; gap: 35px; font: 700 11px/1.219 Montserrat, Arial, sans-serif; letter-spacing: 0.7px; text-transform: uppercase; }
+.pq-design .footer-note { position: static; grid-column: 2; grid-row: 2; justify-self: end; max-width: 420px; margin: 0; font: 400 12px/1.35 Montserrat, Arial, sans-serif; letter-spacing: 0; text-align: right; color: #799AAF; }
+.pq-design .footer-note span { margin-right: 10px; font-weight: 500; letter-spacing: 0; color: #A6BDCF; }
+.pq-design .footer-legal { position: static; grid-column: 2; grid-row: 3; justify-self: end; display: flex; gap: 24px; font: 700 11px/1.2 Montserrat, Arial, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; }
 .pq-design .footer-legal a { color: #A6BDCF; }
 .pq-design .acc-item button { font: 500 30px Montserrat, sans-serif !important; transition: background-color 160ms ease; }
 .pq-design .acc-item:hover button { background: rgba(16,42,95,.04); }
@@ -783,14 +783,14 @@
   .pq-design .why-layout { width: var(--pq-rail); }
 }
 @media (max-width: 1100px) {
-  .pq-design .footer { height: auto; padding: 40px 24px 32px; }
+  .pq-design .footer { display: block; height: auto; padding: 40px 24px 32px; }
   .pq-design .footer-brand,
   .pq-design .footer-desc,
   .pq-design .footer-links,
   .pq-design .footer-copy,
   .pq-design .footer-locale,
   .pq-design .footer-note,
-  .pq-design .footer-legal { position: static; left: auto; right: auto; top: auto; width: auto; max-width: 100%; }
+  .pq-design .footer-legal { position: static; left: auto; right: auto; top: auto; grid-column: auto; grid-row: auto; justify-self: auto; width: auto; max-width: 100%; text-align: left; }
   .pq-design .footer-desc,
   .pq-design .footer-links,
   .pq-design .footer-copy,
@@ -1862,14 +1862,14 @@
   .pq-design .contact small,
   .pq-design .contact .direct { font-size: 14px; line-height: 1.5; }
 
-  .pq-design .footer { height: auto; padding: 36px 18px 28px; }
+  .pq-design .footer { display: block; height: auto; padding: 36px 18px 28px; }
   .pq-design .footer-brand,
   .pq-design .footer-desc,
   .pq-design .footer-links,
   .pq-design .footer-copy,
   .pq-design .footer-locale,
   .pq-design .footer-note,
-  .pq-design .footer-legal { position: static; width: auto; max-width: none; text-align: left; }
+  .pq-design .footer-legal { position: static; grid-column: auto; grid-row: auto; justify-self: auto; width: auto; max-width: none; text-align: left; }
   .pq-design .footer-desc { font-size: 15px; line-height: 1.55; }
   .pq-design .footer-links,
   .pq-design .footer-legal { flex-direction: column; align-items: flex-start; gap: 12px; font-size: 14px; }
