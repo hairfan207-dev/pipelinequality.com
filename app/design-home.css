@@ -2110,17 +2110,89 @@
   .pq-design .process-labels span:nth-child(4) { grid-row: 4; }
   .pq-design .process-labels span:nth-child(5) { grid-row: 5; }
   .pq-design .network-list li img { width: 44px; height: 44px; object-fit: contain; }
+  .pq-design .network-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .pq-design .network-images figure {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    aspect-ratio: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #102A5F;
+  }
+  .pq-design .network-images .shot,
+  .pq-design .network-images .top-solid .shot,
+  .pq-design .network-images .bottom-solid .shot,
+  .pq-design .network-images .top-fade .shot,
+  .pq-design .network-images .bottom-fade .shot {
+    position: relative;
+    inset: auto;
+    top: auto !important;
+    left: auto !important;
+    z-index: 0;
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    max-width: none;
+    border-radius: 0;
+    object-fit: cover;
+  }
+  .pq-design .network-images .shade { display: none; }
   .pq-design .network-images figcaption,
+  .pq-design .network-images .top-fade figcaption,
+  .pq-design .network-images .bottom-fade figcaption,
+  .pq-design .network-images .top-solid figcaption,
+  .pq-design .network-images .bottom-solid figcaption {
+    position: relative;
+    inset: auto;
+    top: auto;
+    bottom: auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: auto;
+    min-height: 52px;
+    margin-top: auto;
+    padding: 6px 8px;
+    background: #102A5F;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    text-align: center;
+  }
+  .pq-design .network-images figcaption img,
+  .pq-design .network-images .top-solid figcaption img,
+  .pq-design .network-images .bottom-solid figcaption img,
+  .pq-design .network-images .top-fade figcaption img,
+  .pq-design .network-images .bottom-fade figcaption img {
+    position: static !important;
+    width: 14px !important;
+    height: 14px !important;
+    flex: none;
+    object-fit: contain;
+  }
+  .pq-design .network-images figcaption > span,
   .pq-design .network-images .top-fade figcaption > span,
   .pq-design .network-images .bottom-fade figcaption > span,
   .pq-design .network-images .top-solid figcaption > span,
   .pq-design .network-images .bottom-solid figcaption > span,
   .pq-design:lang(de) .network-images .top-solid figcaption > span,
   .pq-design:lang(de) .network-images .bottom-solid figcaption > span {
-    font-size: 14px !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    font-size: 11px !important;
     line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center;
   }
-  .pq-design .network-images figcaption img { width: 18px !important; height: 18px !important; object-fit: contain; }
 
   .pq-design .competence {
     display: flex;
