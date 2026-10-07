@@ -2416,7 +2416,7 @@
     margin-top: 8px !important;
     padding: 8px 4px 10px !important;
     border-radius: 12px !important;
-    background: #F4F7F9 !important;
+    background: transparent !important;
     box-shadow: none !important;
     flex: 1;
   }
