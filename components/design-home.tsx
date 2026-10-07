@@ -632,7 +632,8 @@ export function DesignHome() {
           {steps.map((step, index) => (
             <article key={step.id} className={index % 2 ? 'up' : 'down'}>
               <div className='wf-card'>
-                <img src={workPhotos[index]} alt='' />
+                <img className={index === 3 ? 'wf-mobile-only' : undefined} src={workPhotos[index]} alt='' />
+                {index === 3 ? <img className='wf-desktop-only' src='/design/figma/work-control-desktop.png' alt='' /> : null}
                 <strong>{step.title}</strong>
               </div>
               <p>{step.text}</p>
