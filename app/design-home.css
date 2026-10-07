@@ -2007,7 +2007,7 @@
     align-items: center;
     gap: 10px;
     margin: 0;
-    padding: 28px 14px 12px;
+    padding: 16px 14px 10px;
     background: linear-gradient(180deg, transparent, rgba(16, 42, 95, 0.92));
     color: #fff;
     font-size: 15px !important;
@@ -2021,9 +2021,14 @@
     flex: none;
   }
   .pq-design .acc-mobile-visual .image-caption span {
+    display: block;
     flex: 1;
     min-width: 0;
     width: auto;
+    height: auto;
+    background: transparent;
+    color: #fff;
+    border-radius: 0;
   }
 
   .pq-design .process-panel {
@@ -2037,7 +2042,14 @@
     margin-top: 12px;
     padding: 8px 4px 4px;
   }
-  .pq-design .process-icon { grid-column: 1; width: 48px; height: 48px; object-fit: contain; }
+  .pq-design .process-icon {
+    grid-column: 1;
+    width: 48px;
+    height: 48px;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+  }
   .pq-design .process-icon:nth-child(1) { grid-row: 1; }
   .pq-design .process-icon:nth-child(2) { grid-row: 2; }
   .pq-design .process-icon:nth-child(3) { grid-row: 3; }
@@ -2165,6 +2177,7 @@
   .pq-design .industry-mobile-panel { margin: 4px 0 16px; }
   .pq-design .industry-mobile-panel .industry-photo {
     height: auto;
+    padding-bottom: 0;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -2172,6 +2185,7 @@
     position: relative;
     width: 100%;
     height: auto;
+    max-height: none;
     aspect-ratio: 16 / 10;
     min-height: 0;
     object-fit: cover;
@@ -2184,6 +2198,7 @@
     right: auto;
     bottom: auto;
     height: auto;
+    min-height: 0;
     padding: 12px 16px;
     border-radius: 0;
     font-size: 15px;
@@ -2236,7 +2251,8 @@
     font-size: 16px !important;
     line-height: 1.6 !important;
   }
-  .pq-design .experience.section h2 { font-size: clamp(30px, 8vw, 36px) !important; line-height: 1.12 !important; }
+  .pq-design .experience.section h2 { font-size: clamp(26px, 7vw, 34px) !important; line-height: 1.12 !important; }
+  .pq-design .experience.section h2 .line { white-space: nowrap; }
 
   .pq-design .standard-grid,
   .pq-design:lang(de) .standard-grid {
@@ -2269,7 +2285,7 @@
     height: auto !important;
     min-height: 0 !important;
     margin-top: 0 !important;
-    padding: 10px 6px 12px !important;
+    padding: 8px 4px 10px !important;
     border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -2277,8 +2293,14 @@
   }
   .pq-design .standard-grid h3,
   .pq-design:lang(de) .standard-grid h3 {
-    font-size: 13px !important;
-    line-height: 1.25 !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    hyphens: manual;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .pq-design:lang(de) .standard-grid h3 {
+    font-size: 11px !important;
     hyphens: auto;
   }
   .pq-design .standard-grid p,
@@ -2289,10 +2311,54 @@
 
   .pq-design .faq.section { padding: 64px 18px 72px; }
   .pq-design .faq.section h2 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    text-align: left !important;
     font-size: clamp(30px, 8vw, 34px) !important;
     line-height: 1.1 !important;
-    margin-bottom: 0 !important;
   }
+  .pq-design .network.section .network-copy h2 {
+    width: 100% !important;
+    font-size: clamp(20px, 6.2vw, 28px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0 !important;
+  }
+  .pq-design .network-copy h2 .net-line { white-space: nowrap; }
+  .pq-design .network-copy h2 .complete { letter-spacing: 0 !important; }
+  .pq-design .workflow.section h2 {
+    width: var(--pq-rail) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(24px, 6.8vw, 32px) !important;
+    line-height: 1.15 !important;
+    text-wrap: balance !important;
+  }
+  .pq-design .standards.section h2 {
+    width: var(--pq-rail) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(20px, 6.2vw, 28px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+  }
+  .pq-design .standards.section h2 .line { white-space: nowrap; }
+  .pq-design .digital.section h2 {
+    font-size: clamp(22px, 6.4vw, 30px) !important;
+    line-height: 1.15 !important;
+  }
+  .pq-design .digital.section h2 .line { white-space: nowrap; }
+  .pq-design .partners.section h2 {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: clamp(24px, 6.6vw, 32px) !important;
+    line-height: 1.15 !important;
+  }
+  .pq-design .partners.section h2 .line { text-wrap: balance !important; }
   .pq-design .faq-lead {
     margin-top: 12px;
     font-size: 16px !important;
