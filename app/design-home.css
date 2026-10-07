@@ -1895,10 +1895,10 @@
   .pq-design .footer-links a,
   .pq-design .footer-legal a { min-height: 0; display: inline-flex; align-items: center; white-space: nowrap; padding: 6px 0; }
   .pq-design .footer-copy { font-size: 11px; }
-  .pq-design .footer-note { font-size: 11px; line-height: 1.35; white-space: normal; }
+  .pq-design .footer-note { font-size: 8px !important; line-height: 1.3; white-space: nowrap !important; }
   .pq-design:lang(de) .footer-links { font-size: 10px; gap: 6px; letter-spacing: 0; white-space: nowrap; }
   .pq-design:lang(de) .footer-legal { font-size: 9px; gap: 6px; letter-spacing: 0; justify-content: space-between; white-space: nowrap; }
-  .pq-design:lang(de) .footer-note { font-size: 11px; gap: 6px; white-space: normal; }
+  .pq-design:lang(de) .footer-note { font-size: 7px !important; gap: 6px; white-space: nowrap !important; }
 }
 
 @media (max-width: 359px) {
