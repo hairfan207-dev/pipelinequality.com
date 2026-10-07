@@ -1927,6 +1927,16 @@
   .pq-design:lang(de) .services-grid h2 { font-size: clamp(18px, 5.6cqi, 30px) !important; }
   .pq-design .services-grid h2 .svc-line,
   .pq-design:lang(de) .services-grid h2 .svc-line { white-space: nowrap !important; }
+  .pq-design .intro h2,
+  .pq-design .process.section h2 {
+    font-size: clamp(22px, calc(6.4vw - 2.304px), 32px) !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+  }
+  .pq-design:lang(de) .intro h2,
+  .pq-design:lang(de) .process.section h2 {
+    font-size: clamp(18px, calc(5.6vw - 2.016px), 30px) !important;
+  }
 
   .pq-design .service-accordion .acc-item {
     margin: 0;
