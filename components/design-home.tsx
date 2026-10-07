@@ -512,11 +512,7 @@ export function DesignHome() {
                 {industry === index ? (
                   <div className='industry-mobile-panel'>
                     <div className='industry-photo'>
-                      <img
-                        className={index === 0 ? 'industry-wind-mobile' : undefined}
-                        src={index === 0 ? '/design/figma/industry-wind-mobile.jpg' : industryPhotos[index]}
-                        alt={sectors[index].title}
-                      />
+                      <img src={index === 0 ? '/design/figma/industry-wind.png' : industryPhotos[index]} alt={sectors[index].title} />
                       <strong>{sectors[index].title}</strong>
                     </div>
                     <div className='industry-copy'>
@@ -632,8 +628,7 @@ export function DesignHome() {
           {steps.map((step, index) => (
             <article key={step.id} className={index % 2 ? 'up' : 'down'}>
               <div className='wf-card'>
-                <img className={index === 3 ? 'wf-mobile-only' : undefined} src={workPhotos[index]} alt='' />
-                {index === 3 ? <img className='wf-desktop-only' src='/design/figma/work-control-desktop.png' alt='' /> : null}
+                <img src={workPhotos[index]} alt='' />
                 <strong>{step.title}</strong>
               </div>
               <p>{step.text}</p>
