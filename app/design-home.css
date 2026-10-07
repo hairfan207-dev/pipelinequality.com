@@ -2634,6 +2634,20 @@
   .pq-design .footer-lang { min-height: 44px; min-width: 44px; padding: 0 8px; font-size: 14px; }
   .pq-design .eyebrow,
   .pq-design .dq-kicker { font-size: 14px !important; }
+  .pq-design .dq-panel .dq-kicker {
+    margin-bottom: 10px;
+    font-size: 11px !important;
+    letter-spacing: 0.08em;
+  }
+  .pq-design .digital-support.section h2 {
+    font-size: clamp(26px, 7.2vw, 32px) !important;
+    line-height: 1.05 !important;
+  }
+  .pq-design .dq-panel .dq-copy {
+    margin-top: 12px;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
 }
 
 @media (max-width: 359px) {
