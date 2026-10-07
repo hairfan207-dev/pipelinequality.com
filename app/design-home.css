@@ -2454,6 +2454,22 @@
     object-fit: cover;
     object-position: center;
   }
+  .pq-design .wf-card img,
+  .pq-design .workflow article.up .wf-card img {
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .pq-design .wf-card strong,
+  .pq-design .workflow article.up .wf-card strong,
+  .pq-design .workflow article.down .wf-card strong {
+    flex: none;
+    height: auto;
+    min-height: 0;
+    padding: 7px 10px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
   .pq-design .footer-lang { min-height: 44px; min-width: 44px; padding: 0 8px; font-size: 14px; }
   .pq-design .eyebrow,
   .pq-design .dq-kicker { font-size: 14px !important; }
