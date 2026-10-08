@@ -448,7 +448,13 @@
   .pq-design .why-final-grid p,
   .pq-design .how-final-grid p,
   .pq-design .contact-final-head p { font-size: 16px !important; line-height: 1.6; }
-  .pq-design .hero-actions { width: 100%; align-items: stretch; }
+  .pq-design .hero-actions {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    align-items: stretch;
+  }
   .pq-design .hero-actions .btn,
   .pq-design .hero-actions .btn-orange,
   .pq-design .hero-actions .btn-navy,
