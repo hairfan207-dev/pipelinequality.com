@@ -1,16 +1,14 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
 
 type Block = { title: string; items: string[] };
-type Stage = { id: string; title: string; items: string[] };
 type Industry = { title: string; items: string[] };
 type Step = { id: string; title: string; text: string };
 type Reason = { title: string; description: string };
-type Faq = { question: string; answer: string };
 
 const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
@@ -24,41 +22,6 @@ const industryPhotos = [
   '/client/industry-maintenance.jpg',
 ];
 const serviceOrder = [0, 2, 1, 3];
-const processPhotos = [
-  '/design/figma/handover-field.png',
-  '/design/figma/handover-quality.png',
-  '/design/figma/handover-project.png',
-];
-const networkPhotos = [
-  { src: '/design/figma/team-inspectors.webp', role: 7, variant: 'top-fade', icon: '/design/figma/team-icon-inspectors.svg', shade: '/design/figma/team-caption-weld.svg' },
-  { src: '/design/figma/team-docs.webp', role: 9, variant: 'top-fade', icon: '/design/figma/team-icon-docs.svg', shade: '/design/figma/team-caption-weld.svg' },
-  { src: '/design/figma/team-dimensional.webp', role: 8, variant: 'top-fade', icon: '/design/figma/team-icon-dimensional.svg', shade: '/design/figma/team-caption-weld.svg' },
-  { src: '/design/figma/team-welding.webp', role: 5, variant: 'top-fade', icon: '/design/figma/team-icon-weld.svg', shade: '/design/figma/team-caption-weld.svg' },
-];
-const roleIcons = [
-  '/design/figma/net-qm.svg',
-  '/design/figma/net-auditors.svg',
-  '/design/figma/net-third.svg',
-  '/design/figma/net-leaders.svg',
-  '/design/figma/net-qaqc.svg',
-  '/design/figma/net-weld.svg',
-  '/design/figma/net-ndt.svg',
-  '/design/figma/net-inspectors.svg',
-  '/design/figma/net-dimensional.svg',
-  '/design/figma/net-docs.svg',
-  '/design/figma/net-support.svg',
-  '/design/figma/net-hse.svg',
-];
-const networkColumns = [
-  [0, 1, 4, 5, 3, 2],
-  [6, 7, 8, 9, 10, 11],
-];
-const pillarIcons = [
-  '/design/figma/icon-experienced.svg',
-  '/design/figma/icon-project.svg',
-  '/design/figma/icon-quality.svg',
-  '/design/figma/icon-coordinated.svg',
-];
 const serviceIcons = [
   '/design/figma/svc-qaqc.svg',
   '/design/figma/svc-inspect.svg',
@@ -77,32 +40,12 @@ const servicePhotos = [
   '/design/figma/photo-documentation.webp',
   '/design/figma/photo-project-quality.webp',
 ];
-const fieldIcons = [
-  '/design/figma/handover-field-inspection.png',
-  '/design/figma/handover-field-welding.png',
-  '/design/figma/handover-field-ndt.png',
-  '/design/figma/handover-field-dimensional.png',
-  '/design/figma/handover-field-mtr.png',
-];
 const workPhotos = [
   '/design/figma/work-understand.webp',
   '/design/figma/work-match.webp',
   '/design/figma/work-execute.webp',
   '/design/figma/work-control.webp',
   '/design/figma/work-handover.webp',
-];
-const qualityIcons = [
-  '/design/figma/handover-qc-inspection.png',
-  '/design/figma/handover-qc-ncr.png',
-  '/design/figma/handover-qc-traceability.png',
-  '/design/figma/handover-qc-status.png',
-  '/design/figma/handover-qc-approvals.png',
-];
-const projectIcons = [
-  '/design/figma/handover-project-reports.png',
-  '/design/figma/handover-project-mdr.png',
-  '/design/figma/handover-project-handover.png',
-  '/design/figma/handover-project-compliance.png',
 ];
 const standardIcons = [
   '/design/figma/std-qm.svg',
@@ -117,20 +60,13 @@ const standardOrder = [0, 5, 4, 3, 2, 1, 6];
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
-  const tIntro = useTranslations('intro');
   const tServices = useTranslations('services');
-  const tField = useTranslations('fieldHandover');
-  const tTeam = useTranslations('team');
-  const tPhil = useTranslations('philosophy');
   const tInd = useTranslations('industries');
   const tExp = useTranslations('experience');
   const tStd = useTranslations('standards');
   const tWork = useTranslations('workProcess');
-  const tSmart = useTranslations('smartQAQC');
   const tDigital = useTranslations('digitalQuality');
-  const tPartners = useTranslations('partners');
   const tWhy = useTranslations('why');
-  const tFaq = useTranslations('faq');
   const tContact = useTranslations('contact');
   const tFooter = useTranslations('footer');
   const tNav = useTranslations('nav');
@@ -138,10 +74,7 @@ export function DesignHome() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const pillars = tHero.raw('pillars') as Array<{ title: string; text: string }>;
   const blocks = tServices.raw('blocks') as Block[];
-  const stages = tField.raw('stages') as Stage[];
-  const roles = tTeam.raw('roles') as string[];
   const sectors = tInd.raw('sectors') as Industry[];
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
@@ -151,9 +84,7 @@ export function DesignHome() {
     title: block.title,
     description: block.summary ?? block.items.join(', '),
   }));
-  const digitalCopy = tSmart('description').split(/(?=Together,|Gemeinsam )/).filter(Boolean).map((part) => part.trim());
   const reasons = tWhy.raw('reasons') as Reason[];
-  const faqs = tFaq.raw('items') as Faq[];
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -161,7 +92,6 @@ export function DesignHome() {
   const langMenuRef = useRef<HTMLDivElement>(null);
   const [serviceOpen, setServiceOpen] = useState(0);
   const [industry, setIndustry] = useState(0);
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
@@ -206,19 +136,22 @@ export function DesignHome() {
               <em>QUALITY</em>
             </span>
           </a>
-          <button
-            type='button'
-            className='menu-btn'
-            aria-expanded={menuOpen}
-            aria-controls='pq-nav-menu'
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span className='menu-label'>{tNav('menu')}</span>
-          </button>
+          <div className='nav-tools'>
+            <a className='nav-contact' href='#contact' onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
+            <button
+              type='button'
+              className='menu-btn'
+              aria-expanded={menuOpen}
+              aria-controls='pq-nav-menu'
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span className='menu-label'>{tNav('menu')}</span>
+            </button>
+          </div>
           <div id='pq-nav-menu' className={`nav-links${menuOpen ? ' is-open' : ''}`}>
             <a href='#services' onClick={() => setMenuOpen(false)}>{tNav('services')}</a>
-            <a href='#process' onClick={() => setMenuOpen(false)}>{tNav('process')}</a>
             <a href='#industries' onClick={() => setMenuOpen(false)}>{tNav('industries')}</a>
+            <a href='#expertise' onClick={() => setMenuOpen(false)}>{tNav('expertise')}</a>
             <a href='#experience' onClick={() => setMenuOpen(false)}>{tNav('experience')}</a>
             <a href='#contact' onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
             <div className='lang-menu' ref={langMenuRef}>
@@ -260,47 +193,13 @@ export function DesignHome() {
           </p>
           <div className='hero-actions'>
             <a className='btn btn-orange' href='#contact'>{tHero('cta1')}</a>
-            <a className='btn btn-navy' href='#network'>{tHero('cta2')}</a>
+            <a className='btn btn-navy' href='#experience'>{tHero('cta2')}</a>
           </div>
         </div>
       </header>
 
-      <section className='promise-strip'>
-        <div className='shell promise-grid'>
-          {pillars.map((pillar, index) => (
-            <article key={pillar.title}>
-              <div className='round-icon' aria-hidden='true'><img src={pillarIcons[index]} alt='' /></div>
-              <h3>
-                {pillar.title.split(/(?= & )/).map((line, index) => (
-                  <span key={line}>
-                    {index > 0 ? <br /> : null}
-                    {line.trim()}
-                  </span>
-                ))}
-              </h3>
-              <p>{pillar.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className='intro section'>
-        <div className='intro-bg' aria-hidden='true'>
-          <img src='/design/figma/qc-bg.png' alt='' />
-        </div>
-        <div className='shell center'>
-          <p className='eyebrow'>{tIntro('label')}</p>
-          <h2>
-            {tIntro('headlineLine1')}
-            <br />
-            <span>{tIntro('headlineLine2')}</span>
-          </h2>
-          <p className='intro-copy'>{tIntro('paragraph1')}</p>
-          <p className='intro-copy intro-copy-b'>{tIntro('paragraph2')}</p>
-        </div>
-      </section>
-
       <section className='services section' id='services'>
+        <span id='expertise' className='section-anchor' />
         <div className='shell two-col services-grid'>
           <div>
             <h2>
@@ -370,122 +269,6 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='process section' id='process'>
-        <div className='shell center'>
-          <h2>
-            {tField('designLine1')}
-            <span>{tField('designLine2')}</span>
-          </h2>
-          <p className='lead centered'>{tField('lead')}</p>
-          <div className='process-cards'>
-            {stages.map((stage, index) => (
-              <Fragment key={stage.id}>
-                <article className='process-card'>
-                  <div className='pic'>
-                    <img src={processPhotos[index]} alt={stage.title} />
-                    <strong>{stage.title}</strong>
-                  </div>
-                  <div className='process-panel'>
-                    {(index === 0 ? fieldIcons : index === 1 ? qualityIcons : projectIcons).map((src) => (
-                      <img key={src} className='process-icon' src={src} alt='' />
-                    ))}
-                    <div className='process-labels'>
-                      {stage.items.map((item) => (
-                        <span key={item}>{item}</span>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-                {index < stages.length - 1 ? <div className='connector'><img src='/design/figma/handover-connector.svg' alt='' /></div> : null}
-              </Fragment>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className='network section' id='network'>
-        <div className='shell network-grid'>
-          <div className='network-images'>
-            {networkPhotos.map((photo) => {
-              const label = roles[photo.role] ?? '';
-                  const lines = locale === 'de'
-                    ? [label]
-                    : label.startsWith('Quality ')
-                      ? ['Quality', label.slice('Quality '.length)]
-                      : label.startsWith('Dimensional / ')
-                        ? ['Dimensional', label.slice('Dimensional / '.length)]
-                        : [label];
-              return (
-                <figure key={photo.src} className={photo.variant}>
-                  <img className='shot' src={photo.src} alt={label} />
-                  <img className='shade' src={photo.shade} alt='' />
-                  <figcaption>
-                    <img src={photo.icon} alt='' />
-                    <span>
-                      {lines.map((line, index) => (
-                        <span key={line}>
-                          {index > 0 ? <br /> : null}
-                          {line}
-                        </span>
-                      ))}
-                    </span>
-                  </figcaption>
-                </figure>
-              );
-            })}
-          </div>
-          <div className='network-copy'>
-            <p className='eyebrow left'>{tServices('keyAreasTitle')}</p>
-            <h2>
-              <span className='net-line'>{tTeam('titleBefore')}</span>
-              <span className='net-line'>
-                <span className='complete'>{tTeam('titleAfter')}</span>
-                <span>{tTeam('titleAccent')}</span>
-              </span>
-            </h2>
-            <p className='lead'>{tTeam('paragraph1')}</p>
-            <div className='network-list'>
-              <h3>{tTeam('networkLabel')}</h3>
-              <div className='cols'>
-                {networkColumns.map((column) => (
-                  <ul key={column.join('-')}>
-                    {column.map((index) => (
-                      <li key={roles[index]} className={index === 11 ? 'wrap' : undefined}>
-                        <img src={roleIcons[index]} alt='' />
-                        <span>{roles[index]}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className='competence'>
-        <img src='/design/figma/competence-bg.webp' className='competence-bg' alt='' />
-        <div className='shell competence-inner'>
-          <div className='competence-card'>
-            <h2>
-              <span className='line'>{tPhil('designLine1')}</span>
-              <span className='line'>{tPhil('designLine2')}</span>
-              <span className='line'>{tPhil('designLine3')}</span>
-            </h2>
-            <p>{tPhil('paragraph1')}</p>
-            <p>{tPhil('paragraph2')}</p>
-            <p className='note'>{tPhil('paragraph3')}</p>
-          </div>
-        </div>
-        <div className='competence-visual' aria-hidden='true'>
-          <div className='quality-badge'>
-            <span>{tPhil('badge1')}</span>
-            <span>{tPhil('badge2')}</span>
-            <span>{tPhil('badge3')}</span>
-          </div>
-        </div>
-      </section>
-
       <section className='industries' id='industries'>
         <div className='industries-head'>
           <h2>
@@ -547,43 +330,35 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='experience section' id='experience'>
-        <div className='experience-box'>
-          <div className='experience-intro'>
-            <div className='experience-heading'>
-              <h2>
-            <span className='line'>{tExp('designBefore1')}<span className='accent'>{tExp('designAccent1')}</span><span className='amp'>{tExp('designAmp')}</span></span>
-            <span className='line'>{tExp('designBefore2')}<span className='accent'>{tExp('designAccent2')}</span></span>
-              </h2>
-              <p>{tExp('intro')}</p>
-            </div>
-            <div className='experience-copy'>
-              <p className='eyebrow'>{tExp('label')}</p>
-              <p>{tExp('paragraph1')}</p>
-              {tExp('paragraph2') ? <p>{tExp('paragraph2')}</p> : null}
-            </div>
-          </div>
-          <div className='experience-photos'>
-            <img className='exp-wind' src='/design/figma/exp-wind.webp' alt={tExp('imageAlt')} />
-            <div className='exp-pipes'>
-              <img src='/design/figma/exp-pipes.webp' alt={tExp('industrialTitle')} />
-            </div>
-          </div>
-          <div className='experience-ref'>
-            <p className='eyebrow'>{tExp('referenceLabel')}</p>
-            <h3>{tExp('referenceTitle')}</h3>
-            {tExp('referenceText').split('\n\n').map((part) => (
-              <p className='ref-body' key={part}>{part}</p>
+      <section className='why section' id='why'>
+        <div className='why-layout'>
+          <svg className='why-shape' viewBox='0 0 1650.1 625.42' preserveAspectRatio='none' aria-hidden='true'>
+            <path fill='#F4F7F9' d='M824.85 20V252.14C824.85 257.444 822.743 262.531 818.992 266.281C815.241 270.032 810.154 272.14 804.85 272.14H20C14.6957 272.14 9.60859 274.246 5.85786 277.997C2.10714 281.748 0 286.835 0 292.14V605.42C0 610.724 2.10714 615.811 5.85786 619.562C9.60859 623.312 14.6957 625.42 20 625.42H1630.1C1635.4 625.42 1640.49 623.312 1644.24 619.562C1647.99 615.811 1650.1 610.724 1650.1 605.42V20C1650.1 14.6957 1647.99 9.60815 1644.24 5.85742C1640.49 2.10669 1635.4 0 1630.1 0H844.85C839.546 0 834.459 2.10669 830.708 5.85742C826.957 9.60815 824.85 14.6957 824.85 20Z' />
+          </svg>
+          <h2>
+            <span className='line'>{tWhy('designLine1')}</span>
+            <span className='line'>{tWhy('designLine2')}<span>{tWhy('designMark')}</span></span>
+          </h2>
+          <div className='why-col why-col-right'>
+            {reasons.slice(0, 4).map((reason) => (
+              <article key={reason.title}>
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
             ))}
-            <h4>{tExp('scopeTitle')}</h4>
-            <p className='ref-detail'>{tExp('scopeText')}</p>
-            <h4 className='track'>{tExp('trackTitle')}</h4>
-            <p className='ref-detail track'>{tExp('trackText')}</p>
+          </div>
+          <div className='why-col why-col-left'>
+            {reasons.slice(4).map((reason) => (
+              <article key={reason.title}>
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className='standards section'>
+      <section className='standards section' id='capabilities'>
         <h2>
             <span className='line'>{tStd('designLine1')}</span>
             <span className='line'>
@@ -621,6 +396,42 @@ export function DesignHome() {
         </div>
       </section>
 
+      <section className='experience section' id='experience'>
+        <div className='experience-box'>
+          <div className='experience-intro'>
+            <div className='experience-heading'>
+              <h2>
+            <span className='line'>{tExp('designBefore1')}<span className='accent'>{tExp('designAccent1')}</span><span className='amp'>{tExp('designAmp')}</span></span>
+            <span className='line'>{tExp('designBefore2')}<span className='accent'>{tExp('designAccent2')}</span></span>
+              </h2>
+              <p>{tExp('intro')}</p>
+            </div>
+            <div className='experience-copy'>
+              <p className='eyebrow'>{tExp('label')}</p>
+              <p>{tExp('paragraph1')}</p>
+              {tExp('paragraph2') ? <p>{tExp('paragraph2')}</p> : null}
+            </div>
+          </div>
+          <div className='experience-photos'>
+            <img className='exp-wind' src='/design/figma/exp-wind.webp' alt={tExp('imageAlt')} />
+            <div className='exp-pipes'>
+              <img src='/design/figma/exp-pipes.webp' alt={tExp('industrialTitle')} />
+            </div>
+          </div>
+          <div className='experience-ref'>
+            <p className='eyebrow'>{tExp('referenceLabel')}</p>
+            <h3>{tExp('referenceTitle')}</h3>
+            {tExp('referenceText').split('\n\n').map((part) => (
+              <p className='ref-body' key={part}>{part}</p>
+            ))}
+            <h4>{tExp('scopeTitle')}</h4>
+            <p className='ref-detail'>{tExp('scopeText')}</p>
+            <h4 className='track'>{tExp('trackTitle')}</h4>
+            <p className='ref-detail track'>{tExp('trackText')}</p>
+          </div>
+        </div>
+      </section>
+
       <section className='workflow section' id='how-we-work'>
         <p className='eyebrow'>{tWork('label')}</p>
         <h2>{tWork('title')}</h2>
@@ -635,29 +446,6 @@ export function DesignHome() {
               <p>{step.text}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className='digital section' id='bw-digit'>
-        <div className='digital-grid'>
-          <div>
-            <h2>
-            <span className='line'>{tSmart('designLine1')}</span>
-            <span className='line'>{tSmart('designLine2')}</span>
-            </h2>
-            <a className='btn btn-orange' href='#contact'>{tSmart('cta')}</a>
-            <div className='dig-photo dig-engineer'>
-              <img src='/design/figma/dig-engineer.jpg' alt={tSmart('docsAlt')} />
-            </div>
-          </div>
-          <div>
-            <div className='dig-photo dig-quality'>
-              <img src='/design/figma/dig-quality.png' alt={tSmart('fieldAlt')} />
-            </div>
-            {digitalCopy.map((part) => (
-              <p key={part}>{part}</p>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -711,72 +499,6 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='partners section' id='partners'>
-        <p className='eyebrow'>{tPartners('label')}</p>
-        <h2>
-            <span className='line'>{tPartners('designLine1')}</span>
-            <span className='line'>{tPartners('designLine2')}</span>
-        </h2>
-        <p className='partners-lead'>{tPartners('paragraph1')}</p>
-        <p className='partners-note'>{tPartners('paragraph2')}</p>
-        <a className='btn btn-orange' href='#contact'>{tPartners('cta')}</a>
-      </section>
-
-      <section className='why section'>
-        <div className='why-layout'>
-          <svg className='why-shape' viewBox='0 0 1650.1 625.42' preserveAspectRatio='none' aria-hidden='true'>
-            <path fill='#F4F7F9' d='M824.85 20V252.14C824.85 257.444 822.743 262.531 818.992 266.281C815.241 270.032 810.154 272.14 804.85 272.14H20C14.6957 272.14 9.60859 274.246 5.85786 277.997C2.10714 281.748 0 286.835 0 292.14V605.42C0 610.724 2.10714 615.811 5.85786 619.562C9.60859 623.312 14.6957 625.42 20 625.42H1630.1C1635.4 625.42 1640.49 623.312 1644.24 619.562C1647.99 615.811 1650.1 610.724 1650.1 605.42V20C1650.1 14.6957 1647.99 9.60815 1644.24 5.85742C1640.49 2.10669 1635.4 0 1630.1 0H844.85C839.546 0 834.459 2.10669 830.708 5.85742C826.957 9.60815 824.85 14.6957 824.85 20Z' />
-          </svg>
-          <h2>
-            <span className='line'>{tWhy('designLine1')}</span>
-            <span className='line'>{tWhy('designLine2')}<span>{tWhy('designMark')}</span></span>
-          </h2>
-          <div className='why-col why-col-right'>
-            {reasons.slice(0, 4).map((reason) => (
-              <article key={reason.title}>
-                <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className='why-col why-col-left'>
-            {reasons.slice(4).map((reason) => (
-              <article key={reason.title}>
-                <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className='faq section'>
-          <h2>{tFaq('designBefore')}<span>{tFaq('designAccent')}</span></h2>
-        <p className='faq-lead'>{tContact('description')}</p>
-        <div className='faq-box'>
-          {faqs.map((faq, index) => (
-            <div
-              key={faq.question}
-              className={`faq-item${faqOpen === index ? ' open' : ''}`}
-              onMouseMove={() => setFaqOpen((current) => (current === index ? current : index))}
-            >
-              <button
-                type='button'
-                aria-expanded={faqOpen === index}
-                onClick={() => setFaqOpen(faqOpen === index ? null : index)}
-                onFocus={() => setFaqOpen(index)}
-              >
-                <span>{faq.question}</span>
-                <svg className='faq-chevron' viewBox='0 0 12 20' width='8' height='14' aria-hidden='true' focusable='false'>
-                  <path d='M2.2 2.4 L9.4 10 L2.2 17.6' fill='none' stroke='#102A5F' strokeWidth='1.6' strokeLinecap='round' strokeLinejoin='round' />
-                </svg>
-              </button>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className='contact section' id='contact'>
           <h2>{tContact('designBefore')}<span>{tContact('designAccent')}</span>{tContact('designAfter')}</h2>
         <ContactForm />
@@ -788,6 +510,7 @@ export function DesignHome() {
         <nav className='footer-links'>
           <a href='#services'>{tNav('services')}</a>
           <a href='#industries'>{tNav('industries')}</a>
+          <a href='#expertise'>{tNav('expertise')}</a>
           <a href='#experience'>{tNav('experience')}</a>
           <a href='#contact'>{tNav('contact')}</a>
         </nav>
