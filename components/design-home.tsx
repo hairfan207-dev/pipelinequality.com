@@ -458,7 +458,10 @@ export function DesignHome() {
       </section>
 
       <section className='contact section' id='contact'>
-          <h2>{tContact('designBefore')}<span>{tContact('designAccent')}</span>{tContact('designAfter')}</h2>
+        <div className='shell contact-final-head'>
+          <h2>{tContact('enquiryHeading')}</h2>
+          <p>{tContact('enquiryIntro')}</p>
+        </div>
         <ContactForm />
       </section>
 

@@ -1,313 +1,195 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { Button } from '@/components/ui/button';
-import { Upload } from 'lucide-react';
-import { Toast } from './toast';
+import { useTranslations } from 'next-intl';
+
+type FieldName = 'name' | 'company' | 'email' | 'location' | 'industry' | 'services' | 'message' | 'privacy';
+type Errors = Partial<Record<FieldName, string>>;
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const FIELD_ORDER: FieldName[] = ['name', 'company', 'email', 'location', 'industry', 'services', 'message', 'privacy'];
 
 export function ContactForm() {
-  const t = useTranslations('contact.form');
-  const tTypes = useTranslations('contact');
-  const locale = useLocale();
+  const t = useTranslations('contact.enquiry');
+  const industries = t.raw('industries') as string[];
+  const services = t.raw('serviceOptions') as string[];
+  const durations = t.raw('durations') as string[];
+  const [errors, setErrors] = useState<Errors>({});
+  const [status, setStatus] = useState<'success' | 'error' | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [fileName, setFileName] = useState<string | null>(null);
-  const [toast, setToast] = useState<{ type: 'success' | 'error'; message: string; description: string } | null>(null);
 
-  const supportTypes = tTypes.raw('supportTypes') as string[];
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const nextErrors: Errors = {};
+    const value = (key: string) => String(data.get(key) ?? '').trim();
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      // Check file size (10MB max)
-      if (file.size > 10 * 1024 * 1024) {
-        setToast({
-          type: 'error',
-          message: 'File Too Large',
-          description: 'File size must be less than 10MB'
-        });
-        e.target.value = '';
-        return;
-      }
-      setFileName(file.name);
+    if (!value('name')) nextErrors.name = t('errors.name');
+    if (!value('company')) nextErrors.company = t('errors.company');
+    if (!value('email')) nextErrors.email = t('errors.email');
+    else if (!EMAIL_PATTERN.test(value('email'))) nextErrors.email = t('errors.emailFormat');
+    if (!value('location')) nextErrors.location = t('errors.location');
+    if (!value('industry')) nextErrors.industry = t('errors.industry');
+    if (data.getAll('services').filter((item) => String(item).trim()).length === 0) {
+      nextErrors.services = t('errors.services');
     }
-  };
+    if (!value('message')) nextErrors.message = t('errors.details');
+    if (data.get('privacy') !== 'yes') nextErrors.privacy = t('errors.privacy');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      setStatus(null);
+      const first = FIELD_ORDER.find((field) => nextErrors[field]);
+      const target = first === 'services'
+        ? form.querySelector<HTMLElement>('input[name="services"]')
+        : form.querySelector<HTMLElement>(`#${first}`);
+      target?.focus();
+      return;
+    }
+
     setIsSubmitting(true);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
+    setStatus(null);
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        body: formData,
-      });
-
+      const response = await fetch('/api/send-email', { method: 'POST', body: new FormData(form) });
       if (response.ok) {
-        setToast({
-          type: 'success',
-          message: t('successTitle'),
-          description: t('successMessage')
-        });
+        setStatus('success');
         form.reset();
-        setFileName(null);
+        setErrors({});
       } else {
-        setToast({
-          type: 'error',
-          message: t('errorTitle'),
-          description: t('errorMessage')
-        });
+        setStatus('error');
       }
-    } catch (error) {
-      setToast({
-        type: 'error',
-        message: t('errorTitle'),
-        description: t('errorMessage')
-      });
+    } catch {
+      setStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className='space-y-6'>
-
-      {/* Name */}
-      <div>
-        <label
-          htmlFor='name'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('name')} *
-        </label>
-        <input
-          type='text'
-          id='name'
-          name='name'
-          required
-          placeholder={t('namePlaceholder')}
-          className='w-full px-4 py-3 border border-steel/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-muted-gold focus:border-transparent'
-        />
+    <form className='contact-final' noValidate onSubmit={handleSubmit}>
+      <Field id='name' label={t('name')} error={errors.name} autoComplete='name' />
+      <Field id='company' label={t('company')} error={errors.company} autoComplete='organization' />
+      <Field id='email' label={t('email')} error={errors.email} type='email' autoComplete='email' inputMode='email' />
+      <Field id='phone' label={t('phone')} optionalLabel={t('optional')} type='tel' autoComplete='tel' />
+      <Field id='location' label={t('location')} error={errors.location} autoComplete='address-level2' />
+      <div className={errors.industry ? 'is-invalid' : undefined}>
+        <label htmlFor='industry'>{t('industry')}</label>
+        <select id='industry' name='industry' defaultValue='' aria-invalid={Boolean(errors.industry)} aria-describedby={errors.industry ? 'industry-error' : undefined}>
+          <option value=''>{t('selectIndustry')}</option>
+          {industries.map((option) => (
+            <option key={option} value={option}>{option}</option>
+          ))}
+        </select>
+        {errors.industry ? <p id='industry-error' className='field-error'>{errors.industry}</p> : null}
       </div>
 
-      {/* Company */}
-      <div>
-        <label
-          htmlFor='company'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('company')} *
-        </label>
-        <input
-          type='text'
-          id='company'
-          name='company'
-          required
-          placeholder={t('companyPlaceholder')}
-          className='w-full px-4 py-3 border border-steel/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-muted-gold focus:border-transparent'
-        />
-      </div>
+      <fieldset className={`is-wide contact-services${errors.services ? ' is-invalid' : ''}`} aria-invalid={Boolean(errors.services)} aria-describedby={errors.services ? 'services-error' : undefined}>
+        <legend>{t('services')}</legend>
+        <ul>
+          {services.map((option) => (
+            <li key={option}>
+              <label>
+                <input type='checkbox' name='services' value={option} />
+                <span>{option}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+        {errors.services ? <p id='services-error' className='field-error'>{errors.services}</p> : null}
+      </fieldset>
 
-      {/* Email */}
+      <Field id='projectStart' name='projectStart' label={t('start')} optionalLabel={t('optional')} autoComplete='off' />
       <div>
-        <label
-          htmlFor='email'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('email')} *
+        <label htmlFor='duration'>
+          {t('duration')}
+          <span className='opt'>{t('optional')}</span>
         </label>
-        <input
-          type='email'
-          id='email'
-          name='email'
-          required
-          placeholder={t('emailPlaceholder')}
-          className='w-full px-4 py-3 border border-steel/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-muted-gold focus:border-transparent'
-        />
-      </div>
-
-      {/* Project Support Type */}
-      <div>
-        <label
-          htmlFor='supportType'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('supportType')}
-        </label>
-        <select
-          id='supportType'
-          name='supportType'
-          className='w-full px-4 py-3 border border-steel/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-muted-gold focus:border-transparent bg-white'
-        >
-          <option value=''>{t('supportTypePlaceholder')}</option>
-          {supportTypes.map((type, index) => (
-            <option key={index} value={type}>
-              {type}
-            </option>
+        <select id='duration' name='duration' defaultValue=''>
+          <option value=''>{t('selectDuration')}</option>
+          {durations.map((option) => (
+            <option key={option} value={option}>{option}</option>
           ))}
         </select>
       </div>
 
-      {/* Message */}
-      <div>
-        <label
-          htmlFor='message'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('message')} *
+      <div className={`is-wide${errors.message ? ' is-invalid' : ''}`}>
+        <label htmlFor='message'>{t('details')}</label>
+        <textarea id='message' name='message' rows={6} aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-error' : undefined} />
+        {errors.message ? <p id='message-error' className='field-error'>{errors.message}</p> : null}
+      </div>
+
+      <div className={`is-wide contact-privacy${errors.privacy ? ' is-invalid' : ''}`}>
+        <input
+          id='privacy'
+          name='privacy'
+          type='checkbox'
+          value='yes'
+          aria-invalid={Boolean(errors.privacy)}
+          aria-describedby={errors.privacy ? 'privacy-error' : undefined}
+        />
+        <label htmlFor='privacy'>
+          {t('privacyBefore')}
+          <a href='/privacy'>{t('privacyLink')}</a>
+          {t('privacyAfter')}
         </label>
-        <textarea
-          id='message'
-          name='message'
-          required
-          rows={5}
-          placeholder={t('messagePlaceholder')}
-          className='w-full px-4 py-3 border border-steel/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-muted-gold focus:border-transparent resize-none'
-        ></textarea>
+        {errors.privacy ? <p id='privacy-error' className='field-error'>{errors.privacy}</p> : null}
       </div>
 
-      {/* File Upload */}
-      <div>
-        <label
-          htmlFor='attachment'
-          className='block text-sm font-semibold text-navy mb-2'
-        >
-          {t('fileUpload')}
-        </label>
-        <div className='relative'>
-          <input
-            type='file'
-            id='attachment'
-            name='attachment'
-            accept='.pdf,.dwg,.xlsx,.xls,.doc,.docx'
-            onChange={handleFileChange}
-            className='hidden'
-          />
-          <label
-            htmlFor='attachment'
-            className='flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-steel/30 rounded-lg hover:border-muted-gold cursor-pointer transition-colors'
-          >
-            <Upload className='w-5 h-5 text-steel' strokeWidth={2} />
-            <span className='text-sm text-charcoal'>
-              {fileName || t('fileUploadHint')}
-            </span>
-          </label>
-        </div>
+      <div className='pq-hp' aria-hidden='true'>
+        <label htmlFor='pq_leave_blank'>Leave blank</label>
+        <input id='pq_leave_blank' name='pq_leave_blank' type='text' tabIndex={-1} autoComplete='off' defaultValue='' />
       </div>
 
-      {/* GDPR Consent */}
-      <div className='flex flex-col gap-3'>
-        <div className='flex items-start gap-3'>
-          <input
-            type='checkbox'
-            id='gdpr'
-            name='gdpr'
-            required
-            className='mt-1 w-4 h-4 text-muted-gold border-steel/30 rounded focus:ring-2 focus:ring-muted-gold'
-          />
-          <label htmlFor='gdpr' className='text-sm text-charcoal'>
-            {t('gdprConsent')}{' '}
-            <a href='/privacy' target='_blank' rel='noopener noreferrer' className='text-muted-gold hover:underline'>
-              {t('privacyPolicy')}
-            </a>
-            {t('gdprConsentEnd')} *
-          </label>
-        </div>
-        <p className='text-[10px] md:text-xs text-charcoal/60 leading-relaxed italic'>
-          {t('privacyNote')}
+      {status ? (
+        <p className={`is-wide contact-status is-${status}`} role={status === 'error' ? 'alert' : 'status'}>
+          {status === 'success' ? t('success') : t('error')}
         </p>
-      </div>
+      ) : null}
 
-      {/* Submit Button */}
-      <Button
-        type='submit'
-        disabled={isSubmitting}
-        className='w-full rounded-none bg-accent py-6 text-[13px] font-semibold tracking-[0.08em] text-white uppercase shadow-none transition-colors duration-300 hover:bg-accent-hover hover:shadow-none disabled:cursor-not-allowed disabled:opacity-50'
-      >
-        {isSubmitting ? (
-          <span className='flex items-center justify-center gap-2'>
-            <svg
-              className='animate-spin h-5 w-5'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-            >
-              <circle
-                className='opacity-25'
-                cx='12'
-                cy='12'
-                r='10'
-                stroke='currentColor'
-                strokeWidth='4'
-              ></circle>
-              <path
-                className='opacity-75'
-                fill='currentColor'
-                d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-              ></path>
-            </svg>
-            {t('submitting')}
-          </span>
-        ) : (
-          t('submit')
-        )}
-      </Button>
-
-      {/* Contact Icons */}
-      <div className='flex flex-col items-center gap-4 pt-2'>
-        <p className='text-sm font-semibold text-navy/70'>
-          {tTypes('connectDirectly')}
-        </p>
-        <div className='flex items-center gap-3'>
-          <a
-            href='https://www.linkedin.com/company/pipelinequality'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='pq-social pq-social--linkedin'
-            aria-label='LinkedIn'
-          >
-            <svg viewBox='0 0 24 24' aria-hidden>
-              <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' />
-            </svg>
-          </a>
-
-          <a
-            href='https://wa.me/491728137111'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='pq-social pq-social--whatsapp'
-            aria-label='WhatsApp'
-          >
-            <svg viewBox='0 0 24 24' aria-hidden>
-              <path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z' />
-            </svg>
-          </a>
-        </div>
-        <a
-          href='mailto:info@pipelinequality.com'
-          className='text-[15px] font-semibold text-navy transition hover:text-accent lg:text-[16px]'
-        >
-          info@pipelinequality.com
-        </a>
-      </div>
-
-      {/* Disclaimer */}
-      <p className='text-sm text-charcoal/70 text-center'>{t('disclaimer')}</p>
+      <button className='is-wide' type='submit' disabled={isSubmitting} aria-busy={isSubmitting}>
+        {isSubmitting ? t('submitting') : t('submit')}
+      </button>
     </form>
+  );
+}
 
-    {/* Toast Notification */}
-    {toast && (
-      <Toast
-        type={toast.type}
-        message={toast.message}
-        description={toast.description}
-        onClose={() => setToast(null)}
+function Field({
+  id,
+  name,
+  label,
+  error,
+  optionalLabel,
+  type = 'text',
+  autoComplete,
+  inputMode,
+}: {
+  id: string;
+  name?: string;
+  label: string;
+  error?: string;
+  optionalLabel?: string;
+  type?: string;
+  autoComplete?: string;
+  inputMode?: 'email' | 'tel' | 'text';
+}) {
+  return (
+    <div className={error ? 'is-invalid' : undefined}>
+      <label htmlFor={id}>
+        {label}
+        {optionalLabel ? <span className='opt'>{optionalLabel}</span> : null}
+      </label>
+      <input
+        id={id}
+        name={name ?? id}
+        type={type}
+        autoComplete={autoComplete}
+        inputMode={inputMode}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${id}-error` : undefined}
       />
-    )}
-  </>
+      {error ? <p id={`${id}-error`} className='field-error'>{error}</p> : null}
+    </div>
   );
 }
