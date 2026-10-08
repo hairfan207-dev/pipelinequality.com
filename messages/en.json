@@ -530,6 +530,52 @@
       }
     ]
   },
+  "industriesSection": {
+    "heading": "Industries We Support",
+    "intro": "Industrial quality and inspection support tailored to the requirements of fabrication, infrastructure, energy and process projects.",
+    "cards": [
+      {
+        "title": "Offshore Wind",
+        "description": "Monopiles, transition pieces, offshore substations, jackets and other offshore foundation structures.",
+        "imageAlt": "Monopiles in a fabrication hall"
+      },
+      {
+        "title": "Pipelines & Infrastructure",
+        "description": "Pipeline construction, transmission infrastructure, piping systems and associated inspection and quality activities.",
+        "imageAlt": "Welded pipeline on supports along a construction route"
+      },
+      {
+        "title": "Oil & Gas",
+        "description": "Industrial facilities, pipeline systems, fabrication, maintenance and project-specific quality requirements.",
+        "imageAlt": "Process piping and storage tanks at an oil and gas facility"
+      },
+      {
+        "title": "Refineries & Petrochemical",
+        "description": "Process plants, piping, equipment, fabrication, brownfield projects, shutdowns and revamps.",
+        "imageAlt": "Pipe racks and process columns at a petrochemical plant"
+      },
+      {
+        "title": "Energy & Power",
+        "description": "Industrial energy infrastructure, power-related installations and project quality support.",
+        "imageAlt": "Power station with cooling towers and electrical equipment"
+      },
+      {
+        "title": "Industrial Manufacturing & Fabrication",
+        "description": "Steel structures, heavy fabrication, welding, inspection and manufacturing quality.",
+        "imageAlt": "Heavy steel sections in a fabrication hall"
+      },
+      {
+        "title": "EPC & Engineering Projects",
+        "description": "Project-based technical support, inspection coordination, quality documentation and handover activities.",
+        "imageAlt": "Engineers reviewing drawings beside a fabricated steel component"
+      },
+      {
+        "title": "Maintenance, Shutdowns & Revamps",
+        "description": "Inspection, quality follow-up, documentation recovery and close-out support during planned or time-critical work.",
+        "imageAlt": "Technicians maintaining a pipeline from site scaffolding"
+      }
+    ]
+  },
   "industries": {
     "label": "Industries",
     "title": "Industries We Support",

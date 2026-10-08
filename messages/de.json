@@ -529,6 +529,52 @@
       }
     ]
   },
+  "industriesSection": {
+    "heading": "Branchen, die wir unterstützen",
+    "intro": "Industrielle Qualitäts- und Inspektionsunterstützung für Fertigungs-, Infrastruktur-, Energie- und Prozessanlagenprojekte.",
+    "cards": [
+      {
+        "title": "Offshore-Windenergie",
+        "description": "Monopiles, Transition Pieces, Offshore-Umspannplattformen, Jackets und weitere Offshore-Gründungsstrukturen.",
+        "imageAlt": "Monopiles in einer Fertigungshalle"
+      },
+      {
+        "title": "Pipelines & Infrastruktur",
+        "description": "Pipelinebau, Fernleitungsinfrastruktur, Rohrleitungssysteme sowie zugehörige Inspektions- und Qualitätsaktivitäten.",
+        "imageAlt": "Geschweißte Pipeline auf Auflagern entlang einer Baustrecke"
+      },
+      {
+        "title": "Öl & Gas",
+        "description": "Industrieanlagen, Pipelinesysteme, Fertigung, Instandhaltung und projektspezifische Qualitätsanforderungen.",
+        "imageAlt": "Prozessrohrleitungen und Lagertanks in einer Öl- und Gasanlage"
+      },
+      {
+        "title": "Raffinerien & Petrochemie",
+        "description": "Prozessanlagen, Rohrleitungen, Ausrüstung, Fertigung, Brownfield-Projekte, Stillstände und Anlagenumbauten.",
+        "imageAlt": "Rohrbrücken und Prozesskolonnen in einer petrochemischen Anlage"
+      },
+      {
+        "title": "Energie & Stromversorgung",
+        "description": "Industrielle Energieinfrastruktur, energiebezogene Anlagen und projektbezogene Qualitätsunterstützung.",
+        "imageAlt": "Kraftwerk mit Kühltürmen und elektrischen Anlagen"
+      },
+      {
+        "title": "Industrielle Fertigung & Stahlbau",
+        "description": "Stahlkonstruktionen, Schwerfertigung, Schweißtechnik, Inspektion und Fertigungsqualität.",
+        "imageAlt": "Schwere Stahlbauteile in einer Fertigungshalle"
+      },
+      {
+        "title": "EPC- & Engineering-Projekte",
+        "description": "Projektbezogene technische Unterstützung, Inspektionskoordination, Qualitätsdokumentation und Übergabeaktivitäten.",
+        "imageAlt": "Ingenieure prüfen Zeichnungen neben einem gefertigten Stahlbauteil"
+      },
+      {
+        "title": "Instandhaltung, Stillstände & Anlagenumbauten",
+        "description": "Inspektionen, Qualitätsnachverfolgung, Aufarbeitung fehlender Dokumentation und Unterstützung beim Projektabschluss.",
+        "imageAlt": "Techniker warten eine Rohrleitung von einem Baugerüst"
+      }
+    ]
+  },
   "industries": {
     "label": "Branchen",
     "title": "Branchen, die wir unterstützen",

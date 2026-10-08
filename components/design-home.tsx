@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
 
-type Industry = { title: string; items: string[] };
+type IndustryCard = { title: string; description: string; imageAlt: string };
 type ExpertiseCard = {
   title: string;
   description: string;
@@ -17,15 +17,14 @@ type ExpertiseCard = {
 type Step = { id: string; title: string; text: string };
 type Reason = { title: string; description: string };
 
-const industryOrder = [2, 0, 4, 1, 5, 3, 7, 6];
 const industryPhotos = [
-  '/design/figma/industry-wind.webp',
-  '/design/figma/industry-pipeline.webp',
+  '/design/figma/industry-wind.png',
+  '/client/industry-pipeline.jpg',
   '/client/industry-oilgas.jpg',
   '/client/industry-chemical.jpg',
-  '/design/figma/industry-energy.webp',
-  '/client/industry-epc.jpg',
-  '/design/figma/industry-construction.webp',
+  '/client/industry-energy.jpg',
+  '/client/industry-construction.jpg',
+  '/client/intro-inspection.jpg',
   '/client/industry-maintenance.jpg',
 ];
 const expertisePhotos = [
@@ -57,7 +56,7 @@ const standardOrder = [0, 5, 4, 3, 2, 1, 6];
 export function DesignHome() {
   const tHero = useTranslations('hero');
   const tExpertise = useTranslations('expertiseSection');
-  const tInd = useTranslations('industries');
+  const tIndustries = useTranslations('industriesSection');
   const tExp = useTranslations('experience');
   const tStd = useTranslations('standards');
   const tWork = useTranslations('workProcess');
@@ -71,7 +70,7 @@ export function DesignHome() {
   const pathname = usePathname();
 
   const expertiseCards = tExpertise.raw('cards') as ExpertiseCard[];
-  const sectors = tInd.raw('sectors') as Industry[];
+  const industryCards = tIndustries.raw('cards') as IndustryCard[];
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
   const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[]; summary?: string }>;
@@ -87,7 +86,6 @@ export function DesignHome() {
   const [langOpen, setLangOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const [expertiseOpen, setExpertiseOpen] = useState<Record<number, boolean>>({});
-  const [industry, setIndustry] = useState(0);
   const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
@@ -113,8 +111,6 @@ export function DesignHome() {
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, [langOpen]);
-
-  const activeIndustry = sectors[industry];
 
   return (
     <div className={`pq-design${menuOpen ? ' menu-open' : ''}`} lang={locale}>
@@ -241,64 +237,23 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='industries' id='industries'>
-        <div className='industries-head'>
-          <h2>
-            {tInd('designLine1')}{' '}
-            <span>{tInd('designLine2')}</span>
-          </h2>
+      <section className='industry-section' id='industries'>
+        <div className='shell industry-head'>
+          <h2>{tIndustries('heading')}</h2>
+          <p>{tIndustries('intro')}</p>
         </div>
-        <div className='shell industries-panel'>
-          <div className='industry-tabs'>
-            {industryOrder.map((index) => (
-              <div key={sectors[index].title} className={`industry-row${industry === index ? ' active' : ''}`}>
-                <button
-                  type='button'
-                  className={industry === index ? 'active' : ''}
-                  aria-expanded={industry === index}
-                  onPointerEnter={(event) => {
-                    if (event.pointerType === 'mouse') setIndustry(index);
-                  }}
-                  onClick={() => setIndustry(index)}
-                >
-                  {sectors[index].title}
-                  <img src='/design/figma/industry-mark.svg' alt='' />
-                </button>
-                {industry === index ? (
-                  <div className='industry-mobile-panel'>
-                    <div className='industry-photo'>
-                      <img src={index === 0 ? '/design/figma/industry-wind.png' : industryPhotos[index]} alt={sectors[index].title} />
-                      <strong>{sectors[index].title}</strong>
-                    </div>
-                    <div className='industry-copy'>
-                      <p>
-                        {sectors[index].items.map((item) => (
-                          <span key={item}>{item}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </div>
-                ) : null}
+        <div className='shell industry-grid'>
+          {industryCards.map((card, index) => (
+            <article key={card.title} className='industry-tile'>
+              <div className={`industry-visual${index === 6 ? ' is-portrait' : ''}`}>
+                <img src={industryPhotos[index]} alt={card.imageAlt} />
               </div>
-            ))}
-          </div>
-          <div className='industry-card'>
-            <div className='industry-photo'>
-              <img key={industry} src={industryPhotos[industry]} alt={activeIndustry.title} />
-              <strong key={`label-${industry}`}>{activeIndustry.title}</strong>
-            </div>
-            <div className='industry-copy' key={`copy-${industry}`}>
-              <h3>{activeIndustry.title}</h3>
-              <p>
-                {activeIndustry.items.map((item) => (
-                  <span key={item}>
-                    {item}
-                    <br />
-                  </span>
-                ))}
-              </p>
-            </div>
-          </div>
+              <div className='industry-body'>
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
