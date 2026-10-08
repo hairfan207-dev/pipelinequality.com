@@ -1298,6 +1298,12 @@
     "principleLabel": "",
     "principle": "QUALITY BEFORE QUANTITY."
   },
+  "digitalSection": {
+    "heading": "Digital Quality & Documentation Support",
+    "body1": "Structured digital workflows can help organise inspection records, quality documentation, traceability and project information.",
+    "body2": "We support practical digital approaches that complement industrial quality processes and improve access to relevant project records.",
+    "imageAlt": "Technical professional in PPE reviewing inspection records on a tablet beside a fabricated steel component"
+  },
   "digitalQuality": {
     "label": "Digital Quality",
     "title": "Practical Digital Quality Support",

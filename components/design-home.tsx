@@ -155,7 +155,7 @@ export function DesignHome() {
   const tExperience = useTranslations('experienceSection');
   const tQual = useTranslations('qualificationsSection');
   const tWork = useTranslations('howSection');
-  const tDigital = useTranslations('digitalQuality');
+  const tDigital = useTranslations('digitalSection');
   const tWhy = useTranslations('whySection');
   const tContact = useTranslations('contact');
   const tFooter = useTranslations('footer');
@@ -168,12 +168,6 @@ export function DesignHome() {
   const industryCards = tIndustries.raw('cards') as IndustryCard[];
   const qualCategories = tQual.raw('categories') as QualCategory[];
   const steps = tWork.raw('steps') as Step[];
-  const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[]; summary?: string }>;
-  const workflows = digitalBlocks.map((block, index) => ({
-    number: String(index + 1).padStart(2, '0'),
-    title: block.title,
-    description: block.summary ?? block.items.join(', '),
-  }));
   const reasons = tWhy.raw('reasons') as Reason[];
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -182,7 +176,6 @@ export function DesignHome() {
   const langMenuRef = useRef<HTMLDivElement>(null);
   const [expertiseOpen, setExpertiseOpen] = useState<Record<number, boolean>>({});
   const [qualOpen, setQualOpen] = useState<Record<number, boolean>>({});
-  const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
     setLangOpen(false);
@@ -453,53 +446,14 @@ export function DesignHome() {
         </ol>
       </section>
 
-      <section className='digital-support section' id='digital-quality'>
-        <div className='dq-panel'>
-          <div className='dq-panel-copy'>
-            <p className='dq-kicker'>
-              <span className='dq-dash' aria-hidden='true' />
-              {tDigital('label')}
-            </p>
-            <h2>
-              <span className='line'>{tDigital('designLine1')}</span>
-              <span className='line'>{tDigital('designLine2')}</span>
-            </h2>
-            <p className='dq-copy'>{tDigital('description')}</p>
-          </div>
-          <img className='dq-blueprint' src='/design/figma/dq-blueprint.png' alt='' />
+      <section className='digital-final section' id='digital-quality'>
+        <div className='shell digital-final-copy'>
+          <h2>{tDigital('heading')}</h2>
+          <p>{tDigital('body1')}</p>
+          <p>{tDigital('body2')}</p>
         </div>
-        <div className='dq-workflows'>
-          <p className='dq-kicker'>
-            <span className='dq-dash' aria-hidden='true' />
-            {tDigital('workflowsLabel')}
-          </p>
-          <ul className='dq-list'>
-            {workflows.map((item, index) => {
-              const open = supportOpen === index;
-              const panelId = `digital-quality-${item.number}`;
-              return (
-                <li key={item.title} className={open ? 'dq-row is-open' : 'dq-row'}>
-                  <button
-                    type='button'
-                    aria-expanded={open}
-                    aria-controls={panelId}
-                    onMouseEnter={() => setSupportOpen(index)}
-                    onFocus={() => setSupportOpen(index)}
-                    onClick={() => setSupportOpen(index)}
-                  >
-                    <span className='dq-num'>{item.number}</span>
-                    <span className='dq-main'>
-                      <span className='dq-title'>{item.title}</span>
-                      <span className='dq-desc' id={panelId} aria-hidden={!open}>
-                        <span>{item.description}</span>
-                      </span>
-                    </span>
-                    <span className='dq-chevron' aria-hidden='true' />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+        <div className='shell digital-final-visual'>
+          <img src='/design/figma/digital-tablet.webp' alt={tDigital('imageAlt')} />
         </div>
       </section>
 

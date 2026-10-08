@@ -1297,6 +1297,12 @@
     "principleLabel": "",
     "principle": "QUALITÄT VOR QUANTITÄT."
   },
+  "digitalSection": {
+    "heading": "Digitale Qualitäts- & Dokumentationsunterstützung",
+    "body1": "Strukturierte digitale Abläufe helfen dabei, Inspektionsaufzeichnungen, Qualitätsdokumentation, Rückverfolgbarkeit und Projektinformationen zu organisieren.",
+    "body2": "Wir unterstützen praxisorientierte digitale Lösungen, die industrielle Qualitätsprozesse ergänzen und den Zugriff auf relevante Projektdaten verbessern.",
+    "imageAlt": "Technische Fachkraft mit Schutzausrüstung prüft Inspektionsaufzeichnungen auf einem Tablet neben einem gefertigten Stahlbauteil"
+  },
   "digitalQuality": {
     "label": "Digitale Qualität",
     "title": "Praktische digitale Qualitätsunterstützung",

@@ -3391,3 +3391,39 @@
   .pq-design .how-final-head h2 { font-size: clamp(28px, 8vw, 36px) !important; }
   .pq-design .how-final-grid { grid-template-columns: 1fr; gap: 28px; }
 }
+
+.pq-design .digital-final { padding-top: 72px; padding-bottom: 72px; background: #fff; }
+.pq-design .digital-final-copy h2 {
+  margin: 0 0 14px;
+  font-size: clamp(36px, 3.2vw, 56px) !important;
+  line-height: 1.15 !important;
+  font-weight: 600 !important;
+  color: #102A5F !important;
+  white-space: normal;
+}
+.pq-design .digital-final-copy p {
+  margin: 0 0 14px;
+  max-width: 48em;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.55;
+  color: #33466c;
+}
+.pq-design .digital-final-copy p:last-child { margin-bottom: 0; }
+.pq-design .digital-final-visual {
+  margin-top: 28px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #102A5F;
+}
+.pq-design .digital-final-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 767px) {
+  .pq-design .digital-final { padding-top: 48px; padding-bottom: 48px; }
+  .pq-design .digital-final-copy h2 { font-size: clamp(28px, 8vw, 36px) !important; }
+  .pq-design .digital-final-copy p { font-size: 16px; }
+}
