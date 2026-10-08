@@ -83,24 +83,17 @@ export function Navigation() {
     { href: '#contact', label: t('contact') },
   ];
 
-  const solid = scrolled && !isMobileMenuOpen;
-  const onDark = !solid;
+  const onDark = true;
 
-  const linkClass = onDark
-    ? 'text-white hover:text-white'
-    : 'text-navy hover:text-navy';
+  const linkClass = 'text-[var(--bg-light)] hover:text-[var(--accent-teal)]';
 
-  const langShell = onDark
-    ? 'border-white/35 bg-white/10 text-accent hover:bg-white/15'
-    : 'border-accent/35 bg-accent/10 text-accent hover:bg-accent/15';
+  const langShell = 'border-white/25 bg-transparent text-[var(--bg-light)] hover:text-[var(--accent-teal)]';
 
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          solid
-            ? 'bg-white/95 text-navy shadow-[0_1px_0_rgba(1,42,96,0.08)] backdrop-blur'
-            : 'bg-gradient-to-b from-navy/55 via-navy/25 to-transparent text-white'
+        className={`fixed inset-x-0 top-0 z-50 bg-[var(--bg-dark)] text-[var(--bg-light)] transition-shadow duration-200 ${
+          scrolled ? 'shadow-[0_1px_0_rgba(248,250,252,0.12)]' : ''
         }`}
       >
         <div className='pq-shell flex h-[5.5rem] items-center gap-7'>
@@ -120,14 +113,10 @@ export function Navigation() {
               className='h-12 w-auto object-contain sm:h-14'
             />
             <span className='flex flex-col leading-[1.05]'>
-              <span
-                className={`text-[16px] font-semibold tracking-[0.16em] uppercase sm:text-[18px] sm:tracking-[0.18em] ${
-                  onDark ? 'text-white' : 'text-navy'
-                }`}
-              >
+              <span className='text-[16px] font-semibold tracking-[0.04em] text-[var(--bg-light)]'>
                 Pipeline
               </span>
-              <span className='text-[16px] font-semibold tracking-[0.16em] text-accent uppercase sm:text-[18px] sm:tracking-[0.18em]'>
+              <span className='text-[16px] font-semibold tracking-[0.04em] text-[var(--accent-teal)]'>
                 Quality
               </span>
             </span>
@@ -139,7 +128,7 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={handleSmoothScroll}
-                className={`relative px-3.5 py-2.5 text-[13px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 after:absolute after:right-3.5 after:bottom-1 after:left-3.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-400 hover:after:scale-x-100 ${linkClass}`}
+                className={`relative px-3 py-2 text-[16px] font-medium transition-colors duration-200 ${linkClass}`}
               >
                 {item.label}
               </a>
@@ -149,7 +138,7 @@ export function Navigation() {
               <button
                 type='button'
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className={`flex items-center gap-2 whitespace-nowrap border px-3 py-2 text-[13px] font-semibold tracking-[0.14em] uppercase backdrop-blur-[2px] transition ${langShell}`}
+                className={`flex items-center gap-2 whitespace-nowrap border px-3 py-2 text-[16px] font-medium transition ${langShell}`}
                 aria-label='Language'
                 aria-expanded={isLangOpen}
               >
@@ -163,8 +152,8 @@ export function Navigation() {
                       key={lang.code}
                       type='button'
                       onClick={() => switchLocale(lang.code)}
-                      className={`block w-full px-4 py-2.5 text-left text-[13px] font-semibold tracking-[0.12em] uppercase transition hover:bg-light-gray ${
-                        locale === lang.code ? 'text-accent' : 'text-navy'
+                      className={`block w-full px-4 py-2.5 text-left text-[15px] font-medium transition hover:bg-light-gray ${
+                        locale === lang.code ? 'text-[var(--bg-dark)] bg-[color-mix(in_srgb,var(--accent-teal)_35%,white)]' : 'text-navy'
                       }`}
                     >
                       {lang.name}
@@ -195,7 +184,7 @@ export function Navigation() {
       </header>
 
       <div
-        className={`fixed inset-0 z-40 bg-navy transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[var(--bg-dark)] transition-opacity duration-200 lg:hidden ${
           isMobileMenuOpen
             ? 'pointer-events-auto opacity-100'
             : 'pointer-events-none opacity-0'
@@ -203,35 +192,20 @@ export function Navigation() {
       >
         <nav className='flex h-full flex-col justify-between px-6 pt-28 pb-10'>
           <div className='space-y-1'>
-            {links.map((item, index) => (
+            {links.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={handleSmoothScroll}
-                className='group flex items-baseline gap-4 border-b border-white/10 py-4 text-white transition-all duration-500'
-                style={{
-                  transitionDelay: isMobileMenuOpen
-                    ? `${100 + index * 60}ms`
-                    : '0ms',
-                  opacity: isMobileMenuOpen ? 1 : 0,
-                  transform: isMobileMenuOpen
-                    ? 'translateY(0)'
-                    : 'translateY(16px)',
-                }}
+                className='flex items-center border-b border-white/10 py-4 text-[20px] font-medium text-[var(--bg-light)]'
               >
-                <span className='text-[clamp(1.6rem,7vw,2.4rem)] font-semibold tracking-[-0.03em]'>
-                  {item.label}
-                </span>
+                {item.label}
               </a>
             ))}
           </div>
 
           <div
-            className='transition-all duration-500'
-            style={{
-              transitionDelay: isMobileMenuOpen ? '380ms' : '0ms',
-              opacity: isMobileMenuOpen ? 1 : 0,
-            }}
+            className='transition-opacity duration-200'
           >
             <div className='inline-flex items-center gap-1 border border-accent/40 bg-accent/10 p-1'>
               {languages.map((lang) => (
@@ -244,7 +218,7 @@ export function Navigation() {
                   }}
                   className={`px-3.5 py-2 text-[13px] font-semibold tracking-[0.14em] uppercase transition ${
                     locale === lang.code
-                      ? 'bg-accent text-white'
+                      ? 'bg-[var(--accent-teal)] text-[var(--bg-dark)]'
                       : 'text-accent hover:bg-accent/15'
                   }`}
                 >

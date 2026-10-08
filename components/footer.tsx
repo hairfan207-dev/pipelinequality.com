@@ -40,7 +40,7 @@ export function Footer() {
 
   return (
     <footer className='bg-navy text-white'>
-      <div className='h-1 bg-accent' />
+      <div className='h-px bg-white/15' />
 
       <div className='pq-shell py-4 md:py-5 lg:py-6'>
         <div className='grid gap-4 md:gap-5 lg:grid-cols-[1.35fr_1fr] lg:items-end lg:gap-12'>
@@ -51,9 +51,9 @@ export function Footer() {
                 alt='Pipeline Quality'
                 className='h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.18)] md:h-11'
               />
-              <p className='font-sans text-[13px] font-semibold tracking-[0.14em] uppercase md:text-[14px]'>
+              <p className='font-sans text-[16px] font-semibold'>
                 <span className='text-white'>Pipeline </span>
-                <span className='text-accent'>Quality</span>
+                <span className='text-[var(--accent-teal)]'>Quality</span>
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
                   ) : null}
                   <Link
                     href={item.href}
-                    className='shrink-0 whitespace-nowrap font-sans text-[10px] font-semibold tracking-[0.06em] text-white/80 uppercase transition hover:text-accent sm:text-[11px] sm:tracking-[0.08em] md:text-[12px] md:tracking-[0.12em]'
+                    className='shrink-0 whitespace-nowrap font-sans text-[16px] font-normal text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--accent-teal)]'
                   >
                     {item.label}
                   </Link>
@@ -138,7 +138,7 @@ export function Footer() {
                 ) : null}
                 <Link
                   href={item.href}
-                  className='shrink-0 whitespace-nowrap font-sans text-[9px] font-semibold tracking-[0.04em] text-white/80 uppercase transition hover:text-accent sm:text-[10px] sm:tracking-[0.06em] md:text-[11px] md:tracking-[0.08em]'
+                  className='shrink-0 whitespace-nowrap font-sans text-[16px] font-normal text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--accent-teal)]'
                 >
                   {item.label}
                 </Link>

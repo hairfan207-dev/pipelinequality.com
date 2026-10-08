@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '../design-home.css';
+import '../design-system.css';
 
 type Props = {
     children: React.ReactNode;
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             apple: '/logo-mark.png',
         },
         other: {
-            'font-family': 'Montserrat',
+            'font-family': 'Inter',
         },
     };
 }
