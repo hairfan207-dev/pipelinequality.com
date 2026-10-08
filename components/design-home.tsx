@@ -5,8 +5,15 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
 
-type Block = { title: string; items: string[] };
 type Industry = { title: string; items: string[] };
+type ExpertiseCard = {
+  title: string;
+  description: string;
+  capabilitiesLabel: string;
+  capabilities: string[];
+  note?: string;
+  imageAlt: string;
+};
 type Step = { id: string; title: string; text: string };
 type Reason = { title: string; description: string };
 
@@ -21,24 +28,13 @@ const industryPhotos = [
   '/design/figma/industry-construction.webp',
   '/client/industry-maintenance.jpg',
 ];
-const serviceOrder = [0, 2, 1, 3];
-const serviceIcons = [
-  '/design/figma/svc-qaqc.svg',
-  '/design/figma/svc-inspect.svg',
-  '/design/figma/svc-docs.svg',
-  '/design/figma/svc-project.svg',
-];
-const serviceCaptionIcons = [
-  '/design/figma/svc-qaqc-on.svg',
-  '/design/figma/svc-inspect-on.png',
-  '/design/figma/svc-docs-on.png',
-  '/design/figma/svc-project-on.png',
-];
-const servicePhotos = [
-  '/design/figma/photo-measure.png',
-  '/design/figma/photo-inspection.webp',
-  '/design/figma/photo-documentation.webp',
-  '/design/figma/photo-project-quality.webp',
+const expertisePhotos = [
+  '/client/service-project.jpg',
+  '/client/service-engineering.jpg',
+  '/design/figma/team-inspectors.webp',
+  '/client/service-welding.jpg',
+  '/client/service-docs-yard.jpg',
+  '/client/bw-field.jpg',
 ];
 const workPhotos = [
   '/design/figma/work-understand.webp',
@@ -60,7 +56,7 @@ const standardOrder = [0, 5, 4, 3, 2, 1, 6];
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
-  const tServices = useTranslations('services');
+  const tExpertise = useTranslations('expertiseSection');
   const tInd = useTranslations('industries');
   const tExp = useTranslations('experience');
   const tStd = useTranslations('standards');
@@ -74,7 +70,7 @@ export function DesignHome() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const blocks = tServices.raw('blocks') as Block[];
+  const expertiseCards = tExpertise.raw('cards') as ExpertiseCard[];
   const sectors = tInd.raw('sectors') as Industry[];
   const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
   const steps = tWork.raw('steps') as Step[];
@@ -90,7 +86,7 @@ export function DesignHome() {
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
-  const [serviceOpen, setServiceOpen] = useState(0);
+  const [expertiseOpen, setExpertiseOpen] = useState<Record<number, boolean>>({});
   const [industry, setIndustry] = useState(0);
   const [supportOpen, setSupportOpen] = useState(0);
 
@@ -189,74 +185,59 @@ export function DesignHome() {
         </div>
       </header>
 
-      <section className='services section' id='services'>
+      <section className='services section expertise-section' id='services'>
         <span id='expertise' className='section-anchor' />
-        <div className='shell two-col services-grid'>
-          <div>
-            <h2>
-              <span className='svc-line'>{tServices('designTitle')}</span>
-              <span className='svc-line'><span>{tServices('designAccentLead')}</span> {tServices('designAccentTail')}</span>
-            </h2>
-            <p className='lead'>{tServices('designLead')}</p>
-            <div className='accordion service-accordion'>
-              {serviceOrder.map((index) => {
-                const block = blocks[index];
-                const open = serviceOpen === index;
-                const splitAt = Math.ceil(block.items.length / 2);
-                const longerFirst = block.items.length % 2 === 1;
-                const columns = longerFirst
-                  ? [block.items.slice(0, splitAt), block.items.slice(splitAt)]
-                  : [block.items.slice(splitAt), block.items.slice(0, splitAt)];
-                return (
-                  <div
-                    key={block.title}
-                    className={`acc-item${open ? ' open' : ''}`}
-                    onPointerEnter={(event) => {
-                      if (event.pointerType === 'mouse') setServiceOpen(index);
-                    }}
-                  >
+        <div className='shell expertise-head'>
+          <h2>{tExpertise('heading')}</h2>
+          <p>{tExpertise('intro')}</p>
+        </div>
+        <div className='shell expertise-grid'>
+          {expertiseCards.map((card, index) => {
+            const visible = card.capabilities.slice(0, 4);
+            const hidden = card.capabilities.slice(4);
+            const open = Boolean(expertiseOpen[index]);
+            const panelId = `expertise-more-${index}`;
+            return (
+              <article key={card.title} className='expertise-card'>
+                <div className={`expertise-photo${index === 2 ? ' is-cropped' : ''}`}>
+                  <img src={expertisePhotos[index]} alt={card.imageAlt} />
+                </div>
+                <div className='expertise-body'>
+                  <h3>{card.title}</h3>
+                  <p className='expertise-desc'>{card.description}</p>
+                  {card.note ? <p className='expertise-note'>{card.note}</p> : null}
+                  <p className='expertise-label'>{card.capabilitiesLabel}</p>
+                  <ul className='expertise-list'>
+                    {visible.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  {hidden.length > 0 ? (
+                    <div id={panelId} className={`expertise-more${open ? ' is-open' : ''}`} aria-hidden={!open}>
+                      <div>
+                        <ul className='expertise-list'>
+                          {hidden.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : null}
+                  {hidden.length > 0 ? (
                     <button
                       type='button'
+                      className='expertise-toggle'
                       aria-expanded={open}
-                      onClick={() => {
-                        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-                        setServiceOpen(open ? -1 : index);
-                      }}
+                      aria-controls={panelId}
+                      onClick={() => setExpertiseOpen((current) => ({ ...current, [index]: !current[index] }))}
                     >
-                      <span className='acc-icon'><img src={serviceIcons[index]} alt='' /></span>
-                      <span className='acc-title'>{block.title}</span>
-                      <b className='acc-chevron' aria-hidden='true'>›</b>
+                      {open ? tExpertise('showFewer') : tExpertise('showAll')}
                     </button>
-                    <div className='acc-panel'>
-                      <div className='acc-panel-inner'>
-                        {columns.map((column, columnIndex) => (
-                          <ul key={columnIndex}>
-                            {column.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        ))}
-                      </div>
-                      <figure className='acc-mobile-visual'>
-                        <img src={servicePhotos[index]} alt={block.title} />
-                        <figcaption className='image-caption'>
-                          <img src={serviceCaptionIcons[index]} alt='' />
-                          <span>{block.title}</span>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className='feature-image'>
-            <img key={serviceOpen} src={servicePhotos[Math.max(serviceOpen, 0)]} alt={blocks[Math.max(serviceOpen, 0)]?.title ?? ''} />
-            <div className='image-caption' key={`cap-${serviceOpen}`}>
-              <img src={serviceCaptionIcons[Math.max(serviceOpen, 0)]} alt='' />
-              {blocks[Math.max(serviceOpen, 0)]?.title}
-            </div>
-          </div>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 

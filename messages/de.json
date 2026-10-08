@@ -133,6 +133,109 @@
     "industrialTitle": "Industrie & Pipeline",
     "industrialText": "Pipelines, Öl & Gas, Chemie / Petrochemie, Energie, EPC, Industrieanlagenbau, Rohrleitungen, Fertigung, Wartung / Stillstand / Revamp."
   },
+  "expertiseSection": {
+    "heading": "Kernkompetenzen",
+    "intro": "Von der Unterstützung durch einzelne Fachkräfte bis zu koordinierten Projektteams bieten wir praxisorientierte Industriekompetenz entsprechend dem Umfang, den technischen Anforderungen und der jeweiligen Projektphase.",
+    "showAll": "Alle Leistungen anzeigen",
+    "showFewer": "Weniger Leistungen anzeigen",
+    "cards": [
+      {
+        "title": "QA/QC Engineering & Qualitätsmanagement",
+        "description": "Qualitätsplanung, Inspektionskoordination und Umsetzungsnachverfolgung. Unterstützung bei ITPs, QCPs, projektspezifischen PTPs, Qualitätsverfahren, Berichterstattung, Abweichungen und kundenspezifischen Qualitätsanforderungen.",
+        "capabilitiesLabel": "Leistungen",
+        "imageAlt": "Inspektoren neben einem großen Stahlschuss in einer Fertigungshalle",
+        "capabilities": [
+          "Qualitätspläne und Verfahren",
+          "Inspection and Test Plans (ITP)",
+          "Quality Control Plans (QCP)",
+          "Projektspezifische PTPs, sofern anwendbar",
+          "Prüfungsvorbereitung und Hold-/Witness-Punkte",
+          "Nachverfolgung von Abweichungen und Korrekturmaßnahmen",
+          "Qualitätsberichte und Koordination"
+        ]
+      },
+      {
+        "title": "Inspektion & Technische Überwachung",
+        "description": "Inspektionen in der Fertigung und auf Baustellen, Fertigungsüberwachung, Prüfung von Zeichnungen und Spezifikationen, Maßkontrollen, Inspektionskoordination und Unterstützung bei Drittinspektionen.",
+        "capabilitiesLabel": "Leistungen",
+        "imageAlt": "Maßkontrolle an einem Stahlbauteil",
+        "capabilities": [
+          "Fertigungs- und Herstellungsüberwachung",
+          "Sicht- und Maßprüfungen",
+          "Prüfung von Zeichnungen und Spezifikationen",
+          "Inspektionskoordination",
+          "Abstimmung mit Kunden und Drittinspektoren",
+          "Inspektionsberichte und Freigabedokumentation",
+          "Lieferantenüberwachung, sofern erforderlich"
+        ]
+      },
+      {
+        "title": "ZfP & Spezialinspektion",
+        "description": "Koordination und Bereitstellung entsprechend qualifizierter ZfP-Fachkräfte für projektspezifische Prüfanforderungen, einschließlich konventioneller und fortgeschrittener Ultraschallprüfverfahren.",
+        "capabilitiesLabel": "Über qualifizierte Fachkräfte verfügbare Verfahren und Leistungen",
+        "imageAlt": "Ultraschallmessgerät an einer geschweißten Stahloberfläche",
+        "note": "Wichtig: Prüfverfahren, Prüfanweisung, Akzeptanzkriterien und erforderliche Personalqualifikationen sind für jedes Projekt zu bestätigen. Es darf nicht der Eindruck entstehen, dass jedes Verfahren für jeden Werkstoff oder Einsatz verfügbar ist.",
+        "capabilities": [
+          "VT — Sichtprüfung",
+          "PT — Eindringprüfung",
+          "MT — Magnetpulverprüfung",
+          "UT — Ultraschallprüfung",
+          "RT — Durchstrahlungsprüfung",
+          "PAUT — Ultraschallprüfung mit Phased-Array-Technik",
+          "TOFD — Laufzeitbeugungstechnik",
+          "PMI — Werkstoffidentifikation, sofern verfügbar",
+          "Härteprüfung und weitere Spezialverfahren gemäß Projektanforderungen und verfügbaren Qualifikationen"
+        ]
+      },
+      {
+        "title": "Schweißen, Werkstoffe & Fertigungsqualität",
+        "description": "Unterstützung bei Schweißqualität, Werkstoffrückverfolgbarkeit, Fertigungsaufzeichnungen und Koordination entsprechend qualifizierter Schweißfachkräfte.",
+        "capabilitiesLabel": "Leistungen",
+        "imageAlt": "Schweißer an einem großen Stahlrohrabschnitt in einer Fertigungshalle",
+        "capabilities": [
+          "Koordination der Schweißqualität",
+          "Prüfung von WPS- und WPQR/PQR-Dokumentation",
+          "Schweißerqualifikationsnachweise",
+          "Schweißpläne und Schweißnaht-Rückverfolgbarkeit",
+          "Werkstoffzeugnisse und Chargenrückverfolgbarkeit",
+          "Werkstoffdokumentation nach EN 10204",
+          "Reparaturdokumentation und Nachverfolgung",
+          "Koordination von Beschichtungsprüfungen, sofern erforderlich"
+        ]
+      },
+      {
+        "title": "Qualitätsdokumentation & Projektabschluss",
+        "description": "Strukturierte Qualitätsaufzeichnungen, Rückverfolgbarkeit und Abschlussdokumentation zur Unterstützung von Inspektions-, Konformitäts- und Übergabeanforderungen.",
+        "capabilitiesLabel": "Leistungen",
+        "imageAlt": "Qualitätsunterlagen und ein Dokumentenordner auf einem Projektschreibtisch",
+        "capabilities": [
+          "MDR / Manufacturing Data Record bzw. Manufacturing Data Book gemäß Kundenvorgaben",
+          "Abschließende Qualitätsdossiers und Übergabepakete",
+          "Prüf- und Inspektionsaufzeichnungen",
+          "Prüfung von MTR/MTC und Werkstoffrückverfolgbarkeit",
+          "NCR-Register und Nachweise zum Abschluss",
+          "Nachverfolgung von RFI- und Inspektionsanfragen",
+          "Punch Lists und fehlende Dokumentation",
+          "Dokumentenregister, Revisionskontrolle und Vollständigkeitsprüfung",
+          "Aufarbeitung von Dokumentationsrückständen"
+        ]
+      },
+      {
+        "title": "HSE & Baustellenunterstützung",
+        "description": "Zugang zu entsprechend qualifizierten HSE-Fachkräften für die Betreuung vor Ort, Sicherheitskoordination, Maßnahmenverfolgung und projektspezifische HSE-Anforderungen.",
+        "capabilitiesLabel": "Leistungen",
+        "imageAlt": "Inspektor mit Schutzausrüstung misst eine Schweißnaht an einem großen Rohr",
+        "capabilities": [
+          "HSE-Betreuung vor Ort gemäß den Einsatzanforderungen",
+          "Sicherheitskoordination und Maßnahmenverfolgung",
+          "Sicherheitsdokumentation",
+          "HSE-Berichte und Maßnahmenlisten",
+          "Abstimmung mit Projektteams und Baustellenleitung",
+          "Unterstützung bei projektspezifischen Sicherheitsanforderungen"
+        ]
+      }
+    ]
+  },
   "services": {
     "title": "Leistungen",
     "description": "QA/QC Engineering, Inspektion, Fertigungsbegleitung und Dokumentation — abgestimmt auf den Projektumfang.",

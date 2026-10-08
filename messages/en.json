@@ -133,6 +133,109 @@
     "industrialTitle": "Industrial & Pipeline",
     "industrialText": "Pipelines, oil & gas, chemical / petrochemical, energy, EPC, industrial construction, piping, fabrication, maintenance / shutdown / revamp."
   },
+  "expertiseSection": {
+    "heading": "Expertise",
+    "intro": "From individual specialist support to coordinated project teams, we provide practical industrial expertise according to the scope, technical requirements and stage of each assignment.",
+    "showAll": "Show all capabilities",
+    "showFewer": "Show fewer capabilities",
+    "cards": [
+      {
+        "title": "QA/QC Engineering & Quality Management",
+        "description": "Quality planning, inspection coordination and implementation follow-up. Support with ITPs, QCPs, applicable PTPs, quality procedures, reporting, non-conformities and client quality requirements.",
+        "capabilitiesLabel": "Key capabilities",
+        "imageAlt": "Inspectors beside a large steel can in a fabrication hall",
+        "capabilities": [
+          "Quality plans and procedures",
+          "Inspection and Test Plans (ITP)",
+          "Quality Control Plans (QCP)",
+          "Project-specific PTPs, where applicable",
+          "Inspection readiness and hold/witness points",
+          "NCR and corrective-action follow-up",
+          "Quality reporting and coordination"
+        ]
+      },
+      {
+        "title": "Inspection & Technical Supervision",
+        "description": "Shop-floor and site inspections, fabrication surveillance, verification of drawings and specifications, dimensional control, inspection coordination and third-party inspection support.",
+        "capabilitiesLabel": "Key capabilities",
+        "imageAlt": "Dimensional inspection of a steel fabrication",
+        "capabilities": [
+          "Manufacturing and fabrication surveillance",
+          "Visual and dimensional inspection",
+          "Drawing and specification checks",
+          "Inspection coordination",
+          "Client and third-party inspection interfaces",
+          "Inspection reports and release documentation",
+          "Vendor and supplier surveillance, where required"
+        ]
+      },
+      {
+        "title": "NDT & Specialist Inspection",
+        "description": "Coordination and provision of suitably qualified NDT personnel for project-specific inspection requirements, including conventional and advanced ultrasonic testing methods.",
+        "capabilitiesLabel": "Methods and capabilities available through qualified specialists",
+        "imageAlt": "Ultrasonic gauge on a welded steel surface",
+        "note": "Important: The method, inspection procedure, acceptance criteria and required personnel qualifications must be confirmed for each project. Do not suggest that every method is available for every material, component or assignment.",
+        "capabilities": [
+          "VT — Visual Testing",
+          "PT — Penetrant Testing",
+          "MT — Magnetic Particle Testing",
+          "UT — Ultrasonic Testing",
+          "RT — Radiographic Testing",
+          "PAUT — Phased Array Ultrasonic Testing",
+          "TOFD — Time-of-Flight Diffraction",
+          "PMI — Positive Material Identification, where available",
+          "Hardness testing and other specialist methods, subject to project requirements and available qualifications"
+        ]
+      },
+      {
+        "title": "Welding, Materials & Fabrication Quality",
+        "description": "Support with welding quality, material traceability, fabrication records and coordination of suitably qualified welding specialists.",
+        "capabilitiesLabel": "Key capabilities",
+        "imageAlt": "Welder working on a large steel pipe section in a fabrication hall",
+        "capabilities": [
+          "Welding quality coordination",
+          "WPS and WPQR/PQR documentation review",
+          "Welder qualification records",
+          "Weld maps and weld traceability",
+          "Material certificates and heat-number traceability",
+          "EN 10204 material documentation",
+          "Repair documentation and follow-up",
+          "Coordination of coating inspection where required"
+        ]
+      },
+      {
+        "title": "Quality Documentation & Project Close-Out",
+        "description": "Structured quality records, traceability and final documentation packages to support inspection, compliance and handover requirements.",
+        "capabilitiesLabel": "Key capabilities",
+        "imageAlt": "Quality records and a document binder on a project desk",
+        "capabilities": [
+          "MDR / Manufacturing Data Record or Manufacturing Data Book, as defined by the client",
+          "Final quality dossiers and handover packages",
+          "Inspection and test records",
+          "MTR/MTC review and material traceability",
+          "NCR registers and close-out evidence",
+          "RFI and inspection request follow-up",
+          "Punch lists and outstanding documentation",
+          "Document registers, revision control and completeness checks",
+          "Documentation backlog recovery"
+        ]
+      },
+      {
+        "title": "HSE & Site Support",
+        "description": "Access to suitably qualified HSE professionals for site supervision, safety coordination, implementation follow-up and project-specific HSE requirements.",
+        "capabilitiesLabel": "Key capabilities",
+        "imageAlt": "Inspector in safety gear measuring a weld on a large pipe",
+        "capabilities": [
+          "HSE site supervision, subject to assignment requirements",
+          "Safety coordination and follow-up",
+          "Site safety documentation",
+          "HSE reporting and action tracking",
+          "Interface with project teams and site management",
+          "Support with project-specific safety requirements"
+        ]
+      }
+    ]
+  },
   "services": {
     "title": "Services",
     "description": "QA/QC engineering, inspection, production support and documentation, scoped to the project.",
