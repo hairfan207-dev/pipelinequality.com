@@ -3212,3 +3212,62 @@
   .pq-design .qual-head h2 { font-size: clamp(28px, 8vw, 36px) !important; }
   .pq-design .qual-card button { font-size: 16px; }
 }
+
+.pq-design .exp-final { padding-top: 72px; padding-bottom: 72px; background: #fff; }
+.pq-design .exp-final-copy h2,
+.pq-design .exp-final-assignment h3 {
+  margin: 0 0 14px;
+  color: #102A5F;
+  font-weight: 600;
+}
+.pq-design .exp-final-copy h2 {
+  font-size: clamp(36px, 3.2vw, 56px) !important;
+  line-height: 1.15 !important;
+  color: #102A5F !important;
+  white-space: normal;
+}
+.pq-design .exp-final-copy p,
+.pq-design .exp-final-assignment p {
+  margin: 0 0 14px;
+  max-width: 48em;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.55;
+  color: #33466c;
+}
+.pq-design .exp-final-note {
+  max-width: none;
+  padding: 14px 16px;
+  background: #F4F7F9;
+  border-left: 3px solid #FB7200;
+  color: #102A5F;
+}
+.pq-design .exp-final-visual {
+  margin: 28px auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #102A5F;
+}
+.pq-design .exp-final-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  transform: scale(1.14);
+}
+.pq-design .exp-final-kicker {
+  margin-bottom: 8px;
+  color: #FB7200;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.pq-design .exp-final-assignment h3 {
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 1.25;
+}
+@media (max-width: 767px) {
+  .pq-design .exp-final { padding-top: 48px; padding-bottom: 48px; }
+  .pq-design .exp-final-copy h2 { font-size: clamp(28px, 8vw, 36px) !important; }
+  .pq-design .exp-final-visual { aspect-ratio: 16 / 10; }
+}

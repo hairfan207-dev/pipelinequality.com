@@ -133,6 +133,17 @@
     "industrialTitle": "Industrie & Pipeline",
     "industrialText": "Pipelines, Öl & Gas, Chemie / Petrochemie, Energie, EPC, Industrieanlagenbau, Rohrleitungen, Fertigung, Wartung / Stillstand / Revamp."
   },
+  "experienceSection": {
+    "heading": "Die Erfahrung hinter Pipeline Quality",
+    "body1": "Pipeline Quality baut auf dem industriellen QA/QC-Hintergrund der Gründerin und der gebündelten Erfahrung von Fachkräften aus dem professionellen Netzwerk auf.",
+    "body2": "Relevante Projekterfahrungen umfassen industrielle Fertigung, chemische und petrochemische Anlagen, Pipelineprojekte sowie die Fertigung von Offshore-Wind-Gründungsstrukturen.",
+    "disclaimer": "Erfahrungen und Referenzen werden entsprechend der tatsächlichen Rolle der jeweiligen Fachkraft dargestellt. Genannte Projekte oder Unternehmen bedeuten nicht, dass alle Netzwerkmitglieder an diesen Projekten beteiligt waren oder dass Pipeline Quality mit jedem genannten Unternehmen direkt einen Vertrag hatte.",
+    "imageAlt": "Offshore-Wind-Gründungsstrukturen in einem Fertigungswerk",
+    "assignmentLabel": "Ausgewählter aktueller Projekteinsatz",
+    "assignmentTitle": "Fertigung von Offshore-Wind-Gründungsstrukturen — Niederlande",
+    "assignmentBody": "QA/QC-Unterstützung in einem Fertigungsumfeld für Offshore-Wind-Gründungsstrukturen, einschließlich Inspektionskoordination, Schweiß- und Qualitätsdokumentation, Nachverfolgung von Abweichungen, Berichterstattung und Abstimmung mit Projektbeteiligten.",
+    "assignmentHistory": "Zugehörige Projektumfelder können East Anglia 2, Oranje Wind, DolWin und IJmuiden Ver Gamma umfassen, sofern dies durch die tatsächliche Projekthistorie der jeweiligen Fachkraft belegt ist."
+  },
   "expertiseSection": {
     "heading": "Kernkompetenzen",
     "intro": "Von der Unterstützung durch einzelne Fachkräfte bis zu koordinierten Projektteams bieten wir praxisorientierte Industriekompetenz entsprechend dem Umfang, den technischen Anforderungen und der jeweiligen Projektphase.",

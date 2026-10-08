@@ -55,7 +55,7 @@ export function DesignHome() {
   const tHero = useTranslations('hero');
   const tExpertise = useTranslations('expertiseSection');
   const tIndustries = useTranslations('industriesSection');
-  const tExp = useTranslations('experience');
+  const tExperience = useTranslations('experienceSection');
   const tQual = useTranslations('qualificationsSection');
   const tWork = useTranslations('workProcess');
   const tDigital = useTranslations('digitalQuality');
@@ -332,39 +332,21 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='experience section' id='experience'>
-        <div className='experience-box'>
-          <div className='experience-intro'>
-            <div className='experience-heading'>
-              <h2>
-            <span className='line'>{tExp('designBefore1')}<span className='accent'>{tExp('designAccent1')}</span><span className='amp'>{tExp('designAmp')}</span></span>
-            <span className='line'>{tExp('designBefore2')}<span className='accent'>{tExp('designAccent2')}</span></span>
-              </h2>
-              <p>{tExp('intro')}</p>
-            </div>
-            <div className='experience-copy'>
-              <p className='eyebrow'>{tExp('label')}</p>
-              <p>{tExp('paragraph1')}</p>
-              {tExp('paragraph2') ? <p>{tExp('paragraph2')}</p> : null}
-            </div>
-          </div>
-          <div className='experience-photos'>
-            <img className='exp-wind' src='/design/figma/exp-wind.webp' alt={tExp('imageAlt')} />
-            <div className='exp-pipes'>
-              <img src='/design/figma/exp-pipes.webp' alt={tExp('industrialTitle')} />
-            </div>
-          </div>
-          <div className='experience-ref'>
-            <p className='eyebrow'>{tExp('referenceLabel')}</p>
-            <h3>{tExp('referenceTitle')}</h3>
-            {tExp('referenceText').split('\n\n').map((part) => (
-              <p className='ref-body' key={part}>{part}</p>
-            ))}
-            <h4>{tExp('scopeTitle')}</h4>
-            <p className='ref-detail'>{tExp('scopeText')}</p>
-            <h4 className='track'>{tExp('trackTitle')}</h4>
-            <p className='ref-detail track'>{tExp('trackText')}</p>
-          </div>
+      <section className='exp-final section' id='experience'>
+        <div className='shell exp-final-copy'>
+          <h2>{tExperience('heading')}</h2>
+          <p>{tExperience('body1')}</p>
+          <p>{tExperience('body2')}</p>
+          <p className='exp-final-note'>{tExperience('disclaimer')}</p>
+        </div>
+        <div className='shell exp-final-visual'>
+          <img src='/design/figma/exp-wind.webp' alt={tExperience('imageAlt')} />
+        </div>
+        <div className='shell exp-final-assignment'>
+          <p className='exp-final-kicker'>{tExperience('assignmentLabel')}</p>
+          <h3>{tExperience('assignmentTitle')}</h3>
+          <p>{tExperience('assignmentBody')}</p>
+          <p className='exp-final-note'>{tExperience('assignmentHistory')}</p>
         </div>
       </section>
 

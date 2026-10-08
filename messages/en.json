@@ -133,6 +133,17 @@
     "industrialTitle": "Industrial & Pipeline",
     "industrialText": "Pipelines, oil & gas, chemical / petrochemical, energy, EPC, industrial construction, piping, fabrication, maintenance / shutdown / revamp."
   },
+  "experienceSection": {
+    "heading": "Experience Behind Pipeline Quality",
+    "body1": "Pipeline Quality builds on the QA/QC background and the combined experience of professionals within Pipeline Quality network.",
+    "body2": "Relevant project environments include industrial manufacturing, chemical and petrochemical facilities, pipeline projects and offshore wind foundation fabrication.",
+    "disclaimer": "Experience and references are presented according to the actual role performed by the relevant professional. Named projects or companies do not imply that every network member worked on them or that Pipeline Quality contracted directly with every named organisation.",
+    "imageAlt": "Offshore wind foundations in a fabrication yard",
+    "assignmentLabel": "Selected Recent Project Assignment",
+    "assignmentTitle": "Offshore Wind Foundation Manufacturing — The Netherlands",
+    "assignmentBody": "QC support in an offshore wind foundation manufacturing environment, including inspection coordination, welding and quality documentation, non-conformity follow-up, reporting and coordination with project stakeholders.",
+    "assignmentHistory": "Related project environments may include East Anglia 2, Oranje Wind, DolWin and IJmuiden Ver Gamma, only where supported by the relevant professional’s actual assignment history."
+  },
   "expertiseSection": {
     "heading": "Expertise",
     "intro": "From individual specialist support to coordinated project teams, we provide practical industrial expertise according to the scope, technical requirements and stage of each assignment.",
