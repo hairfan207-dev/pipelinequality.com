@@ -1150,6 +1150,38 @@
       "Other / Not sure yet"
     ]
   },
+  "footerFinal": {
+    "statement": "Industrial quality, NDT inspection, and HSE management for heavy infrastructure, pipelines, and data centers.",
+    "cta": "Request Project Support",
+    "navLabel": "Quick Links (Company)",
+    "legalLabel": "Connect & Legal",
+    "privacy": "Privacy Policy",
+    "imprint": "Legal Notice / Imprint",
+    "brandLine": "Pipeline Quality, brand of Backpack Wander GmbH.",
+    "copyright": "© {year} Backpack Wander GmbH. All rights reserved.",
+    "links": [
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Industries",
+        "href": "#industries"
+      },
+      {
+        "label": "Expertise",
+        "href": "#expertise"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ]
+  },
   "footer": {
     "brand": "Pipeline Quality",
     "description": "Industrial partner for project quality — QA/QC engineering, inspection, production support and documentation for offshore wind, pipelines, industrial and energy projects.",

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useMessages, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 import { ContactForm } from '@/components/contact-form';
 
@@ -158,7 +158,13 @@ export function DesignHome() {
   const tDigital = useTranslations('digitalSection');
   const tWhy = useTranslations('whySection');
   const tContact = useTranslations('contact');
-  const tFooter = useTranslations('footer');
+  const tFooter = useTranslations('footerFinal');
+  const rawFooterLinks = (useMessages() as { footerFinal?: { links?: unknown } }).footerFinal?.links;
+  const footerLinks = (Array.isArray(rawFooterLinks)
+    ? rawFooterLinks
+    : rawFooterLinks && typeof rawFooterLinks === 'object'
+      ? Object.values(rawFooterLinks)
+      : []) as Array<{ label: string; href: string }>;
   const tNav = useTranslations('nav');
   const locale = useLocale();
   const router = useRouter();
@@ -465,27 +471,34 @@ export function DesignHome() {
         <ContactForm />
       </section>
 
-      <footer className='footer'>
-        <p className='footer-brand'>Pipeline Quality</p>
-        <p className='footer-desc'>{tFooter('description')}</p>
-        <nav className='footer-links'>
-          <a href='#services'>{tNav('services')}</a>
-          <a href='#industries'>{tNav('industries')}</a>
-          <a href='#expertise'>{tNav('expertise')}</a>
-          <a href='#experience'>{tNav('experience')}</a>
-          <a href='#contact'>{tNav('contact')}</a>
-        </nav>
-        <p className='footer-copy'>{tFooter('copyright')}</p>
-        <div className='footer-locale'>
-          <span>{tFooter('location')}</span>
-          <button type='button' className={locale === 'en' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('en')}>EN</button>
-          <button type='button' className={locale === 'de' ? 'footer-lang on' : 'footer-lang'} onClick={() => switchLocale('de')}>DE</button>
+      <footer className='footer footer-final'>
+        <div className='footer-final-grid'>
+          <div className='footer-final-brand'>
+            <p className='footer-final-name'>Pipeline Quality</p>
+            <p>{tFooter('statement')}</p>
+            <a className='footer-final-cta' href='#contact'>{tFooter('cta')}</a>
+          </div>
+          <nav className='footer-final-col' aria-labelledby='footer-nav-label'>
+            <p id='footer-nav-label'>{tFooter('navLabel')}</p>
+            <ul>
+              {footerLinks.map((link) => (
+                <li key={link.href}><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </nav>
+          <div className='footer-final-col'>
+            <p id='footer-legal-label'>{tFooter('legalLabel')}</p>
+            <ul aria-labelledby='footer-legal-label'>
+              <li><a href='https://www.linkedin.com/company/pipeline-quality' target='_blank' rel='noopener noreferrer'>LinkedIn</a></li>
+              <li><a href='mailto:info@pipelinequality.com'>info@pipelinequality.com</a></li>
+              <li><a href='/privacy'>{tFooter('privacy')}</a></li>
+              <li><a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a></li>
+            </ul>
+          </div>
         </div>
-          <p className='footer-note'><span>Pipeline Quality</span> {tFooter('brandRest')}</p>
-        <div className='footer-legal'>
-          <a href='/privacy'>{tFooter('privacyPolicy')}</a>
-          <a href={locale === 'de' ? '/agb' : '/terms'}>{tFooter('terms')}</a>
-          <a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a>
+        <div className='footer-final-bottom'>
+          <p>{tFooter('brandLine')}</p>
+          <p>{tFooter('copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </footer>
     </div>

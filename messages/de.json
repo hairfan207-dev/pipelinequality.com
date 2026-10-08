@@ -1149,6 +1149,38 @@
       "Sonstiges / Noch nicht sicher"
     ]
   },
+  "footerFinal": {
+    "statement": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte.",
+    "cta": "Projekt besprechen",
+    "navLabel": "Navigation",
+    "legalLabel": "Kontakt & Rechtliches",
+    "privacy": "Datenschutzerklärung",
+    "imprint": "Impressum",
+    "brandLine": "Pipeline Quality, eine Marke der Backpack Wander GmbH.",
+    "copyright": "© {year} Backpack Wander GmbH. Alle Rechte vorbehalten.",
+    "links": [
+      {
+        "label": "Kernkompetenzen",
+        "href": "#expertise"
+      },
+      {
+        "label": "Branchen",
+        "href": "#industries"
+      },
+      {
+        "label": "Technische Qualifikationen",
+        "href": "#capabilities"
+      },
+      {
+        "label": "Erfahrung",
+        "href": "#experience"
+      },
+      {
+        "label": "Kontakt",
+        "href": "#contact"
+      }
+    ]
+  },
   "footer": {
     "brand": "Pipeline Quality",
     "description": "Industriepartner für Projektqualität — QA/QC Engineering, Inspektion, Fertigungsbegleitung und Dokumentation für Offshore-Wind, Pipelines sowie Industrie- und Energieprojekte.",
