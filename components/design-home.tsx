@@ -16,6 +16,14 @@ type ExpertiseCard = {
 };
 type Step = { id: string; title: string; text: string };
 type Reason = { title: string; description: string };
+type QualGroup = { label?: string; items: string[] };
+type QualCategory = {
+  code: string;
+  title: string;
+  lead?: string;
+  groups: QualGroup[];
+  note?: string;
+};
 
 const industryPhotos = [
   '/design/figma/industry-wind.png',
@@ -42,23 +50,13 @@ const workPhotos = [
   '/design/figma/work-control.webp',
   '/design/figma/work-handover.webp',
 ];
-const standardIcons = [
-  '/design/figma/std-qm.svg',
-  '/design/figma/std-coat.svg',
-  '/design/figma/std-press.svg',
-  '/design/figma/std-wind-icon.svg',
-  '/design/figma/std-weld-icon.svg',
-  '/design/figma/std-ndt.svg',
-  '/design/figma/std-docs.svg',
-];
-const standardOrder = [0, 5, 4, 3, 2, 1, 6];
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
   const tExpertise = useTranslations('expertiseSection');
   const tIndustries = useTranslations('industriesSection');
   const tExp = useTranslations('experience');
-  const tStd = useTranslations('standards');
+  const tQual = useTranslations('qualificationsSection');
   const tWork = useTranslations('workProcess');
   const tDigital = useTranslations('digitalQuality');
   const tWhy = useTranslations('why');
@@ -71,7 +69,7 @@ export function DesignHome() {
 
   const expertiseCards = tExpertise.raw('cards') as ExpertiseCard[];
   const industryCards = tIndustries.raw('cards') as IndustryCard[];
-  const groups = tStd.raw('groups') as Array<{ title: string; items: string[] }>;
+  const qualCategories = tQual.raw('categories') as QualCategory[];
   const steps = tWork.raw('steps') as Step[];
   const digitalBlocks = tDigital.raw('blocks') as Array<{ title: string; items: string[]; summary?: string }>;
   const workflows = digitalBlocks.map((block, index) => ({
@@ -86,6 +84,7 @@ export function DesignHome() {
   const [langOpen, setLangOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const [expertiseOpen, setExpertiseOpen] = useState<Record<number, boolean>>({});
+  const [qualOpen, setQualOpen] = useState<Record<number, boolean>>({});
   const [supportOpen, setSupportOpen] = useState(0);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
@@ -285,37 +284,47 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='standards section' id='capabilities'>
-        <h2>
-            <span className='line'>{tStd('designLine1')}</span>
-            <span className='line'>
-              <span className='amp'>&</span>{' '}
-              {tStd('designLine2').replace(/^&\s*/, '')}
-            </span>
-        </h2>
-        <div className='standard-grid'>
-          {standardOrder.map((groupIndex, iconIndex) => {
-            const group = groups[groupIndex];
-            const [first, ...rest] = group.title.split(' ');
-            const titleLines = group.title.includes(' & ')
-              ? group.title.split(' & ').map((part, line) => (line === 0 ? part : `& ${part}`))
-              : group.title.includes(' / ')
-                ? group.title.split(' / ').map((part, line, parts) => (line < parts.length - 1 ? `${part} /` : part))
-                : rest.length ? [first, rest.join(' ')] : [group.title];
+      <section className='qual-section section' id='capabilities'>
+        <div className='shell qual-head'>
+          <h2>{tQual('heading')}</h2>
+          <p>{tQual('intro')}</p>
+          <p className='qual-disclaimer'>{tQual('disclaimer')}</p>
+        </div>
+        <div className='shell qual-grid'>
+          {qualCategories.map((category, index) => {
+            const open = Boolean(qualOpen[index]);
+            const panelId = `qual-panel-${category.code}`;
             return (
-              <article key={group.title}>
-                <img src={standardIcons[iconIndex]} alt='' />
-                <div className='std-card'>
-                  <h3>
-                    {titleLines.map((line) => (
-                      <span key={line}>{line}</span>
-                    ))}
-                  </h3>
-                  <p>
-                    {group.items.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </p>
+              <article key={category.code} className={`qual-card${category.code === 'C' ? ' is-wide' : ''}${open ? ' is-open' : ''}`}>
+                <h3>
+                  <button
+                    type='button'
+                    aria-expanded={open}
+                    aria-controls={panelId}
+                    onClick={() => setQualOpen((current) => ({ ...current, [index]: !current[index] }))}
+                  >
+                    <span className='qual-code'>{category.code}</span>
+                    {' '}
+                    <span className='qual-title'>{category.title}</span>
+                  </button>
+                </h3>
+                <div id={panelId} className={`qual-panel${open ? ' is-open' : ''}`} aria-hidden={!open}>
+                  <div>
+                    {category.lead ? <p className='qual-lead'>{category.lead}</p> : null}
+                    <div className={`qual-groups${category.groups.length > 1 ? ' is-split' : ''}`}>
+                      {category.groups.map((group) => (
+                        <div key={group.label ?? category.code}>
+                          {group.label ? <p className='qual-label'>{group.label}</p> : null}
+                          <ul>
+                            {group.items.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    {category.note ? <p className='qual-note'>{category.note}</p> : null}
+                  </div>
                 </div>
               </article>
             );

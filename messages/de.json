@@ -424,6 +424,180 @@
     "docsText": "WPS, Schweißnahtpläne, MDR, NCR-Nachverfolgung",
     "docsAlt": "WPS, Schweißnahtpläne und MDR-Dokumentation in der Fertigung"
   },
+  "qualificationsSection": {
+    "heading": "Technische Kompetenzen & Qualifikationen",
+    "intro": "Abhängig von den Projektanforderungen können über unser professionelles Netzwerk entsprechend qualifizierte Fachkräfte aus den Bereichen Qualitätsmanagement, Schweißtechnik, ZfP, Werkstoffe, Inspektion, Beschichtung und HSE bereitgestellt werden. Individuelle Qualifikationen und relevante Erfahrungen werden anhand der Anforderungen des jeweiligen Einsatzes geprüft.",
+    "disclaimer": "Die aufgeführten Normen und Qualifikationen beschreiben technische Bereiche unseres Leistungsportfolios. Sie stellen keine Zertifizierungen von Pipeline Quality oder Backpack Wander GmbH dar. Individuelle Zertifikate, Kompetenzen und Erfahrungen werden anhand der Anforderungen des jeweiligen Einsatzes geprüft. Maßgeblich sind die Projektspezifikationen und vertraglichen Anforderungen.",
+    "categories": [
+      {
+        "code": "A",
+        "title": "Qualitätsmanagement & Auditierung",
+        "groups": [
+          {
+            "items": [
+              "ISO 9001 — Qualitätsmanagementsysteme",
+              "ISO 19011 — Leitfaden zur Auditierung von Managementsystemen",
+              "ISO 14001 — Umweltmanagementsysteme, sofern anwendbar",
+              "ISO 45001 — Managementsysteme für Sicherheit und Gesundheit bei der Arbeit",
+              "ISO 3834 — Qualitätsanforderungen für das Schmelzschweißen von metallischen Werkstoffen, sofern anwendbar",
+              "Interne Qualitätsaudits und Lieferantenaudits gemäß individueller Kompetenz und Projektumfang"
+            ]
+          }
+        ],
+        "note": "Es darf nicht der Eindruck entstehen, dass Pipeline Quality oder die Backpack Wander GmbH diese Managementsystem-Zertifizierungen selbst hält."
+      },
+      {
+        "code": "B",
+        "title": "Schweißtechnik & Fertigung",
+        "groups": [
+          {
+            "items": [
+              "ISO 9606 — Prüfung von Schweißern — Schmelzschweißen",
+              "ISO 15614 — Anforderung und Qualifizierung von Schweißverfahren für metallische Werkstoffe",
+              "ISO 14731 — Schweißaufsicht — Aufgaben und Verantwortlichkeiten",
+              "EN ISO 14732 — Schweißpersonal — Prüfung von Bedienern von Schweißeinrichtungen und von Einrichtern, sofern anwendbar",
+              "ASME Section IX — Welding, Brazing and Fusing Qualifications",
+              "WPS — Schweißanweisung (Welding Procedure Specification)",
+              "WPQR/PQR — Bericht über die Qualifizierung des Schweißverfahrens",
+              "Schweißerqualifikationsnachweise",
+              "Schweißpläne und Schweißnaht-Rückverfolgbarkeit"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "title": "ZfP — Konventionelle & fortschrittliche Verfahren",
+        "groups": [
+          {
+            "label": "Prüfverfahren",
+            "items": [
+              "VT — Sichtprüfung (Visual Testing)",
+              "PT — Eindringprüfung (Penetrant Testing)",
+              "MT — Magnetpulverprüfung (Magnetic Particle Testing)",
+              "UT — Ultraschallprüfung (Ultrasonic Testing)",
+              "RT — Durchstrahlungsprüfung (Radiographic Testing)",
+              "PAUT — Ultraschallprüfung mit Phased-Array-Technik",
+              "TOFD — Laufzeitbeugungstechnik (Time-of-Flight Diffraction)",
+              "PMI — Werkstoffidentifikation (Positive Material Identification), sofern verfügbar",
+              "Härteprüfung und weitere Spezialverfahren, sofern verfügbar und erforderlich"
+            ]
+          },
+          {
+            "label": "Relevante Normen und Qualifizierungsrahmen, sofern anwendbar",
+            "items": [
+              "ISO 9712 — Qualifizierung und Zertifizierung von Personal der zerstörungsfreien Prüfung",
+              "ISO 17635 — Zerstörungsfreie Prüfung von Schweißverbindungen — Allgemeine Regeln",
+              "ISO 17640 — Zerstörungsfreie Prüfung von Schweißverbindungen — Ultraschallprüfung",
+              "ISO 13588 — Zerstörungsfreie Prüfung von Schweißverbindungen — Automatisierte Ultraschallprüfung mit Phased-Array-Technik",
+              "ISO 10863 — Laufzeitbeugungstechnik (TOFD)",
+              "ISO 19285 — Zulässigkeitsgrenzen für die Phased-Array-Technik (PAUT), sofern anwendbar",
+              "Relevante verfahrensspezifische Normen und Projektabläufe"
+            ]
+          }
+        ],
+        "note": "Das genaue Prüfverfahren, die Qualifikationsstufe des Personals, der anwendbare Sektor und die Akzeptanzkriterien müssen mit den Projektspezifikationen abgeglichen werden."
+      },
+      {
+        "code": "D",
+        "title": "Inspektion & Maßkontrolle",
+        "groups": [
+          {
+            "items": [
+              "Sicht- und Maßprüfungen",
+              "Fertigungs- und Herstellungsüberwachung",
+              "Prüfung von Zeichnungen und Spezifikationen",
+              "Prüf- und Inspektionsaufzeichnungen",
+              "Inspection and Test Plans (ITP) / Prüf- und Inspektionspläne",
+              "Quality Control Plans (QCP)",
+              "Projektspezifische PTPs, sofern anwendbar",
+              "Hold Points, Witness Points und Abnahme/Freigabe von Inspektionen",
+              "Koordination von Kunden- und Drittinspektionen"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "title": "Werkstoffe & Rückverfolgbarkeit",
+        "groups": [
+          {
+            "items": [
+              "EN 10204 — Metallische Erzeugnisse — Arten von Prüfbescheinigungen",
+              "Prüfung von Werkstoffzeugnissen (MTR/MTC) und Rückverfolgbarkeit",
+              "Überprüfung von Schmelzenöffnungen (Heat Numbers) und Materialidentifikation",
+              "Register zur Werkstoffrückverfolgbarkeit",
+              "Abgleich der Materialdokumentation mit den Projektanforderungen"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "title": "Stahlbau & Offshore-Fertigung",
+        "groups": [
+          {
+            "items": [
+              "Anwendbare DNV-Anforderungen, einschließlich DNV-ST-0126, sofern für das Projekt relevant",
+              "EN 1090, sofern anwendbar",
+              "Fertigungsdokumentation im Stahlbau",
+              "Schweißnaht-Rückverfolgbarkeit und Inspektionsaufzeichnungen",
+              "Projektspezifische Fertigungs- und Inspektionsanforderungen"
+            ]
+          }
+        ],
+        "note": "Anwendbare Ausgaben, Projektspezifikationen und vertragliche Anforderungen sind stets zu bestätigen."
+      },
+      {
+        "code": "G",
+        "title": "Rohrleitungen, Druckgeräte & Prozessanlagen",
+        "groups": [
+          {
+            "items": [
+              "Druckgeräterichtlinie (PED 2014/68/EU), sofern anwendbar",
+              "Relevante EN- und ASME-Regelwerke je nach Projekt",
+              "Fertigungs- und Inspektionsdokumentation im Rohrleitungsbau",
+              "Werkstoffrückverfolgbarkeit",
+              "Druckprüfprotokolle und unterstützende Dokumentation, sofern im vereinbarten Umfang enthalten",
+              "Dokumentationsunterstützung bei Brownfield-, Stillstands- und Anlagenumbauten"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "title": "Beschichtung & Korrosionsschutz",
+        "groups": [
+          {
+            "items": [
+              "ISO 12944 — Korrosionsschutz von Stahlbauten durch Beschichtungssysteme",
+              "ISO 8501 — Vorbereitung von Stahloberflächen vor dem Auftragen von Beschichtungsstoffen — Visuelle Beurteilung der Oberflächenreinheit",
+              "ISO 8502 — Prüfungen zum Beurteilen der Oberflächenreinheit",
+              "Schichtdickenmessung (DFT), sofern im vereinbarten Umfang enthalten",
+              "Personal mit FROSIO-Qualifikation, sofern verfügbar",
+              "AMPP/NACE-Qualifikationen, sofern verfügbar und anwendbar"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "I",
+        "title": "HSE & Baustellensicherheit",
+        "lead": "Abhängig von den Einsatzanforderungen kann das professionelle Netzwerk Personal mit relevanten Qualifikationen bereitstellen, wie z. B.:",
+        "groups": [
+          {
+            "items": [
+              "SCC / VCA",
+              "IOSH",
+              "NEBOSH",
+              "Weitere anerkannte oder vom Kunden geforderte HSE-Schulungen und Zertifikate"
+            ]
+          }
+        ],
+        "note": "Es dürfen nur Qualifikationen aufgeführt werden, die für den jeweiligen Einsatz tatsächlich beschafft und verifiziert werden können. Es darf nicht der Eindruck entstehen, dass jede HSE-Qualifikation von der Gründerin oder vom Unternehmen selbst gehalten wird."
+      }
+    ]
+  },
   "standards": {
     "label": "Normen & Kompetenz",
     "title": "Qualifikationen, Normen & technische Kompetenz",

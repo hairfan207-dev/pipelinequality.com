@@ -424,6 +424,180 @@
     "docsText": "WPS, weld maps, MDR, NCR tracking",
     "docsAlt": "WPS, weld maps and MDR documentation on the shop floor"
   },
+  "qualificationsSection": {
+    "heading": "Technical Capabilities & Qualifications",
+    "intro": "Depending on project requirements, our professional network can provide suitably qualified specialists across quality management, welding, NDT, materials, inspection, coating and HSE. Individual qualifications and relevant experience are checked against the requirements of each assignment.",
+    "disclaimer": "The standards and qualifications listed describe technical areas relevant to our services. Individual certificates, competence and experience are verified against the requirements of each assignment. The applicable standards, inspection methods and acceptance criteria are defined by the project specification and contract.",
+    "categories": [
+      {
+        "code": "A",
+        "title": "Quality Management & Auditing",
+        "groups": [
+          {
+            "items": [
+              "ISO 9001 — Quality Management Systems",
+              "ISO 19011 — Guidelines for Auditing Management Systems",
+              "ISO 14001 — Environmental Management Systems, where applicable",
+              "ISO 45001 — Occupational Health and Safety Management Systems",
+              "ISO 3834 — Quality Requirements for Fusion Welding of Metallic Materials, where applicable",
+              "Internal quality audits and supplier audits, according to individual competence and assignment scope"
+            ]
+          }
+        ],
+        "note": "Do not imply that Pipeline Quality or Backpack Wander GmbH holds these management-system certifications."
+      },
+      {
+        "code": "B",
+        "title": "Welding & Fabrication",
+        "groups": [
+          {
+            "items": [
+              "ISO 9606 — Qualification Testing of Welders",
+              "ISO 15614 — Welding Procedure Qualification",
+              "ISO 14731 — Welding Coordination",
+              "EN ISO 14732 — Qualification of Welding Operators and Weld Setters, where applicable",
+              "ASME Section IX — Welding, Brazing and Fusing Qualifications",
+              "WPS — Welding Procedure Specification",
+              "WPQR/PQR — Welding Procedure Qualification Record",
+              "Welder qualification records",
+              "Weld maps and weld traceability"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "title": "NDT — Conventional & Advanced Methods",
+        "groups": [
+          {
+            "label": "Methods",
+            "items": [
+              "VT — Visual Testing",
+              "PT — Penetrant Testing",
+              "MT — Magnetic Particle Testing",
+              "UT — Ultrasonic Testing",
+              "RT — Radiographic Testing",
+              "PAUT — Phased Array Ultrasonic Testing",
+              "TOFD — Time-of-Flight Diffraction",
+              "PMI — Positive Material Identification, where available",
+              "Hardness testing and other methods, where available and required"
+            ]
+          },
+          {
+            "label": "Relevant standards and qualification frameworks, as applicable",
+            "items": [
+              "ISO 9712 — Qualification and Certification of NDT Personnel",
+              "ISO 17635 — General Rules for Non-Destructive Testing of Welds",
+              "ISO 17640 — Ultrasonic Testing of Welds",
+              "ISO 13588 — Automated Phased Array Ultrasonic Testing",
+              "ISO 10863 — TOFD",
+              "ISO 19285 — PAUT Acceptance Levels, where applicable",
+              "Relevant method-specific standards and project procedures"
+            ]
+          }
+        ],
+        "note": "The exact method, personnel qualification level, applicable sector and acceptance criteria must be confirmed against the project specification."
+      },
+      {
+        "code": "D",
+        "title": "Inspection & Dimensional Control",
+        "groups": [
+          {
+            "items": [
+              "Visual and dimensional inspection",
+              "Fabrication surveillance",
+              "Drawing and specification verification",
+              "Inspection and test records",
+              "Inspection and Test Plans (ITP)",
+              "Quality Control Plans (QCP)",
+              "Project-specific PTPs, where applicable",
+              "Hold points, witness points and inspection releases",
+              "Client and third-party inspection coordination"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "title": "Materials & Traceability",
+        "groups": [
+          {
+            "items": [
+              "EN 10204 — Inspection Documents for Metallic Products",
+              "MTR/MTC review and traceability",
+              "Heat-number and material identification checks",
+              "Material traceability registers",
+              "Verification of material documentation against project requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "title": "Steel Structures & Offshore Fabrication",
+        "groups": [
+          {
+            "items": [
+              "Applicable DNV requirements, including DNV-ST-0126 where relevant to the project",
+              "EN 1090, where applicable",
+              "Structural steel fabrication documentation",
+              "Weld traceability and inspection records",
+              "Project-specific fabrication and inspection requirements"
+            ]
+          }
+        ],
+        "note": "Applicable editions, project specifications and contractual requirements must always be confirmed."
+      },
+      {
+        "code": "G",
+        "title": "Piping, Pressure Equipment & Process Plants",
+        "groups": [
+          {
+            "items": [
+              "PED 2014/68/EU, where applicable",
+              "Relevant EN and ASME codes, according to the project",
+              "Piping fabrication and inspection documentation",
+              "Material traceability",
+              "Pressure-test records and supporting documentation, where within the agreed scope",
+              "Brownfield, shutdown and revamp documentation support"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "title": "Coating & Corrosion Protection",
+        "groups": [
+          {
+            "items": [
+              "ISO 12944 — Corrosion Protection of Steel Structures by Protective Paint Systems",
+              "ISO 8501 — Visual Assessment of Surface Cleanliness",
+              "ISO 8502 — Tests for the Assessment of Surface Cleanliness",
+              "DFT — Dry Film Thickness inspection, where within the assigned scope",
+              "FROSIO-qualified personnel, where available",
+              "AMPP/NACE qualifications, where available and applicable"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "I",
+        "title": "HSE & Site Safety",
+        "lead": "Depending on assignment requirements, the professional network may provide personnel with relevant qualifications such as:",
+        "groups": [
+          {
+            "items": [
+              "SCC/VCA",
+              "IOSH",
+              "NEBOSH",
+              "Other recognised or client-required HSE training and certifications"
+            ]
+          }
+        ],
+        "note": "Only list qualifications that can actually be sourced and verified for the assignment. Do not imply that every HSE qualification is held by the founder or by the company."
+      }
+    ]
+  },
   "standards": {
     "label": "Standards & Competence",
     "title": "Qualifications, Standards & Technical Competence",

@@ -3059,3 +3059,156 @@
   .pq-design .industry-head h2 { font-size: clamp(28px, 8vw, 36px) !important; }
   .pq-design .industry-body { padding: 18px; }
 }
+
+.pq-design .qual-section { padding-top: 72px; padding-bottom: 72px; background: #F4F7F9; }
+.pq-design .qual-head { margin-bottom: 28px; }
+.pq-design .qual-head h2 {
+  margin: 0 0 14px;
+  font-size: clamp(36px, 3.2vw, 56px) !important;
+  line-height: 1.15 !important;
+  font-weight: 600 !important;
+  color: #102A5F !important;
+  white-space: normal;
+}
+.pq-design .qual-head p {
+  margin: 0;
+  max-width: 52em;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.55;
+  color: #33466c;
+}
+.pq-design .qual-disclaimer {
+  margin-top: 18px;
+  padding: 16px 18px;
+  max-width: none;
+  background: #fff;
+  border-left: 3px solid #FB7200;
+  color: #102A5F;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.pq-design .qual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.pq-design .qual-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #D6DDE6;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.pq-design .qual-card.is-wide { grid-column: 1 / -1; }
+.pq-design .qual-card h3 { margin: 0; }
+.pq-design .qual-card button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 16px 18px;
+  border: 0;
+  background: transparent;
+  color: #102A5F;
+  font: 600 18px/1.3 Montserrat, Arial, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+.pq-design .qual-card button:focus-visible {
+  outline: 2px solid #102A5F;
+  outline-offset: -3px;
+}
+.pq-design .qual-code {
+  flex: none;
+  color: #FB7200;
+  font-weight: 700;
+}
+.pq-design .qual-title { flex: 1; min-width: 0; }
+.pq-design .qual-card button::after {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border-right: 2px solid #102A5F;
+  border-bottom: 2px solid #102A5F;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.18s ease;
+}
+.pq-design .qual-card.is-open button::after { transform: translateY(2px) rotate(-135deg); }
+.pq-design .qual-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+}
+.pq-design .qual-panel.is-open { grid-template-rows: 1fr; }
+.pq-design .qual-panel > div { overflow: hidden; }
+.pq-design .qual-lead,
+.pq-design .qual-groups,
+.pq-design .qual-note { margin-left: 18px; margin-right: 18px; }
+.pq-design .qual-lead {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #33466c;
+}
+.pq-design .qual-groups.is-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 28px;
+}
+.pq-design .qual-label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #102A5F;
+}
+.pq-design .qual-groups ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.pq-design .qual-groups li {
+  position: relative;
+  margin: 0;
+  padding: 5px 0 5px 16px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #102A5F;
+}
+.pq-design .qual-groups li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FB7200;
+}
+.pq-design .qual-note {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: #F4F7F9;
+  color: #102A5F;
+  font-size: 14px;
+  line-height: 1.45;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pq-design .qual-card button:hover { background: rgba(16, 42, 95, 0.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pq-design .qual-panel,
+  .pq-design .qual-card button::after { transition: none; }
+}
+@media (max-width: 767px) {
+  .pq-design .qual-section { padding-top: 48px; padding-bottom: 48px; }
+  .pq-design .qual-grid,
+  .pq-design .qual-groups.is-split { grid-template-columns: 1fr; }
+  .pq-design .qual-head h2 { font-size: clamp(28px, 8vw, 36px) !important; }
+  .pq-design .qual-card button { font-size: 16px; }
+}
