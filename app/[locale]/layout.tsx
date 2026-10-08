@@ -24,6 +24,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: meta.title,
         description: meta.description,
+        openGraph: {
+            title: meta.title,
+            description: meta.description,
+            type: 'website',
+            locale: locale === 'de' ? 'de_DE' : 'en_US',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: meta.title,
+            description: meta.description,
+        },
         icons: {
             icon: '/logo-mark.png',
             apple: '/logo-mark.png',

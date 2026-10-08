@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Pipeline Quality | Project Quality from Production to Handover',
+  title: 'Pipeline Quality | Industrial Quality, NDT & HSE',
   description:
-    'QA/QC Engineering, Inspection, Production Support and Documentation for Offshore Wind, Pipelines, Industrial and Energy projects.',
+    'Industrial quality, NDT inspection, and HSE management for heavy infrastructure, pipelines, and data centers.',
 };
 
 type Props = {

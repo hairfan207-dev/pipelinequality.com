@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
 
           <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
           <p style="color: #718096; font-size: 12px;">
-            © 2024 Pipeline Quality. All rights reserved.
+            © ${new Date().getFullYear()} Backpack Wander GmbH. All rights reserved.
           </p>
         </div>
       `,

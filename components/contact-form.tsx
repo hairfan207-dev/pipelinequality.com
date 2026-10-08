@@ -69,14 +69,14 @@ export function ContactForm() {
 
   return (
     <form className='contact-final' noValidate onSubmit={handleSubmit}>
-      <Field id='name' label={t('name')} error={errors.name} autoComplete='name' />
-      <Field id='company' label={t('company')} error={errors.company} autoComplete='organization' />
-      <Field id='email' label={t('email')} error={errors.email} type='email' autoComplete='email' inputMode='email' />
+      <Field id='name' label={t('name')} error={errors.name} autoComplete='name' required />
+      <Field id='company' label={t('company')} error={errors.company} autoComplete='organization' required />
+      <Field id='email' label={t('email')} error={errors.email} type='email' autoComplete='email' inputMode='email' required />
       <Field id='phone' label={t('phone')} optionalLabel={t('optional')} type='tel' autoComplete='tel' />
-      <Field id='location' label={t('location')} error={errors.location} autoComplete='address-level2' />
+      <Field id='location' label={t('location')} error={errors.location} autoComplete='address-level2' required />
       <div className={errors.industry ? 'is-invalid' : undefined}>
         <label htmlFor='industry'>{t('industry')}</label>
-        <select id='industry' name='industry' defaultValue='' aria-invalid={Boolean(errors.industry)} aria-describedby={errors.industry ? 'industry-error' : undefined}>
+        <select id='industry' name='industry' defaultValue='' required aria-required='true' aria-invalid={Boolean(errors.industry)} aria-describedby={errors.industry ? 'industry-error' : undefined}>
           <option value=''>{t('selectIndustry')}</option>
           {industries.map((option) => (
             <option key={option} value={option}>{option}</option>
@@ -85,7 +85,7 @@ export function ContactForm() {
         {errors.industry ? <p id='industry-error' className='field-error'>{errors.industry}</p> : null}
       </div>
 
-      <fieldset className={`is-wide contact-services${errors.services ? ' is-invalid' : ''}`} aria-invalid={Boolean(errors.services)} aria-describedby={errors.services ? 'services-error' : undefined}>
+      <fieldset className={`is-wide contact-services${errors.services ? ' is-invalid' : ''}`} aria-required='true' aria-invalid={Boolean(errors.services)} aria-describedby={errors.services ? 'services-error' : undefined}>
         <legend>{t('services')}</legend>
         <ul>
           {services.map((option) => (
@@ -116,7 +116,7 @@ export function ContactForm() {
 
       <div className={`is-wide${errors.message ? ' is-invalid' : ''}`}>
         <label htmlFor='message'>{t('details')}</label>
-        <textarea id='message' name='message' rows={6} aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-error' : undefined} />
+        <textarea id='message' name='message' rows={6} required aria-required='true' aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-error' : undefined} />
         {errors.message ? <p id='message-error' className='field-error'>{errors.message}</p> : null}
       </div>
 
@@ -126,6 +126,8 @@ export function ContactForm() {
           name='privacy'
           type='checkbox'
           value='yes'
+          required
+          aria-required='true'
           aria-invalid={Boolean(errors.privacy)}
           aria-describedby={errors.privacy ? 'privacy-error' : undefined}
         />
@@ -164,6 +166,7 @@ function Field({
   type = 'text',
   autoComplete,
   inputMode,
+  required = false,
 }: {
   id: string;
   name?: string;
@@ -173,6 +176,7 @@ function Field({
   type?: string;
   autoComplete?: string;
   inputMode?: 'email' | 'tel' | 'text';
+  required?: boolean;
 }) {
   return (
     <div className={error ? 'is-invalid' : undefined}>
@@ -186,6 +190,8 @@ function Field({
         type={type}
         autoComplete={autoComplete}
         inputMode={inputMode}
+        required={required}
+        aria-required={required || undefined}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
       />

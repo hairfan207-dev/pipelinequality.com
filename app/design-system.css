@@ -477,6 +477,24 @@
   }
 }
 
+.pq-design .legal-document {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 128px 24px 80px;
+  background: var(--bg-dark);
+  color: var(--bg-light);
+}
+.pq-design .legal-document h1 {
+  color: var(--bg-light);
+  font-size: 36px;
+  line-height: 1.15;
+}
+.pq-design .legal-document h2 {
+  color: var(--accent-teal);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pq-design,
   .pq-design *,

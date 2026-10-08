@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Pipeline Quality | Project Quality from Production to Handover",
-    "description": "QA/QC Engineering, Inspection, Production Support and Documentation for Offshore Wind, Pipelines, Industrial and Energy projects."
+    "title": "Pipeline Quality | Industrial Quality, NDT & HSE",
+    "description": "Industrial quality, NDT inspection, and HSE management for heavy infrastructure, pipelines, and data centers."
   },
   "nav": {
     "home": "Home",
@@ -460,8 +460,7 @@
               "Internal quality audits and supplier audits, according to individual competence and assignment scope"
             ]
           }
-        ],
-        "note": "Do not imply that Pipeline Quality or Backpack Wander GmbH holds these management-system certifications."
+        ]
       },
       {
         "code": "B",
@@ -610,8 +609,7 @@
               "Other recognised or client-required HSE training and certifications"
             ]
           }
-        ],
-        "note": "Only list qualifications that can actually be sourced and verified for the assignment. Do not imply that every HSE qualification is held by the founder or by the company."
+        ]
       }
     ]
   },
@@ -1201,7 +1199,7 @@
     "companyInfo": "Company Information",
     "companyDescription": "Pipeline Quality is a brand of Backpack Wander GmbH, a company registered in Germany, with headquarters in Berlin. Technical partner: BW Digit. We work with an international network of qualified professionals and scale our services according to project requirements.",
     "tagline": "Project Quality from Production to Handover",
-    "copyright": "© 2026 Pipeline Quality. All rights reserved.",
+    "copyright": "© 2026 Backpack Wander GmbH. All rights reserved.",
     "brandNote": "Pipeline Quality — a brand of Backpack Wander GmbH",
     "brandRest": "a brand of Backpack Wander GmbH Berlin, Germany",
     "madeBy": "Made by BW Digit",
@@ -1213,8 +1211,8 @@
     "tooltip": "Message us on WhatsApp"
   },
   "meta": {
-    "title": "Pipeline Quality | Project Quality from Production to Handover",
-    "description": "QA/QC Engineering, Inspection, Production Support and Documentation for Offshore Wind, Pipelines, Industrial and Energy projects."
+    "title": "Pipeline Quality | Industrial Quality, NDT & HSE",
+    "description": "Industrial quality, NDT inspection, and HSE management for heavy infrastructure, pipelines, and data centers."
   },
   "legal": {
     "imprint": {

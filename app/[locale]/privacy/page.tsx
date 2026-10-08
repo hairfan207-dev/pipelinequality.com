@@ -1,19 +1,15 @@
 "use client"
 
 import { useTranslations } from 'next-intl'
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import { LegalShell } from "@/components/legal-shell"
 
 export default function PrivacyPage() {
   const t = useTranslations('legal.privacy')
   const sections = t.raw('sections') as Array<{ title: string, content: string }>
 
   return (
-    <main className="min-h-screen bg-[var(--navy)] text-white">
-      <Navigation />
-      
-      <div className="pt-32 pb-20 px-6">
-        <div className="container mx-auto max-w-4xl">
+    <LegalShell>
+        <div className="mx-auto max-w-4xl">
           <h1 className="text-4xl font-semibold mb-12 text-center text-white">{t('title')}</h1>
           
           <div className="bg-white/5 rounded-lg p-8 md:p-12 space-y-12 border border-white/10">
@@ -29,9 +25,6 @@ export default function PrivacyPage() {
             ))}
           </div>
         </div>
-      </div>
-
-      <Footer />
-    </main>
+    </LegalShell>
   )
 }

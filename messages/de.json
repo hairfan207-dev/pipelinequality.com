@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Pipeline Quality | Projektqualität von der Fertigung bis zur Übergabe",
-    "description": "QA/QC Engineering, Inspektion, Fertigungsbegleitung und Dokumentation für Offshore-Wind, Pipelines sowie Industrie- und Energieprojekte."
+    "title": "Pipeline Quality | Industrielle Qualität, ZfP & HSE",
+    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte."
   },
   "nav": {
     "home": "Startseite",
@@ -460,8 +460,7 @@
               "Interne Qualitätsaudits und Lieferantenaudits gemäß individueller Kompetenz und Projektumfang"
             ]
           }
-        ],
-        "note": "Es darf nicht der Eindruck entstehen, dass Pipeline Quality oder die Backpack Wander GmbH diese Managementsystem-Zertifizierungen selbst hält."
+        ]
       },
       {
         "code": "B",
@@ -610,8 +609,7 @@
               "Weitere anerkannte oder vom Kunden geforderte HSE-Schulungen und Zertifikate"
             ]
           }
-        ],
-        "note": "Es dürfen nur Qualifikationen aufgeführt werden, die für den jeweiligen Einsatz tatsächlich beschafft und verifiziert werden können. Es darf nicht der Eindruck entstehen, dass jede HSE-Qualifikation von der Gründerin oder vom Unternehmen selbst gehalten wird."
+        ]
       }
     ]
   },
@@ -1200,7 +1198,7 @@
     "companyInfo": "Unternehmensinformationen",
     "companyDescription": "Pipeline Quality ist eine Marke der Backpack Wander GmbH. Das Unternehmen ist in Deutschland registriert und hat seinen Sitz in Berlin. Technischer Partner: BW Digit. Wir arbeiten mit einem internationalen Netzwerk qualifizierter Fachkräfte und richten den Umfang nach dem Projekt aus.",
     "tagline": "Projektqualität von der Fertigung bis zur Übergabe",
-    "copyright": "© 2026 Pipeline Quality. Alle Rechte vorbehalten.",
+    "copyright": "© 2026 Backpack Wander GmbH. Alle Rechte vorbehalten.",
     "brandNote": "Pipeline Quality — eine Marke der Backpack Wander GmbH",
     "brandRest": "eine Marke der Backpack Wander GmbH, Berlin, Deutschland",
     "madeBy": "Umsetzung durch BW Digit",
@@ -1212,8 +1210,8 @@
     "tooltip": "Schreiben Sie uns per WhatsApp"
   },
   "meta": {
-    "title": "Pipeline Quality | Projektqualität von der Fertigung bis zur Übergabe",
-    "description": "QA/QC Engineering, Inspektion, Fertigungsbegleitung und Dokumentation für Offshore-Wind, Pipelines sowie Industrie- und Energieprojekte."
+    "title": "Pipeline Quality | Industrielle Qualität, ZfP & HSE",
+    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte."
   },
   "legal": {
     "imprint": {

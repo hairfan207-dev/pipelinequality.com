@@ -1,18 +1,14 @@
 "use client"
 
 import { useTranslations } from 'next-intl'
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import { LegalShell } from "@/components/legal-shell"
 
 export default function ImprintPage() {
   const t = useTranslations('legal.imprint')
 
   return (
-    <main className="min-h-screen bg-[var(--navy)] text-white">
-      <Navigation />
-      
-      <div className="pt-32 pb-20 px-6">
-        <div className="container mx-auto max-w-3xl">
+    <LegalShell>
+        <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl font-semibold mb-12 text-center text-white">{t('title')}</h1>
           
           <div className="bg-white/5 rounded-lg p-8 md:p-12 space-y-8 border border-white/10">
@@ -66,9 +62,6 @@ export default function ImprintPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      <Footer />
-    </main>
+    </LegalShell>
   )
 }

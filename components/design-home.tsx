@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { useLocale, useMessages, useTranslations } from 'next-intl';
-import { usePathname, useRouter } from '@/navigation';
+import { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/contact-form';
+import { SiteFooter } from '@/components/footer';
+import { SiteHeader } from '@/components/navigation';
 
 type IndustryCard = { title: string; description: string; imageAlt: string };
 type ExpertiseCard = {
@@ -158,17 +159,7 @@ export function DesignHome() {
   const tDigital = useTranslations('digitalSection');
   const tWhy = useTranslations('whySection');
   const tContact = useTranslations('contact');
-  const tFooter = useTranslations('footerFinal');
-  const rawFooterLinks = (useMessages() as { footerFinal?: { links?: unknown } }).footerFinal?.links;
-  const footerLinks = (Array.isArray(rawFooterLinks)
-    ? rawFooterLinks
-    : rawFooterLinks && typeof rawFooterLinks === 'object'
-      ? Object.values(rawFooterLinks)
-      : []) as Array<{ label: string; href: string }>;
-  const tNav = useTranslations('nav');
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
 
   const expertiseCards = tExpertise.raw('cards') as ExpertiseCard[];
   const industryCards = tIndustries.raw('cards') as IndustryCard[];
@@ -176,99 +167,13 @@ export function DesignHome() {
   const steps = tWork.raw('steps') as Step[];
   const reasons = tWhy.raw('reasons') as Reason[];
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const langMenuRef = useRef<HTMLDivElement>(null);
   const [expertiseOpen, setExpertiseOpen] = useState<Record<number, boolean>>({});
   const [qualOpen, setQualOpen] = useState<Record<number, boolean>>({});
 
-  const switchLocale = (nextLocale: 'en' | 'de') => {
-    setLangOpen(false);
-    setMenuOpen(false);
-    if (nextLocale === locale) return;
-    const hash = window.location.hash;
-    const y = window.scrollY;
-    document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=lax`;
-    router.replace(pathname || '/', { locale: nextLocale });
-    router.refresh();
-    window.setTimeout(() => {
-      if (hash && document.querySelector(hash)) {
-        history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
-        document.querySelector(hash)?.scrollIntoView();
-      } else {
-        window.scrollTo(0, y);
-      }
-    }, 80);
-  };
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    if (!langOpen) return;
-    const close = (event: MouseEvent) => {
-      if (!langMenuRef.current?.contains(event.target as Node)) setLangOpen(false);
-    };
-    document.addEventListener('mousedown', close);
-    return () => document.removeEventListener('mousedown', close);
-  }, [langOpen]);
-
   return (
-    <div className={`pq-design${menuOpen ? ' menu-open' : ''}`} lang={locale}>
+    <div className='pq-design' lang={locale}>
       <header className='hero' id='top'>
-        <nav className={`nav shell${scrolled && !menuOpen ? ' is-scrolled' : ''}`}>
-          <a href='#top' className='brand' aria-label={tNav('homeAria')}>
-            <span className='brand-logo-stack'>
-              <img className='brand-logo brand-logo-light' src='/logo-mark-white.png' alt='' />
-              <img className='brand-logo brand-logo-dark' src='/logo-mark.png' alt='' />
-            </span>
-            <span className='brand-copy'>
-              <b>PIPELINE</b>
-              <em>QUALITY</em>
-            </span>
-          </a>
-          <div className='nav-tools'>
-            <a className='nav-contact' href='#contact' onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
-            <button
-              type='button'
-              className='menu-btn'
-              aria-expanded={menuOpen}
-              aria-controls='pq-nav-menu'
-              onClick={() => setMenuOpen((v) => !v)}
-            >
-              <span className='menu-label'>{tNav('menu')}</span>
-            </button>
-          </div>
-          <div id='pq-nav-menu' className={`nav-links${menuOpen ? ' is-open' : ''}`}>
-            <a href='#services' onClick={() => setMenuOpen(false)}>{tNav('services')}</a>
-            <a href='#industries' onClick={() => setMenuOpen(false)}>{tNav('industries')}</a>
-            <a href='#expertise' onClick={() => setMenuOpen(false)}>{tNav('expertise')}</a>
-            <a href='#experience' onClick={() => setMenuOpen(false)}>{tNav('experience')}</a>
-            <a href='#contact' onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
-            <div className='lang-menu' ref={langMenuRef}>
-              <button
-                type='button'
-                className='lang-btn'
-                aria-expanded={langOpen}
-                aria-haspopup='menu'
-                onClick={() => setLangOpen((open) => !open)}
-              >
-                {locale === 'en' ? 'ENGLISH +' : 'DEUTSCH +'}
-              </button>
-              {langOpen ? (
-                <div className='lang-drop' role='menu'>
-                  <button type='button' role='menuitem' className={locale === 'en' ? 'on' : ''} onClick={() => switchLocale('en')}>English</button>
-                  <button type='button' role='menuitem' className={locale === 'de' ? 'on' : ''} onClick={() => switchLocale('de')}>Deutsch</button>
-                </div>
-              ) : null}
-            </div>
-          </div>
-        </nav>
+        <SiteHeader />
         <div className='hero-stage'>
           <div className='hero-visual'>
             <img className='hero-bg' src='/design/figma/industry-wind.webp' alt={tHero('imageAlt')} />
@@ -482,36 +387,7 @@ export function DesignHome() {
         <ContactForm />
       </section>
 
-      <footer className='footer footer-final'>
-        <div className='footer-final-grid'>
-          <div className='footer-final-brand'>
-            <p className='footer-final-name'>Pipeline Quality</p>
-            <p>{tFooter('statement')}</p>
-            <a className='footer-final-cta' href='#contact'>{tFooter('cta')}</a>
-          </div>
-          <nav className='footer-final-col' aria-labelledby='footer-nav-label'>
-            <p id='footer-nav-label'>{tFooter('navLabel')}</p>
-            <ul>
-              {footerLinks.map((link) => (
-                <li key={link.href}><a href={link.href}>{link.label}</a></li>
-              ))}
-            </ul>
-          </nav>
-          <div className='footer-final-col'>
-            <p id='footer-legal-label'>{tFooter('legalLabel')}</p>
-            <ul aria-labelledby='footer-legal-label'>
-              <li><a href='https://www.linkedin.com/company/pipeline-quality' target='_blank' rel='noopener noreferrer'>LinkedIn</a></li>
-              <li><a href='mailto:info@pipelinequality.com'>info@pipelinequality.com</a></li>
-              <li><a href='/privacy'>{tFooter('privacy')}</a></li>
-              <li><a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className='footer-final-bottom'>
-          <p>{tFooter('brandLine')}</p>
-          <p>{tFooter('copyright', { year: new Date().getFullYear() })}</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
