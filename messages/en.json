@@ -902,6 +902,32 @@
     ],
     "tagline": ""
   },
+  "whySection": {
+    "heading": "Why Pipeline Quality",
+    "subheading": "The Right Expertise. The Right Capacity. For Your Project.",
+    "reasons": [
+      {
+        "title": "Practical Industrial Experience",
+        "description": "An understanding of fabrication, inspection requirements, technical documentation and site realities."
+      },
+      {
+        "title": "Flexible Project Support",
+        "description": "Individual specialists or coordinated teams, depending on project scope and demand."
+      },
+      {
+        "title": "Quality Through to Handover",
+        "description": "Support across inspections, non-conformities, traceability, documentation and project close-out."
+      },
+      {
+        "title": "Competencies Matched to the Assignment",
+        "description": "Professional qualifications and experience are assessed against the technical and project requirements."
+      },
+      {
+        "title": "Coordinated Communication",
+        "description": "Responsibilities, reporting and interfaces are agreed with the client and project team."
+      }
+    ]
+  },
   "why": {
     "label": "Why Pipeline Quality",
     "title": "Why Pipeline Quality?",

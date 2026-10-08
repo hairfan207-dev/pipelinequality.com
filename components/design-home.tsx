@@ -16,6 +16,62 @@ type ExpertiseCard = {
 };
 type Step = { id: string; title: string; text: string };
 type Reason = { title: string; description: string };
+
+function WhyIcon({ index }: { index: number }) {
+  const props = {
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.5,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  };
+  if (index === 0) {
+    return (
+      <svg {...props}>
+        <circle cx='12' cy='12' r='3' />
+        <path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.77 1.05 1.51 1.2H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z' />
+      </svg>
+    );
+  }
+  if (index === 1) {
+    return (
+      <svg {...props}>
+        <rect x='8' y='2' width='8' height='4' rx='1' />
+        <path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2' />
+        <path d='m9 14 2 2 4-4' />
+      </svg>
+    );
+  }
+  if (index === 2) {
+    return (
+      <svg {...props}>
+        <path d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z' />
+        <path d='M14 2v4a2 2 0 0 0 2 2h4' />
+        <path d='M8 13h8' />
+        <path d='M8 17h8' />
+      </svg>
+    );
+  }
+  if (index === 3) {
+    return (
+      <svg {...props}>
+        <path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
+        <circle cx='9' cy='7' r='4' />
+        <path d='m16 11 2 2 4-4' />
+      </svg>
+    );
+  }
+  return (
+    <svg {...props}>
+      <path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
+      <circle cx='9' cy='7' r='4' />
+      <path d='M22 21v-2a4 4 0 0 0-3-3.87' />
+      <path d='M16 3.13a4 4 0 0 1 0 7.75' />
+    </svg>
+  );
+}
 type QualGroup = { label?: string; items: string[] };
 type QualCategory = {
   code: string;
@@ -59,7 +115,7 @@ export function DesignHome() {
   const tQual = useTranslations('qualificationsSection');
   const tWork = useTranslations('workProcess');
   const tDigital = useTranslations('digitalQuality');
-  const tWhy = useTranslations('why');
+  const tWhy = useTranslations('whySection');
   const tContact = useTranslations('contact');
   const tFooter = useTranslations('footer');
   const tNav = useTranslations('nav');
@@ -256,31 +312,19 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='why section' id='why'>
-        <div className='why-layout'>
-          <svg className='why-shape' viewBox='0 0 1650.1 625.42' preserveAspectRatio='none' aria-hidden='true'>
-            <path fill='#F4F7F9' d='M824.85 20V252.14C824.85 257.444 822.743 262.531 818.992 266.281C815.241 270.032 810.154 272.14 804.85 272.14H20C14.6957 272.14 9.60859 274.246 5.85786 277.997C2.10714 281.748 0 286.835 0 292.14V605.42C0 610.724 2.10714 615.811 5.85786 619.562C9.60859 623.312 14.6957 625.42 20 625.42H1630.1C1635.4 625.42 1640.49 623.312 1644.24 619.562C1647.99 615.811 1650.1 610.724 1650.1 605.42V20C1650.1 14.6957 1647.99 9.60815 1644.24 5.85742C1640.49 2.10669 1635.4 0 1630.1 0H844.85C839.546 0 834.459 2.10669 830.708 5.85742C826.957 9.60815 824.85 14.6957 824.85 20Z' />
-          </svg>
-          <h2>
-            <span className='line'>{tWhy('designLine1')}</span>
-            <span className='line'>{tWhy('designLine2')}<span>{tWhy('designMark')}</span></span>
-          </h2>
-          <div className='why-col why-col-right'>
-            {reasons.slice(0, 4).map((reason) => (
-              <article key={reason.title}>
-                <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className='why-col why-col-left'>
-            {reasons.slice(4).map((reason) => (
-              <article key={reason.title}>
-                <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
-              </article>
-            ))}
-          </div>
+      <section className='why-final section' id='why'>
+        <div className='shell why-final-head'>
+          <h2>{tWhy('heading')}</h2>
+          <p>{tWhy('subheading')}</p>
+        </div>
+        <div className='shell why-final-grid'>
+          {reasons.map((reason, index) => (
+            <article key={reason.title}>
+              <WhyIcon index={index} />
+              <h3>{reason.title}</h3>
+              <p>{reason.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 

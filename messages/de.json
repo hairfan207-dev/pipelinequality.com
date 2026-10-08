@@ -901,6 +901,32 @@
     ],
     "tagline": ""
   },
+  "whySection": {
+    "heading": "Warum Pipeline Quality?",
+    "subheading": "Die passende Expertise. Die richtige Kapazität. Für Ihr Projekt.",
+    "reasons": [
+      {
+        "title": "Praktische Industrieerfahrung",
+        "description": "Verständnis für Fertigungsprozesse, Inspektionsanforderungen, technische Dokumentation und die Realität vor Ort."
+      },
+      {
+        "title": "Flexible Projektunterstützung",
+        "description": "Einzelne Fachkräfte oder koordinierte Teams, abhängig von Projektumfang und Bedarf."
+      },
+      {
+        "title": "Qualität bis zur Übergabe",
+        "description": "Unterstützung bei Inspektionen, Abweichungen, Rückverfolgbarkeit, Dokumentation und Projektabschluss."
+      },
+      {
+        "title": "Kompetenzen passend zum Einsatz",
+        "description": "Qualifikationen und Erfahrung werden anhand der technischen und projektbezogenen Anforderungen geprüft."
+      },
+      {
+        "title": "Koordinierte Kommunikation",
+        "description": "Verantwortlichkeiten, Berichterstattung und Schnittstellen werden mit dem Kunden und Projektteam abgestimmt."
+      }
+    ]
+  },
   "why": {
     "label": "Warum Pipeline Quality",
     "title": "Warum Pipeline Quality?",
