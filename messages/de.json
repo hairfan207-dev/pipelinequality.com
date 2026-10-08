@@ -869,6 +869,31 @@
       }
     ]
   },
+  "howSection": {
+    "heading": "Arbeitsweise",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Anforderungen klären",
+        "text": "Wir stimmen Projektanforderungen, Leistungen, Zeitplan und benötigte Kompetenzen ab."
+      },
+      {
+        "id": "02",
+        "title": "Fachkräfte auswählen",
+        "text": "Wir identifizieren geeignete Fachkräfte entsprechend dem Leistungsumfang und den Qualifikationsanforderungen."
+      },
+      {
+        "id": "03",
+        "title": "Unterstützung koordinieren",
+        "text": "Verantwortlichkeiten, Schnittstellen und Berichterstattung werden mit dem Kunden und Projektteam abgestimmt."
+      },
+      {
+        "id": "04",
+        "title": "Bis zum Abschluss begleiten",
+        "text": "Wir unterstützen die vereinbarten Inspektions-, Qualitäts-, HSE- oder Dokumentationsaktivitäten bis zu den erforderlichen Projektmeilensteinen."
+      }
+    ]
+  },
   "workProcess": {
     "label": "Arbeitsweise",
     "title": "Strukturiert. Transparent. Zuverlässig.",

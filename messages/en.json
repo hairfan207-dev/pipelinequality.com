@@ -870,6 +870,31 @@
       }
     ]
   },
+  "howSection": {
+    "heading": "How We Work",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Define the Scope",
+        "text": "We clarify project requirements, deliverables, schedule and required competencies."
+      },
+      {
+        "id": "02",
+        "title": "Match the Expertise",
+        "text": "We identify suitable professionals according to the assignment scope and qualification requirements."
+      },
+      {
+        "id": "03",
+        "title": "Coordinate the Support",
+        "text": "Responsibilities, interfaces and reporting are aligned with the client and project team."
+      },
+      {
+        "id": "04",
+        "title": "Follow Through to Close-Out",
+        "text": "We support agreed inspection, quality, HSE or documentation activities through the required project milestones."
+      }
+    ]
+  },
   "workProcess": {
     "label": "How We Work",
     "title": "Structured. Transparent. Reliable.",

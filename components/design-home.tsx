@@ -99,13 +99,54 @@ const expertisePhotos = [
   '/client/service-docs-yard.jpg',
   '/client/bw-field.jpg',
 ];
-const workPhotos = [
-  '/design/figma/work-understand.webp',
-  '/design/figma/work-match.webp',
-  '/design/figma/work-execute.webp',
-  '/design/figma/work-control.webp',
-  '/design/figma/work-handover.webp',
-];
+function WorkIcon({ index }: { index: number }) {
+  const props = {
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.5,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  };
+  if (index === 0) {
+    return (
+      <svg {...props}>
+        <rect x='8' y='2' width='8' height='4' rx='1' />
+        <path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2' />
+        <path d='M8 11h.01' />
+        <path d='M12 11h4' />
+        <path d='M8 16h.01' />
+        <path d='M12 16h4' />
+      </svg>
+    );
+  }
+  if (index === 1) {
+    return (
+      <svg {...props}>
+        <path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
+        <circle cx='9' cy='7' r='4' />
+        <path d='m16 11 2 2 4-4' />
+      </svg>
+    );
+  }
+  if (index === 2) {
+    return (
+      <svg {...props}>
+        <path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
+        <circle cx='9' cy='7' r='4' />
+        <path d='M22 21v-2a4 4 0 0 0-3-3.87' />
+        <path d='M16 3.13a4 4 0 0 1 0 7.75' />
+      </svg>
+    );
+  }
+  return (
+    <svg {...props}>
+      <path d='M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z' />
+      <path d='M4 22v-7' />
+    </svg>
+  );
+}
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
@@ -113,7 +154,7 @@ export function DesignHome() {
   const tIndustries = useTranslations('industriesSection');
   const tExperience = useTranslations('experienceSection');
   const tQual = useTranslations('qualificationsSection');
-  const tWork = useTranslations('workProcess');
+  const tWork = useTranslations('howSection');
   const tDigital = useTranslations('digitalQuality');
   const tWhy = useTranslations('whySection');
   const tContact = useTranslations('contact');
@@ -394,21 +435,22 @@ export function DesignHome() {
         </div>
       </section>
 
-      <section className='workflow section' id='how-we-work'>
-        <p className='eyebrow'>{tWork('label')}</p>
-        <h2>{tWork('title')}</h2>
-        <div className='workflow-grid'>
-          {steps.map((step, index) => (
-            <article key={step.id} className={index % 2 ? 'up' : 'down'}>
-              <div className='wf-card'>
-                <img className={index === 3 ? 'wf-mobile-only' : undefined} src={index === 3 ? '/design/figma/work-control-desktop.png' : workPhotos[index]} alt='' />
-                {index === 3 ? <img className='wf-desktop-only' src='/design/figma/work-control-desktop.png' alt='' /> : null}
-                <strong>{step.title}</strong>
-              </div>
-              <p>{step.text}</p>
-            </article>
-          ))}
+      <section className='how-final section' id='how-we-work'>
+        <div className='shell how-final-head'>
+          <h2>{tWork('heading')}</h2>
         </div>
+        <ol className='shell how-final-grid'>
+          {steps.map((step, index) => (
+            <li key={step.id}>
+              <div className='how-final-meta'>
+                <span className='how-final-num'>{step.id}</span>
+                <WorkIcon index={index} />
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className='digital-support section' id='digital-quality'>
