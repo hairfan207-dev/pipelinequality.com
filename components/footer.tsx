@@ -62,7 +62,7 @@ export function Footer() {
             </p>
 
             <nav
-              aria-label='Footer'
+              aria-label={tNav('footerAria')}
               className='mt-2.5 flex flex-nowrap items-center justify-between gap-1.5 md:mt-3 md:justify-start md:gap-x-3 lg:gap-x-4'
             >
               {links.map((item, index) => (
@@ -126,7 +126,7 @@ export function Footer() {
             {t('copyright')}
           </p>
           <nav
-            aria-label='Legal'
+            aria-label={tNav('legalAria')}
             className='flex w-full flex-nowrap items-center justify-between gap-1.5 lg:w-auto lg:justify-end lg:gap-x-4'
           >
             {legal.map((item, index) => (

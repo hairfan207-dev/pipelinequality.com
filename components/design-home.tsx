@@ -185,10 +185,21 @@ export function DesignHome() {
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
     setLangOpen(false);
+    setMenuOpen(false);
     if (nextLocale === locale) return;
+    const hash = window.location.hash;
+    const y = window.scrollY;
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=lax`;
     router.replace(pathname || '/', { locale: nextLocale });
     router.refresh();
+    window.setTimeout(() => {
+      if (hash && document.querySelector(hash)) {
+        history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
+        document.querySelector(hash)?.scrollIntoView();
+      } else {
+        window.scrollTo(0, y);
+      }
+    }, 80);
   };
 
   useEffect(() => {
@@ -211,7 +222,7 @@ export function DesignHome() {
     <div className={`pq-design${menuOpen ? ' menu-open' : ''}`} lang={locale}>
       <header className='hero' id='top'>
         <nav className={`nav shell${scrolled && !menuOpen ? ' is-scrolled' : ''}`}>
-          <a href='#top' className='brand' aria-label='Pipeline Quality home'>
+          <a href='#top' className='brand' aria-label={tNav('homeAria')}>
             <span className='brand-logo-stack'>
               <img className='brand-logo brand-logo-light' src='/logo-mark-white.png' alt='' />
               <img className='brand-logo brand-logo-dark' src='/logo-mark.png' alt='' />

@@ -12,7 +12,13 @@
     "experience": "Erfahrung",
     "contact": "Kontakt",
     "process": "Prozess",
-    "menu": "MENÜ"
+    "menu": "MENÜ",
+    "homeAria": "Pipeline Quality Startseite",
+    "language": "Sprache",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "footerAria": "Fußzeile",
+    "legalAria": "Rechtliches"
   },
   "hero": {
     "brand": "Pipeline Quality",
@@ -1060,6 +1066,7 @@
       "duration": "Voraussichtliche Dauer",
       "details": "Projektdetails",
       "optional": "optional",
+      "honeypot": "Leer lassen",
       "selectIndustry": "Branche auswählen",
       "selectDuration": "Dauer auswählen",
       "privacyBefore": "Ich habe die ",

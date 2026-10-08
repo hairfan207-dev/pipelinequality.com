@@ -15,12 +15,20 @@ export function Navigation() {
 
   const switchLocale = (newLocale: string) => {
     if (newLocale === locale) return;
+    const hash = window.location.hash;
     const scrollY = window.scrollY;
     const nextLocale = newLocale as 'en' | 'de';
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=lax`;
     router.replace(pathname || '/', { locale: nextLocale });
     router.refresh();
-    setTimeout(() => window.scrollTo(0, scrollY), 80);
+    setTimeout(() => {
+      if (hash && document.querySelector(hash)) {
+        history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
+        document.querySelector(hash)?.scrollIntoView();
+      } else {
+        window.scrollTo(0, scrollY);
+      }
+    }, 80);
     setIsLangOpen(false);
   };
 
@@ -44,7 +52,7 @@ export function Navigation() {
 
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'de', name: 'German' },
+    { code: 'de', name: 'Deutsch' },
   ];
   const currentLanguage =
     languages.find((lang) => lang.code === locale)?.name ?? 'English';
@@ -139,7 +147,7 @@ export function Navigation() {
                 type='button'
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className={`flex items-center gap-2 whitespace-nowrap border px-3 py-2 text-[16px] font-medium transition ${langShell}`}
-                aria-label='Language'
+                aria-label={t('language')}
                 aria-expanded={isLangOpen}
               >
                 {currentLanguage}
@@ -168,7 +176,7 @@ export function Navigation() {
             type='button'
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className='ml-auto inline-flex h-11 w-11 items-center justify-center lg:hidden'
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMobileMenuOpen ? t('closeMenu') : t('openMenu')}
             aria-expanded={isMobileMenuOpen}
           >
             <span

@@ -138,7 +138,7 @@ export function ContactForm() {
       </div>
 
       <div className='pq-hp' aria-hidden='true'>
-        <label htmlFor='pq_leave_blank'>Leave blank</label>
+        <label htmlFor='pq_leave_blank'>{t('honeypot')}</label>
         <input id='pq_leave_blank' name='pq_leave_blank' type='text' tabIndex={-1} autoComplete='off' defaultValue='' />
       </div>
 

@@ -28,6 +28,19 @@
   font-family: var(--font-inter), Inter, Arial, sans-serif !important;
 }
 
+.pq-design h1,
+.pq-design h2,
+.pq-design h3,
+.pq-design .qual-title,
+.pq-design .expertise-toggle,
+.pq-design .hero-actions .btn,
+.pq-design .footer.footer-final .footer-final-cta,
+.pq-design .nav-contact {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
+}
 .pq-design h1 {
   font-size: 54px;
   font-weight: 700;
