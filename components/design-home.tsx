@@ -123,8 +123,6 @@ export function DesignHome() {
   return (
     <div className={`pq-design${menuOpen ? ' menu-open' : ''}`} lang={locale}>
       <header className='hero' id='top'>
-        <img className='hero-bg' src='/design/figma/hero.png?v=2' alt={tHero('imageAlt')} />
-        <div className='hero-overlay' />
         <nav className={`nav shell${scrolled && !menuOpen ? ' is-scrolled' : ''}`}>
           <a href='#top' className='brand' aria-label='Pipeline Quality home'>
             <span className='brand-logo-stack'>
@@ -173,27 +171,20 @@ export function DesignHome() {
             </div>
           </div>
         </nav>
-        <div className='hero-copy shell'>
-          <h1>{tHero('brand')}</h1>
-          <h2>{tHero('heroLine2')}</h2>
-          <p className='hero-line'>
-            {tHero('subtitle').split('|').map((part, i, arr) => (
-              <span key={part}>
-                {part.trim()}
-                {i < arr.length - 1 ? <i> | </i> : null}
-              </span>
-            ))}
-            <br />
-            {tHero('subtitleLine2').split('|').map((part, i, arr) => (
-              <span key={part}>
-                {part.trim()}
-                {i < arr.length - 1 ? <i> | </i> : null}
-              </span>
-            ))}
-          </p>
-          <div className='hero-actions'>
-            <a className='btn btn-orange' href='#contact'>{tHero('cta1')}</a>
-            <a className='btn btn-navy' href='#experience'>{tHero('cta2')}</a>
+        <div className='hero-stage'>
+          <div className='hero-visual'>
+            <img className='hero-bg' src='/design/figma/industry-wind.webp' alt={tHero('imageAlt')} />
+          </div>
+          <div className='hero-copy'>
+            <h1>{tHero('headline')}</h1>
+            <p className='hero-subtitle'>{tHero('subheading')}</p>
+            <p className='hero-body'>{tHero('body')}</p>
+            <p className='hero-meta'>{tHero('serviceLine')}</p>
+            <p className='hero-meta'>{tHero('industryLine')}</p>
+            <div className='hero-actions'>
+              <a className='btn btn-orange' href='#contact'>{tHero('cta1')}</a>
+              <a className='btn btn-navy' href='#contact'>{tHero('cta2')}</a>
+            </div>
           </div>
         </div>
       </header>
