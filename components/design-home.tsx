@@ -39,6 +39,13 @@ type QualCategory = {
 
 const DESKTOP_QUERY = '(min-width: 1101px)';
 
+function keepClosingWords(text: string) {
+  const words = text.split(' ');
+  if (words.length < 2) return text;
+  const closing = words.splice(-2, 2).join('\u00a0');
+  return `${words.join(' ')} ${closing}`;
+}
+
 type Photo = { src: string; width: number; height: number; pos?: string; posSmall?: string; crop?: string };
 
 const photoStyle = (photo: Photo) =>
@@ -637,7 +644,7 @@ export function DesignHome() {
         <section className='hero'>
           <div className='hero-backdrop'>
             <div className='hero-backdrop-shift'>
-              <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
+              <img src='/media/hero-plant.webp' alt={tHero('imageAlt')} width={1024} height={457} fetchPriority='high' decoding='async' />
             </div>
           </div>
           <div className='site-container hero-inner'>
@@ -645,7 +652,7 @@ export function DesignHome() {
               <p className='hero-kicker'>{tHero('tagline')}</p>
               <h1>{tHero('headline').replace(/ \|/g, '\u00a0|')}</h1>
               <p className='hero-subtitle'>{tHero('subheading')}</p>
-              <p className='hero-body'>{tHero('body')}</p>
+              <p className='hero-body'>{keepClosingWords(tHero('body'))}</p>
               <div className='hero-meta'>
                 <p>{tHero('serviceLine')}</p>
                 <p>{tHero('industryLine')}</p>

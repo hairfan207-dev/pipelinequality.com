@@ -428,8 +428,18 @@ body {
 }
 
 .pq-site:has(.hero) .site-header:not(.is-scrolled):not(.is-menu-open) {
-  background: color-mix(in srgb, var(--pq-blue) 22%, transparent);
+  background: color-mix(in srgb, var(--pq-blue) 88%, transparent);
   box-shadow: none;
+}
+
+.pq-site:has(.hero) .site-header .nav-link,
+.pq-site:has(.hero) .site-header .site-brand {
+  color: var(--pq-mist);
+}
+
+.pq-site:has(.hero) .site-header .site-lang,
+.pq-site:has(.hero) .site-header .site-lang button:not([aria-pressed='true']) {
+  color: color-mix(in srgb, var(--pq-mist) 90%, transparent);
 }
 
 .site-header-inner {
@@ -907,7 +917,7 @@ body {
 /* Hero: full-bleed photograph, left-aligned copy, blue directional overlay */
 
 .hero {
-  --hero-pos: 46% 0%;
+  --hero-pos: center center;
   position: relative;
   isolation: isolate;
   display: flex;
@@ -936,11 +946,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 118%;
+  height: 100%;
   max-width: none;
   object-fit: cover;
   object-position: var(--hero-pos);
-  filter: saturate(0.95) contrast(1.04);
+  filter: saturate(0.98) contrast(1.02);
   animation: pq-hero-settle 1600ms var(--pq-ease-out) both;
 }
 
@@ -951,17 +961,17 @@ body {
   background:
     linear-gradient(
       90deg,
-      color-mix(in srgb, #0a0d10 50%, transparent) 0%,
-      color-mix(in srgb, var(--pq-blue) 36%, transparent) 24%,
-      color-mix(in srgb, var(--pq-blue) 14%, transparent) 48%,
-      transparent 72%
+      var(--pq-blue) 0%,
+      color-mix(in srgb, var(--pq-blue) 94%, transparent) 34%,
+      color-mix(in srgb, var(--pq-blue) 72%, transparent) 52%,
+      transparent 76%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--pq-blue) 28%, transparent) 0%,
-      transparent 24%,
-      transparent 76%,
-      color-mix(in srgb, #0a0d10 20%, transparent) 100%
+      color-mix(in srgb, var(--pq-blue) 72%, transparent) 0%,
+      transparent 22%,
+      transparent 78%,
+      color-mix(in srgb, #0a0d10 24%, transparent) 100%
     );
 }
 
@@ -1010,8 +1020,8 @@ body {
 }
 
 .hero-copy {
-  width: min(100%, 660px);
-  text-shadow: 0 1px 2px color-mix(in srgb, #0a0d10 28%, transparent);
+  width: min(100%, 860px);
+  text-shadow: 0 1px 2px color-mix(in srgb, #0a0d10 45%, transparent);
 }
 
 .hero-kicker {
@@ -1050,8 +1060,8 @@ body {
 
 .hero-body {
   margin-top: 20px;
-  max-width: 54ch;
-  color: color-mix(in srgb, var(--pq-mist) 88%, transparent);
+  max-width: none;
+  color: var(--pq-mist);
 }
 
 .hero-meta {
@@ -1155,7 +1165,7 @@ body {
 /* Tablet and mobile: the photograph holds the top of the hero and fades into ink beneath the copy */
 @media (max-width: 1100px) {
   .hero {
-    --hero-pos: 32% 28%;
+    --hero-pos: center center;
     align-items: flex-end;
     min-height: 0;
     padding: calc(var(--pq-header-h) + 220px) 0 88px;
@@ -1173,10 +1183,10 @@ body {
   .hero-backdrop::after {
     background: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--pq-ink) 12%, transparent) 0%,
-      color-mix(in srgb, var(--pq-ink) 18%, transparent) 34%,
-      color-mix(in srgb, var(--pq-ink) 68%, transparent) 62%,
-      var(--pq-ink) 100%
+      color-mix(in srgb, var(--pq-blue) 36%, transparent) 0%,
+      color-mix(in srgb, var(--pq-blue) 10%, transparent) 26%,
+      color-mix(in srgb, #0a0d10 78%, transparent) 62%,
+      #0a0d10 100%
     );
   }
 
@@ -1195,7 +1205,7 @@ body {
 
 @media (max-width: 640px) {
   .hero {
-    --hero-pos: 30% 28%;
+    --hero-pos: center 42%;
     padding: calc(var(--pq-header-h) + 160px) 0 72px;
   }
 
