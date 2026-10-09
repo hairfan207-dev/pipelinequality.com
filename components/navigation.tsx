@@ -1,8 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
+
+const SECTIONS = [
+  { hash: '#services', key: 'services' },
+  { hash: '#industries', key: 'industries' },
+  { hash: '#expertise', key: 'expertise' },
+  { hash: '#experience', key: 'experience' },
+] as const;
 
 export function SiteHeader() {
   const tNav = useTranslations('nav');
@@ -12,13 +19,11 @@ export function SiteHeader() {
   const onHome = pathname === '/' || pathname === '';
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const langMenuRef = useRef<HTMLDivElement>(null);
 
   const sectionHref = (hash: string) => (onHome ? hash : `/${hash}`);
+  const closeMenu = () => setMenuOpen(false);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
-    setLangOpen(false);
     setMenuOpen(false);
     if (nextLocale === locale) return;
     const hash = window.location.hash;
@@ -37,77 +42,80 @@ export function SiteHeader() {
   };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    const root = document.querySelector('.pq-design');
-    root?.classList.toggle('menu-open', menuOpen);
-    return () => root?.classList.remove('menu-open');
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth > 1100) setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onResize);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      window.removeEventListener('resize', onResize);
+    };
   }, [menuOpen]);
 
-  useEffect(() => {
-    if (!langOpen) return;
-    const close = (event: MouseEvent) => {
-      if (!langMenuRef.current?.contains(event.target as Node)) setLangOpen(false);
-    };
-    document.addEventListener('mousedown', close);
-    return () => document.removeEventListener('mousedown', close);
-  }, [langOpen]);
+  const languageSwitch = (
+    <div className='site-lang' role='group' aria-label={tNav('language')}>
+      <button type='button' lang='en' aria-label='English' aria-pressed={locale === 'en'} onClick={() => switchLocale('en')}>EN</button>
+      <span aria-hidden='true'>/</span>
+      <button type='button' lang='de' aria-label='Deutsch' aria-pressed={locale === 'de'} onClick={() => switchLocale('de')}>DE</button>
+    </div>
+  );
 
   return (
-    <nav className={`nav shell${scrolled && !menuOpen ? ' is-scrolled' : ''}`}>
-      <a href={onHome ? '#top' : '/'} className='brand' aria-label={tNav('homeAria')}>
-        <span className='brand-logo-stack'>
-          <img className='brand-logo brand-logo-light' src='/logo-mark-white.png' alt='' />
-          <img className='brand-logo brand-logo-dark' src='/logo-mark.png' alt='' />
-        </span>
-        <span className='brand-copy'>
-          <b>PIPELINE</b>
-          <em>QUALITY</em>
-        </span>
-      </a>
-      <div className='nav-tools'>
-        <a className='nav-contact' href={sectionHref('#contact')} onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
-        <button
-          type='button'
-          className='menu-btn'
-          aria-expanded={menuOpen}
-          aria-controls='pq-nav-menu'
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className='menu-label'>{tNav('menu')}</span>
-        </button>
-      </div>
-      <div id='pq-nav-menu' className={`nav-links${menuOpen ? ' is-open' : ''}`}>
-        <a href={sectionHref('#services')} onClick={() => setMenuOpen(false)}>{tNav('services')}</a>
-        <a href={sectionHref('#industries')} onClick={() => setMenuOpen(false)}>{tNav('industries')}</a>
-        <a href={sectionHref('#expertise')} onClick={() => setMenuOpen(false)}>{tNav('expertise')}</a>
-        <a href={sectionHref('#experience')} onClick={() => setMenuOpen(false)}>{tNav('experience')}</a>
-        <a href={sectionHref('#contact')} onClick={() => setMenuOpen(false)}>{tNav('contact')}</a>
-        <div className='lang-menu' ref={langMenuRef}>
+    <header className={`site-header${scrolled || menuOpen ? ' is-scrolled' : ''}`}>
+      <div className='site-container site-header-inner'>
+        <a href={onHome ? '#top' : '/'} className='site-brand' aria-label={tNav('homeAria')} onClick={closeMenu}>
+          <img src='/logo-mark.png' alt='' width={40} height={32} />
+          <span className='site-brand-word'>
+            <b>PIPELINE</b>
+            <em>QUALITY</em>
+          </span>
+        </a>
+
+        <nav className='site-nav'>
+          {SECTIONS.map((item) => (
+            <a key={item.hash} href={sectionHref(item.hash)}>{tNav(item.key)}</a>
+          ))}
+        </nav>
+
+        <div className='site-header-tools'>
+          {languageSwitch}
+          <a className='site-btn site-btn-primary site-header-contact' href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
           <button
             type='button'
-            className='lang-btn'
-            aria-expanded={langOpen}
-            aria-haspopup='menu'
-            aria-label={tNav('language')}
-            onClick={() => setLangOpen((open) => !open)}
+            className='site-menu-toggle'
+            aria-expanded={menuOpen}
+            aria-controls='site-mobile-menu'
+            aria-label={menuOpen ? tNav('closeMenu') : tNav('openMenu')}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            {locale === 'en' ? 'ENGLISH +' : 'DEUTSCH +'}
+            <span className='site-menu-icon' aria-hidden='true'><span /><span /></span>
+            <span className='site-menu-label'>{tNav('menu')}</span>
           </button>
-          {langOpen ? (
-            <div className='lang-drop' role='menu'>
-              <button type='button' role='menuitem' className={locale === 'en' ? 'on' : ''} onClick={() => switchLocale('en')}>English</button>
-              <button type='button' role='menuitem' className={locale === 'de' ? 'on' : ''} onClick={() => switchLocale('de')}>Deutsch</button>
-            </div>
-          ) : null}
         </div>
       </div>
-    </nav>
+
+      <div id='site-mobile-menu' className={`site-mobile-menu${menuOpen ? ' is-open' : ''}`} hidden={!menuOpen}>
+        <nav className='site-container'>
+          {SECTIONS.map((item) => (
+            <a key={item.hash} href={sectionHref(item.hash)} onClick={closeMenu}>{tNav(item.key)}</a>
+          ))}
+          <a href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
+          {languageSwitch}
+        </nav>
+      </div>
+    </header>
   );
 }
 

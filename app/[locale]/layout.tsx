@@ -4,8 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
-import '../design-home.css';
-import '../design-system.css';
+import '../site.css';
 
 type Props = {
     children: React.ReactNode;

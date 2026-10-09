@@ -12,7 +12,7 @@
     "experience": "Erfahrung",
     "contact": "Kontakt",
     "process": "Prozess",
-    "menu": "MENÜ",
+    "menu": "Menü",
     "homeAria": "Pipeline Quality Startseite",
     "language": "Sprache",
     "openMenu": "Menü öffnen",
@@ -721,6 +721,8 @@
   "industriesSection": {
     "heading": "Branchen, die wir unterstützen",
     "intro": "Industrielle Qualitäts- und Inspektionsunterstützung für Fertigungs-, Infrastruktur-, Energie- und Prozessanlagenprojekte.",
+    "prev": "Vorherige Branchen",
+    "next": "Nächste Branchen",
     "cards": [
       {
         "title": "Offshore-Windenergie",

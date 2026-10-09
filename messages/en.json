@@ -12,7 +12,7 @@
     "experience": "Experience",
     "contact": "Contact",
     "process": "Process",
-    "menu": "MENU",
+    "menu": "Menu",
     "homeAria": "Pipeline Quality home",
     "language": "Language",
     "openMenu": "Open menu",
@@ -722,6 +722,8 @@
   "industriesSection": {
     "heading": "Industries We Support",
     "intro": "Industrial quality and inspection support tailored to the requirements of fabrication, infrastructure, energy and process projects.",
+    "prev": "Previous industries",
+    "next": "Next industries",
     "cards": [
       {
         "title": "Offshore Wind",
