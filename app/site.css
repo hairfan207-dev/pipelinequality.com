@@ -28,8 +28,8 @@
   --pq-max: 1240px;
   --pq-pad: 40px;
   --pq-section: 96px;
-  --pq-header-h: 72px;
-  --pq-header-h-compact: 72px;
+  --pq-header-h: 88px;
+  --pq-header-h-compact: 88px;
   --motion-fast: 280ms;
   --motion-nav: 360ms;
   --motion-medium: 450ms;
@@ -60,8 +60,8 @@
   :root {
     --pq-pad: 28px;
     --pq-section: 72px;
-    --pq-header-h: 68px;
-    --pq-header-h-compact: 68px;
+    --pq-header-h: 76px;
+    --pq-header-h-compact: 76px;
     --pq-h1: 44px;
     --pq-h2: 34px;
     --pq-h3: 22px;
@@ -74,8 +74,8 @@
   :root {
     --pq-pad: 22px;
     --pq-section: 60px;
-    --pq-header-h: 64px;
-    --pq-header-h-compact: 64px;
+    --pq-header-h: 68px;
+    --pq-header-h-compact: 68px;
     --pq-h1: 36px;
     --pq-h2: 30px;
     --pq-h3: 20px;
@@ -472,15 +472,15 @@ body {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex: 0 0 auto;
   text-decoration: none;
   color: var(--brand-navy);
 }
 
 .site-brand-mark {
-  width: 46px;
-  height: 38px;
+  width: 64px;
+  height: 54px;
   object-fit: contain;
 }
 
@@ -504,9 +504,9 @@ body {
 .site-brand-word {
   display: inline-flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.05;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--brand-navy);
 }
 
@@ -523,14 +523,14 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
   margin-left: auto;
 }
 
 .nav-link {
   position: relative;
-  padding: 6px 0;
-  font-size: 14.5px;
+  padding: 8px 0;
+  font-size: 17px;
   font-weight: 600;
   color: var(--brand-navy);
   text-decoration: none;
@@ -609,19 +609,25 @@ body {
 
 .lang-menu {
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: max-content;
 }
 
 .lang-menu-trigger {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
-  min-height: 34px;
-  padding: 0 12px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 14px;
   background: var(--brand-white);
   border: 1px solid color-mix(in srgb, var(--brand-navy) 35%, transparent);
   border-radius: 2px;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--brand-navy);
   cursor: pointer;
@@ -663,25 +669,31 @@ body {
 .lang-menu-list {
   position: absolute;
   z-index: 5;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 148px;
+  top: calc(100% - 1px);
+  left: 0;
+  right: auto;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   margin: 0;
-  padding: 6px;
+  padding: 0;
   background: var(--brand-white);
-  border: 1px solid color-mix(in srgb, var(--brand-navy) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand-navy) 35%, transparent);
   box-shadow: 0 10px 24px color-mix(in srgb, var(--brand-navy) 12%, transparent);
 }
 
 .lang-menu-list button {
-  display: block;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   width: 100%;
-  padding: 8px 12px;
+  min-height: 40px;
+  padding: 0 14px;
   background: none;
   border: 0;
   font: inherit;
-  font-size: 14.5px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   text-align: left;
   color: var(--brand-navy);
   cursor: pointer;
@@ -824,12 +836,15 @@ body {
 
 .site-mobile-menu .lang-menu {
   margin-top: 16px;
+  width: max-content;
+  max-width: 100%;
 }
 
 .site-mobile-menu .lang-menu-list {
   position: static;
+  width: 100%;
   min-width: 0;
-  margin-top: 6px;
+  margin-top: -1px;
   box-shadow: none;
 }
 
@@ -855,18 +870,33 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  .site-brand {
+    gap: 10px;
+  }
+
+  .site-brand-mark {
+    width: 52px;
+    height: 44px;
+  }
+
+  .site-brand-word {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 400px) {
   .site-header-inner {
     gap: 12px;
   }
 
   .site-brand-word {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .site-brand-mark {
-    width: 40px;
-    height: 33px;
+    width: 48px;
+    height: 40px;
   }
 
   .site-menu-label {
