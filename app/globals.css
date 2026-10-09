@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --bg-dark: #0A0D10;
+  --bg-dark: #1F2937;
   --bg-light: #F8FAFC;
   --text-muted: #94A3B8;
   --accent-teal: #5EEAD4;

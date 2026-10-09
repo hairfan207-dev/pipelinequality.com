@@ -1,6 +1,7 @@
 'use client';
 
 import { useLocale, useMessages, useTranslations } from 'next-intl';
+import { ArrowRightIcon } from '@/components/icons';
 import { usePathname } from '@/navigation';
 
 export function SiteFooter() {
@@ -25,7 +26,10 @@ export function SiteFooter() {
           <div className='site-footer-brand'>
             <p className='site-footer-name'>Pipeline Quality</p>
             <p>{tFooter('statement')}</p>
-            <a className='site-btn site-btn-primary' href={sectionHref('#contact')}>{tFooter('cta')}</a>
+            <a className='site-btn site-btn-primary' href={sectionHref('#contact')}>
+              <span>{tFooter('cta')}</span>
+              <ArrowRightIcon className='site-btn-icon' />
+            </a>
           </div>
           <nav className='site-footer-col' aria-labelledby='footer-nav-label'>
             <p id='footer-nav-label' className='site-footer-label'>{tFooter('navLabel')}</p>

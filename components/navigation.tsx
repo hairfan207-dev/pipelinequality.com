@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { ArrowRightIcon } from '@/components/icons';
 import { usePathname, useRouter } from '@/navigation';
 
 const SECTIONS = [
   { hash: '#services', key: 'services' },
   { hash: '#industries', key: 'industries' },
-  { hash: '#expertise', key: 'expertise' },
+  { hash: '#capabilities', key: 'expertise' },
   { hash: '#experience', key: 'experience' },
 ] as const;
+
+const TRACKED = [...SECTIONS.map((item) => item.hash.slice(1)), 'contact'];
 
 export function SiteHeader() {
   const tNav = useTranslations('nav');
@@ -19,9 +22,11 @@ export function SiteHeader() {
   const onHome = pathname === '/' || pathname === '';
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   const sectionHref = (hash: string) => (onHome ? hash : `/${hash}`);
   const closeMenu = () => setMenuOpen(false);
+  const isActive = (hash: string) => onHome && activeSection === hash.slice(1);
 
   const switchLocale = (nextLocale: 'en' | 'de') => {
     setMenuOpen(false);
@@ -42,11 +47,31 @@ export function SiteHeader() {
   };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!onHome || !('IntersectionObserver' in window)) return;
+    const visible = new Set<string>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) visible.add(entry.target.id);
+          else visible.delete(entry.target.id);
+        });
+        setActiveSection(TRACKED.find((id) => visible.has(id)) ?? null);
+      },
+      { rootMargin: '-38% 0px -58% 0px', threshold: 0 },
+    );
+    TRACKED.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, [onHome]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -73,7 +98,7 @@ export function SiteHeader() {
   );
 
   return (
-    <header className={`site-header${scrolled || menuOpen ? ' is-scrolled' : ''}`}>
+    <header className={`site-header${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}>
       <div className='site-container site-header-inner'>
         <a href={onHome ? '#top' : '/'} className='site-brand' aria-label={tNav('homeAria')} onClick={closeMenu}>
           <img src='/logo-mark.png' alt='' width={40} height={32} />
@@ -85,13 +110,22 @@ export function SiteHeader() {
 
         <nav className='site-nav'>
           {SECTIONS.map((item) => (
-            <a key={item.hash} href={sectionHref(item.hash)}>{tNav(item.key)}</a>
+            <a key={item.hash} className={`nav-link${isActive(item.hash) ? ' is-active' : ''}`} href={sectionHref(item.hash)}>
+              {tNav(item.key)}
+            </a>
           ))}
         </nav>
 
         <div className='site-header-tools'>
           {languageSwitch}
-          <a className='site-btn site-btn-primary site-header-contact' href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
+          <a
+            className={`site-btn site-btn-primary site-header-contact${isActive('#contact') ? ' is-active' : ''}`}
+            href={sectionHref('#contact')}
+            onClick={closeMenu}
+          >
+            <span>{tNav('contact')}</span>
+            <ArrowRightIcon className='site-btn-icon' />
+          </a>
           <button
             type='button'
             className='site-menu-toggle'
@@ -109,7 +143,9 @@ export function SiteHeader() {
       <div id='site-mobile-menu' className={`site-mobile-menu${menuOpen ? ' is-open' : ''}`} hidden={!menuOpen}>
         <nav className='site-container'>
           {SECTIONS.map((item) => (
-            <a key={item.hash} href={sectionHref(item.hash)} onClick={closeMenu}>{tNav(item.key)}</a>
+            <a key={item.hash} className={isActive(item.hash) ? 'is-active' : undefined} href={sectionHref(item.hash)} onClick={closeMenu}>
+              {tNav(item.key)}
+            </a>
           ))}
           <a href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
           {languageSwitch}
