@@ -170,7 +170,7 @@ export function SiteHeader() {
               {tNav(item.key)}
             </a>
           ))}
-          <a href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
+          <a className={isActive('#contact') ? 'is-active' : undefined} href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
           {languageSwitch}
         </nav>
       </div>

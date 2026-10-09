@@ -46,6 +46,18 @@ function keepClosingWords(text: string) {
   return `${words.join(' ')} ${closing}`;
 }
 
+function heroTitle(headline: string) {
+  const [lead, ...rest] = headline.split(/\s*\|\s*/);
+  if (!rest.length) return headline;
+  return (
+    <>
+      {lead}
+      <br />
+      {rest.join(' | ')}
+    </>
+  );
+}
+
 type Photo = { src: string; width: number; height: number; pos?: string; posSmall?: string; crop?: string };
 
 const photoStyle = (photo: Photo) =>
@@ -614,7 +626,6 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
-  const tNav = useTranslations('nav');
   const tExpertise = useTranslations('expertiseSection');
   const tIndustries = useTranslations('industriesSection');
   const tExperience = useTranslations('experienceSection');
@@ -650,7 +661,7 @@ export function DesignHome() {
           <div className='site-container hero-inner'>
             <div className='hero-copy'>
               <p className='hero-kicker'>{tHero('tagline')}</p>
-              <h1>{tHero('headline').replace(/ \|/g, '\u00a0|')}</h1>
+              <h1>{heroTitle(tHero('headline'))}</h1>
               <p className='hero-subtitle'>{tHero('subheading')}</p>
               <p className='hero-body'>{keepClosingWords(tHero('body'))}</p>
               <div className='hero-meta'>
@@ -780,8 +791,6 @@ export function DesignHome() {
             <EditorialMedia
               variant='experience'
               className='experience-media'
-              index='02'
-              label={tNav('experience')}
               caption={tExperience('assignmentTitle')}
               parallax
               revealProps={reveal(0, 'media')}
@@ -839,7 +848,6 @@ export function DesignHome() {
             <EditorialMedia
               variant='digital'
               className='digital-media'
-              index='03'
               caption={tDigital('heading')}
               parallax
               revealProps={reveal(1, 'media')}
