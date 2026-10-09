@@ -24,7 +24,7 @@ export function SiteFooter() {
       <div className='site-container'>
         <div className='site-footer-grid'>
           <div className='site-footer-brand'>
-            <p className='site-footer-name'>Pipeline Quality</p>
+            <p className='site-footer-name'>Pipeline <em>Quality</em></p>
             <p>{tFooter('statement')}</p>
             <a className='site-btn site-btn-primary' href={sectionHref('#contact')}>
               <span>{tFooter('cta')}</span>

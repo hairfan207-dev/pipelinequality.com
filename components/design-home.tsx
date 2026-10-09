@@ -81,18 +81,20 @@ const digitalPhoto: Photo = {
 };
 
 function EditorialMedia({
-  variant = 'feature',
+  variant,
   className,
   index,
+  indexKey,
   label,
   caption,
   parallax = false,
   revealProps,
   children,
 }: {
-  variant?: 'feature' | 'collection';
+  variant: 'expertise' | 'industry' | 'experience' | 'digital' | 'compact';
   className?: string;
   index?: string;
+  indexKey?: string | number;
   label?: string;
   caption?: string;
   parallax?: boolean;
@@ -101,26 +103,20 @@ function EditorialMedia({
 }) {
   return (
     <figure
-      className={[
-        'ed-media',
-        `ed-media--${variant}`,
-        parallax ? 'ed-media--parallax' : '',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      className={['pq-media', `pq-media--${variant}`, parallax ? 'pq-media--parallax' : '', className].filter(Boolean).join(' ')}
       {...revealProps}
     >
       {index ? (
-        <span className='ed-media__index' aria-hidden='true'>
+        <span className='pq-media__index' aria-hidden='true' key={indexKey}>
           <b>{index}</b>
           {label ? <i>{label}</i> : null}
         </span>
       ) : null}
-      <div className='ed-media__plane'>
-        <div className='ed-media__clip'>{children}</div>
+      <div className='pq-media__plane'>
+        <span className='pq-media__accent' aria-hidden='true' key={indexKey} />
+        <div className='pq-media__clip'>{children}</div>
       </div>
-      {caption ? <figcaption className='ed-media__meta'>{caption}</figcaption> : null}
+      {caption ? <figcaption className='pq-media__meta'>{caption}</figcaption> : null}
     </figure>
   );
 }
@@ -174,22 +170,32 @@ function useMediaParallax(rootRef: RefObject<HTMLElement | null>, locale: string
     if (!root) return;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const desktop = window.matchMedia(DESKTOP_QUERY);
-    const images = Array.from(root.querySelectorAll<HTMLElement>('.ed-media--parallax .ed-media__shot'));
+    const images = Array.from(root.querySelectorAll<HTMLElement>('.pq-media--parallax .pq-media__image'));
+    const heroShift = root.querySelector<HTMLElement>('.hero-backdrop-shift');
+    const hero = root.querySelector<HTMLElement>('.hero');
     let frame = 0;
-    const clear = () => images.forEach((image) => image.style.removeProperty('--media-shift'));
+    const clear = () => {
+      images.forEach((image) => image.style.removeProperty('--media-shift'));
+      heroShift?.style.removeProperty('transform');
+    };
     const update = () => {
       if (motion.matches || !desktop.matches) {
         clear();
         return;
       }
       images.forEach((image) => {
-        const clip = image.closest('.ed-media__clip');
+        const clip = image.closest('.pq-media__clip');
         if (!clip) return;
         const box = clip.getBoundingClientRect();
         const mid = box.top + box.height / 2 - window.innerHeight / 2;
         const shift = Math.max(-16, Math.min(16, (mid / window.innerHeight) * -18));
         image.style.setProperty('--media-shift', `${shift.toFixed(1)}px`);
       });
+      if (hero && heroShift) {
+        const distance = Math.min(Math.max(-hero.getBoundingClientRect().top, 0), hero.offsetHeight * 0.3);
+        const shift = (distance / (hero.offsetHeight * 0.3)) * 22;
+        heroShift.style.transform = `translate3d(0, ${shift.toFixed(1)}px, 0)`;
+      }
     };
     const onScroll = () => {
       cancelAnimationFrame(frame);
@@ -460,9 +466,9 @@ function ServiceExplorer({
                       </>
                     ) : null}
                   </div>
-                  <EditorialMedia variant='collection' className='svc-media'>
+                  <EditorialMedia variant='compact' className='svc-media'>
                     <img
-                      className='ed-media__shot'
+                      className='pq-media__image'
                       src={expertisePhotos[index].src}
                       alt={card.imageAlt}
                       loading='lazy'
@@ -479,9 +485,10 @@ function ServiceExplorer({
         );
       })}
       <EditorialMedia
-        variant='feature'
+        variant='expertise'
         className='svc-stage'
-        index='01'
+        index={pad(stage.current + 1)}
+        indexKey={stage.current}
         label={sectionLabel}
         caption={cards[stage.current]?.title}
         revealProps={reveal(0, 'media')}
@@ -494,7 +501,7 @@ function ServiceExplorer({
               src={photo.src}
               alt={current ? cards[index]?.imageAlt ?? '' : ''}
               aria-hidden={current ? undefined : true}
-              className={`ed-media__shot${current ? ' is-current' : index === stage.previous ? ' is-leaving' : ''}`}
+              className={`pq-media__image${current ? ' is-current' : index === stage.previous ? ' is-leaving' : ''}`}
               loading='lazy'
               decoding='async'
               width={photo.width}
@@ -562,9 +569,9 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
       <ul id='industry-track' className='industry-track' ref={trackRef} tabIndex={0} aria-label={labels.region} onKeyDown={onKeyDown}>
         {cards.map((card, index) => (
           <li key={card.title} className='industry-item' aria-roledescription='slide' aria-label={`${index + 1} / ${cards.length}`}>
-            <EditorialMedia variant='collection' className='industry-media'>
+            <EditorialMedia variant='industry' className='industry-media'>
               <img
-                className='ed-media__shot'
+                className='pq-media__image'
                 src={industryPhotos[index].src}
                 alt={card.imageAlt}
                 loading='lazy'
@@ -629,11 +636,13 @@ export function DesignHome() {
       <main>
         <section className='hero'>
           <div className='hero-backdrop'>
-            <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
+            <div className='hero-backdrop-shift'>
+              <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
+            </div>
           </div>
-          <div className='hero-step' aria-hidden='true' />
           <div className='site-container hero-inner'>
             <div className='hero-copy'>
+              <p className='hero-kicker'>{tHero('tagline')}</p>
               <h1>{tHero('headline').replace(/ \|/g, '\u00a0|')}</h1>
               <p className='hero-subtitle'>{tHero('subheading')}</p>
               <p className='hero-body'>{tHero('body')}</p>
@@ -762,7 +771,7 @@ export function DesignHome() {
         <section className='section' id='experience' aria-labelledby='experience-heading'>
           <div className='site-container experience-layout'>
             <EditorialMedia
-              variant='feature'
+              variant='experience'
               className='experience-media'
               index='02'
               label={tNav('experience')}
@@ -771,7 +780,7 @@ export function DesignHome() {
               revealProps={reveal(0, 'media')}
             >
               <img
-                className='ed-media__shot'
+                className='pq-media__image'
                 src={experiencePhoto.src}
                 alt={tExperience('imageAlt')}
                 loading='lazy'
@@ -821,7 +830,7 @@ export function DesignHome() {
               <p {...reveal(2)}>{tDigital('body2')}</p>
             </div>
             <EditorialMedia
-              variant='feature'
+              variant='digital'
               className='digital-media'
               index='03'
               caption={tDigital('heading')}
@@ -829,7 +838,7 @@ export function DesignHome() {
               revealProps={reveal(1, 'media')}
             >
               <img
-                className='ed-media__shot'
+                className='pq-media__image'
                 src={digitalPhoto.src}
                 alt={tDigital('imageAlt')}
                 loading='lazy'

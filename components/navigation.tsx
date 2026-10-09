@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRightIcon } from '@/components/icons';
 import { usePathname, useRouter } from '@/navigation';
@@ -23,6 +23,8 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [indicator, setIndicator] = useState({ x: 0, w: 0, on: false });
+  const navRef = useRef<HTMLElement>(null);
 
   const sectionHref = (hash: string) => (onHome ? hash : `/${hash}`);
   const closeMenu = () => setMenuOpen(false);
@@ -46,8 +48,24 @@ export function SiteHeader() {
     }, 80);
   };
 
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const place = () => {
+      const active = nav.querySelector<HTMLElement>('.nav-link.is-active');
+      if (!active) {
+        setIndicator((current) => (current.on ? { ...current, on: false } : current));
+        return;
+      }
+      setIndicator({ x: active.offsetLeft, w: active.offsetWidth, on: true });
+    };
+    place();
+    window.addEventListener('resize', place);
+    return () => window.removeEventListener('resize', place);
+  }, [activeSection, locale, onHome]);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -101,19 +119,24 @@ export function SiteHeader() {
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}>
       <div className='site-container site-header-inner'>
         <a href={onHome ? '#top' : '/'} className='site-brand' aria-label={tNav('homeAria')} onClick={closeMenu}>
-          <img src='/logo-mark.png' alt='' width={40} height={32} />
+          <img src='/logo-mark-white.png' alt='' width={40} height={32} />
           <span className='site-brand-word'>
             <b>PIPELINE</b>
             <em>QUALITY</em>
           </span>
         </a>
 
-        <nav className='site-nav'>
+        <nav ref={navRef} className='site-nav'>
           {SECTIONS.map((item) => (
             <a key={item.hash} className={`nav-link${isActive(item.hash) ? ' is-active' : ''}`} href={sectionHref(item.hash)}>
               {tNav(item.key)}
             </a>
           ))}
+          <span
+            className={`nav-indicator${indicator.on ? ' is-on' : ''}`}
+            style={{ width: indicator.w, transform: `translateX(${indicator.x}px)` }}
+            aria-hidden='true'
+          />
         </nav>
 
         <div className='site-header-tools'>
