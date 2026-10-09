@@ -8,6 +8,7 @@ import {
   useState,
   type CSSProperties,
   type KeyboardEvent,
+  type ReactNode,
   type RefObject,
 } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -48,23 +49,81 @@ const photoStyle = (photo: Photo) =>
   }) as CSSProperties;
 
 const industryPhotos: Photo[] = [
-  { src: '/media/industry-offshore-wind.webp', width: 1024, height: 474, pos: '96% 50%' },
-  { src: '/media/industry-pipelines.webp', width: 1152, height: 864 },
-  { src: '/media/industry-oil-gas.webp', width: 1280, height: 720, pos: '40% 50%' },
-  { src: '/media/industry-refineries.webp', width: 1152, height: 864 },
-  { src: '/media/industry-energy.webp', width: 1024, height: 682 },
-  { src: '/media/industry-manufacturing.webp', width: 1024, height: 473, pos: '68% 50%' },
-  { src: '/media/industry-epc.webp', width: 864, height: 1152, pos: '50% 60%' },
-  { src: '/media/industry-maintenance.webp', width: 1024, height: 764, pos: '60% 50%' },
+  { src: '/media/industry-offshore-wind.webp', width: 1024, height: 474, pos: '96% 42%' },
+  { src: '/media/industry-pipelines.webp', width: 1152, height: 864, pos: '50% 42%' },
+  { src: '/media/industry-oil-gas.webp', width: 1280, height: 720, pos: '38% 48%' },
+  { src: '/media/industry-refineries.webp', width: 1152, height: 864, pos: '48% 40%' },
+  { src: '/media/industry-energy.webp', width: 1024, height: 682, pos: '42% 45%' },
+  { src: '/media/industry-manufacturing.webp', width: 1024, height: 473, pos: '72% 50%' },
+  { src: '/media/industry-epc.webp', width: 864, height: 1152, pos: '50% 38%' },
+  { src: '/media/industry-maintenance.webp', width: 1024, height: 764, pos: '58% 42%' },
 ];
 const expertisePhotos: Photo[] = [
-  { src: '/media/service-qaqc.webp', width: 1024, height: 1024, posSmall: '50% 45%' },
-  { src: '/media/service-inspection.webp', width: 1024, height: 768, pos: '72% 50%', posSmall: '50% 60%' },
-  { src: '/media/service-ndt.webp', width: 639, height: 737, pos: '50% 60%', posSmall: '50% 45%', crop: '2%' },
-  { src: '/media/service-welding.webp', width: 1024, height: 1024, posSmall: '50% 55%' },
-  { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 50%', posSmall: '60% 50%' },
-  { src: '/media/service-hse.webp', width: 1024, height: 764, pos: '42% 50%', posSmall: '50% 40%' },
+  { src: '/media/service-qaqc.webp', width: 1024, height: 1024, pos: '50% 48%', posSmall: '50% 42%' },
+  { src: '/media/service-inspection.webp', width: 1024, height: 768, pos: '78% 48%', posSmall: '50% 58%' },
+  { src: '/media/service-ndt.webp', width: 639, height: 737, pos: '50% 58%', posSmall: '50% 42%', crop: '2%' },
+  { src: '/media/service-welding.webp', width: 1024, height: 1024, pos: '48% 52%', posSmall: '50% 52%' },
+  { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 48%', posSmall: '60% 50%' },
+  { src: '/media/service-hse.webp', width: 1024, height: 764, pos: '40% 46%', posSmall: '50% 38%' },
 ];
+const experiencePhoto: Photo = {
+  src: '/media/experience-fabrication.webp',
+  width: 1024,
+  height: 565,
+  pos: '52% 48%',
+  crop: '1.5%',
+};
+const digitalPhoto: Photo = {
+  src: '/media/digital-inspection-records.webp',
+  width: 1280,
+  height: 720,
+  pos: '28% 48%',
+};
+
+function EditorialMedia({
+  variant = 'feature',
+  className,
+  index,
+  label,
+  caption,
+  parallax = false,
+  revealProps,
+  children,
+}: {
+  variant?: 'feature' | 'collection';
+  className?: string;
+  index?: string;
+  label?: string;
+  caption?: string;
+  parallax?: boolean;
+  revealProps?: { 'data-reveal': string; style: CSSProperties };
+  children: ReactNode;
+}) {
+  return (
+    <figure
+      className={[
+        'ed-media',
+        `ed-media--${variant}`,
+        parallax ? 'ed-media--parallax' : '',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      {...revealProps}
+    >
+      {index ? (
+        <span className='ed-media__index' aria-hidden='true'>
+          <b>{index}</b>
+          {label ? <i>{label}</i> : null}
+        </span>
+      ) : null}
+      <div className='ed-media__plane'>
+        <div className='ed-media__clip'>{children}</div>
+      </div>
+      {caption ? <figcaption className='ed-media__meta'>{caption}</figcaption> : null}
+    </figure>
+  );
+}
 
 const iconProps = {
   viewBox: '0 0 24 24',
@@ -106,6 +165,49 @@ function useScrollReveal(rootRef: RefObject<HTMLElement | null>, locale: string)
     );
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
+  }, [rootRef, locale]);
+}
+
+function useMediaParallax(rootRef: RefObject<HTMLElement | null>, locale: string) {
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const desktop = window.matchMedia(DESKTOP_QUERY);
+    const images = Array.from(root.querySelectorAll<HTMLElement>('.ed-media--parallax .ed-media__shot'));
+    let frame = 0;
+    const clear = () => images.forEach((image) => image.style.removeProperty('--media-shift'));
+    const update = () => {
+      if (motion.matches || !desktop.matches) {
+        clear();
+        return;
+      }
+      images.forEach((image) => {
+        const clip = image.closest('.ed-media__clip');
+        if (!clip) return;
+        const box = clip.getBoundingClientRect();
+        const mid = box.top + box.height / 2 - window.innerHeight / 2;
+        const shift = Math.max(-16, Math.min(16, (mid / window.innerHeight) * -18));
+        image.style.setProperty('--media-shift', `${shift.toFixed(1)}px`);
+      });
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    motion.addEventListener('change', onScroll);
+    desktop.addEventListener('change', onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      clear();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      motion.removeEventListener('change', onScroll);
+      desktop.removeEventListener('change', onScroll);
+    };
   }, [rootRef, locale]);
 }
 
@@ -169,7 +271,17 @@ function CapabilityList({ items }: { items: string[] }) {
   );
 }
 
-function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]; showAll: string; showFewer: string }) {
+function ServiceExplorer({
+  cards,
+  showAll,
+  showFewer,
+  sectionLabel,
+}: {
+  cards: ExpertiseCard[];
+  showAll: string;
+  showFewer: string;
+  sectionLabel: string;
+}) {
   const [active, setActive] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [moreOpen, setMoreOpen] = useState<Record<number, boolean>>({});
@@ -348,8 +460,9 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
                       </>
                     ) : null}
                   </div>
-                  <div className='media svc-media'>
+                  <EditorialMedia variant='collection' className='svc-media'>
                     <img
+                      className='ed-media__shot'
                       src={expertisePhotos[index].src}
                       alt={card.imageAlt}
                       loading='lazy'
@@ -358,14 +471,21 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
                       height={expertisePhotos[index].height}
                       style={photoStyle(expertisePhotos[index])}
                     />
-                  </div>
+                  </EditorialMedia>
                 </div>
               </div>
             </div>
           </Fragment>
         );
       })}
-      <div className='media media-feature svc-stage'>
+      <EditorialMedia
+        variant='feature'
+        className='svc-stage'
+        index='01'
+        label={sectionLabel}
+        caption={cards[stage.current]?.title}
+        revealProps={reveal(0, 'media')}
+      >
         {expertisePhotos.map((photo, index) => {
           const current = index === stage.current;
           return (
@@ -374,7 +494,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
               src={photo.src}
               alt={current ? cards[index]?.imageAlt ?? '' : ''}
               aria-hidden={current ? undefined : true}
-              className={current ? 'is-current' : index === stage.previous ? 'is-leaving' : undefined}
+              className={`ed-media__shot${current ? ' is-current' : index === stage.previous ? ' is-leaving' : ''}`}
               loading='lazy'
               decoding='async'
               width={photo.width}
@@ -383,7 +503,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
             />
           );
         })}
-      </div>
+      </EditorialMedia>
     </div>
   );
 }
@@ -442,8 +562,9 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
       <ul id='industry-track' className='industry-track' ref={trackRef} tabIndex={0} aria-label={labels.region} onKeyDown={onKeyDown}>
         {cards.map((card, index) => (
           <li key={card.title} className='industry-item' aria-roledescription='slide' aria-label={`${index + 1} / ${cards.length}`}>
-            <div className='media industry-media'>
+            <EditorialMedia variant='collection' className='industry-media'>
               <img
+                className='ed-media__shot'
                 src={industryPhotos[index].src}
                 alt={card.imageAlt}
                 loading='lazy'
@@ -452,7 +573,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
                 height={industryPhotos[index].height}
                 style={photoStyle(industryPhotos[index])}
               />
-            </div>
+            </EditorialMedia>
             <div className='industry-body'>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
@@ -479,6 +600,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
+  const tNav = useTranslations('nav');
   const tExpertise = useTranslations('expertiseSection');
   const tIndustries = useTranslations('industriesSection');
   const tExperience = useTranslations('experienceSection');
@@ -499,6 +621,7 @@ export function DesignHome() {
   const [qualOpen, setQualOpen] = useState<Record<number, boolean>>({});
 
   useScrollReveal(rootRef, locale);
+  useMediaParallax(rootRef, locale);
 
   return (
     <div ref={rootRef} className='pq-site' lang={locale} id='top'>
@@ -508,6 +631,7 @@ export function DesignHome() {
           <div className='hero-backdrop'>
             <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
           </div>
+          <div className='hero-step' aria-hidden='true' />
           <div className='site-container hero-inner'>
             <div className='hero-copy'>
               <h1>{tHero('headline').replace(/ \|/g, '\u00a0|')}</h1>
@@ -538,7 +662,12 @@ export function DesignHome() {
               <p {...reveal(1)}>{tExpertise('intro')}</p>
             </header>
             <div {...reveal(2)}>
-              <ServiceExplorer cards={expertiseCards} showAll={tExpertise('showAll')} showFewer={tExpertise('showFewer')} />
+              <ServiceExplorer
+                cards={expertiseCards}
+                showAll={tExpertise('showAll')}
+                showFewer={tExpertise('showFewer')}
+                sectionLabel={tExpertise('heading')}
+              />
             </div>
           </div>
         </section>
@@ -631,11 +760,28 @@ export function DesignHome() {
         </section>
 
         <section className='section' id='experience' aria-labelledby='experience-heading'>
-          <div className='site-container split split-media-first'>
-            <div className='media media-feature split-media experience-media' {...reveal(0, 'media')}>
-              <img src='/media/experience-fabrication.webp' alt={tExperience('imageAlt')} loading='lazy' decoding='async' width={1024} height={565} />
-            </div>
-            <div className='split-copy'>
+          <div className='site-container experience-layout'>
+            <EditorialMedia
+              variant='feature'
+              className='experience-media'
+              index='02'
+              label={tNav('experience')}
+              caption={tExperience('assignmentTitle')}
+              parallax
+              revealProps={reveal(0, 'media')}
+            >
+              <img
+                className='ed-media__shot'
+                src={experiencePhoto.src}
+                alt={tExperience('imageAlt')}
+                loading='lazy'
+                decoding='async'
+                width={experiencePhoto.width}
+                height={experiencePhoto.height}
+                style={photoStyle(experiencePhoto)}
+              />
+            </EditorialMedia>
+            <div className='split-copy experience-copy'>
               <h2 id='experience-heading' {...reveal(0)}>{tExperience('heading')}</h2>
               <p {...reveal(1)}>{tExperience('body1')}</p>
               <p {...reveal(2)}>{tExperience('body2')}</p>
@@ -668,15 +814,31 @@ export function DesignHome() {
         </section>
 
         <section className='section section-tint' id='digital-quality' aria-labelledby='digital-heading'>
-          <div className='site-container split'>
-            <div className='split-copy'>
+          <div className='site-container digital-layout'>
+            <div className='split-copy digital-copy'>
               <h2 id='digital-heading' {...reveal(0)}>{tDigital('heading')}</h2>
               <p {...reveal(1)}>{tDigital('body1')}</p>
               <p {...reveal(2)}>{tDigital('body2')}</p>
             </div>
-            <div className='media media-feature split-media digital-media' {...reveal(1, 'media')}>
-              <img src='/media/digital-inspection-records.webp' alt={tDigital('imageAlt')} loading='lazy' decoding='async' width={1280} height={720} />
-            </div>
+            <EditorialMedia
+              variant='feature'
+              className='digital-media'
+              index='03'
+              caption={tDigital('heading')}
+              parallax
+              revealProps={reveal(1, 'media')}
+            >
+              <img
+                className='ed-media__shot'
+                src={digitalPhoto.src}
+                alt={tDigital('imageAlt')}
+                loading='lazy'
+                decoding='async'
+                width={digitalPhoto.width}
+                height={digitalPhoto.height}
+                style={photoStyle(digitalPhoto)}
+              />
+            </EditorialMedia>
           </div>
         </section>
 
