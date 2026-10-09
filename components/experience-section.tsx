@@ -8,7 +8,7 @@ export function ExperienceSection() {
   return (
     <section id='experience' className='bg-white text-navy'>
       <div className='pq-shell pb-8'>
-        <div className='rounded-[2rem] bg-[#f4f7fb] px-6 py-10 lg:px-10 lg:py-12'>
+        <div className='rounded-[2rem] bg-[#FFFFFF] px-6 py-10 lg:px-10 lg:py-12'>
           <div className='grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start'>
             <h2 className='text-navy'>{t('title')}</h2>
             <div className='space-y-4 text-[0.98rem] leading-relaxed text-navy/75'>

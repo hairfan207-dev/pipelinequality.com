@@ -11,7 +11,7 @@ export function WhatsAppFloat() {
       href="https://wa.me/923088923063"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 group"
+      className="fixed bottom-6 right-6 z-50 bg-[var(--brand-orange)] text-[var(--brand-navy)] p-4 rounded-full shadow-none hover:bg-[var(--brand-navy)] hover:text-[var(--brand-white)] hover:scale-110 transition-all duration-300 group"
       aria-label={t('tooltip')}
     >
       <MessageCircle className="w-6 h-6" />

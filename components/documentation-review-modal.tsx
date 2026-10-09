@@ -285,7 +285,7 @@ export function DocumentationReviewModal({ isOpen, onClose }: DocumentationRevie
                   href="https://www.linkedin.com/company/pipeline-quality"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#004182] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#012A60] text-white rounded-lg hover:bg-[#012A60] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
                 >
                   <Linkedin className="w-4 h-4" />
                   <span className="text-sm font-semibold">LinkedIn</span>
@@ -296,7 +296,7 @@ export function DocumentationReviewModal({ isOpen, onClose }: DocumentationRevie
                   href="https://wa.me/491728137111"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white rounded-lg hover:bg-[#1DA851] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#FB7200] text-white rounded-lg hover:bg-[#FB7200] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span className="text-sm font-semibold">WhatsApp</span>

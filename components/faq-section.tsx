@@ -13,7 +13,7 @@ export function FAQSection() {
     <section className='bg-white text-navy'>
       <div className='pq-shell py-8 text-center lg:py-12'>
         <h2 className='text-navy'>{t('title')}</h2>
-        <div className='mx-auto mt-8 max-w-3xl rounded-3xl bg-[#f4f7fb] px-4 py-2 text-left sm:px-8'>
+        <div className='mx-auto mt-8 max-w-3xl rounded-3xl bg-[#FFFFFF] px-4 py-2 text-left sm:px-8'>
           {items.map((faq, index) => {
             const open = openIndex === index;
             return (

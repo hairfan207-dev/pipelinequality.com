@@ -40,7 +40,7 @@ export function HeroSection() {
               <div className='mt-8 flex flex-wrap gap-3'>
                 <a
                   href='#contact'
-                  className='inline-flex items-center bg-[#FB7200] px-5 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition hover:bg-[#e56800]'
+                  className='inline-flex items-center bg-[#FB7200] px-5 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition hover:bg-[#FB7200]'
                 >
                   {t('cta1')}
                 </a>
@@ -73,7 +73,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className='border-b border-navy/10 bg-[#f7f8fa]'>
+      <div className='border-b border-navy/10 bg-[#FFFFFF]'>
         <div className='pq-shell grid sm:grid-cols-2 lg:grid-cols-4'>
           {pillars.map((pillar, index) => (
             <p

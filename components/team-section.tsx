@@ -40,7 +40,7 @@ export function TeamSection() {
   const roles = t.raw('roles') as string[];
 
   return (
-    <section id='network' className='bg-[#f7f8fa] text-navy'>
+    <section id='network' className='bg-[#FFFFFF] text-navy'>
       <div className='pq-shell py-16 lg:py-20'>
         <div className='grid items-start gap-8 lg:grid-cols-2 lg:gap-12'>
           <div className='grid grid-cols-2 gap-4'>

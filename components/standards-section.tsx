@@ -30,12 +30,12 @@ export function StandardsSection() {
               <article key={group.title} className='text-center'>
                 <div
                   className={`mx-auto flex h-24 w-full items-center justify-center rounded-2xl ${
-                    navy ? 'bg-navy text-white' : 'bg-[#f4f7fb] text-accent'
+                    navy ? 'bg-navy text-white' : 'bg-[#FFFFFF] text-accent'
                   }`}
                 >
                   <Icon className='h-8 w-8' strokeWidth={1.6} />
                 </div>
-                <div className='mt-3 rounded-2xl border border-navy/10 bg-[#f7f8fa] px-2 py-4'>
+                <div className='mt-3 rounded-2xl border border-navy/10 bg-[#FFFFFF] px-2 py-4'>
                   <p className='text-[13px] font-semibold leading-snug text-navy'>
                     {group.title}
                   </p>

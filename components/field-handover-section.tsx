@@ -19,7 +19,7 @@ export function FieldHandoverSection() {
   const stages = t.raw('stages') as Stage[];
 
   return (
-    <section className='bg-[#f7f8fa] text-navy'>
+    <section className='bg-[#FFFFFF] text-navy'>
       <div className='pq-shell py-16 text-center lg:py-20'>
         <p className='pq-index'>{t('label')}</p>
         <h2 className='mx-auto mt-3 max-w-3xl text-navy'>{t('title')}</h2>

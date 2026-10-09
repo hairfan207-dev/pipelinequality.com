@@ -60,7 +60,7 @@ export function IndustriesSection() {
                 );
               })}
             </ul>
-            <div className='grid items-center gap-5 rounded-2xl bg-[#f4f7fb] p-4 sm:grid-cols-[0.9fr_1fr]'>
+            <div className='grid items-center gap-5 rounded-2xl bg-[#FFFFFF] p-4 sm:grid-cols-[0.9fr_1fr]'>
               <div className='relative overflow-hidden rounded-2xl'>
                 <img
                   src={industryImages[active]}

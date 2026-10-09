@@ -39,7 +39,7 @@ export function ServicesOverview() {
               {t('designLead')}
             </p>
 
-            <div className='mt-8 overflow-hidden rounded-2xl border border-navy/10 bg-[#f4f7fb]'>
+            <div className='mt-8 overflow-hidden rounded-2xl border border-navy/10 bg-[#FFFFFF]'>
               {displayOrder.map((index) => {
                 const service = blocks[index];
                 const isActive = active === index;

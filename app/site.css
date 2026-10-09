@@ -1,22 +1,26 @@
-/* Pipeline Quality — site styles. Palette: #1F2937, #F8FAFC, #94A3B8, #5EEAD4, #0C2340, #F97316 and neutral white. */
+/* Pipeline Quality — site styles. Brand colours only: logo navy #012A60, logo orange #FB7200, white #FFFFFF. */
 
 :root {
-  --pq-ink: #1f2937;
-  --pq-mist: #f8fafc;
-  --pq-slate: #94a3b8;
-  --pq-teal: #5eead4;
-  --pq-blue: #0c2340;
-  --pq-orange: #f97316;
-  --pq-white: #ffffff;
+  --brand-navy: #012A60;
+  --brand-orange: #FB7200;
+  --brand-white: #FFFFFF;
 
-  --pq-text: #0a0d10;
-  --pq-text-muted: color-mix(in srgb, var(--pq-ink) 82%, var(--pq-white));
-  --pq-text-soft: color-mix(in srgb, var(--pq-ink) 70%, var(--pq-white));
-  --pq-line: color-mix(in srgb, var(--pq-slate) 40%, var(--pq-white));
-  --pq-line-strong: var(--pq-slate);
-  --pq-input-line: color-mix(in srgb, var(--pq-ink) 45%, var(--pq-white));
-  --pq-teal-wash: color-mix(in srgb, var(--pq-teal) 18%, transparent);
-  --pq-shadow: color-mix(in srgb, var(--pq-ink) 28%, transparent);
+  --pq-ink: var(--brand-navy);
+  --pq-mist: var(--brand-white);
+  --pq-slate: var(--brand-navy);
+  --pq-teal: var(--brand-orange);
+  --pq-blue: var(--brand-navy);
+  --pq-orange: var(--brand-orange);
+  --pq-white: var(--brand-white);
+
+  --pq-text: var(--brand-navy);
+  --pq-text-muted: var(--brand-navy);
+  --pq-text-soft: var(--brand-navy);
+  --pq-line: var(--brand-navy);
+  --pq-line-strong: var(--brand-navy);
+  --pq-input-line: var(--brand-navy);
+  --pq-teal-wash: var(--brand-white);
+  --pq-shadow: transparent;
 
   --pq-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --pq-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -42,7 +46,7 @@
   --media-easing: cubic-bezier(0.22, 1, 0.36, 1);
   --media-line-size: 56px;
   --media-line-weight: 1px;
-  --media-shadow: 0 18px 36px -28px color-mix(in srgb, var(--pq-ink) 32%, transparent);
+  --media-shadow: none;
   --media-shift: 0px;
 
   --pq-h1: 54px;
@@ -264,20 +268,20 @@ body {
 }
 
 .site-btn-primary {
-  background: var(--pq-blue);
-  border-color: var(--pq-blue);
-  color: var(--pq-mist);
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  color: var(--brand-navy);
 }
 
 .site-btn-primary::before {
-  background: var(--pq-orange);
+  background: var(--brand-navy);
 }
 
 .site-btn-primary:hover,
 .site-btn-primary:focus-visible {
   transform: translateY(-1px);
-  border-color: var(--pq-orange);
-  color: var(--pq-white);
+  border-color: var(--brand-navy);
+  color: var(--brand-white);
   box-shadow: none;
 }
 
@@ -293,12 +297,14 @@ body {
 }
 
 .site-btn-secondary::before {
-  background: var(--pq-teal-wash);
+  background: var(--brand-navy);
 }
 
 .site-btn-secondary:hover,
 .site-btn-secondary:focus-visible {
   transform: translateY(-1px);
+  border-color: var(--brand-navy);
+  color: var(--brand-white);
 }
 
 /* Refined text action (e.g. Show all capabilities) */
@@ -421,7 +427,7 @@ body {
   z-index: 50;
   background: var(--pq-blue);
   color: var(--pq-mist);
-  box-shadow: 0 10px 24px -18px color-mix(in srgb, #0a0d10 45%, transparent);
+  box-shadow: none;
   transition:
     background-color var(--motion-nav) var(--motion-ease),
     box-shadow var(--motion-nav) var(--motion-ease);
@@ -629,8 +635,8 @@ body {
 .site-header-contact:hover,
 .site-header-contact:focus-visible,
 .site-header-contact.is-active {
-  border-color: var(--pq-orange);
-  color: var(--pq-white);
+  border-color: var(--brand-orange);
+  color: var(--brand-navy);
 }
 
 .site-menu-toggle {
@@ -925,7 +931,7 @@ body {
   min-height: clamp(680px, 78svh, 760px);
   padding: calc(var(--pq-header-h) + 48px) 0 108px;
   overflow: hidden;
-  background: #0a0d10;
+  background: var(--brand-navy);
   color: var(--pq-mist);
 }
 
@@ -971,7 +977,7 @@ body {
       color-mix(in srgb, var(--pq-blue) 72%, transparent) 0%,
       transparent 22%,
       transparent 78%,
-      color-mix(in srgb, #0a0d10 24%, transparent) 100%
+      color-mix(in srgb, var(--brand-navy) 24%, transparent) 100%
     );
 }
 
@@ -1021,7 +1027,7 @@ body {
 
 .hero-copy {
   width: min(100%, 860px);
-  text-shadow: 0 1px 2px color-mix(in srgb, #0a0d10 45%, transparent);
+  text-shadow: none;
 }
 
 .hero-kicker {
@@ -1095,18 +1101,19 @@ body {
 }
 
 .hero .site-btn-secondary {
-  background: color-mix(in srgb, var(--pq-ink) 24%, transparent);
-  border-color: color-mix(in srgb, var(--pq-mist) 72%, transparent);
-  color: var(--pq-mist);
+  background: transparent;
+  border-color: var(--brand-white);
+  color: var(--brand-white);
 }
 
 .hero .site-btn-secondary::before {
-  background: color-mix(in srgb, var(--pq-mist) 14%, transparent);
+  background: var(--brand-white);
 }
 
 .hero .site-btn-secondary:hover,
 .hero .site-btn-secondary:focus-visible {
-  border-color: var(--pq-mist);
+  border-color: var(--brand-white);
+  color: var(--brand-navy);
 }
 
 .hero .site-btn-primary:hover,
@@ -1185,8 +1192,8 @@ body {
       180deg,
       color-mix(in srgb, var(--pq-blue) 36%, transparent) 0%,
       color-mix(in srgb, var(--pq-blue) 10%, transparent) 26%,
-      color-mix(in srgb, #0a0d10 78%, transparent) 62%,
-      #0a0d10 100%
+      color-mix(in srgb, var(--brand-navy) 78%, transparent) 62%,
+      var(--brand-navy) 100%
     );
   }
 
@@ -2187,7 +2194,7 @@ body {
   }
 
   .why-item:hover svg {
-    color: color-mix(in srgb, var(--pq-teal) 70%, var(--pq-ink));
+    color: var(--brand-orange);
   }
 
   .why-item:hover h3 {
@@ -2955,13 +2962,13 @@ body {
   justify-self: start;
   min-height: 52px;
   padding: 0 32px;
-  background: var(--pq-blue);
-  border: 1px solid var(--pq-blue);
+  background: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
   border-radius: var(--pq-radius);
   font: inherit;
   font-size: 16px;
   font-weight: 600;
-  color: var(--pq-mist);
+  color: var(--brand-navy);
   cursor: pointer;
   transition:
     transform 220ms var(--pq-ease),
@@ -2972,10 +2979,10 @@ body {
 .contact-final button[type='submit']:hover:not(:disabled),
 .contact-final button[type='submit']:focus-visible {
   transform: translateY(-1px);
-  border-color: var(--pq-orange);
-  background: var(--pq-orange);
-  color: var(--pq-white);
-  box-shadow: 0 10px 22px -14px var(--pq-shadow);
+  border-color: var(--brand-navy);
+  background: var(--brand-navy);
+  color: var(--brand-white);
+  box-shadow: none;
 }
 
 .contact-final button[type='submit']:disabled {
@@ -3060,10 +3067,14 @@ body {
   color: var(--pq-mist);
 }
 
+.site-footer .site-btn-primary::before {
+  background: var(--brand-orange);
+}
+
 .site-footer .site-btn-primary:hover,
 .site-footer .site-btn-primary:focus-visible {
-  border-color: var(--pq-orange);
-  color: var(--pq-white);
+  border-color: var(--brand-orange);
+  color: var(--brand-navy);
 }
 
 .site-footer-label {
