@@ -1,11 +1,11 @@
-/* Pipeline Quality — site styles. Palette: #1F2937, #F8FAFC, #94A3B8, #5EEAD4, #3B82F6, #F97316 and neutral white. */
+/* Pipeline Quality — site styles. Palette: #1F2937, #F8FAFC, #94A3B8, #5EEAD4, #0C2340, #F97316 and neutral white. */
 
 :root {
   --pq-ink: #1f2937;
   --pq-mist: #f8fafc;
   --pq-slate: #94a3b8;
   --pq-teal: #5eead4;
-  --pq-blue: #3b82f6;
+  --pq-blue: #0c2340;
   --pq-orange: #f97316;
   --pq-white: #ffffff;
 
@@ -24,8 +24,8 @@
   --pq-max: 1240px;
   --pq-pad: 40px;
   --pq-section: 96px;
-  --pq-header-h: 90px;
-  --pq-header-h-compact: 74px;
+  --pq-header-h: 96px;
+  --pq-header-h-compact: 82px;
   --motion-fast: 280ms;
   --motion-nav: 360ms;
   --motion-medium: 450ms;
@@ -56,8 +56,8 @@
   :root {
     --pq-pad: 28px;
     --pq-section: 72px;
-    --pq-header-h: 78px;
-    --pq-header-h-compact: 70px;
+    --pq-header-h: 86px;
+    --pq-header-h-compact: 76px;
     --pq-h1: 44px;
     --pq-h2: 34px;
     --pq-h3: 22px;
@@ -70,8 +70,8 @@
   :root {
     --pq-pad: 22px;
     --pq-section: 60px;
-    --pq-header-h: 64px;
-    --pq-header-h-compact: 58px;
+    --pq-header-h: 74px;
+    --pq-header-h-compact: 68px;
     --pq-h1: 36px;
     --pq-h2: 30px;
     --pq-h3: 20px;
@@ -456,19 +456,19 @@ body {
 }
 
 .site-header.is-scrolled .site-brand {
-  transform: scale(0.94);
+  transform: scale(0.96);
 }
 
 .site-brand img {
-  width: 40px;
-  height: 32px;
+  width: 52px;
+  height: 42px;
   object-fit: contain;
 }
 
 .site-brand-word {
   display: inline-flex;
   flex-direction: column;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.05;
   letter-spacing: 0.08em;
 }
@@ -493,7 +493,7 @@ body {
 .nav-link {
   position: relative;
   padding: 8px 0;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   color: color-mix(in srgb, var(--pq-mist) 86%, transparent);
   text-decoration: none;
@@ -713,7 +713,7 @@ body {
   display: block;
   padding: 15px 0 15px 0;
   border-bottom: 1px solid color-mix(in srgb, var(--pq-mist) 22%, transparent);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: var(--pq-mist);
   text-decoration: none;
@@ -780,12 +780,12 @@ body {
   }
 
   .site-brand-word {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .site-brand img {
-    width: 34px;
-    height: 27px;
+    width: 44px;
+    height: 35px;
   }
 
   .site-header-contact {

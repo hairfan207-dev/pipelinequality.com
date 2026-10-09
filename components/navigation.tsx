@@ -119,7 +119,7 @@ export function SiteHeader() {
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}>
       <div className='site-container site-header-inner'>
         <a href={onHome ? '#top' : '/'} className='site-brand' aria-label={tNav('homeAria')} onClick={closeMenu}>
-          <img src='/logo-mark-white.png' alt='' width={40} height={32} />
+          <img src='/logo-mark-white.png' alt='' width={52} height={42} />
           <span className='site-brand-word'>
             <b>PIPELINE</b>
             <em>QUALITY</em>
