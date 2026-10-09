@@ -53,7 +53,17 @@ function heroTitle(headline: string) {
     <>
       {lead}
       <br />
-      {rest.join(' | ')}
+      {rest.map((part, index) => (
+        <Fragment key={part}>
+          {index > 0 ? (
+            <>
+              <span className='sr-only'> | </span>
+              <span className='hero-title-divider' aria-hidden='true' />
+            </>
+          ) : null}
+          {part}
+        </Fragment>
+      ))}
     </>
   );
 }
@@ -96,7 +106,7 @@ const digitalPhoto: Photo = {
   src: '/media/digital-inspection-records.webp',
   width: 1280,
   height: 720,
-  pos: '28% 48%',
+  pos: '46% 42%',
 };
 
 function EditorialMedia({
@@ -588,7 +598,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
       <ul id='industry-track' className='industry-track' ref={trackRef} tabIndex={0} aria-label={labels.region} onKeyDown={onKeyDown}>
         {cards.map((card, index) => (
           <li key={card.title} className='industry-item' aria-roledescription='slide' aria-label={`${index + 1} / ${cards.length}`}>
-            <EditorialMedia variant='industry' className='industry-media'>
+            <EditorialMedia variant='industry' className='industry-media' revealProps={reveal(index, 'media')}>
               <img
                 className='pq-media__image'
                 src={industryPhotos[index].src}
@@ -626,6 +636,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
 
 export function DesignHome() {
   const tHero = useTranslations('hero');
+  const tNav = useTranslations('nav');
   const tExpertise = useTranslations('expertiseSection');
   const tIndustries = useTranslations('industriesSection');
   const tExperience = useTranslations('experienceSection');
@@ -807,7 +818,8 @@ export function DesignHome() {
               />
             </EditorialMedia>
             <div className='split-copy experience-copy'>
-              <h2 id='experience-heading' {...reveal(0)}>{tExperience('heading')}</h2>
+              <p className='experience-kicker' {...reveal(0)}>{tNav('experience')}</p>
+              <h2 id='experience-heading' {...reveal(1)}>{tExperience('heading')}</h2>
               <p {...reveal(1)}>{tExperience('body1')}</p>
               <p {...reveal(2)}>{tExperience('body2')}</p>
               <div className='experience-assignment' {...reveal(3)}>

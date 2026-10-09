@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { ArrowRightIcon } from '@/components/icons';
 import { usePathname, useRouter } from '@/navigation';
 
 const SECTIONS = [
@@ -10,9 +9,15 @@ const SECTIONS = [
   { hash: '#industries', key: 'industries' },
   { hash: '#capabilities', key: 'expertise' },
   { hash: '#experience', key: 'experience' },
+  { hash: '#contact', key: 'contact' },
 ] as const;
 
-const TRACKED = [...SECTIONS.map((item) => item.hash.slice(1)), 'contact'];
+const LANGUAGES = [
+  { id: 'en', label: 'English' },
+  { id: 'de', label: 'Deutsch' },
+] as const;
+
+const TRACKED = SECTIONS.map((item) => item.hash.slice(1));
 
 export function SiteHeader() {
   const tNav = useTranslations('nav');
@@ -107,19 +112,15 @@ export function SiteHeader() {
     };
   }, [menuOpen]);
 
-  const languageSwitch = (
-    <div className='site-lang' role='group' aria-label={tNav('language')}>
-      <button type='button' lang='en' aria-label='English' aria-pressed={locale === 'en'} onClick={() => switchLocale('en')}>EN</button>
-      <span aria-hidden='true'>/</span>
-      <button type='button' lang='de' aria-label='Deutsch' aria-pressed={locale === 'de'} onClick={() => switchLocale('de')}>DE</button>
-    </div>
+  const languageSwitch = (id: string) => (
+    <LanguageMenu id={id} locale={locale} label={tNav('language')} onSelect={switchLocale} />
   );
 
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}>
       <div className='site-container site-header-inner'>
         <a href={onHome ? '#top' : '/'} className='site-brand' aria-label={tNav('homeAria')} onClick={closeMenu}>
-          <img src='/logo-mark-white.png' alt='' width={52} height={42} />
+          <img src='/logo-mark.png' alt='' width={46} height={38} />
           <span className='site-brand-word'>
             <b>PIPELINE</b>
             <em>QUALITY</em>
@@ -140,15 +141,7 @@ export function SiteHeader() {
         </nav>
 
         <div className='site-header-tools'>
-          {languageSwitch}
-          <a
-            className={`site-btn site-btn-primary site-header-contact${isActive('#contact') ? ' is-active' : ''}`}
-            href={sectionHref('#contact')}
-            onClick={closeMenu}
-          >
-            <span>{tNav('contact')}</span>
-            <ArrowRightIcon className='site-btn-icon' />
-          </a>
+          {languageSwitch('lang-menu-bar')}
           <button
             type='button'
             className='site-menu-toggle'
@@ -170,11 +163,110 @@ export function SiteHeader() {
               {tNav(item.key)}
             </a>
           ))}
-          <a className={isActive('#contact') ? 'is-active' : undefined} href={sectionHref('#contact')} onClick={closeMenu}>{tNav('contact')}</a>
-          {languageSwitch}
+          {languageSwitch('lang-menu-drawer')}
         </nav>
       </div>
     </header>
+  );
+}
+
+function LanguageMenu({
+  id,
+  locale,
+  label,
+  onSelect,
+}: {
+  id: string;
+  locale: string;
+  label: string;
+  onSelect: (next: 'en' | 'de') => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const listId = useId();
+  const current = LANGUAGES.find((item) => item.id === locale) ?? LANGUAGES[0];
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointer);
+    return () => document.removeEventListener('pointerdown', onPointer);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    rootRef.current?.querySelector<HTMLButtonElement>('[aria-selected="true"]')?.focus();
+  }, [open]);
+
+  const onTriggerKey = (event: ReactKeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setOpen(true);
+    } else if (event.key === 'Escape') {
+      setOpen(false);
+    }
+  };
+
+  const onListKey = (event: ReactKeyboardEvent<HTMLUListElement>) => {
+    const options = [...(rootRef.current?.querySelectorAll<HTMLButtonElement>('[role="option"]') ?? [])];
+    const index = options.indexOf(document.activeElement as HTMLButtonElement);
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setOpen(false);
+      triggerRef.current?.focus();
+      return;
+    }
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      const next = event.key === 'ArrowDown'
+        ? options[(index + 1) % options.length]
+        : event.key === 'ArrowUp'
+          ? options[(index - 1 + options.length) % options.length]
+          : event.key === 'Home'
+            ? options[0]
+            : options[options.length - 1];
+      next?.focus();
+    }
+  };
+
+  return (
+    <div className={`lang-menu${open ? ' is-open' : ''}`} ref={rootRef} id={id}>
+      <button
+        ref={triggerRef}
+        type='button'
+        className='lang-menu-trigger'
+        aria-haspopup='listbox'
+        aria-expanded={open}
+        aria-controls={listId}
+        aria-label={label}
+        onClick={() => setOpen((value) => !value)}
+        onKeyDown={onTriggerKey}
+      >
+        <span>{current.label}</span>
+        <span className='lang-menu-chevron' aria-hidden='true' />
+      </button>
+      <ul id={listId} className='lang-menu-list' role='listbox' aria-label={label} hidden={!open} onKeyDown={onListKey}>
+        {LANGUAGES.map((item) => (
+          <li key={item.id} role='none'>
+            <button
+              type='button'
+              role='option'
+              lang={item.id}
+              aria-selected={locale === item.id}
+              onClick={() => {
+                setOpen(false);
+                onSelect(item.id);
+              }}
+            >
+              {item.label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
