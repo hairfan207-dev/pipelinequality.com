@@ -14,7 +14,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/contact-form';
 import { SiteFooter } from '@/components/footer';
 import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon } from '@/components/icons';
-import { ImageFrame } from '@/components/image-frame';
 import { SiteHeader } from '@/components/navigation';
 
 type IndustryCard = { title: string; description: string; imageAlt: string };
@@ -43,9 +42,9 @@ type Photo = { src: string; width: number; height: number; pos?: string; posSmal
 
 const photoStyle = (photo: Photo) =>
   ({
-    '--frame-pos': photo.pos,
-    '--frame-pos-sm': photo.posSmall,
-    '--frame-crop': photo.crop,
+    '--media-pos': photo.pos,
+    '--media-pos-sm': photo.posSmall,
+    '--media-crop': photo.crop,
   }) as CSSProperties;
 
 const industryPhotos: Photo[] = [
@@ -175,7 +174,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
   const [isDesktop, setIsDesktop] = useState(false);
   const [moreOpen, setMoreOpen] = useState<Record<number, boolean>>({});
   const [marker, setMarker] = useState<{ y: number; h: number } | null>(null);
-  const [stage, setStage] = useState({ current: 0, previous: -1, changes: 0 });
+  const [stage, setStage] = useState({ current: 0, previous: -1 });
   const rootRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -234,7 +233,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
   useEffect(() => {
     if (active === null) return;
     setStage((current) =>
-      current.current === active ? current : { current: active, previous: current.current, changes: current.changes + 1 },
+      current.current === active ? current : { current: active, previous: current.current },
     );
   }, [active]);
 
@@ -349,7 +348,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
                       </>
                     ) : null}
                   </div>
-                  <ImageFrame variant='card' className='svc-media'>
+                  <div className='media svc-media'>
                     <img
                       src={expertisePhotos[index].src}
                       alt={card.imageAlt}
@@ -359,19 +358,14 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
                       height={expertisePhotos[index].height}
                       style={photoStyle(expertisePhotos[index])}
                     />
-                  </ImageFrame>
+                  </div>
                 </div>
               </div>
             </div>
           </Fragment>
         );
       })}
-      <ImageFrame
-        variant='feature'
-        className='svc-stage'
-        reveal
-        overlay={stage.changes > 0 ? <span key={stage.changes} className='img-frame__pulse' aria-hidden='true' /> : null}
-      >
+      <div className='media media-feature svc-stage'>
         {expertisePhotos.map((photo, index) => {
           const current = index === stage.current;
           return (
@@ -389,7 +383,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
             />
           );
         })}
-      </ImageFrame>
+      </div>
     </div>
   );
 }
@@ -448,7 +442,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
       <ul id='industry-track' className='industry-track' ref={trackRef} tabIndex={0} aria-label={labels.region} onKeyDown={onKeyDown}>
         {cards.map((card, index) => (
           <li key={card.title} className='industry-item' aria-roledescription='slide' aria-label={`${index + 1} / ${cards.length}`}>
-            <ImageFrame variant='card' className='industry-media'>
+            <div className='media industry-media'>
               <img
                 src={industryPhotos[index].src}
                 alt={card.imageAlt}
@@ -458,7 +452,7 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
                 height={industryPhotos[index].height}
                 style={photoStyle(industryPhotos[index])}
               />
-            </ImageFrame>
+            </div>
             <div className='industry-body'>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
@@ -511,7 +505,10 @@ export function DesignHome() {
       <SiteHeader />
       <main>
         <section className='hero'>
-          <div className='site-container hero-grid'>
+          <div className='hero-backdrop'>
+            <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
+          </div>
+          <div className='site-container hero-inner'>
             <div className='hero-copy'>
               <h1>{tHero('headline').replace(/ \|/g, '\u00a0|')}</h1>
               <p className='hero-subtitle'>{tHero('subheading')}</p>
@@ -530,9 +527,6 @@ export function DesignHome() {
                 </a>
               </div>
             </div>
-            <ImageFrame variant='hero' className='hero-media'>
-              <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
-            </ImageFrame>
           </div>
         </section>
 
@@ -638,9 +632,9 @@ export function DesignHome() {
 
         <section className='section' id='experience' aria-labelledby='experience-heading'>
           <div className='site-container split split-media-first'>
-            <ImageFrame variant='feature' orientation='bl' className='split-media experience-media' reveal>
+            <div className='media media-feature split-media experience-media' {...reveal(0, 'media')}>
               <img src='/media/experience-fabrication.webp' alt={tExperience('imageAlt')} loading='lazy' decoding='async' width={1024} height={565} />
-            </ImageFrame>
+            </div>
             <div className='split-copy'>
               <h2 id='experience-heading' {...reveal(0)}>{tExperience('heading')}</h2>
               <p {...reveal(1)}>{tExperience('body1')}</p>
@@ -680,9 +674,9 @@ export function DesignHome() {
               <p {...reveal(1)}>{tDigital('body1')}</p>
               <p {...reveal(2)}>{tDigital('body2')}</p>
             </div>
-            <ImageFrame variant='feature' precise className='split-media digital-media' reveal revealIndex={1}>
+            <div className='media media-feature split-media digital-media' {...reveal(1, 'media')}>
               <img src='/media/digital-inspection-records.webp' alt={tDigital('imageAlt')} loading='lazy' decoding='async' width={1280} height={720} />
-            </ImageFrame>
+            </div>
           </div>
         </section>
 
