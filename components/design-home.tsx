@@ -14,6 +14,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/contact-form';
 import { SiteFooter } from '@/components/footer';
 import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon } from '@/components/icons';
+import { ImageFrame } from '@/components/image-frame';
 import { SiteHeader } from '@/components/navigation';
 
 type IndustryCard = { title: string; description: string; imageAlt: string };
@@ -38,23 +39,32 @@ type QualCategory = {
 
 const DESKTOP_QUERY = '(min-width: 1101px)';
 
-const industryPhotos = [
-  '/media/industry-offshore-wind.webp',
-  '/media/industry-pipelines.webp',
-  '/media/industry-oil-gas.webp',
-  '/media/industry-refineries.webp',
-  '/media/industry-energy.webp',
-  '/media/industry-manufacturing.webp',
-  '/media/industry-epc.webp',
-  '/media/industry-maintenance.webp',
+type Photo = { src: string; width: number; height: number; pos?: string; posSmall?: string; crop?: string };
+
+const photoStyle = (photo: Photo) =>
+  ({
+    '--frame-pos': photo.pos,
+    '--frame-pos-sm': photo.posSmall,
+    '--frame-crop': photo.crop,
+  }) as CSSProperties;
+
+const industryPhotos: Photo[] = [
+  { src: '/media/industry-offshore-wind.webp', width: 1024, height: 474, pos: '96% 50%' },
+  { src: '/media/industry-pipelines.webp', width: 1152, height: 864 },
+  { src: '/media/industry-oil-gas.webp', width: 1280, height: 720, pos: '40% 50%' },
+  { src: '/media/industry-refineries.webp', width: 1152, height: 864 },
+  { src: '/media/industry-energy.webp', width: 1024, height: 682 },
+  { src: '/media/industry-manufacturing.webp', width: 1024, height: 473, pos: '68% 50%' },
+  { src: '/media/industry-epc.webp', width: 864, height: 1152, pos: '50% 60%' },
+  { src: '/media/industry-maintenance.webp', width: 1024, height: 764, pos: '60% 50%' },
 ];
-const expertisePhotos = [
-  '/media/service-qaqc.webp',
-  '/media/service-inspection.webp',
-  '/media/service-ndt.webp',
-  '/media/service-welding.webp',
-  '/media/service-documentation.webp',
-  '/media/service-hse.webp',
+const expertisePhotos: Photo[] = [
+  { src: '/media/service-qaqc.webp', width: 1024, height: 1024, posSmall: '50% 45%' },
+  { src: '/media/service-inspection.webp', width: 1024, height: 768, pos: '72% 50%', posSmall: '50% 60%' },
+  { src: '/media/service-ndt.webp', width: 639, height: 737, pos: '50% 60%', posSmall: '50% 45%', crop: '2%' },
+  { src: '/media/service-welding.webp', width: 1024, height: 1024, posSmall: '50% 55%' },
+  { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 50%', posSmall: '60% 50%' },
+  { src: '/media/service-hse.webp', width: 1024, height: 764, pos: '42% 50%', posSmall: '50% 40%' },
 ];
 
 const iconProps = {
@@ -165,6 +175,7 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
   const [isDesktop, setIsDesktop] = useState(false);
   const [moreOpen, setMoreOpen] = useState<Record<number, boolean>>({});
   const [marker, setMarker] = useState<{ y: number; h: number } | null>(null);
+  const [stage, setStage] = useState({ current: 0, previous: -1, changes: 0 });
   const rootRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -187,9 +198,9 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
     const observer = new IntersectionObserver(
       (entries) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
-        expertisePhotos.forEach((src) => {
+        expertisePhotos.forEach((photo) => {
           const image = new Image();
-          image.src = src;
+          image.src = photo.src;
         });
         observer.disconnect();
       },
@@ -219,6 +230,13 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
     observer.observe(root);
     return () => observer.disconnect();
   }, [updateMarker]);
+
+  useEffect(() => {
+    if (active === null) return;
+    setStage((current) =>
+      current.current === active ? current : { current: active, previous: current.current, changes: current.changes + 1 },
+    );
+  }, [active]);
 
   useEffect(() => () => window.clearTimeout(hoverTimer.current), []);
 
@@ -331,22 +349,47 @@ function ServiceExplorer({ cards, showAll, showFewer }: { cards: ExpertiseCard[]
                       </>
                     ) : null}
                   </div>
-                  <div className='svc-media media-hover'>
+                  <ImageFrame variant='card' className='svc-media'>
                     <img
-                      src={expertisePhotos[index]}
+                      src={expertisePhotos[index].src}
                       alt={card.imageAlt}
                       loading='lazy'
                       decoding='async'
-                      width={800}
-                      height={800}
+                      width={expertisePhotos[index].width}
+                      height={expertisePhotos[index].height}
+                      style={photoStyle(expertisePhotos[index])}
                     />
-                  </div>
+                  </ImageFrame>
                 </div>
               </div>
             </div>
           </Fragment>
         );
       })}
+      <ImageFrame
+        variant='feature'
+        className='svc-stage'
+        reveal
+        overlay={stage.changes > 0 ? <span key={stage.changes} className='img-frame__pulse' aria-hidden='true' /> : null}
+      >
+        {expertisePhotos.map((photo, index) => {
+          const current = index === stage.current;
+          return (
+            <img
+              key={photo.src}
+              src={photo.src}
+              alt={current ? cards[index]?.imageAlt ?? '' : ''}
+              aria-hidden={current ? undefined : true}
+              className={current ? 'is-current' : index === stage.previous ? 'is-leaving' : undefined}
+              loading='lazy'
+              decoding='async'
+              width={photo.width}
+              height={photo.height}
+              style={photoStyle(photo)}
+            />
+          );
+        })}
+      </ImageFrame>
     </div>
   );
 }
@@ -405,9 +448,17 @@ function IndustryCarousel({ cards, labels }: { cards: IndustryCard[]; labels: { 
       <ul id='industry-track' className='industry-track' ref={trackRef} tabIndex={0} aria-label={labels.region} onKeyDown={onKeyDown}>
         {cards.map((card, index) => (
           <li key={card.title} className='industry-item' aria-roledescription='slide' aria-label={`${index + 1} / ${cards.length}`}>
-            <div className='industry-media media-hover'>
-              <img src={industryPhotos[index]} alt={card.imageAlt} loading='lazy' decoding='async' width={800} height={600} />
-            </div>
+            <ImageFrame variant='card' className='industry-media'>
+              <img
+                src={industryPhotos[index].src}
+                alt={card.imageAlt}
+                loading='lazy'
+                decoding='async'
+                width={industryPhotos[index].width}
+                height={industryPhotos[index].height}
+                style={photoStyle(industryPhotos[index])}
+              />
+            </ImageFrame>
             <div className='industry-body'>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
@@ -479,9 +530,9 @@ export function DesignHome() {
                 </a>
               </div>
             </div>
-            <div className='hero-media'>
+            <ImageFrame variant='hero' className='hero-media'>
               <img src='/media/hero-monopile.webp' alt={tHero('imageAlt')} width={737} height={696} fetchPriority='high' decoding='async' />
-            </div>
+            </ImageFrame>
           </div>
         </section>
 
@@ -587,9 +638,9 @@ export function DesignHome() {
 
         <section className='section' id='experience' aria-labelledby='experience-heading'>
           <div className='site-container split split-media-first'>
-            <div className='split-media experience-media' {...reveal(0, 'media')}>
+            <ImageFrame variant='feature' orientation='bl' className='split-media experience-media' reveal>
               <img src='/media/experience-fabrication.webp' alt={tExperience('imageAlt')} loading='lazy' decoding='async' width={1024} height={565} />
-            </div>
+            </ImageFrame>
             <div className='split-copy'>
               <h2 id='experience-heading' {...reveal(0)}>{tExperience('heading')}</h2>
               <p {...reveal(1)}>{tExperience('body1')}</p>
@@ -629,9 +680,9 @@ export function DesignHome() {
               <p {...reveal(1)}>{tDigital('body1')}</p>
               <p {...reveal(2)}>{tDigital('body2')}</p>
             </div>
-            <div className='split-media digital-media' {...reveal(1, 'media')}>
+            <ImageFrame variant='feature' precise className='split-media digital-media' reveal revealIndex={1}>
               <img src='/media/digital-inspection-records.webp' alt={tDigital('imageAlt')} loading='lazy' decoding='async' width={1280} height={720} />
-            </div>
+            </ImageFrame>
           </div>
         </section>
 
