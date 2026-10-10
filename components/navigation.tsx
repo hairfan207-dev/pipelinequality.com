@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/navigation';
 
@@ -14,7 +14,7 @@ const SECTIONS = [
 
 const LANGUAGES = [
   { id: 'en', label: 'English' },
-  { id: 'de', label: 'Deutsch' },
+  { id: 'de', label: 'German' },
 ] as const;
 
 const TRACKED = SECTIONS.map((item) => item.hash.slice(1));
@@ -28,8 +28,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [indicator, setIndicator] = useState({ x: 0, w: 0, on: false });
-  const navRef = useRef<HTMLElement>(null);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
 
   const sectionHref = (hash: string) => (onHome ? hash : `/${hash}`);
   const closeMenu = () => setMenuOpen(false);
@@ -52,22 +51,6 @@ export function SiteHeader() {
       }
     }, 80);
   };
-
-  useLayoutEffect(() => {
-    const nav = navRef.current;
-    if (!nav) return;
-    const place = () => {
-      const active = nav.querySelector<HTMLElement>('.nav-link.is-active');
-      if (!active) {
-        setIndicator((current) => (current.on ? { ...current, on: false } : current));
-        return;
-      }
-      setIndicator({ x: active.offsetLeft, w: active.offsetWidth, on: true });
-    };
-    place();
-    window.addEventListener('resize', place);
-    return () => window.removeEventListener('resize', place);
-  }, [activeSection, locale, onHome]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -99,10 +82,13 @@ export function SiteHeader() {
   useEffect(() => {
     if (!menuOpen) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuToggleRef.current?.focus();
+      }
     };
     const onResize = () => {
-      if (window.innerWidth > 1100) setMenuOpen(false);
+      if (window.innerWidth > 960) setMenuOpen(false);
     };
     document.addEventListener('keydown', onKey);
     window.addEventListener('resize', onResize);
@@ -128,17 +114,12 @@ export function SiteHeader() {
           </span>
         </a>
 
-        <nav ref={navRef} className='site-nav'>
+        <nav className='site-nav' aria-label={locale === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
           {SECTIONS.map((item) => (
-            <a key={item.hash} className={`nav-link${isActive(item.hash) ? ' is-active' : ''}`} href={sectionHref(item.hash)}>
+            <a key={item.hash} className={`nav-link${isActive(item.hash) ? ' is-active' : ''}`} aria-current={isActive(item.hash) ? 'location' : undefined} href={sectionHref(item.hash)}>
               {tNav(item.key)}
             </a>
           ))}
-          <span
-            className={`nav-indicator${indicator.on ? ' is-on' : ''}`}
-            style={{ width: indicator.w, transform: `translateX(${indicator.x}px)` }}
-            aria-hidden='true'
-          />
         </nav>
 
         <div className='site-header-tools'>
@@ -146,6 +127,7 @@ export function SiteHeader() {
           <button
             type='button'
             className='site-menu-toggle'
+            ref={menuToggleRef}
             aria-expanded={menuOpen}
             aria-controls='site-mobile-menu'
             aria-label={menuOpen ? tNav('closeMenu') : tNav('openMenu')}
@@ -160,7 +142,7 @@ export function SiteHeader() {
       <div id='site-mobile-menu' className={`site-mobile-menu${menuOpen ? ' is-open' : ''}`} hidden={!menuOpen}>
         <nav className='site-container'>
           {SECTIONS.map((item) => (
-            <a key={item.hash} className={isActive(item.hash) ? 'is-active' : undefined} href={sectionHref(item.hash)} onClick={closeMenu}>
+            <a key={item.hash} className={isActive(item.hash) ? 'is-active' : undefined} aria-current={isActive(item.hash) ? 'location' : undefined} href={sectionHref(item.hash)} onClick={closeMenu}>
               {tNav(item.key)}
             </a>
           ))}

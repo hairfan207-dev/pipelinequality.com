@@ -11,6 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  skipMiddlewareUrlNormalize: true,
   // Hide the Next.js "N" badge on the client preview tunnel
   devIndicators: false,
   allowedDevOrigins: ['*.trycloudflare.com'],

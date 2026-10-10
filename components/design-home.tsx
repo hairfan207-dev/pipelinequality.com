@@ -84,13 +84,13 @@ const industryPhotos: Photo[] = [
   { src: '/media/industry-refineries.webp', width: 1152, height: 864, pos: '48% 40%' },
   { src: '/media/industry-energy.webp', width: 1024, height: 682, pos: '42% 45%' },
   { src: '/media/industry-manufacturing.webp', width: 1024, height: 473, pos: '72% 50%' },
-  { src: '/media/industry-epc.webp', width: 864, height: 1152, pos: '50% 38%' },
+  { src: '/media/industry-epc-refinery.webp', width: 1448, height: 1086, pos: '50% 65%' },
   { src: '/media/industry-maintenance.webp', width: 1024, height: 764, pos: '58% 42%' },
 ];
 const expertisePhotos: Photo[] = [
   { src: '/media/service-qaqc.webp', width: 1024, height: 1024, pos: '50% 48%', posSmall: '50% 42%' },
   { src: '/media/service-inspection.webp', width: 1024, height: 768, pos: '78% 48%', posSmall: '50% 58%' },
-  { src: '/media/service-ndt.webp', width: 639, height: 737, pos: '50% 58%', posSmall: '50% 42%', crop: '2%' },
+  { src: '/media/service-ndt-ultrasonic.webp', width: 1448, height: 1086, pos: '55% 55%', posSmall: '55% 55%' },
   { src: '/media/service-welding.webp', width: 1024, height: 1024, pos: '48% 52%', posSmall: '50% 52%' },
   { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 48%', posSmall: '60% 50%' },
   { src: '/media/service-hse.webp', width: 1024, height: 764, pos: '40% 46%', posSmall: '50% 38%' },
@@ -103,10 +103,10 @@ const experiencePhoto: Photo = {
   crop: '1.5%',
 };
 const digitalPhoto: Photo = {
-  src: '/media/digital-inspection-records.webp',
-  width: 1280,
-  height: 720,
-  pos: '46% 42%',
+  src: '/media/digital-workshop-inspection.webp',
+  width: 1448,
+  height: 1086,
+  pos: '50% 50%',
 };
 
 function EditorialMedia({
@@ -666,7 +666,7 @@ export function DesignHome() {
         <section className='hero'>
           <div className='hero-backdrop'>
             <div className='hero-backdrop-shift'>
-              <img src='/media/hero-plant.webp' alt={tHero('imageAlt')} width={1024} height={457} fetchPriority='high' decoding='async' />
+              <img src='/media/hero-fabrication-banner.webp' alt={tHero('imageAlt')} width={7681} height={3457} fetchPriority='high' decoding='async' />
             </div>
           </div>
           <div className='site-container hero-inner'>
@@ -676,8 +676,16 @@ export function DesignHome() {
               <p className='hero-subtitle'>{tHero('subheading')}</p>
               <p className='hero-body'>{keepClosingWords(tHero('body'))}</p>
               <div className='hero-meta'>
-                <p>{tHero('serviceLine')}</p>
-                <p>{tHero('industryLine')}</p>
+                {(['serviceLine', 'industryLine'] as const).map((key) => (
+                  <p key={key}>
+                    {tHero(key).split('|').map((text, index) => (
+                      <Fragment key={index}>
+                        {index > 0 ? <span className='hero-meta-separator'> | </span> : null}
+                        {text.trim()}
+                      </Fragment>
+                    ))}
+                  </p>
+                ))}
               </div>
               <div className='hero-actions'>
                 <a className='site-btn site-btn-primary' href='#contact'>
