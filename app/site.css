@@ -426,8 +426,8 @@ body {
 /* Header: transparent over the hero, white once the page moves */
 
 .site-header {
-  --pq-header-h: 70px;
-  --pq-header-h-compact: 62px;
+  --pq-header-h: 88px;
+  --pq-header-h-compact: 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -465,15 +465,15 @@ body {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
   flex: 0 0 auto;
   text-decoration: none;
   color: var(--brand-navy);
 }
 
 .site-brand-mark {
-  width: 50px;
-  height: 42px;
+  width: 64px;
+  height: 54px;
   transition: width 300ms var(--motion-ease), height 300ms var(--motion-ease);
   object-fit: contain;
 }
@@ -485,7 +485,7 @@ body {
 .site-brand-word {
   display: inline-flex;
   flex-direction: column;
-  font-size: 12.5px;
+  font-size: 16px;
   transition: font-size 300ms var(--motion-ease);
   line-height: 1.05;
   letter-spacing: 0.08em;
@@ -505,7 +505,7 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   margin-left: auto;
 }
 
@@ -513,7 +513,7 @@ body {
   position: relative;
   padding: 14px 0;
   line-height: 1;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--brand-navy);
   text-decoration: none;
@@ -832,12 +832,12 @@ body {
 
 /* Compact brand utility and scroll proportions. */
 .site-header.is-scrolled .site-brand-word {
-  font-size: 11.25px;
+  font-size: 15px;
 }
 
 .site-header.is-scrolled .site-brand-mark {
-  width: 45px;
-  height: 38px;
+  width: 58px;
+  height: 48px;
 }
 
 .site-header-tools > .lang-menu .lang-menu-trigger {
@@ -885,8 +885,22 @@ body {
 
 @media (max-width: 960px) {
   .site-header {
-    --pq-header-h: 66px;
-    --pq-header-h-compact: 60px;
+    --pq-header-h: 76px;
+    --pq-header-h-compact: 72px;
+  }
+
+  .site-brand-mark {
+    width: 56px;
+    height: 46px;
+  }
+
+  .site-brand-word,
+  .site-header.is-scrolled .site-brand-word {
+    font-size: 14px;
+  }
+
+  .site-mobile-menu a {
+    font-size: 18px;
   }
   .site-mobile-menu {
     max-height: calc(100dvh - 72px);
