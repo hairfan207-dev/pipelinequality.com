@@ -2300,7 +2300,7 @@ body {
   }
 
   .industry-track {
-    grid-auto-columns: 86%;
+    grid-auto-columns: 100%;
   }
 
   .industry-controls {
