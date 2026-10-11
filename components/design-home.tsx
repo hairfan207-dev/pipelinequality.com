@@ -51,7 +51,7 @@ function heroTitle(headline: string) {
   if (!rest.length) return headline;
   return (
     <>
-      {lead}
+      <span className='hero-title-lead'>{lead}</span>
       <br />
       {rest.map((part, index) => (
         <Fragment key={part}>
@@ -666,12 +666,14 @@ export function DesignHome() {
         <section className='hero'>
           <div className='hero-backdrop'>
             <div className='hero-backdrop-shift'>
-              <img src='/media/hero-fabrication-banner.webp' alt={tHero('imageAlt')} width={7681} height={3457} fetchPriority='high' decoding='async' />
+              <picture>
+                <source media='(max-width: 640px)' srcSet='/media/hero-mobile.webp' width={941} height={1672} />
+              <img src='/media/hero-banner.webp' alt={tHero('imageAlt')} width={2119} height={948} fetchPriority='high' decoding='async' />
+              </picture>
             </div>
           </div>
           <div className='site-container hero-inner'>
             <div className='hero-copy'>
-              <p className='hero-kicker'>{tHero('tagline')}</p>
               <h1>{heroTitle(tHero('headline'))}</h1>
               <p className='hero-subtitle'>{tHero('subheading')}</p>
               <p className='hero-body'>{keepClosingWords(tHero('body'))}</p>

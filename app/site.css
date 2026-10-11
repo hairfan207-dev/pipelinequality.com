@@ -426,8 +426,8 @@ body {
 /* Header: transparent over the hero, white once the page moves */
 
 .site-header {
-  --pq-header-h: 88px;
-  --pq-header-h-compact: 80px;
+  --pq-header-h: 78px;
+  --pq-header-h-compact: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -465,7 +465,7 @@ body {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;
   flex: 0 0 auto;
   text-decoration: none;
   color: var(--brand-navy);
@@ -505,7 +505,7 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
   margin-left: auto;
 }
 
@@ -788,13 +788,13 @@ body {
   box-shadow: none;
 }
 
-@media (min-width: 961px) {
+@media (min-width: 1101px) {
   .site-mobile-menu {
     display: none !important;
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .site-nav,
   .site-header-tools > .lang-menu {
     display: none;
@@ -832,20 +832,20 @@ body {
 
 /* Compact brand utility and scroll proportions. */
 .site-header.is-scrolled .site-brand-word {
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 .site-header.is-scrolled .site-brand-mark {
-  width: 58px;
+  width: 57px;
   height: 48px;
 }
 
 .site-header-tools > .lang-menu .lang-menu-trigger {
-  min-height: 38px;
+  min-height: 44px;
   background: var(--brand-orange);
   border-color: var(--brand-orange);
   color: var(--brand-white);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .site-header-tools > .lang-menu .lang-menu-trigger:hover,
@@ -883,24 +883,10 @@ body {
   border-color: var(--brand-orange);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .site-header {
-    --pq-header-h: 76px;
-    --pq-header-h-compact: 72px;
-  }
-
-  .site-brand-mark {
-    width: 56px;
-    height: 46px;
-  }
-
-  .site-brand-word,
-  .site-header.is-scrolled .site-brand-word {
-    font-size: 14px;
-  }
-
-  .site-mobile-menu a {
-    font-size: 18px;
+    --pq-header-h: 66px;
+    --pq-header-h-compact: 60px;
   }
   .site-mobile-menu {
     max-height: calc(100dvh - 72px);
@@ -1064,25 +1050,12 @@ body {
   animation: pq-hero-settle 1600ms var(--pq-ease-out) both;
 }
 
+/* A light, localized scrim supplements the banner’s built-in shading. */
 .hero-backdrop::after {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      var(--pq-blue) 0%,
-      color-mix(in srgb, var(--pq-blue) 94%, transparent) 34%,
-      color-mix(in srgb, var(--pq-blue) 72%, transparent) 52%,
-      transparent 76%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--pq-blue) 72%, transparent) 0%,
-      transparent 22%,
-      transparent 78%,
-      color-mix(in srgb, var(--brand-navy) 24%, transparent) 100%
-    );
+  background: linear-gradient(90deg, rgba(1, 42, 96, 0.3) 0%, rgba(1, 42, 96, 0.24) 55%, transparent 82%);
 }
 
 .hero-step {
@@ -1131,7 +1104,7 @@ body {
 
 .hero-copy {
   width: min(100%, 860px);
-  text-shadow: none;
+  text-shadow: 0 1px 3px rgba(0, 15, 38, 0.45);
 }
 
 .hero-kicker {
@@ -1183,7 +1156,7 @@ body {
   border-top: 1px solid color-mix(in srgb, var(--pq-mist) 26%, transparent);
   font-size: 15px;
   line-height: 1.55;
-  color: color-mix(in srgb, var(--pq-mist) 80%, transparent);
+  color: var(--brand-white);
 }
 
 .hero-meta::before {
@@ -1242,6 +1215,10 @@ body {
   color: var(--brand-white);
   transform: translateY(-1px);
   box-shadow: 0 8px 18px color-mix(in srgb, var(--brand-navy) 16%, transparent);
+}
+
+.hero-title-lead {
+  color: var(--brand-orange);
 }
 
 .hero-title-divider {
@@ -1349,11 +1326,48 @@ body {
 
   .hero-backdrop {
     height: min(64%, 460px);
+    /* Fade the entire photo layer to the hero background before its edge. */
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 72%, transparent 98%);
+  }
+
+  .hero-backdrop::after {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 38%,
+      color-mix(in srgb, var(--brand-navy) 30%, transparent) 68%,
+      var(--brand-navy) 100%
+    );
+  }
+
+  .hero-copy h1,
+  .hero-subtitle {
+    position: relative;
+    isolation: isolate;
+    text-shadow: 0 2px 4px rgba(0, 15, 38, 0.7);
+  }
+
+  .hero-copy h1::before,
+  .hero-subtitle::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -12px -14px;
+    background: rgba(1, 42, 96, 0.62);
+    filter: blur(14px);
+    pointer-events: none;
   }
 
   .hero-subtitle {
     margin-top: 18px;
     font-size: 18px;
+    color: var(--brand-white);
+    font-weight: 600;
+  }
+
+  .hero-body {
+    color: var(--brand-white);
   }
 
   .hero-meta {

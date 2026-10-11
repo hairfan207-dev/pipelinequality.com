@@ -88,7 +88,7 @@ export function SiteHeader() {
       }
     };
     const onResize = () => {
-      if (window.innerWidth > 960) setMenuOpen(false);
+      if (window.innerWidth > 1100) setMenuOpen(false);
     };
     document.addEventListener('keydown', onKey);
     window.addEventListener('resize', onResize);
