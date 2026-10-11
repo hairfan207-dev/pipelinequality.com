@@ -14,7 +14,7 @@ import {
 import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/contact-form';
 import { SiteFooter } from '@/components/footer';
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon } from '@/components/icons';
+import { ArrowLeftIcon, ArrowRightIcon, CheckIcon } from '@/components/icons';
 import { SiteHeader } from '@/components/navigation';
 
 type IndustryCard = { title: string; description: string; imageAlt: string };
@@ -308,18 +308,13 @@ function CapabilityList({ items }: { items: string[] }) {
 
 function ServiceExplorer({
   cards,
-  showAll,
-  showFewer,
   sectionLabel,
 }: {
   cards: ExpertiseCard[];
-  showAll: string;
-  showFewer: string;
   sectionLabel: string;
 }) {
   const [active, setActive] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [moreOpen, setMoreOpen] = useState<Record<number, boolean>>({});
   const [marker, setMarker] = useState<{ y: number; h: number } | null>(null);
   const [stage, setStage] = useState({ current: 0, previous: -1 });
   const rootRef = useRef<HTMLDivElement>(null);
@@ -433,12 +428,8 @@ function ServiceExplorer({
       </div>
       {cards.map((card, index) => {
         const open = active === index;
-        const visible = card.capabilities.slice(0, 4);
-        const hidden = card.capabilities.slice(4);
-        const more = Boolean(moreOpen[index]);
         const tabId = `svc-tab-${index}`;
         const panelId = `svc-panel-${index}`;
-        const moreId = `svc-more-${index}`;
         return (
           <Fragment key={card.title}>
             <h3 className='svc-head' style={{ '--row': index + 1 } as CSSProperties}>
@@ -474,26 +465,7 @@ function ServiceExplorer({
                     <p className='svc-desc'>{card.description}</p>
                     {card.note ? <p className='svc-note'>{card.note}</p> : null}
                     <p className='svc-label'>{card.capabilitiesLabel}</p>
-                    <CapabilityList items={visible} />
-                    {hidden.length > 0 ? (
-                      <>
-                        <div id={moreId} className={`collapse${more ? ' is-open' : ''}`}>
-                          <div className='collapse-clip'>
-                            <CapabilityList items={hidden} />
-                          </div>
-                        </div>
-                        <button
-                          type='button'
-                          className='text-action'
-                          aria-expanded={more}
-                          aria-controls={moreId}
-                          onClick={() => setMoreOpen((current) => ({ ...current, [index]: !current[index] }))}
-                        >
-                          <span>{more ? showFewer : showAll}</span>
-                          <ArrowDownIcon className='text-action-icon' />
-                        </button>
-                      </>
-                    ) : null}
+                    <CapabilityList items={card.capabilities} />
                   </div>
                   <EditorialMedia variant='compact' className='svc-media'>
                     <img
@@ -712,8 +684,6 @@ export function DesignHome() {
             <div {...reveal(2)}>
               <ServiceExplorer
                 cards={expertiseCards}
-                showAll={tExpertise('showAll')}
-                showFewer={tExpertise('showFewer')}
                 sectionLabel={tExpertise('heading')}
               />
             </div>

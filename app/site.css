@@ -1994,6 +1994,16 @@ body {
       visibility 0s;
   }
 
+  .svc-panel:not(.is-open) {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .svc:not(.has-active) .svc-panel.is-default {
+    max-height: none;
+    overflow: visible;
+  }
+
   .svc-panel-clip {
     overflow: visible;
   }
