@@ -169,6 +169,7 @@ function LanguageMenu({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const listId = useId();
   const current = LANGUAGES.find((item) => item.id === locale) ?? LANGUAGES[0];
+  const optionLabel = (id: 'en' | 'de', text: string) => (locale === 'de' && id === 'de' ? 'Deutsch' : text);
 
   useEffect(() => {
     if (!open) return;
@@ -228,7 +229,7 @@ function LanguageMenu({
         onClick={() => setOpen((value) => !value)}
         onKeyDown={onTriggerKey}
       >
-        <span>{current.label}</span>
+        <span>{optionLabel(current.id, current.label)}</span>
         <span className='lang-menu-chevron' aria-hidden='true' />
       </button>
       <ul id={listId} className='lang-menu-list' role='listbox' aria-label={label} hidden={!open} onKeyDown={onListKey}>
@@ -244,7 +245,7 @@ function LanguageMenu({
                 onSelect(item.id);
               }}
             >
-              {item.label}
+              {optionLabel(item.id, item.label)}
             </button>
           </li>
         ))}

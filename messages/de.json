@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Pipeline Quality | Industrielle Qualität, ZfP & HSE",
-    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte."
+    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrumsprojekte."
   },
   "nav": {
     "home": "Startseite",
@@ -29,10 +29,10 @@
     "titleLine3": "",
     "title": "Projektqualität. Von der Fertigung bis zur Übergabe.",
     "headline": "Industrielle Qualität | ZfP | HSE",
-    "subheading": "Technische Bauüberwachung — von der Fertigung bis zur Übergabe",
-    "body": "Wir stellen qualifizierte technische Fachkräfte und koordinierte Projektteams für Qualitätssicherung, Sicherheit und Konformität bereit. Von der Fertigungsüberwachung im Werk über die Audit-Vorbereitung bis hin zur Aufarbeitung von Dokumentationsrückständen sichern wir den Projektablauf und die lückenlose Rückverfolgbarkeit.",
+    "subheading": "Technische Überwachung — von der Fertigung bis zur Übergabe",
+    "body": "Wir stellen qualifizierte technische Fachkräfte und koordinierte Projektteams für Qualitätssicherung, Sicherheit und Konformität bereit. Von der Fertigungsüberwachung im Werk über die Vorbereitung von Drittaudits bis zur Aufarbeitung von Dokumentationsrückständen aus der Ferne sichern wir den Projektablauf und die lückenlose Rückverfolgbarkeit.",
     "serviceLine": "QA/QC Engineering | Inspektion & ZfP | HSE-Überwachung | QM & Audits | Dokumentation & Projektabschluss | Digitale Lösungen",
-    "industryLine": "Onshore- & Offshore-Windfundamente | Pipelines & Infrastruktur | Öl & Gas | Raffinerien & Petrochemie | Rechenzentren",
+    "industryLine": "Onshore- und Offshore-Windfundamente | Pipelines & Infrastruktur | Öl & Gas | Raffinerien & Petrochemie | Rechenzentren",
     "subtitle": "QA/QC | Inspektion | Engineering | Dokumentation",
     "imageAlt": "Offshore-Strukturen und große Stahlrohre auf einem Fertigungsgelände",
     "availability": "Verfügbar für projektbezogene QA/QC-Unterstützung europaweit.",
@@ -140,25 +140,25 @@
     "industrialText": "Pipelines, Öl & Gas, Chemie / Petrochemie, Energie, EPC, Industrieanlagenbau, Rohrleitungen, Fertigung, Wartung / Stillstand / Revamp."
   },
   "experienceSection": {
-    "heading": "Die Erfahrung hinter Pipeline Quality",
+    "heading": "Erfahrung, auf die Pipeline Quality baut",
     "body1": "Pipeline Quality baut auf dem industriellen QA/QC-Hintergrund der Gründerin und der gebündelten Erfahrung von Fachkräften aus dem professionellen Netzwerk auf.",
-    "body2": "Relevante Projekterfahrungen umfassen industrielle Fertigung, chemische und petrochemische Anlagen, Pipelineprojekte sowie die Fertigung von Offshore-Wind-Gründungsstrukturen.",
-    "disclaimer": "Erfahrungen und Referenzen werden entsprechend der tatsächlichen Rolle der jeweiligen Fachkraft dargestellt. Genannte Projekte oder Unternehmen bedeuten nicht, dass alle Netzwerkmitglieder an diesen Projekten beteiligt waren oder dass Pipeline Quality mit jedem genannten Unternehmen direkt einen Vertrag hatte.",
+    "body2": "Relevante Projektumfelder umfassen die industrielle Fertigung, chemische und petrochemische Anlagen, Pipelineprojekte sowie die Fertigung von Offshore-Wind-Gründungsstrukturen.",
+    "disclaimer": "Erfahrungen und Referenzen werden entsprechend der tatsächlichen Rolle der jeweiligen Fachkraft dargestellt. Genannte Projekte oder Unternehmen bedeuten nicht, dass alle Netzwerkmitglieder an diesen Projekten beteiligt waren oder dass Pipeline Quality mit jedem genannten Unternehmen direkt einen Vertrag geschlossen hat.",
     "imageAlt": "Offshore-Wind-Gründungsstrukturen in einem Fertigungswerk",
-    "assignmentLabel": "Ausgewählter aktueller Projekteinsatz",
+    "assignmentLabel": "Ausgewählter Projekteinsatz",
     "assignmentTitle": "Fertigung von Offshore-Wind-Gründungsstrukturen — Niederlande",
     "assignmentBody": "QA/QC-Unterstützung in einem Fertigungsumfeld für Offshore-Wind-Gründungsstrukturen, einschließlich Inspektionskoordination, Schweiß- und Qualitätsdokumentation, Nachverfolgung von Abweichungen, Berichterstattung und Abstimmung mit Projektbeteiligten.",
-    "assignmentHistory": "Zugehörige Projektumfelder können East Anglia 2, Oranje Wind, DolWin und IJmuiden Ver Gamma umfassen, sofern dies durch die tatsächliche Projekthistorie der jeweiligen Fachkraft belegt ist."
+    "assignmentHistory": "Zu den relevanten Projektumfeldern können East Anglia 2, Oranje Wind, DolWin und IJmuiden Ver Gamma zählen, sofern dies durch die tatsächliche Projekthistorie der jeweiligen Fachkraft belegt ist."
   },
   "expertiseSection": {
     "heading": "Kernkompetenzen",
-    "intro": "Von der Unterstützung durch einzelne Fachkräfte bis zu koordinierten Projektteams bieten wir praxisorientierte Industriekompetenz entsprechend dem Umfang, den technischen Anforderungen und der jeweiligen Projektphase.",
+    "intro": "Von einzelnen Fachkräften bis zu koordinierten Projektteams stellen wir praxisorientierte Industriekompetenz bereit, abgestimmt auf Umfang, technische Anforderungen und Phase des jeweiligen Einsatzes.",
     "showAll": "Alle Leistungen anzeigen",
     "showFewer": "Weniger Leistungen anzeigen",
     "cards": [
       {
         "title": "QA/QC Engineering & Qualitätsmanagement",
-        "description": "Qualitätsplanung, Inspektionskoordination und Umsetzungsnachverfolgung. Unterstützung bei ITPs, QCPs, projektspezifischen PTPs, Qualitätsverfahren, Berichterstattung, Abweichungen und kundenspezifischen Qualitätsanforderungen.",
+        "description": "Qualitätsplanung, Inspektionskoordination und Nachverfolgung der Umsetzung. Unterstützung bei ITPs, QCPs und projektspezifischen PTPs, sofern anwendbar, sowie bei Qualitätsverfahren, Berichterstattung, Abweichungen und kundenspezifischen Qualitätsanforderungen.",
         "capabilitiesLabel": "Leistungen",
         "imageAlt": "Inspektoren neben einem großen Stahlschuss in einer Fertigungshalle",
         "capabilities": [
@@ -166,32 +166,32 @@
           "Inspection and Test Plans (ITP)",
           "Quality Control Plans (QCP)",
           "Projektspezifische PTPs, sofern anwendbar",
-          "Prüfungsvorbereitung und Hold-/Witness-Punkte",
-          "Nachverfolgung von Abweichungen und Korrekturmaßnahmen",
+          "Prüfbereitschaft sowie Hold- und Witness-Punkte",
+          "Nachverfolgung von Abweichungen (NCR) und Korrekturmaßnahmen",
           "Qualitätsberichte und Koordination"
         ]
       },
       {
         "title": "Inspektion & Technische Überwachung",
-        "description": "Inspektionen in der Fertigung und auf Baustellen, Fertigungsüberwachung, Prüfung von Zeichnungen und Spezifikationen, Maßkontrollen, Inspektionskoordination und Unterstützung bei Drittinspektionen.",
+        "description": "Inspektionen in der Fertigung und auf der Baustelle, Fertigungsüberwachung, Prüfung von Zeichnungen und Spezifikationen, Maßkontrollen, Inspektionskoordination und Unterstützung bei Drittinspektionen.",
         "capabilitiesLabel": "Leistungen",
         "imageAlt": "Maßkontrolle an einem Stahlbauteil",
         "capabilities": [
-          "Fertigungs- und Herstellungsüberwachung",
+          "Fertigungsüberwachung",
           "Sicht- und Maßprüfungen",
           "Prüfung von Zeichnungen und Spezifikationen",
           "Inspektionskoordination",
           "Abstimmung mit Kunden und Drittinspektoren",
           "Inspektionsberichte und Freigabedokumentation",
-          "Lieferantenüberwachung, sofern erforderlich"
+          "Hersteller- und Lieferantenüberwachung, sofern erforderlich"
         ]
       },
       {
         "title": "ZfP & Spezialinspektion",
-        "description": "Koordination und Bereitstellung entsprechend qualifizierter ZfP-Fachkräfte für projektspezifische Prüfanforderungen, einschließlich konventioneller und fortgeschrittener Ultraschallprüfverfahren.",
-        "capabilitiesLabel": "Über qualifizierte Fachkräfte verfügbare Verfahren und Leistungen",
+        "description": "Koordination und Bereitstellung entsprechend qualifizierter ZfP-Fachkräfte für projektspezifische Prüfanforderungen, einschließlich konventioneller und fortgeschrittener Ultraschallprüfung.",
+        "capabilitiesLabel": "Verfahren und Leistungen, die über qualifizierte Fachkräfte verfügbar sind",
         "imageAlt": "Ultraschallmessgerät an einer geschweißten Stahloberfläche",
-        "note": "Wichtig: Prüfverfahren, Prüfanweisung, Akzeptanzkriterien und erforderliche Personalqualifikationen sind für jedes Projekt zu bestätigen. Es darf nicht der Eindruck entstehen, dass jedes Verfahren für jeden Werkstoff oder Einsatz verfügbar ist.",
+        "note": "Wichtig: Prüfverfahren, Prüfanweisung, Akzeptanzkriterien und die erforderlichen Personalqualifikationen sind für jedes Projekt zu bestätigen. Es darf nicht der Eindruck entstehen, dass jedes Verfahren für jeden Werkstoff, jedes Bauteil oder jeden Einsatz verfügbar ist.",
         "capabilities": [
           "VT — Sichtprüfung",
           "PT — Eindringprüfung",
@@ -213,8 +213,8 @@
           "Koordination der Schweißqualität",
           "Prüfung von WPS- und WPQR/PQR-Dokumentation",
           "Schweißerqualifikationsnachweise",
-          "Schweißpläne und Schweißnaht-Rückverfolgbarkeit",
-          "Werkstoffzeugnisse und Chargenrückverfolgbarkeit",
+          "Schweißnahtpläne und Rückverfolgbarkeit der Schweißnähte",
+          "Werkstoffzeugnisse und Rückverfolgbarkeit der Schmelzennummern",
           "Werkstoffdokumentation nach EN 10204",
           "Reparaturdokumentation und Nachverfolgung",
           "Koordination von Beschichtungsprüfungen, sofern erforderlich"
@@ -230,23 +230,23 @@
           "Abschließende Qualitätsdossiers und Übergabepakete",
           "Prüf- und Inspektionsaufzeichnungen",
           "Prüfung von MTR/MTC und Werkstoffrückverfolgbarkeit",
-          "NCR-Register und Nachweise zum Abschluss",
+          "NCR-Register und Nachweise zum Projektabschluss",
           "Nachverfolgung von RFI- und Inspektionsanfragen",
-          "Punch Lists und fehlende Dokumentation",
+          "Punchlisten und fehlende Dokumentation",
           "Dokumentenregister, Revisionskontrolle und Vollständigkeitsprüfung",
           "Aufarbeitung von Dokumentationsrückständen"
         ]
       },
       {
         "title": "HSE & Baustellenunterstützung",
-        "description": "Zugang zu entsprechend qualifizierten HSE-Fachkräften für die Betreuung vor Ort, Sicherheitskoordination, Maßnahmenverfolgung und projektspezifische HSE-Anforderungen.",
+        "description": "Zugang zu entsprechend qualifizierten HSE-Fachkräften für den Einsatz vor Ort, die Sicherheitskoordination, die Nachverfolgung von Maßnahmen und projektspezifische HSE-Anforderungen.",
         "capabilitiesLabel": "Leistungen",
         "imageAlt": "Inspektor mit Schutzausrüstung misst eine Schweißnaht an einem großen Rohr",
         "capabilities": [
-          "HSE-Betreuung vor Ort gemäß den Einsatzanforderungen",
+          "HSE-Überwachung vor Ort gemäß den Anforderungen des Einsatzes",
           "Sicherheitskoordination und Maßnahmenverfolgung",
-          "Sicherheitsdokumentation",
-          "HSE-Berichte und Maßnahmenlisten",
+          "Sicherheitsdokumentation vor Ort",
+          "HSE-Berichte und Maßnahmenverfolgung",
           "Abstimmung mit Projektteams und Baustellenleitung",
           "Unterstützung bei projektspezifischen Sicherheitsanforderungen"
         ]
@@ -444,7 +444,7 @@
   "qualificationsSection": {
     "heading": "Technische Kompetenzen & Qualifikationen",
     "intro": "Abhängig von den Projektanforderungen können über unser professionelles Netzwerk entsprechend qualifizierte Fachkräfte aus den Bereichen Qualitätsmanagement, Schweißtechnik, ZfP, Werkstoffe, Inspektion, Beschichtung und HSE bereitgestellt werden. Individuelle Qualifikationen und relevante Erfahrungen werden anhand der Anforderungen des jeweiligen Einsatzes geprüft.",
-    "disclaimer": "Die aufgeführten Normen und Qualifikationen beschreiben technische Bereiche unseres Leistungsportfolios. Sie stellen keine Zertifizierungen von Pipeline Quality oder Backpack Wander GmbH dar. Individuelle Zertifikate, Kompetenzen und Erfahrungen werden anhand der Anforderungen des jeweiligen Einsatzes geprüft. Maßgeblich sind die Projektspezifikationen und vertraglichen Anforderungen.",
+    "disclaimer": "Die aufgeführten Normen und Qualifikationen beschreiben technische Bereiche unseres Leistungsportfolios. Sie stellen keine Zertifizierungen von Pipeline Quality oder Backpack Wander GmbH dar. Individuelle Zertifikate, Kompetenzen und Erfahrungen werden anhand der Anforderungen des jeweiligen Einsatzes geprüft. Maßgeblich sind die Projektspezifikationen und die vertraglichen Anforderungen.",
     "categories": [
       {
         "code": "A",
@@ -457,7 +457,7 @@
               "ISO 14001 — Umweltmanagementsysteme, sofern anwendbar",
               "ISO 45001 — Managementsysteme für Sicherheit und Gesundheit bei der Arbeit",
               "ISO 3834 — Qualitätsanforderungen für das Schmelzschweißen von metallischen Werkstoffen, sofern anwendbar",
-              "Interne Qualitätsaudits und Lieferantenaudits gemäß individueller Kompetenz und Projektumfang"
+              "Interne Qualitätsaudits und Lieferantenaudits entsprechend der individuellen Kompetenz und dem Umfang des Einsatzes"
             ]
           }
         ]
@@ -476,14 +476,14 @@
               "WPS — Schweißanweisung (Welding Procedure Specification)",
               "WPQR/PQR — Bericht über die Qualifizierung des Schweißverfahrens",
               "Schweißerqualifikationsnachweise",
-              "Schweißpläne und Schweißnaht-Rückverfolgbarkeit"
+              "Schweißnahtpläne und Rückverfolgbarkeit der Schweißnähte"
             ]
           }
         ]
       },
       {
         "code": "C",
-        "title": "ZfP — Konventionelle & fortschrittliche Verfahren",
+        "title": "ZfP — konventionelle und fortschrittliche Verfahren",
         "groups": [
           {
             "label": "Prüfverfahren",
@@ -512,7 +512,7 @@
             ]
           }
         ],
-        "note": "Das genaue Prüfverfahren, die Qualifikationsstufe des Personals, der anwendbare Sektor und die Akzeptanzkriterien müssen mit den Projektspezifikationen abgeglichen werden."
+        "note": "Das genaue Prüfverfahren, die Qualifikationsstufe des Personals, der anwendbare Sektor und die Akzeptanzkriterien sind anhand der Projektspezifikation zu bestätigen."
       },
       {
         "code": "D",
@@ -521,13 +521,13 @@
           {
             "items": [
               "Sicht- und Maßprüfungen",
-              "Fertigungs- und Herstellungsüberwachung",
+              "Fertigungsüberwachung",
               "Prüfung von Zeichnungen und Spezifikationen",
               "Prüf- und Inspektionsaufzeichnungen",
               "Inspection and Test Plans (ITP) / Prüf- und Inspektionspläne",
               "Quality Control Plans (QCP)",
               "Projektspezifische PTPs, sofern anwendbar",
-              "Hold Points, Witness Points und Abnahme/Freigabe von Inspektionen",
+              "Hold Points, Witness Points und Inspektionsfreigaben",
               "Koordination von Kunden- und Drittinspektionen"
             ]
           }
@@ -541,9 +541,9 @@
             "items": [
               "EN 10204 — Metallische Erzeugnisse — Arten von Prüfbescheinigungen",
               "Prüfung von Werkstoffzeugnissen (MTR/MTC) und Rückverfolgbarkeit",
-              "Überprüfung von Schmelzenöffnungen (Heat Numbers) und Materialidentifikation",
+              "Prüfung von Schmelzennummern (Heat Numbers) und der Werkstoffidentifikation",
               "Register zur Werkstoffrückverfolgbarkeit",
-              "Abgleich der Materialdokumentation mit den Projektanforderungen"
+              "Abgleich der Werkstoffdokumentation mit den Projektanforderungen"
             ]
           }
         ]
@@ -557,7 +557,7 @@
               "Anwendbare DNV-Anforderungen, einschließlich DNV-ST-0126, sofern für das Projekt relevant",
               "EN 1090, sofern anwendbar",
               "Fertigungsdokumentation im Stahlbau",
-              "Schweißnaht-Rückverfolgbarkeit und Inspektionsaufzeichnungen",
+              "Rückverfolgbarkeit der Schweißnähte und Inspektionsaufzeichnungen",
               "Projektspezifische Fertigungs- und Inspektionsanforderungen"
             ]
           }
@@ -719,8 +719,8 @@
     ]
   },
   "industriesSection": {
-    "heading": "Branchen, die wir unterstützen",
-    "intro": "Industrielle Qualitäts- und Inspektionsunterstützung für Fertigungs-, Infrastruktur-, Energie- und Prozessanlagenprojekte.",
+    "heading": "Branchen & Einsatzbereiche",
+    "intro": "Unterstützung bei Qualitätssicherung und Inspektion für Fertigungs-, Infrastruktur-, Energie- und Prozessanlagenprojekte.",
     "prev": "Vorherige Branchen",
     "next": "Nächste Branchen",
     "cards": [
@@ -751,26 +751,26 @@
       },
       {
         "title": "Industrielle Fertigung & Stahlbau",
-        "description": "Stahlkonstruktionen, Schwerfertigung, Schweißtechnik, Inspektion und Fertigungsqualität.",
+        "description": "Stahlkonstruktionen, schwere Fertigung, Schweißen, Inspektion und Fertigungsqualität.",
         "imageAlt": "Schwere Stahlbauteile in einer Fertigungshalle"
       },
       {
-        "title": "EPC- & Engineering-Projekte",
-        "description": "Projektbezogene technische Unterstützung, Inspektionskoordination, Qualitätsdokumentation und Übergabeaktivitäten.",
+        "title": "EPC- und Engineering-Projekte",
+        "description": "Projektbezogene technische Unterstützung, Inspektionskoordination, Qualitätsdokumentation und Unterstützung bei der Übergabe.",
         "imageAlt": "Ingenieure prüfen Baupläne auf einer Raffineriebaustelle"
       },
       {
         "title": "Instandhaltung, Stillstände & Anlagenumbauten",
-        "description": "Inspektionen, Qualitätsnachverfolgung, Aufarbeitung fehlender Dokumentation und Unterstützung beim Projektabschluss.",
+        "description": "Inspektion, qualitätsbezogene Nachverfolgung, Aufarbeitung fehlender Dokumentation und Unterstützung beim Projektabschluss.",
         "imageAlt": "Techniker warten eine Rohrleitung von einem Baugerüst"
       }
     ]
   },
   "industries": {
     "label": "Branchen",
-    "title": "Branchen, die wir unterstützen",
-    "designLine1": "Branchen,",
-    "designLine2": "die wir unterstützen",
+    "title": "Branchen & Einsatzbereiche",
+    "designLine1": "Branchen &",
+    "designLine2": "Einsatzbereiche",
     "description": "Offshore-Wind, Pipeline und Fernleitung, Öl & Gas, Chemie, Energie, EPC und Industrieanlagenbau.",
     "standardsAlt": "ISO-, ASME-, API- und EN-Normen für Pipeline QA/QC",
     "list": [
@@ -779,7 +779,7 @@
       "Öl & Gas (Onshore und zugehörige Anlagen)",
       "Chemie- und Petrochemieanlagen",
       "Energie und Stromerzeugung",
-      "EPC- und Ingenieurprojekte",
+      "EPC- und Engineering-Projekte",
       "Industrieanlagenbau und Montage",
       "Wartungs-, Stillstands- und Revamp-Projekte"
     ],
@@ -881,7 +881,7 @@
       {
         "id": "01",
         "title": "Anforderungen klären",
-        "text": "Wir stimmen Projektanforderungen, Leistungen, Zeitplan und benötigte Kompetenzen ab."
+        "text": "Wir klären Projektanforderungen, Leistungen, Zeitplan und benötigte Kompetenzen."
       },
       {
         "id": "02",
@@ -891,12 +891,12 @@
       {
         "id": "03",
         "title": "Unterstützung koordinieren",
-        "text": "Verantwortlichkeiten, Schnittstellen und Berichterstattung werden mit dem Kunden und Projektteam abgestimmt."
+        "text": "Verantwortlichkeiten, Schnittstellen und Berichterstattung werden mit dem Kunden und dem Projektteam abgestimmt."
       },
       {
         "id": "04",
         "title": "Bis zum Abschluss begleiten",
-        "text": "Wir unterstützen die vereinbarten Inspektions-, Qualitäts-, HSE- oder Dokumentationsaktivitäten bis zu den erforderlichen Projektmeilensteinen."
+        "text": "Wir unterstützen die vereinbarten Tätigkeiten in Inspektion, Qualität, HSE oder Dokumentation bis zu den erforderlichen Projektmeilensteinen."
       }
     ]
   },
@@ -934,27 +934,27 @@
   },
   "whySection": {
     "heading": "Warum Pipeline Quality?",
-    "subheading": "Die passende Expertise. Die richtige Kapazität. Für Ihr Projekt.",
+    "subheading": "Die passende Fachkompetenz. Die richtige Kapazität. Für Ihr Projekt.",
     "reasons": [
       {
         "title": "Praktische Industrieerfahrung",
-        "description": "Verständnis für Fertigungsprozesse, Inspektionsanforderungen, technische Dokumentation und die Realität vor Ort."
+        "description": "Verständnis für Fertigung, Inspektionsanforderungen, technische Dokumentation und die Bedingungen vor Ort."
       },
       {
         "title": "Flexible Projektunterstützung",
-        "description": "Einzelne Fachkräfte oder koordinierte Teams, abhängig von Projektumfang und Bedarf."
+        "description": "Einzelne Fachkräfte oder koordinierte Teams, je nach Projektumfang und Bedarf."
       },
       {
         "title": "Qualität bis zur Übergabe",
         "description": "Unterstützung bei Inspektionen, Abweichungen, Rückverfolgbarkeit, Dokumentation und Projektabschluss."
       },
       {
-        "title": "Kompetenzen passend zum Einsatz",
+        "title": "Passende Kompetenzen für den jeweiligen Einsatz",
         "description": "Qualifikationen und Erfahrung werden anhand der technischen und projektbezogenen Anforderungen geprüft."
       },
       {
         "title": "Koordinierte Kommunikation",
-        "description": "Verantwortlichkeiten, Berichterstattung und Schnittstellen werden mit dem Kunden und Projektteam abgestimmt."
+        "description": "Verantwortlichkeiten, Berichterstattung und Schnittstellen werden mit dem Kunden und dem Projektteam abgestimmt."
       }
     ]
   },
@@ -1078,7 +1078,7 @@
       "error": "Ihre Nachricht konnte nicht übermittelt werden. Bitte prüfen Sie die Pflichtfelder und versuchen Sie es erneut.",
       "errors": {
         "name": "Geben Sie Ihren vollständigen Namen ein.",
-        "company": "Geben Sie Ihr Unternehmen ein.",
+        "company": "Geben Sie den Unternehmensnamen ein.",
         "email": "Geben Sie Ihre geschäftliche E-Mail-Adresse ein.",
         "emailFormat": "Geben Sie eine gültige E-Mail-Adresse ein.",
         "location": "Geben Sie den Projektstandort ein.",
@@ -1094,7 +1094,7 @@
         "Raffinerien & Petrochemie",
         "Energie & Stromversorgung",
         "Industrielle Fertigung & Stahlbau",
-        "EPC- & Engineering-Projekte",
+        "EPC- und Engineering-Projekte",
         "Instandhaltung, Stillstände & Anlagenumbauten",
         "Sonstiges"
       ],
@@ -1157,7 +1157,7 @@
     ]
   },
   "footerFinal": {
-    "statement": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte.",
+    "statement": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrumsprojekte.",
     "cta": "Projekt besprechen",
     "navLabel": "Navigation",
     "legalLabel": "Kontakt & Rechtliches",
@@ -1213,7 +1213,7 @@
   },
   "meta": {
     "title": "Pipeline Quality | Industrielle Qualität, ZfP & HSE",
-    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrenprojekte."
+    "description": "Industrielle Qualitätssicherung, ZfP-Inspektion und HSE-Management für Infrastruktur-, Pipeline- und Rechenzentrumsprojekte."
   },
   "legal": {
     "imprint": {
@@ -1401,9 +1401,9 @@
     "principle": "QUALITÄT VOR QUANTITÄT."
   },
   "digitalSection": {
-    "heading": "Digitale Qualitäts- & Dokumentationsunterstützung",
-    "body1": "Strukturierte digitale Abläufe helfen dabei, Inspektionsaufzeichnungen, Qualitätsdokumentation, Rückverfolgbarkeit und Projektinformationen zu organisieren.",
-    "body2": "Wir unterstützen praxisorientierte digitale Lösungen, die industrielle Qualitätsprozesse ergänzen und den Zugriff auf relevante Projektdaten verbessern.",
+    "heading": "Digitale Unterstützung für Qualität & Dokumentation",
+    "body1": "Strukturierte digitale Abläufe können helfen, Inspektionsaufzeichnungen, Qualitätsdokumentation, Rückverfolgbarkeit und Projektinformationen zu ordnen.",
+    "body2": "Wir unterstützen praxisnahe digitale Ansätze, die industrielle Qualitätsprozesse ergänzen und den Zugriff auf relevante Projektunterlagen verbessern.",
     "imageAlt": "Technische Fachkraft mit Schutzausrüstung prüft Inspektionsaufzeichnungen auf einem Tablet neben einem gefertigten Stahlbauteil"
   },
   "digitalQuality": {
