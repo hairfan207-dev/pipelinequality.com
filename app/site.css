@@ -864,12 +864,19 @@ body {
 
 .site-header .lang-menu-list {
   top: calc(100% + 8px);
-  min-width: 120px;
-  left: auto;
-  right: 0;
-  padding: 4px 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0;
   border-top: 2px solid var(--brand-orange);
   box-shadow: 0 4px 12px #012a6014;
+}
+
+.site-header-tools > .lang-menu .lang-menu-list button {
+  min-height: 44px;
+  padding: 0 14px;
 }
 
 .site-header .site-mobile-menu .lang-menu-list {
