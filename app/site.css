@@ -216,7 +216,6 @@ body {
 .site-btn {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -250,6 +249,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
+  border-radius: inherit;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 320ms var(--pq-ease);
@@ -1178,7 +1178,12 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
+  padding-bottom: 2px;
   text-shadow: none;
+}
+
+.hero .site-btn {
+  overflow: visible;
 }
 
 .hero .site-btn-secondary {
