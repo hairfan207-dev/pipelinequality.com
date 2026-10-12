@@ -3528,6 +3528,30 @@ body {
   background: var(--brand-orange);
 }
 
+@media (min-width: 901px) {
+  #experience .pq-media__meta {
+    max-width: 360px;
+    font-size: 7.6px;
+    letter-spacing: 0.02em;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1280px) {
+  #experience .pq-media__meta {
+    max-width: none;
+    font-size: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .pq-site[lang='de'] #experience .pq-media__meta {
+    max-width: 360px;
+    font-size: 9px;
+    letter-spacing: 0.02em;
+  }
+}
+
 #experience .experience-kicker {
   display: flex;
   align-items: center;
