@@ -78,7 +78,7 @@ const photoStyle = (photo: Photo) =>
   }) as CSSProperties;
 
 const industryPhotos: Photo[] = [
-  { src: '/media/industry-offshore-wind.webp', width: 1024, height: 474, pos: '96% 42%' },
+  { src: '/media/industry-offshore-fabrication-hall.webp', width: 1448, height: 1086, pos: '50% 50%' },
   { src: '/media/industry-pipelines.webp', width: 1152, height: 864, pos: '50% 42%' },
   { src: '/media/industry-oil-gas.webp', width: 1280, height: 720, pos: '38% 48%' },
   { src: '/media/industry-refineries.webp', width: 1152, height: 864, pos: '48% 40%' },
@@ -93,7 +93,7 @@ const expertisePhotos: Photo[] = [
   { src: '/media/service-ndt-ultrasonic.webp', width: 1448, height: 1086, pos: '55% 55%', posSmall: '55% 55%' },
   { src: '/media/service-welding.webp', width: 1024, height: 1024, pos: '48% 52%', posSmall: '50% 52%' },
   { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 48%', posSmall: '60% 50%' },
-  { src: '/media/service-hse.webp', width: 1024, height: 764, pos: '40% 46%', posSmall: '50% 38%' },
+  { src: '/media/service-hse-checklist-4x3.webp', width: 1365, height: 1024, pos: '50% 50%', posSmall: '50% 50%' },
 ];
 const experiencePhoto: Photo = {
   src: '/media/experience-fabrication.webp',
@@ -103,9 +103,9 @@ const experiencePhoto: Photo = {
   crop: '1.5%',
 };
 const digitalPhoto: Photo = {
-  src: '/media/digital-workshop-inspection.webp',
-  width: 1448,
-  height: 1086,
+  src: '/media/digital-tunnel-inspector.webp',
+  width: 1402,
+  height: 1122,
   pos: '50% 50%',
 };
 
@@ -801,14 +801,17 @@ export function DesignHome() {
               <p className='experience-kicker' {...reveal(0)}>{tNav('experience')}</p>
               <h2 id='experience-heading' {...reveal(1)}>{tExperience('heading')}</h2>
               <p {...reveal(1)}>{tExperience('body1')}</p>
-              <p {...reveal(2)}>{tExperience('body2')}</p>
               <div className='experience-assignment' {...reveal(3)}>
                 <p className='eyebrow'>{tExperience('assignmentLabel')}</p>
                 <h3>{tExperience('assignmentTitle')}</h3>
                 <p>{tExperience('assignmentBody')}</p>
-                <p className='fine-print'>{tExperience('assignmentHistory')}</p>
+                <h3>{tExperience('historyLabel')}</h3>
+                <p>{tExperience('assignmentHistory')}</p>
               </div>
-              <p className='fine-print fine-print-ruled' {...reveal(4)}>{tExperience('disclaimer')}</p>
+              <div className='experience-broader' {...reveal(4)}>
+                <h3>{tExperience('broaderLabel')}</h3>
+                <p>{tExperience('body2')}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -830,31 +833,29 @@ export function DesignHome() {
           </div>
         </section>
 
-        <section className='section section-tint' id='digital-quality' aria-labelledby='digital-heading'>
-          <div className='site-container digital-layout'>
-            <div className='split-copy digital-copy'>
-              <h2 id='digital-heading' {...reveal(0)}>{tDigital('heading')}</h2>
-              <p {...reveal(1)}>{tDigital('body1')}</p>
-              <p {...reveal(2)}>{tDigital('body2')}</p>
+        <section className='section digital-solutions' id='digital-quality' aria-labelledby='digital-heading' lang={locale}>
+          <div className='site-container'>
+            <div className='digital-editorial'>
+              <div className='digital-editorial-copy'>
+                <p className='digital-eyebrow' {...reveal(0)}>{tDigital('eyebrow')}</p>
+                <h2 id='digital-heading' {...reveal(1)}>{tDigital('heading')}</h2>
+                <h3 {...reveal(1)}>{tDigital('statement')}</h3>
+                <p {...reveal(2)}>{tDigital('body1')}</p>
+                <p {...reveal(2)}>{tDigital('body2')}</p>
+                <a className='site-btn site-btn-primary digital-project-cta' href='https://www.bwdigit.com'><span>{tDigital('cta')}</span><ArrowRightIcon className='site-btn-icon' /></a>
+              </div>
+              <figure className='digital-editorial-photo' {...reveal(1)}>
+                <img src={digitalPhoto.src} alt={tDigital('imageAlt')} loading='lazy' decoding='async' width={digitalPhoto.width} height={digitalPhoto.height} />
+              </figure>
             </div>
-            <EditorialMedia
-              variant='digital'
-              className='digital-media'
-              caption={tDigital('heading')}
-              parallax
-              revealProps={reveal(1, 'media')}
-            >
-              <img
-                className='pq-media__image'
-                src={digitalPhoto.src}
-                alt={tDigital('imageAlt')}
-                loading='lazy'
-                decoding='async'
-                width={digitalPhoto.width}
-                height={digitalPhoto.height}
-                style={photoStyle(digitalPhoto)}
-              />
-            </EditorialMedia>
+            <ol className='digital-workflow'>
+              {[0, 1, 2].map((index) => (
+                <li key={index} {...reveal(index)}>
+                  <span className='digital-step-number'>0{index + 1}</span>
+                  <div><h3>{tDigital(`steps.${index}.title`)}</h3><p>{tDigital(`steps.${index}.body`)}</p></div>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 

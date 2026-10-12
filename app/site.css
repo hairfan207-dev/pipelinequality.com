@@ -3756,3 +3756,262 @@ body {
     transform: scaleX(0) !important;
   }
 }
+
+.site-footer-bottom .footer-parent-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer-bottom .footer-parent-link:hover {
+  color: var(--brand-orange);
+}
+
+.experience-broader { margin-top: 32px; }
+
+/* Industrial digital solutions: editorial composition and three-stage strip. */
+#digital-quality.digital-solutions { background: var(--brand-white); }
+.digital-editorial { display: grid; grid-template-columns: 44% 56%; background: var(--brand-navy); }
+.digital-editorial-copy { padding: 48px 36px 56px; color: var(--brand-white); }
+.digital-editorial-copy .digital-eyebrow { color: var(--brand-orange); font-size: 12px; font-weight: 600; letter-spacing: .14em; margin-bottom: 24px; }
+.digital-editorial-copy h2 { color: var(--brand-white); font-size: clamp(30px, 2.7vw, 40px); line-height: 1.13; margin-bottom: 28px; }
+.digital-editorial-copy h3 { color: var(--brand-white); font-size: 20px; line-height: 1.4; padding-top: 22px; border-top: 2px solid var(--brand-orange); margin-bottom: 24px; }
+.digital-editorial-copy > p:not(.digital-eyebrow) { font-size: 16px; line-height: 1.65; margin-top: 18px; }
+.digital-editorial-photo { margin: 24px 0 24px -8px; position: relative; min-width: 0; }
+.digital-editorial-photo img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 44% center; }
+.digital-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 36px 0 !important; border-bottom: 1px solid rgba(1,42,96,.2); }
+.digital-workflow li { display: flex; gap: 16px; padding: 0 28px; }
+.digital-workflow li + li { border-left: 1px solid rgba(1,42,96,.18); }
+.digital-step-number { color: var(--brand-orange); font-size: 14px; font-weight: 600; padding-top: 3px; }
+.digital-workflow h3 { color: var(--brand-navy); font-size: 19px; line-height: 1.3; margin-bottom: 12px; }
+.digital-workflow p { color: var(--brand-navy); font-size: 15px; line-height: 1.6; }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .digital-editorial-copy { padding: 32px 24px; }
+  .digital-editorial-copy h2 { font-size: 30px; }
+  .digital-editorial-copy h3 { font-size: 18px; }
+  .digital-editorial-photo img { object-position: 39% center; }
+  .digital-workflow li { padding: 0 16px; gap: 10px; }
+}
+@media (max-width: 700px) {
+  .digital-editorial { grid-template-columns: minmax(0,1fr); }
+  .digital-editorial-copy { padding: 36px 24px; }
+  .digital-editorial-copy h2 { font-size: 32px; }
+  .digital-editorial-photo { margin: 0; aspect-ratio: 4 / 3; }
+  .digital-editorial-photo img { object-position: center; }
+  .digital-workflow { grid-template-columns: 1fr; padding: 12px 0 !important; }
+  .digital-workflow li { padding: 24px 4px; }
+  .digital-workflow li + li { border-left: 0; border-top: 1px solid rgba(1,42,96,.18); }
+}
+
+
+/* Integrated architectural photo cut and contact action. */
+.digital-editorial { grid-template-columns: 43% 57%; }
+.digital-editorial-copy { padding: 64px 62px 68px 44px; }
+.digital-editorial-copy .digital-eyebrow { font-size: 13px; }
+.digital-editorial-copy h2 { font-size: clamp(34px, 3.1vw, 46px); line-height: 1.1; }
+.digital-editorial-copy h3 { position: relative; border: 0; padding-top: 28px; font-size: 24px; line-height: 1.35; }
+.digital-editorial-copy h3::before { content: ''; position: absolute; top: 0; left: 0; width: 56px; height: 2px; background: var(--brand-orange); }
+.digital-editorial-copy > p:not(.digital-eyebrow) { font-size: 17px; opacity: .92; max-width: 560px; }
+.digital-editorial-photo { margin: 32px 0 32px -28px; overflow: hidden; clip-path: polygon(34px 0, 100% 0, 100% 100%, 0 100%, 0 34px); }
+.digital-editorial-photo::before { content: ''; position: absolute; z-index: 2; top: 0; left: 0; width: 49px; height: 3px; background: var(--brand-orange); transform: rotate(-45deg); transform-origin: 0 0; translate: 0 34px; }
+.digital-editorial-photo::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(1,42,96,.22), rgba(1,42,96,.06) 12%, transparent 28%); }
+.digital-editorial-photo img { object-position: 42% center; transition: transform 1000ms var(--motion-ease); }
+.reveal-ready .digital-editorial-photo:not(.is-revealed) img { transform: scale(1.035); }
+.digital-project-cta { margin-top: 30px; white-space: normal; }
+.digital-solutions .site-btn-primary,
+.digital-solutions .site-btn-primary:hover,
+.digital-solutions .site-btn-primary:focus-visible { background: var(--brand-orange); border-color: var(--brand-orange); color: var(--brand-white); }
+.digital-solutions .site-btn-primary::before { background: var(--brand-orange); }
+@media (min-width: 701px) and (max-width: 1100px) {
+ .digital-editorial-copy { padding: 40px 36px 44px 28px; }
+ .digital-editorial-copy h2 { font-size: 32px; }
+ .digital-editorial-copy h3 { font-size: 21px; }
+ .digital-editorial-copy > p:not(.digital-eyebrow) { font-size: 16px; }
+ .digital-editorial-photo { margin-left: -16px; }
+}
+@media (max-width: 700px) {
+ .digital-editorial { grid-template-columns: minmax(0,1fr); }
+ .digital-editorial-copy { padding: 32px 24px; }
+ .digital-editorial-copy h2 { font-size: 34px; }
+ .digital-editorial-copy h3 { font-size: 21px; }
+ .digital-editorial-photo { margin: 0; clip-path: none; aspect-ratio: 4 / 3; }
+ .digital-editorial-photo img { object-position: center; }
+ .digital-editorial-photo::before { top: 0; width: 56px; transform: none; translate: none; }
+ .digital-editorial-photo::after { display: none; }
+ .digital-project-cta { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .digital-editorial-photo img { transition: none; transform: none !important; }
+}
+
+.site-footer-bottom .footer-parent-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  color: var(--brand-orange);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.footer-parent-arrow {
+  display: inline-block;
+  transition: transform 250ms ease;
+}
+.site-footer-bottom .footer-parent-link:hover,
+.site-footer-bottom .footer-parent-link:focus-visible {
+  color: var(--brand-white);
+  text-decoration-thickness: 2px;
+}
+.footer-parent-link:hover .footer-parent-arrow,
+.footer-parent-link:focus-visible .footer-parent-arrow {
+  transform: translate(2px, -2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-parent-arrow { transition: none; transform: none !important; }
+}
+
+/* Compact digital editorial layout. */
+#digital-quality.digital-solutions { padding-block: 84px; }
+#digital-quality > .site-container { max-width: 1280px; }
+.digital-editorial { grid-template-columns: minmax(0, .47fr) minmax(0, .53fr); background: transparent; }
+.digital-editorial-copy { background: var(--brand-navy); padding: 30px 32px; }
+.digital-editorial-copy .digital-eyebrow { margin-bottom: 16px; font-size: 13px; }
+.digital-editorial-copy h2 { font-size: 36px; line-height: 1.08; margin-bottom: 18px; text-wrap: initial; }
+.digital-editorial-copy h3 { padding-top: 18px; font-size: 20px; line-height: 1.3; margin-bottom: 14px; }
+.digital-editorial-copy > p:not(.digital-eyebrow) { font-size: 16px; line-height: 1.55; margin-top: 14px; }
+.digital-project-cta { margin-top: 26px; }
+.digital-editorial-photo { margin: -18px 0; clip-path: none; }
+.digital-editorial-photo::before,
+.digital-editorial-photo::after { display: none; }
+.digital-editorial-photo img { object-position: center; }
+.digital-workflow { margin-top: 18px !important; }
+@media (min-width: 701px) and (max-width: 1100px) {
+ .digital-editorial-copy { padding: 28px 24px; }
+ .digital-editorial-copy h2 { font-size: 30px; }
+ .digital-editorial-copy h3 { font-size: 20px; }
+ .digital-editorial-photo { margin: -12px 0; }
+}
+@media (max-width: 700px) {
+ #digital-quality.digital-solutions { padding-block: 60px; }
+ .digital-editorial { grid-template-columns: minmax(0,1fr); }
+ .digital-editorial-copy { padding: 28px 22px; }
+ .digital-editorial-copy h2 { font-size: 32px; }
+ .digital-editorial-photo { margin: 0; aspect-ratio: 4 / 3; }
+ .digital-workflow { margin-top: 0 !important; }
+}
+
+/* Hero boundary and restrained digital photo corner. */
+/* Bring Expertise closer to the hero without changing the banner geometry. */
+.hero + #services {
+  border-top: 3px solid var(--brand-orange);
+  padding-top: 32px;
+}
+
+@media (max-width: 640px) {
+  .hero + #services {
+    padding-top: 24px;
+  }
+}
+.digital-editorial-photo { overflow: visible; }
+.digital-editorial-photo::before {
+  display: block;
+  inset: -12px -12px auto auto;
+  width: 42%;
+  height: 90px;
+  border-top: 1px solid rgba(1,42,96,.32);
+  border-right: 1px solid rgba(1,42,96,.32);
+  background: none;
+  transform: none;
+  translate: none;
+  pointer-events: none;
+}
+.digital-editorial-photo::after {
+  display: block;
+  inset: 16px -12px auto auto;
+  width: 2px;
+  height: 38px;
+  background: var(--brand-orange);
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+ .digital-editorial-photo::before { inset: 10px 10px auto auto; width: 64px; height: 64px; border-color: var(--brand-white); }
+ .digital-editorial-photo::after { inset: 10px 10px auto auto; width: 28px; height: 2px; }
+}
+
+.digital-editorial-photo img { object-position: 65% center; }
+@media (min-width: 701px) {
+ .digital-editorial-photo::before { width: 70%; height: 150px; }
+ .digital-editorial-photo::after { height: 64px; }
+}
+
+/* Compact the lead-in to the requested content sections. */
+#why.section,
+#capabilities.section,
+#contact.section {
+  padding-top: 32px;
+}
+
+@media (max-width: 640px) {
+  #why.section,
+  #capabilities.section,
+  #contact.section {
+    padding-top: 24px;
+  }
+}
+
+/* Reduce the adjoining lower padding so the full section gaps stay compact. */
+#industries.section,
+#why.section,
+#digital-quality.digital-solutions {
+  padding-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  #industries.section,
+  #why.section,
+  #digital-quality.digital-solutions {
+    padding-bottom: 24px;
+  }
+}
+
+/* German short text wraps at word boundaries, without automatic hyphenation. */
+.pq-site[lang='de'] :is(h1, h2, h3, h4, h5, h6,
+  .svc-title, .svc-panel-title, .svc-label, .qual-title, .qual-label,
+  .site-nav a, .site-mobile-menu a, .site-language, .site-btn,
+  label, legend, option) {
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* Give the five German benefit headings a little more room to breathe. */
+.pq-site[lang='de'] .why-grid {
+  column-gap: 24px;
+}
+.pq-site[lang='de'] .why-item h3 {
+  font-size: 18px;
+}
+
+.pq-site[lang='de'] .svc-tab {
+  gap: 12px;
+}
+.pq-site[lang='de'] .svc-title {
+  font-size: 16px;
+}
+
+/* Keep the full HSE checklist composition centered in its desktop frame. */
+@media (min-width: 1101px) {
+  .pq-media--expertise .pq-media__clip:has(img.is-current[src='/media/service-hse-checklist-4x3.webp']) {
+    aspect-ratio: 1365 / 1024;
+  }
+  .pq-media--expertise img[src='/media/service-hse-checklist-4x3.webp'] {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    transform: none;
+  }
+  .pq-media--expertise:hover img.is-current[src='/media/service-hse-checklist-4x3.webp'] {
+    transform: none;
+  }
+}

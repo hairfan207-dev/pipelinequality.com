@@ -30,7 +30,7 @@
     "title": "Projektqualität. Von der Fertigung bis zur Übergabe.",
     "headline": "Industrielle Qualität | ZfP | HSE",
     "subheading": "Technische Überwachung — von der Fertigung bis zur Übergabe",
-    "body": "Wir stellen qualifizierte technische Fachkräfte und koordinierte Projektteams für Qualitätssicherung, Sicherheit und Konformität bereit. Von der Fertigungsüberwachung im Werk über die Vorbereitung von Drittaudits bis zur Aufarbeitung von Dokumentationsrückständen aus der Ferne sichern wir den Projektablauf und die lückenlose Rückverfolgbarkeit.",
+    "body": "Wir stellen qualifizierte technische Fachkräfte und koordinierte Projektteams für Qualitätssicherung, Sicherheit und Konformität bereit. Von der Fertigungsüberwachung im Werk über die Vorbereitung von Drittaudits bis zur Aufarbeitung von Dokumentationsrückständen sichern wir den Projektablauf und die lückenlose Rückverfolgbarkeit.",
     "serviceLine": "QA/QC Engineering | Inspektion & ZfP | HSE-Überwachung | QM & Audits | Dokumentation & Projektabschluss | Digitale Lösungen",
     "industryLine": "Onshore- und Offshore-Windfundamente | Pipelines & Infrastruktur | Öl & Gas | Raffinerien & Petrochemie | Rechenzentren",
     "subtitle": "QA/QC | Inspektion | Engineering | Dokumentation",
@@ -141,14 +141,16 @@
   },
   "experienceSection": {
     "heading": "Erfahrung, auf die Pipeline Quality baut",
-    "body1": "Pipeline Quality baut auf dem industriellen QA/QC-Hintergrund der Gründerin und der gebündelten Erfahrung von Fachkräften aus dem professionellen Netzwerk auf.",
-    "body2": "Relevante Projektumfelder umfassen die industrielle Fertigung, chemische und petrochemische Anlagen, Pipelineprojekte sowie die Fertigung von Offshore-Wind-Gründungsstrukturen.",
+    "body1": "Pipeline Quality verbindet praktische Erfahrung in der Projektabwicklung mit den Kompetenzen eines professionellen Netzwerks für industrielle Qualität, Inspektion und technische Überwachung.",
+    "body2": "Unser professionelles Netzwerk verfügt über zusätzliche Erfahrung in der Schwerfertigung, in chemischen und petrochemischen Anlagen, Prozessanlagen, Pipelines und industriellen Energieprojekten. Fachkräfte werden entsprechend dem Umfang, der relevanten Projekterfahrung und den Qualifikationsanforderungen jedes Einsatzes ausgewählt.",
     "disclaimer": "Erfahrungen und Referenzen werden entsprechend der tatsächlichen Rolle der jeweiligen Fachkraft dargestellt. Genannte Projekte oder Unternehmen bedeuten nicht, dass alle Netzwerkmitglieder an diesen Projekten beteiligt waren oder dass Pipeline Quality mit jedem genannten Unternehmen direkt einen Vertrag geschlossen hat.",
     "imageAlt": "Offshore-Wind-Gründungsstrukturen in einem Fertigungswerk",
-    "assignmentLabel": "Ausgewählter Projekteinsatz",
-    "assignmentTitle": "Fertigung von Offshore-Wind-Gründungsstrukturen — Niederlande",
-    "assignmentBody": "QA/QC-Unterstützung in einem Fertigungsumfeld für Offshore-Wind-Gründungsstrukturen, einschließlich Inspektionskoordination, Schweiß- und Qualitätsdokumentation, Nachverfolgung von Abweichungen, Berichterstattung und Abstimmung mit Projektbeteiligten.",
-    "assignmentHistory": "Zu den relevanten Projektumfeldern können East Anglia 2, Oranje Wind, DolWin und IJmuiden Ver Gamma zählen, sofern dies durch die tatsächliche Projekthistorie der jeweiligen Fachkraft belegt ist."
+    "assignmentLabel": "Aktueller Projekteinsatz",
+    "assignmentTitle": "Fertigung von Offshore-Windfundamenten — SIF Group, Niederlande",
+    "assignmentBody": "QA/QC-Unterstützung bei der Fertigung von Offshore-Windfundamenten, einschließlich Inspektionskoordination, Schweißqualitätsdokumentation, Prüfaufzeichnungen, Nachverfolgung von Abweichungen, Berichterstattung und Abstimmung mit Projektbeteiligten.",
+    "assignmentHistory": "East Anglia 2 | Oranje Wind | DolWin 4 | IJmuiden Ver Gamma",
+    "historyLabel": "Relevante Projektumfelder",
+    "broaderLabel": "Weitere Branchenerfahrung"
   },
   "expertiseSection": {
     "heading": "Kernkompetenzen",
@@ -238,10 +240,10 @@
         ]
       },
       {
-        "title": "HSE & Baustellenunterstützung",
+        "title": "HSE & Unterstützung vor Ort",
         "description": "Zugang zu entsprechend qualifizierten HSE-Fachkräften für den Einsatz vor Ort, die Sicherheitskoordination, die Nachverfolgung von Maßnahmen und projektspezifische HSE-Anforderungen.",
         "capabilitiesLabel": "Leistungen",
-        "imageAlt": "Inspektor mit Schutzausrüstung misst eine Schweißnaht an einem großen Rohr",
+        "imageAlt": "Hände beim Ausfüllen einer Inspektions- und Sicherheitscheckliste für schwere Geräte",
         "capabilities": [
           "HSE-Überwachung vor Ort gemäß den Anforderungen des Einsatzes",
           "Sicherheitskoordination und Maßnahmenverfolgung",
@@ -1106,7 +1108,7 @@
         "Qualitätsdokumentation & Projektabschluss",
         "HSE & Unterstützung vor Ort",
         "Technische Fachkraft / Projektteam",
-        "Digitale Qualitätsunterstützung",
+        "Digitale Lösungen",
         "Sonstiges / Noch unklar"
       ],
       "durations": [
@@ -1401,10 +1403,27 @@
     "principle": "QUALITÄT VOR QUANTITÄT."
   },
   "digitalSection": {
-    "heading": "Digitale Unterstützung für Qualität & Dokumentation",
-    "body1": "Strukturierte digitale Abläufe können helfen, Inspektionsaufzeichnungen, Qualitätsdokumentation, Rückverfolgbarkeit und Projektinformationen zu ordnen.",
-    "body2": "Wir unterstützen praxisnahe digitale Ansätze, die industrielle Qualitätsprozesse ergänzen und den Zugriff auf relevante Projektunterlagen verbessern.",
-    "imageAlt": "Technische Fachkraft mit Schutzausrüstung prüft Inspektionsaufzeichnungen auf einem Tablet neben einem gefertigten Stahlbauteil"
+    "eyebrow": "DIGITALE LÖSUNGEN",
+    "heading": "Digitale Lösungen für industrielle Prozesse",
+    "statement": "Industrielle Herausforderungen digital lösen",
+    "body1": "Unsere Ingenieure verstehen industrielle Prozesse und erkennen, wo digitale Lösungen Arbeitsabläufe gezielt verbessern können. Gemeinsam mit unseren Digitalspezialisten entwickeln wir daraus praxisnahe, maßgeschneiderte Lösungen.",
+    "body2": "Von der Rückverfolgbarkeit von Schweißarbeiten und ZfP-Prüfungen über Inspektionsaufzeichnungen bis hin zur Qualitätsdokumentation unterstützen wir Industrieunternehmen dabei, manuellen Aufwand zu reduzieren und Projektinformationen effizienter zu verknüpfen.",
+    "cta": "Digitales Projekt besprechen",
+    "imageAlt": "Inspektor mit Schutzhelm und Warnweste hält ein Tablet im Inneren einer großen Stahlstruktur",
+    "steps": [
+      {
+        "title": "Betriebsabläufe verstehen",
+        "body": "Prozesse, Anforderungen und betriebliche Herausforderungen erfassen."
+      },
+      {
+        "title": "Lösungen entwickeln",
+        "body": "Passgenaue digitale Ansätze für konkrete betriebliche Anforderungen."
+      },
+      {
+        "title": "Informationen verknüpfen",
+        "body": "Rückverfolgbarkeit, Inspektionsdaten und Qualitätsdokumentation verbessern."
+      }
+    ]
   },
   "digitalQuality": {
     "label": "Digitale Qualität",

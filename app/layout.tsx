@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import type React from 'react';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
-import { defaultLocale } from '@/i18n';
+import { getLocale } from 'next-intl/server';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,9 +22,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: Props) {
+export default async function RootLayout({ children }: Props) {
+  const locale = await getLocale();
   return (
-    <html lang={defaultLocale} data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${inter.className} font-sans antialiased`}
         suppressHydrationWarning

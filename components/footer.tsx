@@ -50,7 +50,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className='site-footer-bottom'>
-          <p>{tFooter('brandLine')}</p>
+          <p>{tFooter('brandLine').split('Backpack Wander GmbH')[0]}<a className='footer-parent-link' href='https://www.backpackwander.com'>Backpack Wander GmbH<span className='footer-parent-arrow' aria-hidden='true'>↗</span></a>{tFooter('brandLine').split('Backpack Wander GmbH')[1]}</p>
           <p>{tFooter('copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
