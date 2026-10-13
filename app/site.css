@@ -3869,7 +3869,7 @@ body {
 .site-footer-bottom .footer-parent-link {
   display: inline-flex;
   align-items: baseline;
-  gap: 5px;
+  gap: 4px;
   color: var(--brand-orange);
   font-weight: 600;
   text-decoration: underline;
@@ -4478,4 +4478,18 @@ body {
   .qual-layout,
   .contact-layout { column-gap: clamp(64px, 5vw, 80px); }
   .experience-copy > p { max-width: 65ch; }
+}
+
+/* Compact desktop footer proportions on the shared page grid. */
+@media (min-width: 1101px) {
+  .site-footer-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, .8fr) minmax(0, 1fr);
+    column-gap: clamp(90px, 7vw, 110px);
+  }
+  .site-footer-bottom {
+    font-size: 14px;
+    border-top-color: color-mix(in srgb, var(--pq-mist) 22%, transparent);
+  }
+  .site-footer-bottom p,
+  .site-footer-bottom a { font-size: inherit; }
 }
