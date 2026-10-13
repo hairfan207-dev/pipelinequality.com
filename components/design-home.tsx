@@ -93,7 +93,7 @@ const expertisePhotos: Photo[] = [
   { src: '/media/service-ndt-ultrasonic.webp', width: 1448, height: 1086, pos: '55% 55%', posSmall: '55% 55%' },
   { src: '/media/service-welding.webp', width: 1024, height: 1024, pos: '48% 52%', posSmall: '50% 52%' },
   { src: '/media/service-documentation.webp', width: 1024, height: 438, pos: '62% 48%', posSmall: '60% 50%' },
-  { src: '/media/service-hse-checklist-4x3.webp', width: 1365, height: 1024, pos: '50% 50%', posSmall: '50% 50%' },
+  { src: '/media/service-hse-equipment-checklist.webp', width: 1448, height: 1086, pos: '50% 50%', posSmall: '50% 50%' },
 ];
 const experiencePhoto: Photo = {
   src: '/media/experience-fabrication.webp',
