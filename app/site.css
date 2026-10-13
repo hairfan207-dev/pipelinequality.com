@@ -465,7 +465,7 @@ body {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 16px;
   flex: 0 0 auto;
   text-decoration: none;
   color: var(--brand-navy);
