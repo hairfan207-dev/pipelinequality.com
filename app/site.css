@@ -4416,3 +4416,23 @@ body {
   #experience.section { padding-bottom: 48px; }
   #how-we-work.section { padding-top: 40px; }
 }
+
+/* Desktop hero typography: stronger copy within a restrained reading width. */
+@media (min-width: 1101px) {
+  .hero-copy { width: min(100%, 700px); }
+  .hero-copy h1 { font-size: clamp(52px, 4vw, 58px); line-height: 1.05; }
+  .hero-subtitle { font-size: clamp(20px, 1.5vw, 22px); line-height: 1.35; font-weight: 500; max-width: 700px; }
+  .hero-body { font-size: clamp(16.5px, 1.2vw, 17px); line-height: 1.55; max-width: 680px; margin-top: 26px; }
+  .hero-meta { font-size: 15px; line-height: 1.5; margin-top: 34px; gap: 12px; }
+  .hero-actions { margin-top: 40px; }
+  .hero .site-btn { font-size: 15px; }
+}
+
+/* Preserve the existing desktop hero footprint on shorter laptop viewports. */
+@media (min-width: 1101px) and (max-height: 790px) {
+  .hero {
+    min-height: max(100svh, 732px);
+    padding-top: calc(var(--pq-header-h) + 24px);
+    padding-bottom: 58px;
+  }
+}
