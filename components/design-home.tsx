@@ -88,7 +88,7 @@ const industryPhotos: Photo[] = [
   { src: '/media/industry-maintenance.webp', width: 1024, height: 764, pos: '58% 42%' },
 ];
 const expertisePhotos: Photo[] = [
-  { src: '/media/service-qaqc.webp', width: 1024, height: 1024, pos: '50% 48%', posSmall: '50% 42%' },
+  { src: '/media/service-qaqc-weld-inspection.webp', width: 1448, height: 1086, pos: '50% 50%', posSmall: '50% 50%' },
   { src: '/media/service-inspection.webp', width: 1024, height: 768, pos: '78% 48%', posSmall: '50% 58%' },
   { src: '/media/service-ndt-ultrasonic.webp', width: 1448, height: 1086, pos: '55% 55%', posSmall: '55% 55%' },
   { src: '/media/service-welding.webp', width: 1024, height: 1024, pos: '48% 52%', posSmall: '50% 52%' },
