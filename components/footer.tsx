@@ -43,7 +43,7 @@ export function SiteFooter() {
             <p id='footer-legal-label' className='site-footer-label'>{tFooter('legalLabel')}</p>
             <ul aria-labelledby='footer-legal-label'>
               <li><a href='https://www.linkedin.com/company/pipelinequality' target='_blank' rel='noopener noreferrer'>LinkedIn</a></li>
-              <li><a href='mailto:info@pipelinequality.com'>info@pipelinequality.com</a></li>
+              <li><a href='mailto:info@pipelinequality.com'>info@<wbr />pipelinequality.com</a></li>
               <li><a href='/privacy'>{tFooter('privacy')}</a></li>
               <li><a href={locale === 'de' ? '/impressum' : '/legal-notice'}>{tFooter('imprint')}</a></li>
             </ul>
