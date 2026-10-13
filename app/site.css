@@ -4365,3 +4365,23 @@ body {
   .site-footer-bottom { margin-top: 18px; padding: 16px 0 20px; font-size: 12px; line-height: 1.5; }
 }
 
+/* Match the mobile footer column headings and link-row baselines. */
+@media (max-width: 640px) {
+  .site-footer-grid > .site-footer-col {
+    align-self: start;
+  }
+  .site-footer-col .site-footer-label {
+    min-height: 35px;
+    margin-bottom: 4px;
+  }
+  .site-footer-col ul {
+    grid-auto-rows: 40px;
+    align-items: start;
+  }
+  .site-footer-col li {
+    width: 100%;
+  }
+  .site-footer-col a {
+    min-height: 40px;
+  }
+}
