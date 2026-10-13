@@ -4385,3 +4385,24 @@ body {
     min-height: 40px;
   }
 }
+
+/* Align desktop and tablet footer column headings and link baselines. */
+@media (min-width: 641px) {
+  .site-footer-grid > .site-footer-col { align-self: start; }
+  .site-footer-col .site-footer-label {
+    min-height: 24px;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+  .site-footer-col ul {
+    grid-auto-rows: 32px;
+    gap: 0;
+    align-items: start;
+  }
+  .site-footer-col li { width: 100%; }
+  .site-footer-col a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+  }
+}
