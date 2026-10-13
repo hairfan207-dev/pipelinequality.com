@@ -4381,26 +4381,3 @@ body {
     overflow-wrap: normal;
   }
 }
-
-/* Mobile footer: brand, quick links, CTA, then one legal-link row. */
-@media (max-width: 640px) {
-  .site-footer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .site-footer-brand { display: contents; }
-  .site-footer-brand > .site-footer-name { order: 0; }
-  .site-footer-brand > p:not(.site-footer-name) { order: 1; margin-top: -8px; }
-  .site-footer-grid > nav.site-footer-col { order: 2; }
-  .site-footer-brand > .site-btn { order: 3; margin-top: 0; align-self: flex-start; }
-  .site-footer-grid > div.site-footer-col { order: 4; }
-  .site-footer-grid > div.site-footer-col ul {
-    flex-wrap: nowrap;
-    gap: 10px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-  }
-  .site-footer-grid > div.site-footer-col li { flex: 0 0 auto; }
-  .site-footer-grid > div.site-footer-col a { font-size: 11.5px; white-space: nowrap; }
-}
