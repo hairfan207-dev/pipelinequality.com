@@ -3998,14 +3998,14 @@ body {
   font-size: 16px;
 }
 
-/* Keep the HSE checklist centered within the shared desktop frame. */
+/* Position the HSE checklist slightly left within the shared desktop frame. */
 @media (min-width: 1101px) {
   .pq-media--expertise img[src='/media/service-hse-equipment-checklist.webp'] {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-position: center;
+    object-position: 70% 50%;
     transform: none;
   }
   .pq-media--expertise:hover img.is-current[src='/media/service-hse-equipment-checklist.webp'] {
