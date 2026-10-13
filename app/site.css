@@ -4440,31 +4440,42 @@ body {
 /* Refined desktop header scale; tablet/mobile retain their existing sizing. */
 @media (min-width: 1101px) {
   .site-header {
-    --pq-header-h: 76px;
-    --pq-header-h-compact: 72px;
+    --pq-header-h: 80px;
+    --pq-header-h-compact: 76px;
   }
   .site-header .site-brand-mark {
-    width: clamp(66px, 4.722vw, 68px);
-    height: clamp(55.6875px, 3.984vw, 57.375px);
+    width: clamp(72px, 5.278vw, 76px);
+    height: clamp(60.75px, 4.453125vw, 64.125px);
   }
   .site-header .site-brand-word {
-    font-size: clamp(16.5px, 1.18vw, 17px);
+    font-size: clamp(17.5px, 1.25vw, 18px);
   }
   .site-header.is-scrolled .site-brand-mark {
-    width: clamp(62px, 4.444vw, 64px);
-    height: clamp(52.3125px, 3.75vw, 54px);
+    width: clamp(70px, 5.139vw, 74px);
+    height: clamp(59.0625px, 4.3359375vw, 62.4375px);
   }
   .site-header.is-scrolled .site-brand-word {
-    font-size: clamp(16px, 1.146vw, 16.5px);
+    font-size: clamp(17.5px, 1.25vw, 18px);
   }
   .site-header .nav-link {
-    font-size: clamp(16px, 1.18vw, 17px);
+    font-size: clamp(17px, 1.25vw, 18px);
     font-weight: 600;
     line-height: 1;
   }
-  .site-header .site-nav { gap: clamp(28px, 2.222vw, 32px); }
+  .site-header .site-nav { gap: clamp(30px, 2.361vw, 34px); }
   .site-header-tools > .lang-menu .lang-menu-trigger {
     font-size: 16px;
-    padding-inline: 18px;
+    padding-inline: 20px;
   }
+}
+
+/* One wider desktop content grid, with gutters outside the readable content cap. */
+@media (min-width: 1101px) {
+  :root {
+    --pq-max: 1380px;
+    --pq-pad: clamp(28px, 4vw, 64px);
+  }
+  .qual-layout,
+  .contact-layout { column-gap: clamp(64px, 5vw, 80px); }
+  .experience-copy > p { max-width: 65ch; }
 }
