@@ -4346,3 +4346,21 @@ body {
     margin-top: 0;
   }
 }
+
+/* Compact mobile footer with two adjacent vertical link lists. */
+@media (max-width: 640px) {
+  .site-footer { padding-top: 28px; }
+  .site-footer-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px 18px;
+  }
+  .site-footer-brand { grid-column: 1 / -1; }
+  .site-footer-brand > p:not(.site-footer-name) { font-size: 14px; line-height: 1.5; }
+  .site-footer-brand .site-btn { margin-top: 12px; }
+  .site-footer-col { min-width: 0; }
+  .site-footer-label { font-size: 12px; letter-spacing: .05em; line-height: 1.45; margin-bottom: 8px; }
+  .site-footer-col ul { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .site-footer-col li { min-width: 0; max-width: 100%; }
+  .site-footer-col a { display: inline-flex; align-items: center; min-height: 36px; max-width: 100%; font-size: 13.5px; line-height: 1.4; }
+  .site-footer-bottom { margin-top: 18px; padding: 16px 0 20px; font-size: 12px; line-height: 1.5; }
+}
