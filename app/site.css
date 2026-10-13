@@ -4475,3 +4475,13 @@ body {
 @media (max-width: 700px) {
   .pq-site[lang] #experience .pq-media__meta { font-size: 12px; }
 }
+
+/* Fit the complete experience caption on one desktop line. */
+@media (min-width: 1101px) {
+  #experience .experience-media { container-type: inline-size; }
+  .pq-site[lang] #experience .pq-media__meta {
+    font-size: clamp(8px, calc(2.3cqw - 2.2px), 12px);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+}
