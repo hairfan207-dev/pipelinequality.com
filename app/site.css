@@ -3479,7 +3479,7 @@ body {
 
 #experience .experience-media {
   position: relative;
-  padding: 22px 0 0 22px;
+  padding: 22px;
 }
 
 #experience .experience-media::before {
@@ -3528,30 +3528,6 @@ body {
   background: var(--brand-orange);
 }
 
-@media (min-width: 901px) {
-  #experience .pq-media__meta {
-    max-width: 360px;
-    font-size: 7.6px;
-    letter-spacing: 0.02em;
-    line-height: 18px;
-    white-space: nowrap;
-  }
-}
-
-@media (min-width: 1280px) {
-  #experience .pq-media__meta {
-    max-width: none;
-    font-size: 10px;
-    letter-spacing: 0.03em;
-  }
-
-  .pq-site[lang='de'] #experience .pq-media__meta {
-    max-width: 360px;
-    font-size: 9px;
-    letter-spacing: 0.02em;
-  }
-}
-
 #experience .experience-kicker {
   display: flex;
   align-items: center;
@@ -3576,7 +3552,7 @@ body {
 }
 
 #experience .experience-assignment {
-  padding: 22px 0 0 22px;
+  padding: 22px;
   border-top: 0;
   border-left: 2px solid var(--brand-orange);
   background: linear-gradient(90deg, #f3f4f1, transparent);
@@ -4022,11 +3998,8 @@ body {
   font-size: 16px;
 }
 
-/* Keep the full HSE checklist composition centered in its desktop frame. */
+/* Keep the HSE checklist centered within the shared desktop frame. */
 @media (min-width: 1101px) {
-  .pq-media--expertise .pq-media__clip:has(img.is-current[src='/media/service-hse-checklist-4x3.webp']) {
-    aspect-ratio: 1365 / 1024;
-  }
   .pq-media--expertise img[src='/media/service-hse-checklist-4x3.webp'] {
     top: 0;
     left: 0;
@@ -4225,8 +4198,6 @@ body {
   .svc-list { gap: 18px; }
   .svc-tab, .svc-head:first-of-type .svc-tab { padding-block: 21px; }
   .pq-media--expertise .pq-media__clip { aspect-ratio: 5 / 4.5; }
-  /* The supplied HSE crop continues to show the complete checklist. */
-  .pq-media--expertise .pq-media__clip:has(img.is-current[src='/media/service-hse-checklist-4x3.webp']) { aspect-ratio: 1365 / 1024; }
 
   #industries .section-head { margin-bottom: 72px; }
   .pq-media--industry .pq-media__clip { aspect-ratio: 16 / 11; }
@@ -4492,4 +4463,15 @@ body {
   }
   .site-footer-bottom p,
   .site-footer-bottom a { font-size: inherit; }
+}
+
+/* Readable image credit, with natural wrapping inside the existing caption bar. */
+.pq-site[lang] #experience .pq-media__meta {
+  max-width: none;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: .03em;
+}
+@media (max-width: 700px) {
+  .pq-site[lang] #experience .pq-media__meta { font-size: 12px; }
 }
