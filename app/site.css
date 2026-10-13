@@ -4365,19 +4365,3 @@ body {
   .site-footer-bottom { margin-top: 18px; padding: 16px 0 20px; font-size: 12px; line-height: 1.5; }
 }
 
-/* Mobile footer links run horizontally and wrap within each group. */
-@media (max-width: 640px) {
-  .site-footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 18px;
-  }
-  .site-footer-col ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0 18px;
-  }
-  .site-footer-col a {
-    overflow-wrap: normal;
-  }
-}
