@@ -4406,3 +4406,13 @@ body {
     min-height: 32px;
   }
 }
+
+/* Keep the Experience-to-process transition compact. */
+@media (min-width: 1101px) {
+  #experience.section { padding-bottom: 64px; }
+  #how-we-work.section { padding-top: 56px; }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  #experience.section { padding-bottom: 48px; }
+  #how-we-work.section { padding-top: 40px; }
+}
